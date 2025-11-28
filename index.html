@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title style="text-align: center;">S. S. Heavy Equipments PVT. LTD.</title>
+<style>
+
+/*Backhoe loader icon*/
+ul.custom-bullets {
+  list-style-type: none; /* Remove default bullet points */
+  padding-left: 20px; /* Add space for custom bullets */
+}
+ul.custom-bullets li {
+  background: url('icon.png') no-repeat left center;
+  background-size: 16px 16px; /* Adjust size */
+  padding-left: 24px; /* Space so text doesn't overlap image */
+}
+ul.custom-bullets li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 24px;  /* Adjust size */
+    height: 24px;
+    background: url('icon.png') no-repeat center center;
+    background-size: contain;
+  }
+
+  /*Maha_image popup*/
+.image-popup-container {
+  position: relative;
+  display: inline-block;
+}
+
+.popup-content {
+  display: none;
+  position: absolute;
+  bottom: 120%; /* Position above the image */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #222;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 6px;
+  white-space: nowrap;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.image-popup-container:hover .popup-content {
+  display: block;
+}
+
+.hero p {
+
+  font-size: 1.5rem;           /* existing */
+  margin-bottom: 1.5rem;       /* existing */
+
+
+  opacity: 0;
+  transform: translateX(100px);  /* start off right side */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.hero p.visible {
+  opacity: 1;
+  transform: translateX(0);    /* slide back to original position */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Service image hover */
+.pop-up-effect {
+  transition: transform 0.3s ease; /* Smooth transition */
+  cursor: pointer; /* Optional: shows pointer on hover */
+}
+.pop-up-effect:hover {
+  transform: scale(1.1); /* Enlarges image by 10% on hover */
+  z-index: 10; /* Ensures it stays on top */
+}
+
+
+
+  /* GENERAL STYLES */
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f6f8;
+    color: #2c3e50;
+    overflow-x: hidden;
+  }
+
+  /* HEADER */
+  header {
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    flex-wrap: wrap;
+  }
+
+  /* Hero Section */
+  .hero {
+    background-image: url('backgrnd.jpg');
+    background-position: center;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    padding: 120px 2rem 90px;
+    text-align: center;
+    position: relative;
+
+
+    /* Animation start: slightly scaled down and transparent */
+  transition: transform 0.5s cubic-bezier(.4,0,.2,1), box-shadow 0.5s cubic-bezier(.4,0,.2,1);
+  transform: scale(1);
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+/* This class triggers the pop-up animation */
+.hero:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 40px rgba(40,40,60,0.15);
+}
+  
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(129, 139, 159, 0.65);
+    z-index: 0;
+  }
+  .hero > * {
+    position: relative;
+    z-index: 1;
+  }
+  .hero h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .hero p {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+
+  opacity: 0;                  /* new */
+  transform: translateY(30px); /* new */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* new */
+  will-change: opacity, transform; /* new */
+  }
+
+.hero p.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+  .hero .btn-primary {
+    font-size: 1.2rem;
+    background-color: #f17407;
+    border: none;
+    padding: 12px 30px;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+  }
+  .hero .btn-primary:hover, .hero .btn-primary:focus {
+    background-color: #d35400;
+  }
+
+  /* Logo as text & Styling */
+  .logo-text {
+    
+    font-size: 2.8rem;
+    font-weight: 900;
+    text-align:center;
+    font-style: italic;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #f17407;
+    letter-spacing: 3px;
+    cursor: default;
+    user-select: none;
+  }
+
+  /* Nav menu styles */
+  nav {
+    display: flex;
+    align-items: right;
+    text-align: right;
+    gap: 22px;
+    flex-wrap: wrap;
+  }
+  nav a {
+    
+    text-decoration: none;
+    color: #020747;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position:relative;
+  }
+  nav a:hover, nav a.active {
+    background: #e67e22;
+    color: #fff;
+  }
+  nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  nav a:hover::after, nav a.active::after {
+    width: 50%;
+    left: 25%;
+  }
+  /* CSS */
+.nav-tabs {
+  text-align: right; /* Aligns the inline children to the right */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-tabs li {
+  display: inline-block; /* Makes the list items act like text, allowing text-align to work */
+  padding: 10px 15px;
+}
+
+  /* Sections styling */
+section {
+  padding: 70px 25px;
+  border-radius: 20px;
+  background: #fff;
+  margin: 40px auto;
+  max-width: 1100px;
+  box-shadow: 0 8px 35px rgba(44, 62, 80, 0.08);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+  box-shadow: 0 16px 50px rgba(44,62,80,0.16);
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 45px;
+  text-align: center;
+  color: #2c3e50;
+  letter-spacing: 1.3px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#about p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 20px 0;
+  letter-spacing: 0.5px;
+}
+
+/*Updated for About info*/
+
+/* Directors styles */
+.director {
+  background: #efeeeb;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(44, 62, 80, 0.1);
+  cursor: pointer;
+  padding: 20px;
+  margin: 14px auto;
+  max-width: 980px;
+  transition: all 0.3s ease;
+}
+.director:hover {
+  transform: scale(1.05);
+  box-shadow: 0 22px 60px rgba(44, 62, 80, 0.2);
+}
+
+.director h3 {
+  font-size: 1.8rem;
+  font-family:Arial, Helvetica, sans-serif;
+  color: #f17407;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.director p {
+  margin: 6px 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+#directors .director {
+  cursor: pointer;
+}
+
+
+
+
+/* Dealership logos */
+.logos {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.logos img {
+  height: 110px;
+  margin: 0 30px;
+  border-radius: 15px;
+  box-shadow: 0 12px 35px rgba(44, 62, 80, 0.10);
+  transition: all 0.3s ease;
+}
+.logos img:hover {
+  transform: scale(1.12);
+}
+
+/* Images grid */
+.images {
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px, 1fr));
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+  justify-items: center;
+  align-items: center;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.images img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 8px 18px rgba(44, 62, 80, 0.15);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  margin: 0;
+}
+.images img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 20px 40px rgba(44,62,80,0.2);
+}
+
+
+
+/* Branches container */
+#branches {
+  margin-top: 40px;
+}
+.branch {
+  margin: 50px 0;
+}
+.branch h3 {
+  text-align: center;
+  color: #f17407;
+  font-size: 2rem;
+  font-family:Arial, Helvetica, sans-serif;
+  margin-bottom: 20px;
+}
+.branch p {
+  color: #000000;
+}
+
+/* Workshops tab */
+#workshops {
+  padding-top: 50px;
+  border-top: 4px solid #e67e22;
+}
+.workshops-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.workshop {
+  max-width: 340px;
+  background: #fefefe;
+  box-shadow: 0 14px 38px rgba(44, 62, 80, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+.workshop:hover {
+  transform: scale(1.03);
+  box-shadow: 0 25px 70px rgba(44,62,80,0.20);
+}
+.workshop img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+h4 {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #e67e22;
+}
+p {
+  padding: 0 20px 20px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #34495e;
+}
+
+/* Services list */
+#services {
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+#services ul {
+  max-width: 700px;
+  margin: 0 auto;
+  list-style: inside disc;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+#services li {
+  margin-bottom: 12px;
+}
+
+/* Contact section */
+#contact {
+  max-width: 500px;
+  margin: 40px auto;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.6;
+}
+#contact strong {
+  color: #e67e22;
+}
+#contact p {
+  margin: 15px 0;
+}
+
+/* Footer */
+footer {
+  background: #2c3e50;
+  color: #ecf0f1;
+  text-align: center;
+  padding: 16px 0;
+  font-size: 1rem;
+  margin-top: 30px;
+}
+
+/* Popup Modal */
+.popup-modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(44, 62, 80, 0.62);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+.popup-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.popup-modal img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 28px 90px rgba(44, 62, 80, 0.37);
+  animation: zoomIn 0.5s ease;
+}
+
+/* Director popup for detailed info, including image & scroll */
+.director-info {
+  max-width: 520px;
+  max-height: 85vh;
+  background: #fff;
+  border-radius: 22px;
+  overflow-y: auto;
+  padding: 24px 30px;
+  box-shadow: 0 18px 58px rgba(44, 62, 80, 0.30);
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.director-info h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.9rem;
+  color: #e67e22;
+}
+.director-info img {
+  text-align: right;
+  max-width: 20px;
+  max-height: 30px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(44,62,80,0.22);
+}
+
+.image-right {
+  float: right; /* Aligns the image to the right */
+  margin-left: 15px; /* Adds space to the left of the image */
+}
+
+.director-info p {
+  margin-bottom: 12px;
+}
+
+/* Close button on popup */
+.close-btn {
+  position: absolute;
+  top: 12px; right: 16px;
+  font-size: 2.6rem;
+  border: none;
+  background: transparent;
+  color: #e67e22;
+  cursor: pointer;
+  font-weight: bold;
+}
+@keyframes zoomIn {
+  from { transform: scale(0.7);}
+  to { transform: scale(1);}
+}
+
+
+/*For mobile phones*/
+
+@media (max-width: 600px) {
+    .hero h1 {
+      font-size: 2rem !important;
+    }
+    .hero p {
+      font-size: 1rem !important;
+      padding: 0 1rem !important;
+    }
+    header, nav, section, footer {
+      padding: 10px 1rem !important;
+    }
+
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="sshepl.github.io" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
+     <div class="logo-text" style="font-size: 1.2em; letter-spacing: -2px;">S. S. HEAVY EQUIPMENTS PVT. LTD.</div>
+    </a><br>
+  <nav style="text-align: right;">
+    <a href="#about"><strong>About</strong></a>
+    <a href="#dealership"><strong>Dealerships</strong></a>
+    <a href="#branches"><strong>Branches</strong></a>
+    <a href="#services"><strong>Services</strong></a>
+    <a href="#gallery"><strong>Gallery</strong></a>
+    <a href="#contact"><strong>Contact</strong></a>
+    
+  </nav>
+</header>
+
+<section class="hero" role="banner" aria-label="Hero section with company slogan">
+  <p style="font-family:'Times New Roman', Times, serif; font-size: 3.2em; font-weight: bold; color: #000000;">
+   <strong>SSHEPL</strong></p>
+<p style="text-align: center; font-size:1.6em; color: #000000; font-weight:bold">
+  <strong>Delivering Strength, Reliability, and Service Excellence Since 2013</strong>
+</p>
+ 
+</section>
+
+<section id="about">
+
+  <div class="info">
+
+<div class="director">
+  
+<p style="text-align: center;"><h3 style="text-align: center;font:bolder; size:4em; color:#000000"><strong>Our History</strong></h3> 
+
+Founded in 2013 in Pune by Mr. Santosh Chougule, Mr. Prasad Diwakar, and Mr. Sachin Deshmukh, S.S. Heavy Equipments Pvt. Ltd. (SSHEPL) was established to explore and expand the dealership business in the field of construction, earthmoving, and allied machinery.
+
+With over 20 years of combined experience in corporate and government sales, after-sales service, and team management, the directors bring deep industry expertise and a strong commitment to customer satisfaction.<br>
+
+</div>
+
+<div class="director"><p><h3 style="text-align: center;font:bold; color:#000000"><strong>Our Journey</strong></h3>
+
+<strong>2014 – 2018</strong><br>
+SSHEPL began its operations as an authorized dealer for Kobelco Construction Equipment India Pvt. Ltd., handling excavator sales and service across 16 districts in Maharashtra. The company’s network included a head office in Pune and branches in Kolhapur, Solapur, Nanded, and Aurangabad(now Chh. Sambhabhinagar).
+Kobelco operations concluded in July 2018.<br><br>
+
+<strong>2018</strong><br>
+In November 2018, SSHEPL became the authorized dealer for CASE New Holland Construction Equipment India Pvt. Ltd., representing its entire product range in Pune and Satara districts.<br><br>
+
+<strong>2019</strong><br>
+On our performance basis, Sangli and Kolhapur districts were added to SSHEPL’s territory in July 2019. We were no. 1 dealer in West Zone for machine sales. <br><br>
+
+<strong>2020</strong><br>
+Building on continued excellence, Solapur, Osmanabad(now Dharashiv), Latur, and Nanded districts were also extended to SSHEPL from March 1, 2020 for our excellent performance in the calendar year 2019.<br><br>
+
+<strong>2023</strong><br>
+In 2023, SSHEPL started the dealership of ELSA – Concreting Machinery for its Chhatrapati Sambhajinagar branch.<br><br>
+
+<div class="director"><p><h3 style="text-align: center;font:bold; color:#000000"><strong>Our Strength and Achievements</strong></h3>
+
+A dedicated team of 50+ skilled professionals operating across Maharashtra<br>
+
+Recognized for outstanding sales and service performance<br>
+
+<a href="Award-photo.png" target="_blank" rel="noopener">Awarded for three consecutive years for achieving the Highest Compactor Sales in India</a><br>
+
+At SSHEPL, we continue to grow with a focus on trust, quality service, and long-term partnerships with our clients<br>
+
+Qualified in Sapphire club with CNH for 2024 &  No. 1 pan India in machine sales upto Sept 2025
+    </p></div>
+
+    </div>
+
+<!-- edit -->
+<div class="directors">
+      <div class="director">
+        <h2>Our Directors</h2>
+        <p>At S.S. Heavy Equipments Pvt. Ltd. (SSHEPL), our leadership team comprises three seasoned professionals — Mr. Santosh Chougule, Mr. Prasad Diwakar, and Mr. Sachin Deshmukh — who together bring  decades of combined experience in the construction equipment and material handling industry.
+
+Each director contributes a unique blend of technical expertise, strategic insight, and hands-on operational leadership that has shaped SSHEPL into one of the most trusted names in the sector.</p><br>
+<div class="directors">
+      <div class="director">  
+
+        
+        
+<h3>Mr. Santosh R. Chougule</h3>
+        <p><ul>          
+          <li>Qualification: Diploma in Production Technology</li>
+
+<li>Mr. Santosh Chougule brings over 24 years of experience in the Construction Equipment and Material Handling industry.</li> <li>His career began with Larsen & Toubro Limited (1996–2000), followed by roles at L&T Case Equipment Pvt. Ltd. (2000–2009) and Telco Construction Equipment Limited (2009–2011).</li>
+
+<li>From 2011 to 2013, he served as Managing Partner at Chaitanya Escorts—authorized dealers for Escorts Construction Equipment in the Marathwada region of Maharashtra.</li>
+<li>Since 2013, he has been the Co-Founder and Director of S.S. Heavy Equipments Pvt. Ltd., where he oversees Finance, Human Resources, and Administration.</li>
+
+<li>Renowned for his deep industry knowledge and strong relationships with customers, financiers, and stakeholders, Mr. Chougule continues to drive SSHEPL’s growth and operational excellence.</li>
+       </ul>
+ </p>
+      </div>
+
+      <div class="director">
+         
+        <h3>Mr. Prasad C. Diwakar</h3>
+        <p>
+          
+          <li>Qualification: Diploma in Automobile Engineering, B.E. (Mechanical), MBA (Marketing)</li>
+
+<li>Mr. Prasad Diwakar has an extensive background combining technical expertise and strategic management.</li><li>He began his career with Magna Industrial Corporation (Australia), where he worked from 1994 to 2003, gaining valuable international experience.</li>
+
+<li>He has been serving as a Director at Habco Inweld India Pvt. Ltd. since 2004, and joined S.S. Heavy Equipments Pvt. Ltd. as Director in 2013.</li>
+
+<li>Mr. Diwakar specializes in maintenance welding and currently leads after-sales, service, and workshop operations for SSHEPL, ensuring consistent service quality and customer satisfaction.</li>
+
+        </p>
+      </div>
+
+      <div class="director">
+        
+        <h3>Mr. Sachin G. Deshmukh</h3>
+        <p>
+          
+          <li>Qualification: Diploma in Automobile Engineering</li>
+
+<li>Mr. Sachin Deshmukh began his professional journey with Larsen & Toubro’s authorized dealership (1998–2002) and went on to establish S.S. Engineers in 2002 as a proprietary firm.</li><li>The company has represented ACE Cranes and Terex Backhoe Loaders between 2014 and 2018, contributing significantly to regional market growth.</li>
+
+<li>Director of S.S. Heavy Equipments Pvt. Ltd. since 2013, Mr. Deshmukh leads operations in the Marathwada territory, focusing on ELSA Concreting Machinery’s concrete equipment range.</li> <li>His hands-on leadership and technical expertise have played a pivotal role in strengthening SSHEPL’s presence in the construction equipment sector.</li>
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+<section id="dealership">
+<h2>Our Dealerships</h2>
+<p>We are proud to offer a comprehensive range of equipment from two of the industry's most respected names: Case Construction Equipment and ELSA Concreting Machinery. </p>
+<div class="logos">
+  
+<a href="https://www.casece.com/en/india" target="_blank"><img src="case.jpg" alt="Case Logo"></a>
+<a href="https://elsa-spa.com/" target="_blank"><img src="elsa.jpg" alt="Elsa Logo"></a>
+</div>
+
+<p><strong>Case Construction Equipment</strong> is an Italian-American manufacturer and a global leader in construction machinery, with roots dating back to 1842. As a brand of Case New Holland Industrial, Case is known for its heritage of strong values and practical innovation, producing a full line of construction equipment designed for productivity, power, and durability worldwide. They were the first company to introduce the factory-integrated backhoe loader.</p>
+<div class="images">
+<a href="https://www.casece.com/en/india/products/backhoe-loaders/ex-series-backhoe-loaders/770ex" target="_blank"><img src="case_backhoe.jpg" alt="Case Equip 1" ></a>
+<a href="https://www.casece.com/en/india/products/compactors/single-drum-rollers/1107-nx" target="_blank"><img src="case-3.webp" alt="Case Equip 3" ></a>
+<a href="https://www.casece.com/en/india/products/crawler-excavators/cx220c" target="_blank"><img src="case-2.webp" alt="Case Equip 2" style="width: min-content;" ></a>
+<a href="https://www.casece.com/en/india/products/graders/c-series-graders" target="_blank"><img src="case-4.webp" alt="Case Equip 4" ></a>
+</div><br>
+
+<p><strong>ELSA Concreting Machinery India Pvt. Ltd.</strong> is an emerging Indian MNC specializing in concreting and construction machinery, often built on Indian and European technology collaboration. Their mission is to support the Construction, Concreting, and Infrastructure industry by supplying machinery that meets high standards of quality and efficiency. ELSA is a pioneer in the field, offering a wide base of products for concrete production and handling. </p>
+<div class="images">
+<a href="http://elsa-spa.com/el-2-2-slm/" target="_blank"><img src="elsa-1.jpg" alt="Elsa Equip 1"></a>
+<a href="http://elsa-spa.com/inline-series-batching-plants-products/" target="_blank"><img src="elsa-2.jpg" alt="Elsa Equip 2"> </a>
+<a href="http://elsa-spa.com/captive-series-batching-plantsproducts/" target="_blank"><img src="elsa-3.jpg" alt="Elsa Equip 3"> </a>
+<a href="https://elsa-spa.com/compact-series-batching-plants-products/" target="_blank"><img src="elsa-4.jpg" alt="Elsa Equip 4"></a>
+</div>
+</section>
+
+<section id="branches">
+  <h2>Branches</h2>
+  
+<p><strong>We are glad to serve in 7 different cities across Maharashtra, enabling us to reach our customers more effectively. Our network of branches allows us to provide localized support, quicker service, and a strong presence in the region. These branches are integral to our vision of delivering quality and accessible solutions to all our clients throughout the state.</strong></p>
+  <div class="branches-map" style="text-align: center;">
+    <img src="map.png" usemap="#image-map" alt="Maharashtra Branches Map" 
+         style="max-width: 100%; height: auto; border-radius: 10px;">
+
+   <map name="image-map">
+    <area target="" alt="Pune Head office" title="Pune Head office" href="#branch-pune" coords="843,423,870,457" shape="rect">
+    <area target="" alt="Chhatrapati Sambhajinagar Branch office" title="Chhatrapati Sambhajinagar Branch office" href="#branch-sambhajinagar" coords="956,316,983,346" shape="rect">
+    <area target="" alt="Solapur Branch office" title="Solapur Branch office" href="#branch-solapur" coords="957,494,985,525" shape="rect">
+    <area target="" alt="Kolhapur Branch office" title="Kolhapur Branch office" href="#branch-kolhapur" coords="862,626,890,660" shape="rect">
+    
+    <area target="" alt="Satara Branch office" title="Satara Branch office" href="#branch-satara" coords="864,509,889,541" shape="rect">
+    <area target="" alt="Latur Branch office" title="Latur Branch office" href="#branch-latur" coords="1093,460,1115,492" shape="rect">
+    <area target="" alt="Nanded Branch office" title="Nanded Branch office" href="#branch-nanded" coords="1126,428,1150,460" shape="rect">
+    <area target="" alt="Pune Workshop/ Warehouse" title="Pune Workshop/ Warehouse" href="#workshop-pune" coords="864,470,886,493" shape="rect">
+    <area target="" alt="Solapur Workshop" title="Solapur Workshop" href="#workshop-solapur" coords="965,536,988,560" shape="rect">
+    <area target="" alt="Chhatrapati Sambhajinagar Warehouse" title="Chhatrapati Sambhajinagar Warehouse" href="#workshop-sambhajinagar" coords="965,366,989,390" shape="rect">
+</map>
+
+  </div>
+
+  <div class="branch" id="branch-pune"><br><br>
+    <h3>Head Office - Pune</h3>
+    <p style="text-align: center; color:#000000;">
+      <strong>Contact no. :  Mr. Prasad Diwakar - 7722014300, Mr. Mahesh Talele - 7722014302
+
+ <br><a href="https://maps.app.goo.gl/x33Ak4gsaB4SAekE9" target="_blank" rel="noopener" style="color:#000000;">Address : 116/6/1, MUMBAI-BENGLORE HIGHWAY
+NEAR 'R' SQUARE BUILDING,
+OPP. VINAYAK HOSPITAL, PUNE. 411058</strong></a>
+ <br>
+    </p>
+    <div class="images">
+      <img src="MH14 (1).png"><img src="MH14 (2).png"><img src="MH14 (3).png"><img src="MH14 (4).png">
+    </div>
+  </div>
+
+  <div class="branch" id="branch-sambhajinagar"><br><br>
+    <h3>Branch Office - Chhatrapati Sambhajinagar</h3>
+    <p style="text-align: center; color:#000000;"><strong>
+      Contact no. :  Mr. Sachin Deshmukh - 9822353430, Mr. Rajesh Bhale - 9850437443
+ <br><a href="https://maps.app.goo.gl/XTLPUXXoqNtu4Ynv5" target="_blank" rel="noopener" style="color:#000000;">Address : N-5, H46 SATYAMNAGAR, CIDCO, CHHATRAPATI SAMBHAJINAGR. 431003</strong></a>
+ <br>
+    </p>
+    <div class="images">
+      <img src="MH20 (5).png"><img src="MH20 (2).png"><img src="MH20 (3).png"><img src="MH20 (4).png">
+    </div>
+  </div>
+
+  <div class="branch" id="branch-kolhapur"><br><br>
+    <h3 style="text-align: center;">Branch Office - Kolhapur</h3>
+    <p style="text-align: center;"><strong>
+      Contact no. : Mr. Samar Karpe - 8669978662, Mr. Santosh Bartakke - 8669978665
+ <br>Address : MAHAT COMPLEX, OPP. MAHADIK BUNGLOW
+NEAR S M TRACTOR, SHIROLI, PULACHI
+KOLHAPUR. 416122</strong>
+<br>
+    </p>
+    <div class="images">
+      <img src="MH09.png" style="text-align: center; width:min-content;"><img src="MH09-1.jpg"><img src="MH09-2.jpg"><img src="MH09-3.jpg">
+    </div>
+  </div>
+
+  <div class="branch" id="branch-solapur"><br><br>
+    <h3>Branch Office - Solapur</h3>
+    <p style="text-align: center;"><strong>
+      Contact no. : Mr.Vinay Atnur - 9503255689, Mr. Prashant Ganganvar - 8329986617<br>
+     <a href="https://maps.app.goo.gl/hoxo8HQcQsQP74T79" target="_blank" rel="noopener" style="color: #000000;"> Address : KRISHNA HEIGHTS,
+315/2, PLOT NO-3, SOLAPUR-PUNE HIGHWAY, NEAR SOLAPUR UNIVERSITY, KONDI, NORTH SOLAPUR, SOLAPUR. 413255.</strong></a>
+<br>
+    </p>
+    <div class="images">
+      <img src="MH13.jpg"><img src="MH13 (2).png"><img src="MH13-2.jpg"><img src="MH13-3.jpg">
+    </div>
+  </div>
+
+  <div class="branch" id="branch-latur"><br><br>
+    <h3>Branch Office - Latur</h3>
+    <p style="text-align: center;"><strong>
+      Contact no. : Mr. Yatin Katke - 8484928194
+
+ <br>Address : DESAI COMPLEX, NEAR TCI EXPRESS OFFICE, NAIK, CHOWK, LATUR. 413512</strong>
+<br>
+    </p>
+    <div class="images">
+      <img src="MH24 (1).png" style="margin: 0; width:min-content;">
+      <img src="MH24 (2).png" style="margin: 0; width:min-content;">
+    </div>
+  </div>
+
+  <div class="branch" id="branch-nanded"><br><br>
+    <h3>Branch Office - Nanded</h3>
+    <p style="text-align: center;"><strong>
+      Contact no. : Mr. Manik Surywanshi - 9175268073<br>
+      Address : KOKATE COMPLEX, ARDHAPUR ROAD, OPP. RAM NAGAR, AASANA BYPASS, NANDED. 431601</strong>
+<br>
+    </p>
+    <div class="images">
+      <img src="MH26 (2).png" style="width: min-content;">
+      <img src="MH26 (1).png" style="width: min-content;">
+    </div>
+  </div>
+
+  <div class="branch" id="branch-satara"><br><br>
+    <h3>Branch Office - Satara</h3>
+   <p style="text-align: center;"><strong>
+      Contact no. : Mr.Vinod Shivtare - 8669921937<br>
+      Address : SHOP NO 8, MANGAL MURTI VIHAR NEAR HOTEL SAYAJI, BANGLORE HIGHWAY, WADE PHATA SATARA. 415004</strong><br></p>
+    <div class="images">
+      <img src="MH11.png" style="width: max-content; text-align:center">
+    </div>
+  </div>
+
+
+  
+
+  
+</section>
+
+<section id="workshops">
+  <h2>Workshop / Warehouse</h2>
+  <p>Our dedicated facilities are strategically located to ensure prompt service, maintenance, and ready access to parts and equipment for our dealers and customers:</p>
+  <div class="workshops-container">
+    <div class="workshop" id="workshop-pune">
+      <img src="MH12WORKSHOP (1).jpg">
+      <h4>Pune Workshop & Warehouse</h4>
+      <p>Our main service and storage facility, spanning 5,000 sq ft.</p>
+    </div>
+    <div class="workshop" id="workshop-solapur">
+      <img src="MH13WORKSHIP (2).png" style="height:fit-content">
+      <h4>Solapur Warehouse</h4>
+      <p>A local Service Workshop and storage unit, covering 3,000 sq ft</p>
+    </div>
+    <div class="workshop" id="workshop-sambhajinagar">
+      <img src="MH20WORKSHIOP.png">
+      <h4>Chhatrapati Sambhabhinagar Warehouse</h4>
+      <p>Our regional hub, featuring an 8,000 sq ft Workshop and Warehouse.</p>
+    </div>
+  </div>
+</section>
+
+
+<div class="director">
+<section id="services" style="display: flex; align-items: flex-start; gap: 20px;">
+  <div style="flex: 1;">
+    <h2>Our Services</h2>
+      <p style="font-size: 1.2em;"><strong>We provide a complete range of expert maintenance and repair services, offering end-to-end 3S support – Sales, Spares, and Service.</strong></p>
+      <ul>
+      <li>Expert sales delivering the right equipment to power your success.</li>
+      <li>All Types of Replacement spare parts available</li>
+      <li>Bucket Hardfacing</li>
+      <li>Arm & Boom Repair</li>
+      <li>Hydraulic Repairs</li>
+      <li>Engine Repair</li>
+      <li>Undercarriage Repairs</li>
+      <li>Line Boring</li>
+    </ul>
+  </div>
+
+  <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 15px; margin-top: 40px;">
+  <img src="repair1.jpeg" alt="Service 1" style="width: 100%; height: auto;" class="pop-up-effect">
+  <img src="repair2.jpeg" alt="Service 2" style="width: 100%; height: auto;" class="pop-up-effect">
+  <img src="repair4.jpeg" alt="Service 3" style="width: 100%; height: auto;" class="pop-up-effect">
+  <img src="repair3.jpeg" alt="Service 4" style="width: 100%; height: auto;" class="pop-up-effect">
+</div>
+
+</section>
+</div>
+
+<div class="director">
+<section id="gallery">
+    <h2>Gallery</h2>
+    <div class="images">
+      <img src="1.jpg"><img src="2.jpg"><img src="gallery.jpg" ><img src="gallerypic.jpg"><img src="gallerypic1.jpg"><img src="Award-photo.png"><img src="gal1.jpg"><img src="gal2.jpg">
+  </section>
+  </section>
+  </div>
+
+<section id="contact">
+<h2>Contact</h2><h3>For enquires contact us at</h3>
+<p><strong>Phone :</strong> +91 9822016435, 9822353430, 9422332031</p>
+<p><strong>Email :</strong><a href="https://mail.google.com/mail/?view=cm&fs=1&to=sshepl.pune@gmail.com" target="_blank" rel="noopener"> sshepl.pune@gmail.com</a>
+</p>
+<p><strong>Address :</strong> 116/6/1, MUMBAI-BANGLORE HIGHWAY
+NEAR 'R' SQUARE BUILDING,
+OPP. VINAYAK HOSPITAL, PUNE. 411058</p>
+
+<h3>Follow us on</h3>
+<a href="https://www.facebook.com/share/1A4fUjgfnK/" target="_blank" rel="noopener">
+<img src="facebook_logo.png" alt="Facebook" style="width:40px; height:40px; border-radius:50%; border: 0.8px solid rgb(0, 0, 0); padding:6px; box-sizing:border-box;"></a>
+
+<a href="https://www.linkedin.com/company/sshepl/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BhACo4bk6QEav8dcNJPMwrA%3D%3D" target="_blank" rel="noopener">
+<img src="linkedin_logo.png" alt="LinkedIn" style="width:40px; height:40px; border-radius:50%; border: 0.8px solid rgb(0, 0, 0); padding:6px; box-sizing:border-box;"></a>
+
+</section>
+
+<footer>&copy; 2025 S. S. Heavy Equipments Pvt. Ltd.</footer>
+
+<!-- Modal popup for images -->
+<div class="popup-modal" style="display:none;"></div>
+
+<script>
+  // Show sections on scroll
+  window.addEventListener('scroll', ()=> {
+    document.querySelectorAll('section').forEach(sec => {
+      if (sec.getBoundingClientRect().top < window.innerHeight * 0.8) {
+        sec.classList.add('visible');
+      }
+    });
+  });
+  document.querySelectorAll('.director').forEach(d => {
+    d.addEventListener('click', () => {
+      // Show director info modal
+      showDirectorInfo(d.dataset.index);
+    });
+  });
+  function showDirectorInfo(index) {
+    const directors = [
+      {
+        name: "Santosh Chougule", qualification: "Diploma in Production Technology", experience: "15 Years", career: [
+          "1996-2000: Larsen & Toubro Limited",
+          "2000-2009: L&T Case Equipment Pvt. Ltd.",
+          "2009-2011: Telco Construction Equipment Limited",
+          "2011-13: Chaitanya Escorts – Managing Partner",
+          "2013 – Till date: S.S. Heavy Equipments Pvt. Ltd."
+        ],
+        img: "director1.jpg"
+      },
+      {
+        name: "Prasad Diwakar", qualification: "Diploma in Automobile, B.E (Mech), MBA (Marketing)", experience: "10 Years", career: [
+          "1994–2003: Magna Industrial Corporation (Australia)",
+          "2004 – Till 2024: Habco Inweld India Pvt. Ltd.",
+          "2013 – Till date: S.S. Heavy Equipments Pvt. Ltd."
+        ],
+        img: "director2.jpg"
+      },
+      {
+        name: "Sachin Deshmukh", qualification: "Diploma in Automobile Engineering", experience: "4 Years", career: [
+          "1998–2002: Authorized Dealership of Larsen & Toubro Limited",
+          "2002 – Till date: S.S. Engineers - Proprietor",
+          "2013 – Till date: S.S. Heavy Equipments Pvt. Ltd."
+        ],
+        img: "director3.jpg"
+      }
+    ];
+    const director = directors[index];
+    // create modal
+    const modalDiv = document.createElement('div');
+    modalDiv.className = 'popup-modal open';
+    modalDiv.innerHTML = `
+      <div class="director-info" role="dialog" aria-modal="true" aria-labelledby="directorName">
+        <button class="close-btn" aria-label="Close">&times;</button>
+        <h3 id="directorName">${director.name}</h3>
+        <img src="${director.img}" alt="${director.name}">
+        <p><strong>Qualification:</strong> ${director.qualification}</p>
+        <p><strong>Experience:</strong> ${director.experience}</p>
+        ${director.career.map(entry => `<p>${entry}</p>`).join('')}
+      </div>
+    `;
+    document.body.appendChild(modalDiv);
+    // event to close modal
+    modalDiv.querySelector('.close-btn').onclick = () => {
+      document.body.removeChild(modalDiv);
+    };
+    modalDiv.onclick = e => {
+      if (e.target === modalDiv) {
+        document.body.removeChild(modalDiv);
+      }
+    };
+  }
+  // Image enlarge effect
+  document.querySelectorAll('.images img').forEach(img => {
+    img.onclick = () => {
+      const modal = document.createElement('div');
+      modal.className = 'popup-modal';
+      modal.innerHTML = `
+        <button class="close-btn" aria-label="Close">&times;</button>
+        <img src="${img.src}">
+      `;
+      document.body.appendChild(modal);
+      modal.style.display='flex';
+      modal.querySelector('.close-btn').onclick = () => document.body.removeChild(modal);
+      modal.onclick = e => { if (e.target === modal) document.body.removeChild(modal); };
+    }
+  });
+</script>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const paragraphs = document.querySelectorAll('.hero p');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  paragraphs.forEach(p => observer.observe(p));
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/image-map-resizer@1.0.10/js/imageMapResizer.min.js"></script>
+<script>
+  window.addEventListener('load', function(){
+    if(window.imageMapResize) imageMapResize();
+  });
+
+  window.addEventListener('load', function(){
+    window.scrollTo(0, 0);
+  });
+</script>
+
+
+
+
+
+</body>
+</html>
