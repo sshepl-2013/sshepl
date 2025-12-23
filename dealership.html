@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dealership - S. S. Heavy Equipments PVT. LTD.</title>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    * { box-sizing: border-box; }
+
+    body {
+      background-image: url(dealership.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+      font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+      color: #2c3e50;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.45);
+      z-index: 0;
+      pointer-events: none;
+    }
+    header, section, footer {
+      position: relative;
+      z-index: 2;
+    }
+    h1, h2, h3 { margin-top: 0; }
+    a { color: inherit; }
+
+    /* HEADER */
+    header {
+      background: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      flex-wrap: wrap;
+    }
+    .logo-text {
+      font-size: 2.8rem;
+      font-weight: 900;
+      text-align:center;
+      font-style: italic;
+      font-family:Arial, Helvetica, sans-serif;
+      color: #f17407;
+      letter-spacing: 3px;
+      cursor: default;
+      user-select: none;
+    }
+    nav {
+      display: flex;
+      gap: 1px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      text-decoration: none;
+      color: #000000;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position:relative;
+    }
+    nav a:hover, nav a.active {
+      background: #e67e22;
+      color: #fff;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      bottom: 2px;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background: #fff;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    nav a:hover::after, nav a.active::after {
+      width: 50%;
+      left: 25%;
+    }
+
+    /* MAIN SECTION CARD */
+    #dealership {
+      margin:40px auto;
+      max-width:1100px;
+      padding:40px 25px;
+      border-radius:20px;
+      box-shadow:0 8px 35px rgba(0,0,0,0.35);
+      background: rgba(0,0,0,0.35);
+    }
+    #dealership h2 {
+      text-align:center;
+      font-size:3rem;
+      font-weight:900;
+      margin-bottom:25px;
+      color:#ffffff;
+    }
+
+    /* Brand logos */
+    .logos {
+      text-align: center;
+      margin-bottom: 40px;
+      filter: brightness(1.05) contrast(1.1);
+    }
+    .logos img {
+      height: 110px;
+      margin: 0 30px;
+      border-radius: 15px;
+      box-shadow: 0 12px 35px rgba(44, 62, 80, 0.10);
+      transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+      filter: brightness(1.05) contrast(1.1);
+    }
+
+    /* Images grid */
+    .images {
+      display:grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px, 1fr));
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+      justify-items: center;
+      align-items: center;
+      max-width: 100%;
+      overflow: hidden;
+    }
+    .images img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 8px 18px rgba(44, 62, 80, 0.15);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Product card + button */
+    .product-card {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .product-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 8px 18px rgba(44, 62, 80, 0.15);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .product-btn {
+      margin-top: 2px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 2px solid #e67e22;
+      background: rgba(0,0,0,0.2);
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .product-btn:hover {
+      background: #e67e22;
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    /* Explore more button */
+    .explore-btn-wrap {
+      text-align: right;
+      margin: 20px 5px 0 0;
+    }
+    .explore-btn {
+      display: inline-block;
+      padding: 10px 26px;
+      border-radius: 999px;
+      border: 2px solid #ffffff;
+      color: #ffffff;
+      background: rgba(255,255,255,0.05);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 1rem;
+      transition: all 0.25s ease;
+    }
+    .explore-btn:hover {
+      background: rgba(249, 249, 249, 0.18);
+      border-color: #000000;
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+    .big-arrow {
+      font-size: 1.4rem;
+      margin-left: 6px;
+      vertical-align: middle;
+      transform: translateY(-4px);
+    }
+
+    /* Scroll reveal base */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .reveal-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* pop effect */
+    .pop-card {
+      transition: all 0.3s ease-out;
+    }
+    .pop-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+    }
+
+    .slide-in-left  { transform: translate(-40px, 40px); }
+    .slide-in-right { transform: translate(40px, 40px); }
+    .reveal-on-scroll.visible .slide-in-left,
+    .reveal-on-scroll.visible .slide-in-right {
+      transform: translate(0, 0);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #2c3e50;
+      color: #ecf0f1;
+      text-align: center;
+      padding: 16px 0;
+      font-size: 1rem;
+      margin-top: 30px;
+    }
+
+    /*Home-icon*/
+.home-icon-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;   /* space before logo */
+}
+
+.home-icon-img {
+  width: 24px;          /* adjust size as needed */
+  height: 24px;
+  object-fit: contain;
+  display: block;
+}
+
+
+/* simple house icon using pure CSS */
+.home-icon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+/* roof */
+.home-icon::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #f17407;
+  top: 0;
+}
+
+.home-icon-btn:hover{
+background-color: #e67e22;
+}
+
+/* body */
+.home-icon::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  width: 12px;
+  height: 10px;
+  background: #f17407;
+  border-radius: 2px;
+}
+
+    /* ===== Hover + lightbox styles for dealership images ===== */
+    .image-card {
+      position: relative;
+      overflow: hidden;
+      background: #ffffff;          /* white frame */
+  padding: 4px;                 /* frame thickness */
+      border-radius: 15px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.55);
+      cursor: pointer;
+      width: 100%;
+    }
+    .image-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+      transform: scale(1.02);
+      transition:
+        transform 0.35s cubic-bezier(0.19, 1, 0.22, 1),
+        box-shadow 0.35s ease,
+        filter 0.35s ease;
+    }
+    .image-card::after {
+      content: "View";
+      position: absolute;
+      bottom: 10px;
+      right: 12px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.55);
+      color: #f5f7ff;
+      font-size: 0.7rem;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .image-card:hover img {
+      transform: scale(1.08) translateY(-2px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.7);
+      filter: brightness(1.05);
+    }
+    .image-card:hover::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* lightbox shared */
+    .lightbox-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .lightbox-backdrop.open { display: flex; }
+    .lightbox-frame {
+      max-width: 94vw;
+      max-height: 90vh;
+      position: relative;
+    }
+    .lb-zoom-wrap {
+      max-width: 100%;
+      max-height: 90vh;
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+    .lb-zoom-wrap img {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 16px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.9);
+      display: block;
+      transition: transform 0.25s ease;
+    }
+    .lb-zoom-wrap.lb-zoomed { cursor: zoom-out; }
+    .lb-zoom-wrap.lb-zoomed img { transform: scale(1.8); }
+
+    .lightbox-caption {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #e0e5f0;
+    }
+    .lb-btn {
+      position: absolute;
+      top: 50%;
+      width: 40px;
+      height: 40px;
+      margin-top: -20px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(0,0,0,0.6);
+      color: #ffffff;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .lb-btn:hover {
+      background: rgba(241,116,7,0.85);
+      transform: translateY(-1px);
+    }
+    .lb-prev { left: -50px; }
+    .lb-next { right: -50px; }
+    .lb-close {
+      top: -16px;
+      right: -16px;
+      margin-top: 0;
+      width: 34px;
+      height: 34px;
+      font-size: 20px;
+      background: rgba(0,0,0,0.7);
+    }
+    @media (max-width: 768px) {
+      .lb-prev { left: 6px; }
+      .lb-next { right: 6px; }
+      .lb-close { right: 6px; top: 6px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="sshepl.github.io" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
+      <div class="logo-text" style="font-size: 1.2em; letter-spacing: -2px;">
+        S. S. HEAVY EQUIPMENTS PVT. LTD.
+      </div>
+    </a>
+    <nav>
+      <button class="home-icon-btn" onclick="goHome()" aria-label="Home">
+  <img src="home.png" alt="Home" class="home-icon-img">
+</button>
+      <a href="about.html" ><strong>About</strong></a>
+      <a href="dealership.html" class="active"><strong>Dealerships</strong></a>
+      <a href="services.html" ><strong>Services</strong></a>
+      <a href="branches.html" ><strong>Branches</strong></a>
+      <a href="gallery.html" ><strong>Gallery</strong></a>
+      <a href="index.html#contact"><strong>Contact</strong></a>
+    </nav>
+  </header> 
+
+  <section id="dealership" class="reveal-on-scroll">
+    <h2 class="pop-card reveal-on-scroll">Our Dealerships</h2>
+
+    <p style="text-align:center; font-size:1.1rem; max-width:900px; margin:0 auto 30px; color:#ffffff">
+      We are proud to offer a comprehensive range of equipment from two of the industry's most respected names:
+      <strong>Case Construction Equipment</strong> and <strong>ELSA Concreting Machinery</strong>.
+    </p><br><br><br>
+
+    <div class="logos reveal-on-scroll">
+      <a href="https://www.bkt-tires.com/in/us/" target="_blank" rel="noopener">
+        <img class="pop-card" src="BKT.png" alt="BKT Logo">
+      </a>
+      <a href="https://www.casece.com/en/india" target="_blank" rel="noopener">
+        <img class="pop-card" src="case.jpg" alt="Case Construction Equipment Logo">
+      </a>
+      <a href="https://elsa-spa.com" target="_blank" rel="noopener">
+        <img class="pop-card" src="elsa.jpg" alt="ELSA Concreting Machinery Logo">
+      </a>
+    </div>
+
+    <br><br>
+
+    <p style="color: #ffffff;">
+      <strong>Case Construction Equipment</strong> is an Italian‑American manufacturer and a global leader in construction
+      machinery, with roots dating back to 1842. As a brand of Case New Holland Industrial, Case is known for its strong
+      values and practical innovation, producing a full line of equipment designed for productivity, power, and durability
+      worldwide. They were the first company to introduce the factory‑integrated backhoe loader.
+    </p>
+
+    <div class="images reveal-on-scroll">
+      <div class="product-card">
+        <div class="image-card">
+          <img class="pop-card" src="case_backhoe.jpg" alt="CASE 770EX Backhoe Loader">
+        </div>
+        <button class="product-btn"
+          onclick="window.open('https://www.casece.com/en/india/products/backhoe-loaders/ex-series-backhoe-loaders/770ex','_blank')">
+          CASE Backhoe Loader
+        </button>
+      </div>
+
+      <div class="product-card">
+        <div class="image-card">
+          <img class="pop-card" src="case-3.webp" alt="CASE 1107 NX Compactor">
+        </div>
+        <button class="product-btn"
+          onclick="window.open('https://www.casece.com/en/india/products/compactors/single-drum-rollers/1107-nx','_blank')">
+          CASE Compactor
+        </button>
+      </div>
+
+      <div class="product-card">
+        <div class="image-card">
+          <img class="pop-card" src="case-2.webp" alt="CASE CX220C Excavator">
+        </div>
+        <button class="product-btn"
+          onclick="window.open('https://www.casece.com/en/india/products/crawler-excavators/cx220c','_blank')">
+          CASE Excavator
+        </button>
+      </div>
+
+      <div class="product-card">
+        <div class="image-card">
+          <img class="pop-card" src="case-4.webp" alt="CASE C-Series Motor Grader">
+        </div>
+        <button class="product-btn"
+          onclick="window.open('https://www.casece.com/en/india/products/graders/c-series-graders','_blank')">
+          CASE Motor Grader
+        </button>
+      </div>
+    </div>
+
+    <div class="explore-btn-wrap">
+      <a href="https://www.casece.com/en/india/products" target="_blank" rel="noopener" class="explore-btn">
+        Explore more products <span class="big-arrow">&rarr;</span>
+      </a>
+    </div>
+
+    <br><br><br>
+
+    <p style="color: #ffffff;">
+      <strong>ELSA Concreting Machinery India Pvt. Ltd.</strong> is an emerging Indian MNC specializing in concreting and
+      construction machinery, built on Indian and European technology collaboration. Its mission is to support the
+      construction, concreting, and infrastructure industry by supplying machinery that meets high standards of quality
+      and efficiency, with a wide base of products for concrete production and handling.
+    </p>
+
+    <div class="images reveal-on-scroll">
+      <div class="product-card">
+        <div class="image-card">
+          <img class="pop-card" src="elsa-1.jpg" alt="ELSA EL 2.2 SLM">
+        </div>
+        <button class="product-btn"
+          onclick="window.open('http://elsa-spa.com/el-2-2-slm','_blank')">
+          Self‑Loading Mixer
+        </button>
+      </div>
+
+      <div class="product-card">
+        <div class="image-card">
+          <img class="pop-card" src="elsa-2.jpg" alt="ELSA Inline Batching Plant">
+        </div>
+        <button class="product-btn"
+          onclick="window.open('http://elsa-spa.com/inline-series-batching-plants-products','_blank')">
+          Inline Series
+        </button>
+      </div>
+
+      <div class="product-card">
+        <div class="image-card">
+          <img class="pop-card" src="elsa-3.jpg" alt="ELSA Captive Batching Plant">
+        </div>
+        <button class="product-btn"
+          onclick="window.open('http://elsa-spa.com/captive-series-batching-plantsproducts','_blank')">
+          Captive Series
+        </button>
+      </div>
+
+      <div class="product-card">
+        <div class="image-card">
+          <img class="pop-card" src="elsa-4.jpg" alt="ELSA Compact Batching Plant">
+        </div>
+        <button class="product-btn"
+          onclick="window.open('https://elsa-spa.com/compact-series-batching-plants-products','_blank')">
+          Compact Series
+        </button>
+      </div>
+    </div>
+
+    <div class="explore-btn-wrap">
+      <a href="https://elsa-spa.com/products/" target="_blank" rel="noopener" class="explore-btn">
+        Explore more products <span class="big-arrow">&rarr;</span>
+      </a>
+    </div>
+
+    <br><br><br>
+
+    <h2 class="pop-card reveal-on-scroll" style="opacity:1.0">Our Distributorship</h2><br>
+
+    <p style="color: #ffffff;">
+      <strong>Balkrishna Industries Limited (BKT)</strong>, headquartered in Mumbai, India, is a leading global manufacturer
+      of off-highway tires since 1987, specializing in durable, high-performance tires for agricultural, industrial,
+      construction, mining, and commercial vehicles. SS Heavy Equipment Private Limited proudly announces its new
+      distributorship for BKT commercial tires, covering Pune, Nashik, and Chhatrapati Sambhajinagar, focusing on robust
+      solutions for trucks, tippers, and heavy-duty transport in demanding on/off-road conditions.
+      BKT's commercial tire range features all-steel radial constructions with cut/chip resistance, enhanced grip, and
+      longevity for mining, quarries, ports, and logistics—ideal for India's rugged terrains.
+    </p><br>
+
+    <div style="text-align: center;">
+      <button onclick="window.open('https://www.bkt-tires.com/in/us/')" style="padding:10px 20px; border-radius:0px;">
+        BKT Commercial Tyres coming soon
+      </button>
+    </div>
+
+    <p style="color: #ffffff; text-align: center;"><strong>Cities Served:</strong> Pune, Nashik, Chh Sambhajinagar</p>
+    <p style="color: #ffffff; text-align: center;"><strong>Focus:</strong> Commercial tyres (OTR, truck/bus radials)</p>
+
+<br><br><br>
+
+    <div style="text-align: center;">
+      <button onclick="window.open('index.html#contact')" style="padding:10px 20px; border-radius:999px;">
+        For any kind of Inquiries Click the Button
+      </button>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 S. S. Heavy Equipments Pvt. Ltd. All rights reserved.
+  </footer>
+
+ <!-- Scroll reveal JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const elems = document.querySelectorAll('.reveal-on-scroll');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      elems.forEach(el => observer.observe(el));
+    });
+  </script>
+
+<script>
+  // Ensure page starts at top
+    window.addEventListener('load', function () {
+      window.scrollTo(0, 0);
+      // Trigger initial reveal
+      document.querySelectorAll('section').forEach(function (sec) {
+        if (sec.getBoundingClientRect().top < window.innerHeight * 0.8) {
+          sec.classList.add('visible');
+        }
+      });
+    });</script>
+
+</body>
+</html>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const elems = document.querySelectorAll('.reveal-on-scroll');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      elems.forEach(el => observer.observe(el));
+    });
+
+    window.addEventListener('load', function () {
+      window.scrollTo(0, 0);
+      document.querySelectorAll('section').forEach(function (sec) {
+        if (sec.getBoundingClientRect().top < window.innerHeight * 0.8) {
+          sec.classList.add('visible');
+        }
+      });
+    });
+  </script>
+
+  <!-- Lightbox for dealership images -->
+  <div class="lightbox-backdrop" id="dealer-lightbox" aria-modal="true" role="dialog">
+    <div class="lightbox-frame">
+      <button class="lb-btn lb-close" id="dealer-lb-close" aria-label="Close">&times;</button>
+      <button class="lb-btn lb-prev" id="dealer-lb-prev" aria-label="Previous">&#10094;</button>
+
+      <div class="lb-zoom-wrap" id="dealer-lb-zoom-wrap">
+        <img id="dealer-lb-img" src="" alt="">
+      </div>
+
+      <button class="lb-btn lb-next" id="dealer-lb-next" aria-label="Next">&#10095;</button>
+      <div class="lightbox-caption" id="dealer-lb-cap"></div>
+    </div>
+  </div>
+
+  <script>
+// Lightbox for dealership images
+(function() {
+  const thumbs = Array.from(document.querySelectorAll('#dealership .images .image-card'));
+  if (!thumbs.length) return;
+
+  const lb      = document.getElementById('dealer-lightbox');
+  const lbImg   = document.getElementById('dealer-lb-img');
+  const lbCap   = document.getElementById('dealer-lb-cap');
+  const btnPrev = document.getElementById('dealer-lb-prev');
+  const btnNext = document.getElementById('dealer-lb-next');
+  const btnClose = document.getElementById('dealer-lb-close');
+  const zoomWrap = document.getElementById('dealer-lb-zoom-wrap');
+
+  let current = 0;
+  let zoomed  = false;
+
+  function resetZoom() {
+    zoomed = false;
+    zoomWrap.classList.remove('lb-zoomed');
+  }
+
+  function openAt(index) {
+    current = (index + thumbs.length) % thumbs.length;
+    const card = thumbs[current];
+    const img  = card.querySelector('img');
+    lbImg.src = img.src;
+    lbImg.alt = img.alt || '';
+    lbCap.textContent = img.alt || '';
+    resetZoom();
+    lb.classList.add('open');
+    btnClose.focus();
+  }
+
+  function closeLb() {
+    lb.classList.remove('open');
+    lbImg.src = '';
+    resetZoom();
+  }
+  function next() { openAt(current + 1); }
+  function prev() { openAt(current - 1); }
+
+  thumbs.forEach((card,i) => {
+    card.addEventListener('click', () => openAt(i));
+  });
+
+  btnClose.addEventListener('click', closeLb);
+  btnNext.addEventListener('click', next);
+  btnPrev.addEventListener('click', prev);
+  lb.addEventListener('click', e => {
+    if (e.target === lb) closeLb();
+  });
+
+  zoomWrap.addEventListener('click', () => {
+    zoomed = !zoomed;
+    zoomWrap.classList.toggle('lb-zoomed', zoomed);
+  });
+
+  window.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowRight') next();
+    if (e.key === 'ArrowLeft') prev();
+  });
+})();
+  </script>
+
+<script>
+function goHome() {
+  const isHome =
+    window.location.pathname.endsWith('index.html') ||
+    window.location.pathname === '/' ||
+    window.location.pathname === '';
+
+  if (isHome) {
+    // already on home: refresh
+    window.location.reload();
+  } else {
+    // go to home page
+    window.location.href = 'index.html';
+  }
+}
+</script>
+
+</body>
+</html>
