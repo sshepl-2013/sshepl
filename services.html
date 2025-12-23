@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services - S. S. Heavy Equipments PVT. LTD.</title>
+  <style>
+    html { scroll-behavior: smooth; }
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+      color: #2c3e50;
+      overflow-x: hidden;
+      
+      opacity:8;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 0; pointer-events: none;
+    }
+
+.background-video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Places video behind content */
+  transform: translate(-50%, -50%); /* Centers the video */
+  object-fit: cover; /* Ensures video covers area without distortion */
+}
+
+
+
+    header, section, footer { position: relative; z-index: 1; }
+
+    header {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  flex-wrap: wrap;
+
+  position: sticky;  /* or: fixed */
+  top: 0;
+  z-index: 9999;     /* above dark overlay and content */
+}
+    .logo-text {
+      font-size: 1.2em; font-weight: 900; font-style: italic;
+      font-family: Arial, Helvetica, sans-serif; color: #f17407;
+      letter-spacing: -2px; user-select: none;
+    }
+    /* Nav menu styles */
+  nav {
+    display: flex;
+    align-items: right;
+    text-align: right;
+    gap: 1px;
+    flex-wrap: wrap;
+  }
+  nav a {
+    
+    text-decoration: none;
+    color: #000000;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position:relative;
+  }
+  nav a:hover, nav a.active {
+    background: #e67e22;
+    color: #fff;
+  }
+  nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  nav a:hover::after, nav a.active::after {
+    width: 50%;
+    left: 25%;
+  }
+  /* CSS */
+.nav-tabs {
+  text-align: right; /* Aligns the inline children to the right */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-tabs li {
+  display: inline-block; /* Makes the list items act like text, allowing text-align to work */
+  padding: 10px 15px;
+}
+
+    section {
+      padding: 70px 25px; border-radius: 20px;
+      background: rgba(0,0,0,0.35); margin: 40px auto; max-width: 1100px;
+      box-shadow: 0 8px 35px rgba(0,0,0,0.35);
+    }
+    section h2 {
+      font-size: 3rem; font-weight: 900; margin: 0 0 20px;
+      text-align: center; color: #ffffff; letter-spacing: 1.3px;
+    }
+    #services-intro {
+      text-align:center; color:#ffffff; max-width:900px; margin: 0 auto 20px;
+    }
+    .service-cta-wrap { text-align:center; margin: 10px 0 30px; }
+    .service-cta-btn{
+      display:inline-flex; align-items:center; gap:6px;
+      padding:10px 28px; border-radius:999px; border:2px solid #e67e22;
+      background:#e67e22; color:#fff; font-weight:700; letter-spacing:.5px;
+      text-transform:uppercase; text-decoration:none; font-size:.95rem;
+      box-shadow:0 8px 20px rgba(230,126,34,.45);
+      transition: transform .2s, box-shadow .2s, background .2s, color .2s;
+    }
+    .service-cta-btn:hover{ background:#fff; color:#e67e22; transform: translateY(-2px); box-shadow:0 12px 28px rgba(0,0,0,.35); }
+
+    /* ===== Layout: icons left & right, center cards ===== */
+    .services-layout{
+      display:grid;
+      grid-template-columns: 1fr 1.4fr 1fr; /* left icons – cards – right icons */
+      gap:24px; align-items: stretch;
+    }
+
+    /* Icon panels */
+  .services-icons {
+  display: grid;
+  grid-template-rows: repeat(3, auto); /* shrink to content */
+  gap: 16px;
+  
+}
+
+.icon-card {
+  position: relative;  /* needed for ::before / ::after */
+  align-self: flex-start;
+  border-radius: 14px;
+  padding: 14px 16px 50px;
+  background: transparent;        /* inner background comes from ::after */
+  color: #f6f7fb;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* animated gradient ring – same feel as .glow-line */
+.icon-card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;  /* thickness of glow border */
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ffffff, #c7c7c0, #000000, #020747);
+  background-size: 200% 100%;
+  animation: glowMove 1s linear infinite;
+  z-index: -2;  /* behind everything */
+}
+
+/* solid inner card so text sits on a clean panel */
+.icon-card::after {
+  content: "";
+  position: absolute;
+  inset: 2px;  /* distance from outer glow */
+  border-radius: inherit;
+  background: radial-gradient(circle at 0 0, #210d6b 0%, #758bb1 60%, #0b3070 100%);
+  z-index: -1;
+}
+
+@keyframes glowMove {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+
+
+.icon-card .icon {
+  font-size: 1.8rem;
+  color: #f7a735;
+  margin: 0;                   /* remove extra gap */
+  opacity: 1;
+}
+.icon-card h4 {
+  margin: 0;
+  font-size: 1.32rem;
+  font-weight: 700;
+  opacity: 1;
+}
+.icon-card p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #d5dde8;
+  opacity: 1;
+}
+
+
+    /* Center white service cards */
+    .services-grid{ display:grid; grid-template-columns: 1fr; gap:18px; }
+    .service-card{
+      background: rgba(0, 0, 0, 0.56); border-radius:16px;opacity: 0.6;
+      padding:18px 20px 14px; box-shadow:0 10px 30px rgba(0,0,0,.18);
+      transition: transform .3s ease-out, box-shadow .3s ease-out;
+    }
+    .service-card:hover{ transform: translateY(-8px); box-shadow:0 18px 40px rgba(0,0,0,.35); }
+    .service-card h3{ margin:0 0 10px; font-size:1.5rem; color:#f17407; opacity: 1; }
+    .service-card ul{ margin:0; padding-left:18px; color:#ffffff; font-size:1rem;opacity: 1 }
+
+    footer{ background:#2c3e50; color:#ecf0f1; text-align:center; padding:16px 0; font-size:1rem; margin-top:30px; }
+    
+     /* subtle floating animation for icon cards */
+@keyframes floatPulse {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-20px); }
+}
+
+/* apply continuous movement */
+.icon-card {
+  animation: floatPulse 2s ease-in-out infinite;
+}
+
+/* slightly stronger effect on hover */
+.icon-card:hover {
+  animation-duration: 2.5s;
+  box-shadow: 0 18px 44px rgba(0,0,0,0.55);
+}
+
+/*Home-icon*/
+.home-icon-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;   /* space before logo */
+}
+
+.home-icon-img {
+  width: 24px;          /* adjust size as needed */
+  height: 24px;
+  object-fit: contain;
+  display: block;
+}
+
+
+/* simple house icon using pure CSS */
+.home-icon {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+/* roof */
+.home-icon::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #f17407;
+  top: 0;
+}
+
+.home-icon-btn:hover{
+background-color: #e67e22;
+}
+
+/* body */
+.home-icon::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  width: 12px;
+  height: 10px;
+  background: #f17407;
+  border-radius: 2px;
+}
+
+ /* Scroll reveal base */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .reveal-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Reusable pop effect for cards/images */
+    /* Enhanced pop effect - combines zoom + lift */
+.pop-card {
+  transition: all 0.3s ease-out;
+}
+
+.pop-card:hover {
+  transform:  scale(1.05);  /* lift UP + slight zoom */
+  box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+}
+
+
+    /* Optional slide directions */
+    .slide-in-left  { transform: translate(-40px, 40px); }
+    .slide-in-right { transform: translate(40px, 40px); }
+
+    /* When revealed, reset slide transforms */
+    .reveal-on-scroll.visible .slide-in-left,
+    .reveal-on-scroll.visible .slide-in-right {
+      transform: translate(0, 0);
+    }
+
+
+    @media (max-width: 900px){
+      .services-layout{ grid-template-columns: 1fr; }
+      .services-icons{
+        grid-template-rows: none;
+        grid-template-columns: repeat(3, minmax(0,1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-text">S. S. HEAVY EQUIPMENTS PVT. LTD.</div>
+    <nav>
+      <button class="home-icon-btn" onclick="goHome()" aria-label="Home">
+  <img src="home.png" alt="Home" class="home-icon-img">
+</button>
+    <a href="about.html" ><strong>About</strong></a>
+    <a href="dealership.html" ><strong>Dealerships</strong></a>
+    <a href="services.html" class="active"><strong>Services</strong></a>
+    <a href="branches.html"><strong>Branches</strong> </a>
+    <a href="gallery.html" ><strong>Gallery</strong></a>
+    <a href="index.html#contact"><strong>Contact</strong></a>
+    
+    </nav>
+  </header>
+<video autoplay loop muted playsinline class="background-video">
+  <source src="assets/videos/services.mov" type="video/mp4">
+  <!-- Add other formats (webm) for broader browser support -->
+</video>
+  <section id="services">
+    <h2  class="pop-card reveal-on-scroll">Our Services</h2>
+    <p id="services-intro"><strong>We provide expert maintenance and repair with end‑to‑end 3S support – Sales, Spares, and Service – for CASE construction equipment and ELSA concreting machinery.</strong></p>
+<br><br>
+    <div class="service-cta-wrap">
+      <a class="service-cta-btn" href="index.html#contact">Book a Service ➡️</a>
+    </div>
+<br><br>
+    <div class="services-layout">
+      <!-- Left icon panel -->
+      <div class="services-icons">
+        <div class="icon-card">
+          <div class="icon">🚚</div>
+          <h4>Wide Range</h4>
+          <p>Complete lineup of CASE & ELSA equipment.</p>
+        </div>
+        <div class="icon-card">
+          <div class="icon">🛠️</div>
+          <h4>Expert Service</h4>
+          <p>Certified technicians with process-driven repairs.</p>
+        </div>
+        <div class="icon-card">
+          <div class="icon">⚙️</div>
+          <h4>Genuine Parts</h4>
+          <p>OEM spares for reliability and long life.</p>
+        </div>
+      </div>
+
+      <!-- Center white service cards -->
+      <div class="services-grid">
+        <div class="service-card" style="opacity: 1;">
+          <h3>Sales</h3>
+          <ul>
+            <li>Equipment selection for CASE &amp; ELSA machines</li>
+            <li>New sales, exchange, and finance coordination</li>
+            <li>Site visits and demonstrations</li>
+          </ul>
+        </div>
+
+        <div class="service-card" style="opacity: 1;">
+          <h3>Spares</h3>
+          <ul>
+            <li>Genuine replacement spare parts</li>
+            <li>Undercarriage, filters, pins &amp; bushes</li>
+            <li>Wear parts and ground engaging tools</li>
+          </ul>
+        </div>
+
+        <div class="service-card" style="opacity: 1;">
+          <h3>Service &amp; Repairs</h3>
+          <ul>
+            <li>Engine overhauls and powertrain repair</li>
+            <li>Hydraulic system diagnosis &amp; repairs</li>
+            <li>Electrical &amp; electronic troubleshooting</li>
+          </ul>
+        </div>
+
+        <div class="service-card" style="opacity: 1;">
+          <h3>Structural &amp; Welding</h3>
+          <ul>
+            <li>Bucket hard‑facing and rebuilding</li>
+            <li>Boom, arm and chassis crack repair</li>
+            <li>Line boring and pin‑hole rebuilding</li>
+          </ul>
+        </div>
+
+        <div class="service-card" style="opacity: 1;">
+          <h3>Field Support</h3>
+          <ul>
+            <li>On‑site breakdown assistance</li>
+            <li>Preventive maintenance services</li>
+            <li>Operator and maintenance training</li>
+          </ul>
+        </div>
+
+        <div class="service-card" style="opacity: 1;">
+          <h3>Workshop Facilities</h3>
+          <ul>
+            <li>Workshops at Pune, Solapur &amp; Sambhajinagar</li>
+            <li>Engine, hydraulic and fabrication bays</li>
+            <li>Stocked warehouses for quick turnaround</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right icon panel -->
+      <div class="services-icons" style="opacity: 1;">
+        <div class="icon-card">
+          <div class="icon" style="opacity: 1;">⏱️</div>
+          <h4 style="opacity: 1;">24/7 Support</h4>
+          <p style="opacity: 1;">Rapid response for urgent breakdowns.</p>
+        </div>
+        <div class="icon-card">
+          <div class="icon">📦</div>
+          <h4>Ready Inventory</h4>
+          <p>Fast-moving spares always in stock.</p>
+        </div>
+        <div class="icon-card">
+          <div class="icon">✅</div>
+          <h4>Quality Assured</h4>
+          <p>Standardized processes and checklists.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 S. S. Heavy Equipments Pvt. Ltd. All rights reserved.
+  </footer>
+
+<!-- Scroll reveal JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const elems = document.querySelectorAll('.reveal-on-scroll');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            observer.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      elems.forEach(el => observer.observe(el));
+    });
+  </script>
+
+<script>
+  // Ensure page starts at top
+    window.addEventListener('load', function () {
+      window.scrollTo(0, 0);
+      // Trigger initial reveal
+      document.querySelectorAll('section').forEach(function (sec) {
+        if (sec.getBoundingClientRect().top < window.innerHeight * 0.8) {
+          sec.classList.add('visible');
+        }
+      });
+    });</script>
+
+<script>
+function goHome() {
+  const isHome =
+    window.location.pathname.endsWith('index.html') ||
+    window.location.pathname === '/' ||
+    window.location.pathname === '';
+
+  if (isHome) {
+    // already on home: refresh
+    window.location.reload();
+  } else {
+    // go to home page
+    window.location.href = 'index.html';
+  }
+}
+</script>
+
+  
+
+</body>
+</html>
