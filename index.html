@@ -982,7 +982,7 @@ background-color: #e67e22;
     </div>
 
     <!-- RIGHT: Inquiry form -->
-    <form class="contact-form" id="inquiry-form">
+    <form class="contact-form" id="inquiry-form" action="https://formspree.io/f/manrapek" method="POST">
 <br><br>
 
       <h3>Inquiry Form</h3>
@@ -1286,10 +1286,7 @@ document.addEventListener('DOMContentLoaded', function () {
   updateElsaOther();
 
   // demo submit handler
-  document.getElementById('inquiry-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    alert('Form submitted (demo only) – connect to email/back‑end to receive responses.');
-  });
+  
 });
 </script>
 
@@ -1399,10 +1396,22 @@ document.addEventListener('DOMContentLoaded', function () {
     updateElsaOther();
 
     // Form submission
-    document.getElementById('inquiry-form').addEventListener('submit', function (e) {
-        e.preventDefault();
-        alert('Form submitted (demo only) – connect to email/back-end to receive responses.');
-    });
+   // Form submission
+   document.getElementById('inquiry-form').addEventListener('submit', function(e) {
+  // Show loading
+  const submitBtn = document.querySelector('.contact-submit');
+  const originalText = submitBtn.textContent;
+  submitBtn.textContent = 'Sending...';
+  submitBtn.disabled = true;
+  
+  // Formspree handles submission automatically
+  setTimeout(() => {
+    alert('✅ Thank you! Your inquiry has been sent to SSHEPL.');
+    document.getElementById('inquiry-form').reset();
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
+  }, 2000);
+     });
 });
 </script>
 
@@ -1445,3 +1454,4 @@ function goHome() {
 
 </body>
 </html>
+
