@@ -951,25 +951,24 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <script>
+  
 // ==== 1. Branch list (lat/lng for each city) ====
+// ==== GPS + MANUAL SEARCH WITH CLOSE BUTTON ====
 const branches = [
-  { id: 'branch-pune',          name: 'Pune',                        lat: 18.5204, lng: 73.8567 },
-  { id: 'branch-sambhajinagar', name: 'Chhatrapati Sambhajinagar',  lat: 19.8762, lng: 75.3433 },
-  { id: 'branch-solapur',       name: 'Solapur',                     lat: 17.6599, lng: 75.9064 },
-  { id: 'branch-kolhapur',      name: 'Kolhapur',                    lat: 16.7049, lng: 74.2433 },
-  { id: 'branch-latur',         name: 'Latur',                       lat: 18.4088, lng: 76.5604 },
-  { id: 'branch-nanded',        name: 'Nanded',                      lat: 19.1383, lng: 77.3210 },
-  { id: 'branch-satara',        name: 'Satara',                      lat: 17.6805, lng: 74.0183 }
+  { id: 'branch-pune', name: 'Pune (Head Office)', lat: 18.5204, lng: 73.8567 },
+  { id: 'branch-sambhajinagar', name: 'Chhatrapati Sambhajinagar', lat: 19.8762, lng: 75.3433 },
+  { id: 'branch-solapur', name: 'Solapur', lat: 17.6599, lng: 75.9064 },
+  { id: 'branch-kolhapur', name: 'Kolhapur', lat: 16.7049, lng: 74.2433 },
+  { id: 'branch-latur', name: 'Latur', lat: 18.4088, lng: 76.5604 },
+  { id: 'branch-nanded', name: 'Nanded', lat: 19.1383, lng: 77.3210 },
+  { id: 'branch-satara', name: 'Satara', lat: 17.6805, lng: 74.0183 }
 ];
 
-// ==== 2. Distance helpers ====
 function distanceKm(lat1, lng1, lat2, lng2) {
   const R = 6371;
   const dLat = (lat2 - lat1) * Math.PI / 180;
   const dLng = (lng2 - lng1) * Math.PI / 180;
-  const a = Math.sin(dLat/2)**2 +
-            Math.cos(lat1*Math.PI/180) * Math.cos(lat2*Math.PI/180) *
-            Math.sin(dLng/2)**2;
+  const a = Math.sin(dLat/2)**2 + Math.cos(lat1*Math.PI/180) * Math.cos(lat2*Math.PI/180) * Math.sin(dLng/2)**2;
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
   return R * c;
 }
@@ -977,81 +976,229 @@ function distanceKm(lat1, lng1, lat2, lng2) {
 function findNearestBranch(lat, lng) {
   let best = null;
   branches.forEach(b => {
-    const d = distanceKm(lat, lng, b.lat, b.lng);
-    if (!best || d < best.distance) best = { ...b, distance: d };
+    const distance = distanceKm(lat, lng, b.lat, b.lng);
+    if (!best || distance < best.distance) best = { ...b, distance };
   });
   return best;
 }
 
 function scrollToBranch(branchId) {
   const el = document.getElementById(branchId);
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ==== 3. Geoapify: city name -> coordinates ====
-const GEOAPIFY_KEY = 'a6c537464c0342f381e48f00e41371eb';  // <<< REPLACE THIS
-
-async function geocodeCity(city) {
-  const url =
-    `https://api.geoapify.com/v1/geocode/search?text=${encodeURIComponent(city + ', India')}&limit=1&apiKey=${GEOAPIFY_KEY}`;
-  const res = await fetch(url);
-  if (!res.ok) return null;
-  const data = await res.json();
-  if (!data.features || !data.features.length) return null;
-  const props = data.features[0].properties;
-  return { lat: props.lat, lng: props.lon, formatted: props.formatted };
-}
-
-// ==== 4. Fallback when GPS not available or denied ====
-async function askCityFallback() {
-  const city = prompt('Enter your city (anywhere in India):');
-  if (!city) return;
-
-  try {
-    const loc = await geocodeCity(city);
-    if (!loc) {
-      alert('Sorry, that city could not be found. Please check the spelling.');
-      return;
-    }
-
-    const nearest = findNearestBranch(loc.lat, loc.lng);
-    if (nearest) {
-      alert(
-        'Detected city: ' + loc.formatted +
-        '\nNearest SSHEPL branch office: ' + nearest.name
-      );
-      scrollToBranch(nearest.id);
-    }
-  } catch (e) {
-    alert('There was a problem looking up your city. Please try again later.');
-  }
-}
-
-// ==== 5. Main function used by the button ====
+// ✅ FIXED GPS DEBUG VERSION
 function locateNearestBranch() {
-  if ('geolocation' in navigator) {
-    navigator.geolocation.getCurrentPosition(
-      pos => {
-        const lat = pos.coords.latitude;
-        const lng = pos.coords.longitude;
-        const nearest = findNearestBranch(lat, lng);
-        if (nearest) {
-          alert('Your nearest SSHEPL branch office is: ' + nearest.name);
-          scrollToBranch(nearest.id);
-        }
-      },
-      err => {
-        // If user blocks GPS or it fails, ask for city name
-        askCityFallback();
-      },
-      { enableHighAccuracy: true, timeout: 8000 }
-    );
-  } else {
-    askCityFallback();
+  console.log('🔍 Starting GPS request...');
+  
+  if (!navigator.geolocation) {
+    alert('❌ GPS not supported');
+    showManualSearch();
+    return;
   }
+
+  if (location.protocol !== 'https:') {
+    alert('⚠️ GPS needs HTTPS - visit live site');
+    showManualSearch();
+    return;
+  }
+
+  navigator.geolocation.getCurrentPosition(
+    // ✅ GPS SUCCESS
+    function(pos) {
+      console.log('✅ GPS SUCCESS:', pos.coords);
+      const lat = pos.coords.latitude;
+      const lng = pos.coords.longitude;
+      const nearest = findNearestBranch(lat, lng);
+      const distKm = Math.round(nearest.distance);
+      alert(`✅ GPS Found!\n${nearest.name}\n${distKm} km away`);
+      scrollToBranch(nearest.id);
+    },
+    // ❌ GPS ERROR
+    function(err) {
+      console.error('❌ GPS ERROR:', err.code, err.message);
+      let msg = 'GPS failed - ';
+      switch(err.code) {
+        case 1: msg += 'Permission denied'; break;
+        case 2: msg += 'Location unavailable'; break;
+        case 3: msg += 'Timeout'; break;
+        default: msg += 'Unknown error';
+      }
+      alert(msg + '\n\n🔍 Search manually?');
+      showManualSearch();
+    },
+    { enableHighAccuracy: true, timeout: 15000, maximumAge: 60000 }
+  );
 }
+
+// ✅ MANUAL SEARCH WITH ❌ CLOSE BUTTON
+function showManualSearch() {
+  // Remove existing
+  document.getElementById('search-modal')?.remove();
+  
+  const modal = document.createElement('div');
+  modal.id = 'search-modal';
+  modal.style.cssText = `
+    position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 10001;
+    display: flex; align-items: center; justify-content: center; font-family: system-ui;
+    backdrop-filter: blur(5px);
+  `;
+  
+  modal.innerHTML = `
+    <div style="
+      background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%); 
+      border-radius: 24px; padding: 32px; max-width: 480px; width: 92vw;
+      max-height: 85vh; overflow-y: auto; box-shadow: 0 35px 90px rgba(0,0,0,0.5);
+      position: relative; border: 1px solid rgba(255,255,255,0.2);
+    ">
+      <!-- ❌ CLOSE BUTTON TOP RIGHT -->
+      <button onclick="closeManualSearch()" style="
+        position: absolute; top: 16px; right: 20px; width: 36px; height: 36px;
+        border-radius: 50%; border: none; background: rgba(0,0,0,0.3);
+        color: white; font-size: 18px; font-weight: bold; cursor: pointer;
+        display: flex; align-items: center; justify-content: center;
+        transition: all 0.2s;
+      " onmouseover="this.style.background='rgba(241,116,7,0.8)'" onmouseout="this.style.background='rgba(0,0,0,0.3)'">
+        ×
+      </button>
+      
+      <div style="margin-bottom: 24px;">
+        <h3 style="margin: 0 0 8px 0; color: #1a202c; font-size: 1.5em; font-weight: 700;">
+          📍 Find Nearest Branch
+        </h3>
+        <p style="margin: 0; color: #4a5568; font-size: 15px;">
+          Type city, district, village or taluka
+        </p>
+      </div>
+      
+      <input id="city-input" type="text" placeholder="Pune, Beed, Jalna, Nashik..." 
+        style="width: 100%; padding: 18px 20px; border: 2px solid #e2e8f0; border-radius: 16px; font-size: 16px; box-sizing: border-box; outline: none; font-weight: 500;">
+      
+      <div id="city-results" style="margin-top: 20px; max-height: 280px; overflow-y: auto; border: 1px solid #e2e8f0; border-radius: 16px; background: #fafbfc;"></div>
+      
+      <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #e2e8f0; text-align: center;">
+        <button onclick="tryGPSAgain()" style="
+          padding: 14px 32px; background: linear-gradient(135deg, #f17407, #e55a00);
+          color: white; border: none; border-radius: 12px; cursor: pointer; 
+          font-weight: 600; font-size: 16px; transition: transform 0.2s;
+        " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+          🔄 Try GPS Again
+        </button>
+      </div>
+    </div>
+  `;
+  
+  document.body.appendChild(modal);
+  document.getElementById('city-input').focus();
+  document.getElementById('city-input').addEventListener('input', filterManualCities);
+  
+  // Close on outside click
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) closeManualSearch();
+  });
+}
+
+function filterManualCities() {
+  const input = document.getElementById('city-input');
+  const results = document.getElementById('city-results');
+  const query = input.value.toLowerCase().trim();
+  
+  if (query.length < 2) {
+    results.innerHTML = `
+      <div style="padding: 24px; color: #94a3b8; text-align: center; font-style: italic;">
+        <div style="font-size: 48px; margin-bottom: 12px;">🔍</div>
+        Start typing city/district/village...
+      </div>
+    `;
+    return;
+  }
+  
+  const allCities = [
+    // PUNE REGION (50+)
+    'Pune', 'Pimpri', 'Chinchwad', 'Talegaon', 'Wakad', 'Hinjewadi', 'Kharadi', 'Baner', 'Aundh', 'Kothrud',
+    'Navi Mumbai', 'Panvel', 'Thane', 'Mumbai', 'Alibag', 'Pen', 'Uran',
+    
+    // SAMBHAJINAGAR REGION (30+)
+    'Aurangabad', 'Sambhajinagar', 'Beed', 'Jalna', 'Parli', 'Amalner', 'Pathardi', 'Vaijapur', 'Gangapur',
+    
+    // SOLAPUR (15+)
+    'Solapur', 'Barshi', 'Pandharpur', 'Akkalkot', 'Malshiras', 'Karmala',
+    
+    // KOLHAPUR (20+)
+    'Kolhapur', 'Sangli', 'Ichalkaranji', 'Miraj', 'Kagal', 'Ajra', 'Gadhinglaj',
+    
+    // LATUR (10+)
+    'Latur', 'Udgir', 'Ausa', 'Nilanga', 'Renapur',
+    
+    // NANDED (15+)
+    'Nanded', 'Loha', 'Mukhed', 'Hadgaon', 'Kinwat', 'Bhokar',
+    
+    // SATARA (20+)
+    'Satara', 'Wai', 'Karad', 'Phaltan', 'Mahabaleshwar', 'Panchgani', 'Koregaon'
+  ];
+  
+  const matches = allCities
+    .filter(city => city.toLowerCase().includes(query))
+    .slice(0, 10);
+  
+  if (matches.length === 0) {
+    results.innerHTML = `
+      <div style="padding: 24px; color: #94a3b8; text-align: center;">
+        No matches. Try: Pune, Beed, Jalna, Sangli...
+      </div>
+    `;
+    return;
+  }
+  
+  results.innerHTML = matches.map(city => {
+    const [lat, lng] = getCoordsForCity(city);
+    const nearest = findNearestBranch(lat, lng);
+    return `
+      <div onclick="selectManualCity('${city}')" style="
+        padding: 20px; cursor: pointer; border-bottom: 1px solid #f1f5f9; 
+        display: flex; justify-content: space-between; align-items: center;
+        transition: all 0.2s;
+      " onmouseover="this.style.background='#f8fafc'; this.style.transform='translateX(4px)'" 
+         onmouseout="this.style.background='white'; this.style.transform='translateX(0)'">
+        <div>
+          <strong style="color: #1e293b; font-size: 16px;">${city}</strong>
+        </div>
+        <div style="color: #f17407; font-weight: 600; font-size: 15px; text-align: right;">
+          → ${nearest.name}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function getCoordsForCity(city) {
+  const coords = {
+    'Pune': [18.52, 73.86], 'Aurangabad': [19.88, 75.34], 'Sambhajinagar': [19.88, 75.34],
+    'Solapur': [17.66, 75.91], 'Kolhapur': [16.70, 74.24], 'Latur': [18.41, 76.56],
+    'Nanded': [19.14, 77.32], 'Satara': [17.68, 74.02], 'Beed': [18.99, 75.76],
+    'Jalna': [19.85, 75.88], 'Nashik': [20.00, 73.79], 'Sangli': [16.85, 74.57],
+    'Barshi': [17.23, 75.70], 'Wai': [17.95, 73.89]
+  };
+  return coords[city] || [18.52, 73.86]; // Pune default
+}
+
+function selectManualCity(city) {
+  const [lat, lng] = getCoordsForCity(city);
+  const nearest = findNearestBranch(lat, lng);
+  alert(`📍 ${city} → ${nearest.name}`);
+  scrollToBranch(nearest.id);
+  closeManualSearch();
+}
+
+function closeManualSearch() {
+  document.getElementById('search-modal')?.remove();
+}
+
+function tryGPSAgain() {
+  closeManualSearch();
+  locateNearestBranch();
+}
+
 </script>
 
 
@@ -1089,3 +1236,4 @@ function goHome() {
 
 </body>
 </html>
+
