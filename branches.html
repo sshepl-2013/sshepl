@@ -977,177 +977,31 @@ function findNearestBranch(lat, lng) {
   let best = null;
   branches.forEach(b => {
     const distance = distanceKm(lat, lng, b.lat, b.lng);
-    if (!best || distance < best.distance) best = { ...b, distance };
+    if (!best || distance < best.distance) {
+      best = { ...b, distance };
+    }
   });
   return best;
 }
 
 function scrollToBranch(branchId) {
   const el = document.getElementById(branchId);
-  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }
 
-// ✅ FIXED GPS DEBUG VERSION
-function locateNearestBranch() {
-  console.log('🔍 Starting GPS request...');
+// ✅ NOMINATIM GEOCODING (FREE FOREVER)
+async function geocodeWithNominatim(query) {
+  await new Promise(r => setTimeout(r, 1000)); // Rate limit
   
-  if (!navigator.geolocation) {
-    alert('❌ GPS not supported');
-    showManualSearch();
-    return;
-  }
+  try {
+    const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=5&addressdetails=1&countrycodes=in`;
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'User-Agent': 'SSHEPL-BranchLocator/1.0 (https://sshepl-2013.github.io/sshepl/)
 
-  if (location.protocol !== 'https:') {
-    alert('⚠️ GPS needs HTTPS - visit live site');
-    showManualSearch();
-    return;
-  }
-
-  navigator.geolocation.getCurrentPosition(
-    // ✅ GPS SUCCESS
-    function(pos) {
-      console.log('✅ GPS SUCCESS:', pos.coords);
-      const lat = pos.coords.latitude;
-      const lng = pos.coords.longitude;
-      const nearest = findNearestBranch(lat, lng);
-      const distKm = Math.round(nearest.distance);
-      alert(`✅ GPS Found!\n${nearest.name}\n${distKm} km away`);
-      scrollToBranch(nearest.id);
-    },
-    // ❌ GPS ERROR
-    function(err) {
-      console.error('❌ GPS ERROR:', err.code, err.message);
-      let msg = 'GPS failed - ';
-      switch(err.code) {
-        case 1: msg += 'Permission denied'; break;
-        case 2: msg += 'Location unavailable'; break;
-        case 3: msg += 'Timeout'; break;
-        default: msg += 'Unknown error';
-      }
-      alert(msg + '\n\n🔍 Search manually?');
-      showManualSearch();
-    },
-    { enableHighAccuracy: true, timeout: 15000, maximumAge: 60000 }
-  );
-}
-
-// ✅ MANUAL SEARCH WITH ❌ CLOSE BUTTON
-function showManualSearch() {
-  // Remove existing
-  document.getElementById('search-modal')?.remove();
-  
-  const modal = document.createElement('div');
-  modal.id = 'search-modal';
-  modal.style.cssText = `
-    position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 10001;
-    display: flex; align-items: center; justify-content: center; font-family: system-ui;
-    backdrop-filter: blur(5px);
-  `;
-  
-  modal.innerHTML = `
-    <div style="
-      background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%); 
-      border-radius: 24px; padding: 32px; max-width: 480px; width: 92vw;
-      max-height: 85vh; overflow-y: auto; box-shadow: 0 35px 90px rgba(0,0,0,0.5);
-      position: relative; border: 1px solid rgba(255,255,255,0.2);
-    ">
-      <!-- ❌ CLOSE BUTTON TOP RIGHT -->
-      <button onclick="closeManualSearch()" style="
-        position: absolute; top: 16px; right: 20px; width: 36px; height: 36px;
-        border-radius: 50%; border: none; background: rgba(0,0,0,0.3);
-        color: white; font-size: 18px; font-weight: bold; cursor: pointer;
-        display: flex; align-items: center; justify-content: center;
-        transition: all 0.2s;
-      " onmouseover="this.style.background='rgba(241,116,7,0.8)'" onmouseout="this.style.background='rgba(0,0,0,0.3)'">
-        ×
-      </button>
-      
-      <div style="margin-bottom: 24px;">
-        <h3 style="margin: 0 0 8px 0; color: #1a202c; font-size: 1.5em; font-weight: 700;">
-          📍 Find Nearest Branch
-        </h3>
-        <p style="margin: 0; color: #4a5568; font-size: 15px;">
-          Type city, district, village or taluka
-        </p>
-      </div>
-      
-      <input id="city-input" type="text" placeholder="Pune, Beed, Jalna, Nashik..." 
-        style="width: 100%; padding: 18px 20px; border: 2px solid #e2e8f0; border-radius: 16px; font-size: 16px; box-sizing: border-box; outline: none; font-weight: 500;">
-      
-      <div id="city-results" style="margin-top: 20px; max-height: 280px; overflow-y: auto; border: 1px solid #e2e8f0; border-radius: 16px; background: #fafbfc;"></div>
-      
-      <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid #e2e8f0; text-align: center;">
-        <button onclick="tryGPSAgain()" style="
-          padding: 14px 32px; background: linear-gradient(135deg, #f17407, #e55a00);
-          color: white; border: none; border-radius: 12px; cursor: pointer; 
-          font-weight: 600; font-size: 16px; transition: transform 0.2s;
-        " onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-          🔄 Try GPS Again
-        </button>
-      </div>
-    </div>
-  `;
-  
-  document.body.appendChild(modal);
-  document.getElementById('city-input').focus();
-  document.getElementById('city-input').addEventListener('input', filterManualCities);
-  
-  // Close on outside click
-  modal.addEventListener('click', function(e) {
-    if (e.target === modal) closeManualSearch();
-  });
-}
-
-function filterManualCities() {
-  const input = document.getElementById('city-input');
-  const results = document.getElementById('city-results');
-  const query = input.value.toLowerCase().trim();
-  
-  if (query.length < 2) {
-    results.innerHTML = `
-      <div style="padding: 24px; color: #94a3b8; text-align: center; font-style: italic;">
-        <div style="font-size: 48px; margin-bottom: 12px;">🔍</div>
-        Start typing city/district/village...
-      </div>
-    `;
-    return;
-  }
-  
-  const allCities = [
-    // PUNE REGION (50+)
-    'Pune', 'Pimpri', 'Chinchwad', 'Talegaon', 'Wakad', 'Hinjewadi', 'Kharadi', 'Baner', 'Aundh', 'Kothrud',
-    'Navi Mumbai', 'Panvel', 'Thane', 'Mumbai', 'Alibag', 'Pen', 'Uran',
-    
-    // SAMBHAJINAGAR REGION (30+)
-    'Aurangabad', 'Sambhajinagar', 'Beed', 'Jalna', 'Parli', 'Amalner', 'Pathardi', 'Vaijapur', 'Gangapur',
-    
-    // SOLAPUR (15+)
-    'Solapur', 'Barshi', 'Pandharpur', 'Akkalkot', 'Malshiras', 'Karmala',
-    
-    // KOLHAPUR (20+)
-    'Kolhapur', 'Sangli', 'Ichalkaranji', 'Miraj', 'Kagal', 'Ajra', 'Gadhinglaj',
-    
-    // LATUR (10+)
-    'Latur', 'Udgir', 'Ausa', 'Nilanga', 'Renapur',
-    
-    // NANDED (15+)
-    'Nanded', 'Loha', 'Mukhed', 'Hadgaon', 'Kinwat', 'Bhokar',
-    
-    // SATARA (20+)
-    'Satara', 'Wai', 'Karad', 'Phaltan', 'Mahabaleshwar', 'Panchgani', 'Koregaon'
-  ];
-  
-  const matches = allCities
-    .filter(city => city.toLowerCase().includes(query))
-    .slice(0, 10);
-  
-  if (matches.length === 0) {
-    results.innerHTML = `
-      <div style="padding: 24px; color: #94a3b8; text-align: center;">
-        No matches. Try: Pune, Beed, Jalna, Sangli...
-      </div>
-    `;
-    return;
   }
   
   results.innerHTML = matches.map(city => {
