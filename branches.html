@@ -954,6 +954,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
 // ==== 1. Branch list (lat/lng for each city) ====
 // ==== GPS + MANUAL SEARCH WITH CLOSE BUTTON ====
+// ==== YOUR EXACT CODE + ❌ CLOSE + GPS FIXED ====
 const branches = [
   { id: 'branch-pune', name: 'Pune (Head Office)', lat: 18.5204, lng: 73.8567 },
   { id: 'branch-sambhajinagar', name: 'Chhatrapati Sambhajinagar', lat: 19.8762, lng: 75.3433 },
@@ -986,72 +987,133 @@ function findNearestBranch(lat, lng) {
 
 function scrollToBranch(branchId) {
   const el = document.getElementById(branchId);
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// GPS MAIN FUNCTION
+function locateNearestBranch() {
+  if ('geolocation' in navigator) {
+    navigator.geolocation.getCurrentPosition(
+      function(pos) {
+        const lat = pos.coords.latitude;
+        const lng = pos.coords.longitude;
+        const nearest = findNearestBranch(lat, lng);
+        const distKm = Math.round(nearest.distance);
+        alert(`📍 GPS Found!\nNearest: ${nearest.name}\nDistance: ${distKm} km`);
+        scrollToBranch(nearest.id);
+      },
+      function() {
+        showNominatimSearch();
+      },
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }
+    );
+  } else {
+    showNominatimSearch();
   }
 }
 
-// ✅ NOMINATIM GEOCODING (FREE FOREVER)
+// NOMINATIM SEARCH
 async function geocodeWithNominatim(query) {
-  await new Promise(r => setTimeout(r, 1000)); // Rate limit
-  
+  await new Promise(r => setTimeout(r, 1000));
   try {
     const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=5&addressdetails=1&countrycodes=in`;
     const response = await fetch(url, {
-      method: 'GET',
-      headers: {
-        'User-Agent': 'SSHEPL-BranchLocator/1.0 (https://sshepl-2013.github.io/sshepl/)
+      headers: { 'User-Agent': 'SSHEPL-BranchLocator/1.0' }
+    });
+    const data = await response.json();
+    return data.map(item => ({
+      lat: parseFloat(item.lat),
+      lng: parseFloat(item.lon),
+      name: item.display_name.split(',')[0],
+      formatted: item.display_name
+    })).slice(0, 5);
+  } catch {
+    return [];
+  }
+}
 
+function showNominatimSearch() {
+  document.getElementById('nominatim-modal')?.remove();
+  
+  const modal = document.createElement('div');
+  modal.id = 'nominatim-modal';
+  modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:10000;display:flex;align-items:center;justify-content:center;font-family:system-ui';
+  
+  modal.innerHTML = `
+    <div style="background:white;border-radius:20px;padding:30px;max-width:500px;width:90vw;max-height:80vh;overflow:hidden;box-shadow:0 25px 100px rgba(0,0,0,0.8);position:relative">
+      <!-- ❌ CLOSE BUTTON -->
+      <button onclick="closeNominatimSearch()" style="position:absolute;top:15px;right:20px;width:40px;height:40px;border:none;background:rgba(0,0,0,0.2);color:white;border-radius:50%;font-size:20px;font-weight:bold;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s" onmouseover="this.style.background='rgba(241,116,7,0.8)'" onmouseout="this.style.background='rgba(0,0,0,0.2)'">×</button>
+      
+      <h3 style="margin:0 0 15px 0;color:#1a1a1a;font-size:1.4em">📍 Find Nearest Branch</h3>
+      <p style="margin:0 0 20px 0;color:#666;font-size:15px">City, village, taluka worldwide</p>
+      
+      <input id="nominatim-input" type="text" placeholder="Beed, Jalna, Pune..." style="width:100%;padding:18px 16px;border:2px solid #e2e8f0;border-radius:12px;font-size:16px;box-sizing:border-box">
+      
+      <div id="nominatim-results" style="margin-top:15px;max-height:300px;overflow-y:auto;border:1px solid #e2e8f0;border-radius:12px;background:white"></div>
+      
+      <div style="margin-top:20px;text-align:center">
+        <button onclick="tryGPSAgain()" style="padding:14px 28px;background:#f17407;color:white;border:none;border-radius:10px;cursor:pointer;font-weight:600;font-size:16px">🔄 Try GPS Again</button>
+      </div>
+    </div>
+  `;
+  
+  document.body.appendChild(modal);
+  document.getElementById('nominatim-input').focus();
+  document.getElementById('nominatim-input').addEventListener('input', handleNominatimSearch);
+}
+
+async function handleNominatimSearch() {
+  const input = document.getElementById('nominatim-input');
+  const results = document.getElementById('nominatim-results');
+  const query = input.value;
+  
+  if (query.length < 2) {
+    results.innerHTML = '<div style="padding:20px;color:#999;text-align:center">Type city/village...</div>';
+    return;
   }
   
-  results.innerHTML = matches.map(city => {
-    const [lat, lng] = getCoordsForCity(city);
-    const nearest = findNearestBranch(lat, lng);
+  results.innerHTML = '<div style="padding:20px;color:#999">🔍 Searching...</div>';
+  const locations = await geocodeWithNominatim(query);
+  
+  if (locations.length === 0) {
+    results.innerHTML = '<div style="padding:20px;color:#999">No results. Try Pune, Beed...</div>';
+    return;
+  }
+  
+  results.innerHTML = locations.map(loc => {
+    const nearest = findNearestBranch(loc.lat, loc.lng);
+    const distKm = Math.round(nearest.distance);
     return `
-      <div onclick="selectManualCity('${city}')" style="
-        padding: 20px; cursor: pointer; border-bottom: 1px solid #f1f5f9; 
-        display: flex; justify-content: space-between; align-items: center;
-        transition: all 0.2s;
-      " onmouseover="this.style.background='#f8fafc'; this.style.transform='translateX(4px)'" 
-         onmouseout="this.style.background='white'; this.style.transform='translateX(0)'">
+      <div onclick="selectNominatimLocation(${loc.lat}, ${loc.lng}, '${loc.name.replace(/'/g, "\\'")}', '${nearest.id}')" style="padding:18px 20px;cursor:pointer;border-bottom:1px solid #f0f0f0;display:flex;justify-content:space-between;align-items:center" onmouseover="this.style.background='#f8faff'" onmouseout="this.style.background='white'">
         <div>
-          <strong style="color: #1e293b; font-size: 16px;">${city}</strong>
+          <strong style="color:#1a1a1a">${loc.name}</strong>
+          <div style="color:#666;font-size:14px">${loc.formatted.split(',')[1] || ''}</div>
         </div>
-        <div style="color: #f17407; font-weight: 600; font-size: 15px; text-align: right;">
-          → ${nearest.name}
+        <div style="color:#f17407;font-weight:600;font-size:16px">
+          → ${nearest.name}<br><small>${distKm} km</small>
         </div>
       </div>
     `;
   }).join('');
 }
 
-function getCoordsForCity(city) {
-  const coords = {
-    'Pune': [18.52, 73.86], 'Aurangabad': [19.88, 75.34], 'Sambhajinagar': [19.88, 75.34],
-    'Solapur': [17.66, 75.91], 'Kolhapur': [16.70, 74.24], 'Latur': [18.41, 76.56],
-    'Nanded': [19.14, 77.32], 'Satara': [17.68, 74.02], 'Beed': [18.99, 75.76],
-    'Jalna': [19.85, 75.88], 'Nashik': [20.00, 73.79], 'Sangli': [16.85, 74.57],
-    'Barshi': [17.23, 75.70], 'Wai': [17.95, 73.89]
-  };
-  return coords[city] || [18.52, 73.86]; // Pune default
+function selectNominatimLocation(lat, lng, name, branchId) {
+  const nearest = branches.find(b => b.id === branchId);
+  const distKm = Math.round(distanceKm(lat, lng, nearest.lat, nearest.lng));
+  alert(`📍 ${name} → ${nearest.name} (${distKm} km)`);
+  scrollToBranch(branchId);
+  closeNominatimSearch();
 }
 
-function selectManualCity(city) {
-  const [lat, lng] = getCoordsForCity(city);
-  const nearest = findNearestBranch(lat, lng);
-  alert(`📍 ${city} → ${nearest.name}`);
-  scrollToBranch(nearest.id);
-  closeManualSearch();
-}
-
-function closeManualSearch() {
-  document.getElementById('search-modal')?.remove();
+function closeNominatimSearch() {
+  document.getElementById('nominatim-modal')?.remove();
 }
 
 function tryGPSAgain() {
-  closeManualSearch();
+  closeNominatimSearch();
   locateNearestBranch();
 }
+
 
 </script>
 
@@ -1090,4 +1152,5 @@ function goHome() {
 
 </body>
 </html>
+
 
