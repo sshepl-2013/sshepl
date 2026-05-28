@@ -1,1157 +1,644 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Branches - S. S. Heavy Equipments PVT. LTD.</title>
-<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
-  <style>
-  
-html {
-  scroll-behavior: smooth;
-}
-
-/* GENERAL STYLES */
-* {
-  box-sizing: border-box;
-}
-
-/* 1) Page background = only the image */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
-  color: #2c3e50;
-  overflow-x: hidden;
-  z-index: -1;
-  background: #05070c;                /* important */
-}
-
-/* Background image on a fixed ::before layer */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: brightness(0.6);               /* darken a bit */
-  z-index: -1;                            /* behind everything */
-  pointer-events: none;
-}
-
-.background-video {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* Places video behind content */
-  transform: translate(-50%, -50%); /* Centers the video */
-  object-fit: cover; /* Ensures video covers area without distortion */
-}
-
-
-
-/* 2) Header stays solid white */
-header {
-  background: #ffffff;                    /* white header */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SSHEPL branch network — 7 cities across Maharashtra. Pune, Kolhapur, Solapur, Satara, Latur, Nanded & Chhatrapati Sambhajinagar.">
+<title>Branches | S. S. HEAVY EQUIPMENTS PVT. LTD.</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B1F3A;--navy-deep:#071529;--gold:#D4940A;--gold-light:#F0AB1A;--white:#FFFFFF;--off-white:#F5F3EE;--gray-light:#E8E6E0;--gray-mid:#9A9690;--gray-dark:#3A3830;--text-body:#2C2A26}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',sans-serif;color:var(--text-body);background:var(--off-white);overflow-x:hidden}
+.topbar{background:var(--navy-deep);padding:7px 0;border-bottom:1px solid rgba(212,148,10,.25)}
+.topbar-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between}
+.topbar-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 15px 30px;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  flex-wrap: wrap;
-}
-
-/* 3) Sections are transparent at edges, dark glass center */
-section {
-  padding: 70px 25px;
-  border-radius: 20px;
-  background: rgba(0,0,0,0.35);          /* dark glass card */
-  margin: 40px auto;
-  max-width: 1100px;
-  box-shadow: 0 8px 35px rgba(0,0,0,0.35);
-}
-
-section h2 {
-  font-size: 3rem;
-  font-weight: 900;
-  margin-bottom: 30px;
-  text-align: center;
-  color: #ffffff;
-  letter-spacing: 1.3px;
-  background: transparent;
-  opacity: 1.0;
-}
-
-/* default text inside sections: light */
-section p {
-  padding: 0 20px 20px;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #ffffff;
-}
-
-/* HEADER override */
-header {
-  background: #f5f5f5;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 30px;
-  position: sticky;
-  top: 0;
-  z-index: 9999;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  flex-wrap: wrap;
-}
-
-/* Logo as text & Styling */
-.logo-text {
-  font-size: 2.8rem;
-  font-weight: 900;
-  text-align:center;
-  font-style: italic;
-  font-family:Arial, Helvetica, sans-serif;
-  color: #f17407;
-  letter-spacing: 3px;
-  cursor: default;
-  user-select: none;
-}
-
-/* Nav menu styles */
-nav {
-  display: flex;
-  align-items: right;
-  text-align: right;
-  gap: 1px;
-  flex-wrap: wrap;
-}
-nav a {
+  gap: 6px;
+  font-size: 12px;
+  color: rgba(255,255,255,.6);
   text-decoration: none;
-  color: #000000;
-  padding: 8px 14px;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  position:relative;
 }
-nav a:hover, nav a.active {
-  background: #e67e22;
-  color: #fff;
-}
-nav a::after {
-  content: "";
-  position: absolute;
-  bottom: 2px;
-  left: 50%;
-  width: 0;
-  height: 3px;
-  background: #fff;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-nav a:hover::after, nav a.active::after {
-  width: 50%;
-  left: 25%;
-}
+.topbar-item svg { width: 13px; height: 13px; fill: var(--gold); flex-shrink: 0; }
+.topbar-item:hover { color: var(--gold-light); }
+.topbar-item{font-size:12px;color:rgba(255,255,255,.6);text-decoration:none}
+.topbar-item:hover{color:var(--gold-light)}
 
-/* CSS */
-.nav-tabs {
-  text-align: right;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.nav-tabs li {
-  display: inline-block;
-  padding: 10px 15px;
-}
+/* NAV */
+nav{background:var(--navy);position:sticky;top:0;z-index:100;border-bottom:2px solid var(--gold)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;height:68px;gap:40px}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.nav-logo{width:44px;height:44px;background:var(--gold);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--navy-deep);letter-spacing:1px}
+.nav-brand-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--white);letter-spacing:.5px}
+.nav-brand-sub{font-size:10px;color:var(--gold);letter-spacing:.05em;text-transform:uppercase}
+.nav-links{display:flex;gap:4px;align-items:center;flex:1}
+.nav-link{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:.5px;color:rgba(255,255,255,.75);text-decoration:none;padding:8px 14px;border-radius:4px;text-transform:uppercase;transition:color .2s,background .2s;position:relative}
+.nav-link:hover{color:var(--white);background:rgba(255,255,255,.07)}
+.nav-link.active{color:var(--gold-light)}
+.nav-link.active::after{content:'';position:absolute;bottom:-2px;left:14px;right:14px;height:2px;background:var(--gold);border-radius:2px}
+.nav-link-bkt{color:var(--gold)!important;border:1px solid rgba(212,148,10,.35)}
+.nav-cta{margin-left:auto;background:var(--gold);color:var(--navy-deep);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:10px 22px;border-radius:4px;text-decoration:none;white-space:nowrap;transition:background .2s}
+.nav-cta:hover{background:var(--gold-light)}
 
-/* Images grid */
-.images {
-  display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px, 1fr));
-  gap: 15px;
-  justify-content: center;
-  margin-top: 20px;
-  justify-items: center;
-  align-items: center;
-  max-width: 100%;
-  overflow: hidden;
-}
+/* PAGE HERO */
+.page-hero{background:var(--navy-deep);padding:72px 0 60px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(212,148,10,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(212,148,10,.03) 1px,transparent 1px);background-size:60px 60px}
+.page-hero-inner{max-width:1200px;margin:0 auto;padding:0 32px;position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.breadcrumb{font-size:12px;color:rgba(255,255,255,.35);margin-bottom:16px;display:flex;gap:8px}
+.breadcrumb a{color:rgba(255,255,255,.35);text-decoration:none}
+.breadcrumb a:hover{color:var(--gold)}
+.page-hero-eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.page-hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,6vw,80px);color:var(--white);letter-spacing:2px;line-height:1;margin-bottom:14px}
+.page-hero-desc{font-size:17px;color:rgba(255,255,255,.5);max-width:540px;line-height:1.6}
+.hero-stats-right{display:flex;flex-direction:column;gap:16px;flex-shrink:0}
+.hero-stat-pill{background:rgba(212,148,10,.12);border:1px solid rgba(212,148,10,.3);border-radius:6px;padding:14px 20px;text-align:center;min-width:120px}
+.hero-stat-num{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--gold);letter-spacing:1px;line-height:1}
+.hero-stat-label{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px;margin-top:3px}
 
-/* old direct img hover kept for safety but boxes now use .image-card */
-.images img {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 8px 18px rgba(44, 62, 80, 0.15);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 0;
-  margin: 0;
-}
+/* NETWORK OVERVIEW */
+.network-overview{background:var(--navy);padding:0}
+.network-bar{max-width:1200px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(7,1fr)}
+.network-city{padding:18px 12px;text-align:center;border-right:1px solid rgba(255,255,255,.07);cursor:pointer;transition:background .2s;text-decoration:none;display:block}
+.network-city:last-child{border-right:none}
+.network-city:hover,.network-city.active-city{background:rgba(212,148,10,.1)}
+.network-city-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;color:rgba(255,255,255,.6);letter-spacing:.3px;transition:color .2s}
+.network-city:hover .network-city-name,.network-city.active-city .network-city-name{color:var(--gold)}
+.network-city-tag{font-size:10px;color:rgba(255,255,255,.25);margin-top:3px}
+.network-city.has-workshop .network-city-tag{color:rgba(212,148,10,.5)}
 
-/* Branches container */
-#branches {
-  margin-top: 40px;
-}
-.branch {
-  margin: 50px 0;
-}
-.branch h3 {
-  text-align: center;
-  color: #f17407;
-  background:rgba(0,0,0,0.25);
+/* COMMONS */
+.container{max-width:1200px;margin:0 auto;padding:0 32px}
+section{padding:72px 0}
+.section-eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,4vw,52px);letter-spacing:1.5px;color:var(--navy);line-height:1;margin-bottom:14px}
+.section-title-white{color:var(--white)}
 
-  font-size: 2rem;
-  font-family:Arial, Helvetica, sans-serif;
-  margin-bottom: 20px;
-}
+/* BRANCH CARDS */
+.branches-section{background:var(--white)}
+.branch-card{background:var(--white);border:1px solid var(--gray-light);border-radius:8px;overflow:hidden;margin-bottom:24px;transition:border-color .2s}
+.branch-card:hover{border-color:var(--gold)}
+.branch-card-header{background:var(--navy);padding:24px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.branch-card-left{display:flex;align-items:center;gap:16px}
+.branch-initials{width:52px;height:52px;background:var(--gold);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--navy-deep);letter-spacing:1px;flex-shrink:0}
+.branch-city-name{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--white);letter-spacing:2px;line-height:1}
+.branch-type-label{font-size:12px;color:rgba(255,255,255,.4);margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
+.branch-badges{display:flex;gap:8px;flex-wrap:wrap}
+.badge{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:2px}
+.badge-ho{background:var(--gold);color:var(--navy-deep)}
+.badge-workshop{background:rgba(37,211,102,.15);color:#4ade80;border:1px solid rgba(37,211,102,.3)}
+.badge-branch{background:rgba(255,255,255,.1);color:rgba(255,255,255,.6)}
+.branch-card-body{padding:28px 32px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px}
+.branch-info-group{}
+.branch-info-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.branch-info-text{font-size:14px;color:var(--text-body);line-height:1.6}
+.branch-info-link{font-size:14px;color:var(--navy);text-decoration:none;display:block;margin-bottom:4px;transition:color .2s}
+.branch-info-link:hover{color:var(--gold)}
+.branch-card-footer{padding:16px 32px;background:var(--off-white);border-top:1px solid var(--gray-light);display:flex;gap:12px;flex-wrap:wrap}
+.branch-action{display:inline-flex;align-items:center;gap:6px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.5px;text-transform:uppercase;padding:8px 16px;border-radius:4px;text-decoration:none;transition:all .2s}
+.branch-action-primary{background:var(--navy);color:var(--white)}
+.branch-action-primary:hover{background:var(--gold);color:var(--navy-deep)}
+.branch-action-secondary{background:var(--white);color:var(--navy);border:1px solid var(--gray-light)}
+.branch-action-secondary:hover{border-color:var(--gold);color:var(--gold)}
+.branch-action-wa{background:#25D366;color:var(--white)}
+.branch-action-wa:hover{background:#1da851}
 
-.branch p {
-  color: #ffffff;
-}
+/* HEAD OFFICE SPECIAL */
+.branch-card.head-office{border-color:var(--gold);border-width:2px}
+.branch-card.head-office .branch-card-header{background:linear-gradient(135deg,var(--navy-deep) 0%,#1a3a5c 100%)}
 
-/* Workshops tab */
-#workshops {
-  padding-top: 50px;
-  border-top: 4px solid #e67e22;
-}
-.workshops-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  align-items: stretch;
-}
+/* COVERAGE MAP PLACEHOLDER */
+.map-section{background:var(--navy-deep);padding:72px 0}
+.map-section-inner{max-width:1200px;margin:0 auto;padding:0 32px}
+.map-placeholder{background:rgba(255,255,255,.04);border:1px solid rgba(212,148,10,.2);border-radius:8px;height:400px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;margin-top:40px;position:relative;overflow:hidden}
+.map-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(212,148,10,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(212,148,10,.04) 1px,transparent 1px);background-size:40px 40px}
+.map-content{position:relative;z-index:1;text-align:center}
+.map-title{font-family:'Bebas Neue',sans-serif;font-size:28px;color:rgba(255,255,255,.3);letter-spacing:2px;margin-bottom:8px}
+.map-sub{font-size:14px;color:rgba(255,255,255,.2)}
+/* Simple SVG Maharashtra dots */
+.maha-map{position:relative;z-index:1;width:100%;max-width:600px}
+.city-dot-wrap{position:absolute;transform:translate(-50%,-50%)}
+.city-dot{width:14px;height:14px;background:var(--gold);border-radius:50%;border:2px solid var(--white);box-shadow:0 0 12px rgba(212,148,10,.6);cursor:pointer;transition:transform .2s}
+.city-dot:hover{transform:scale(1.4)}
+.city-dot.ho{width:18px;height:18px;background:var(--gold)}
+.city-dot-label{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;color:rgba(255,255,255,.7);white-space:nowrap;margin-top:6px;text-align:center}
 
-/* Each workshop card */
-.workshop {
-  max-width: 340px;
-  flex: 1 1 300px;
-  background: #fefefe;
-  box-shadow: 0 14px 38px rgba(44, 62, 80, 0.1);
-  border-radius: 16px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  cursor: default;
-}
-.workshop img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-.workshop h4 {
-  margin-top: 14px;
-  text-align: center;
-  font-size: 1.5rem;
-  color: #e67e22;
-}
-.workshop p {
-  padding: 0 20px 20px;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #000000;
-}
+/* CTA STRIP */
+.cta-strip{background:var(--gold);padding:48px 0}
+.cta-strip-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+.cta-strip-title{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--navy-deep);letter-spacing:1.5px}
+.cta-strip-sub{font-size:15px;color:rgba(7,21,41,.6);margin-top:4px}
+.btn-navy{background:var(--navy-deep);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;padding:13px 28px;border-radius:4px;text-decoration:none;transition:background .2s}
+.btn-navy:hover{background:var(--navy)}
 
-/* Optional hover effect */
-.workshop:hover {
-  transform: scale(0.9);
-  box-shadow: 0 25px 70px rgba(44, 62, 80, 0.20);
-}
-h4 {
-  margin-top: 14px;
-  text-align: center;
-  font-size: 1.5rem;
-  color: #e67e22;
-}
-p {
-  padding: 0 20px 20px;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #000000;
-}
+/* FOOTER */
+footer{background:var(--navy-deep);padding:56px 0 0;border-top:2px solid var(--gold)}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px}
+.footer-brand-name{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--white);letter-spacing:2px;margin-bottom:4px}
+.footer-brand-sub{font-size:11px;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+.footer-brand-desc{font-size:13px;color:rgba(255,255,255,.3);line-height:1.7}
+.footer-col-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.footer-link{font-size:13px;color:rgba(255,255,255,.4);text-decoration:none;display:block;margin-bottom:7px;transition:color .2s}
+.footer-link:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding:18px 0;display:flex;justify-content:space-between}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25)}
+.wa-fab{position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);z-index:999;text-decoration:none;transition:transform .2s}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:28px;height:28px;fill:#fff}
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.visible{opacity:1;transform:none}
 
-.branch-cta-wrap {
-  text-align: center;
-  margin: 10px 5px 20px;
+@media(max-width:900px){
+  .page-hero-inner{grid-template-columns:1fr}
+  .hero-stats-right{flex-direction:row;flex-wrap:wrap}
+  .network-bar{grid-template-columns:repeat(4,1fr)}
+  .branch-card-body{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .nav-links,.nav-cta{display:none}
+  .topbar{display:none}
+  .cta-strip-inner{flex-direction:column;text-align:center}
 }
-.branch-cta-btn {
-  display: inline-block;
-  padding: 10px 24px;
-  border-radius: 999px;
-  border: 2px solid #ffffff;
-  background: transparent;
-  color: #ffffff;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: all 0.25s ease;
+@media(max-width:600px){
+  .network-bar{grid-template-columns:repeat(3,1fr)}
+  .branch-card-body{grid-template-columns:1fr}
+  .branch-card-header{flex-direction:column;align-items:flex-start}
+  .footer-grid{grid-template-columns:1fr}
 }
-.branch-cta-btn:hover {
-  background:#ffffff;
-  color: #000000;
-  transform: translateY(-1px);
-}
-.branch-cta-arrow {
-  font-size: 1.3rem;
-  margin-left: 6px;
-  display: inline-block;
-  transform: translateY(-2px);
-}
-
-/*Google color button*/
-.google-multi-btn {
-  position: relative;
-  padding: 10px 22px;
-  border-radius: 999px;
-  border: none;
-  background: #ffffff;
-  color: #202124;
-  font-weight: 600;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  cursor: pointer;
-  z-index: 0;
-  overflow: hidden;
-}
-/* Colored ring */
-.google-multi-btn::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  border-radius: inherit;
-  padding: 2px;
-  background: conic-gradient(
-    #4285f4 0 25%,
-    #ea4335 25% 50%,
-    #fbbc05 50% 75%,
-    #34a853 75% 100%
-  );
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-          mask-composite: exclude;
-  z-index: -1;
-}
-.google-multi-btn:hover {
-  background: #f5f5f5;
-}
-
-/*Reveal on scroll*/
-.reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-}
-.reveal-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Reusable pop effect for cards/images */
-.pop-card {
-  
-    transition: all 0.3s ease-out;
-}
-.pop-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-}
-
-/* Optional slide directions */
-.slide-in-left  { transform: translate(-40px, 40px); }
-.slide-in-right { transform: translate(40px, 40px); }
-.reveal-on-scroll.visible .slide-in-left,
-.reveal-on-scroll.visible .slide-in-right {
-  transform: translate(0, 0);
-}
-
-/* ========== FOOTER ========== */
-footer {
-  background: #2c3e50;
-  color: #ecf0f1;
-  text-align: center;
-  padding: 16px 0;
-  font-size: 1rem;
-  margin-top: 30px;
-}
-
-/* ===== Hover + lightbox styles for branches images ===== */
-.image-card {
-  position: relative;
-  overflow: hidden;
-  background: #ffffff;          /* white frame */
-  padding: 4px;                 /* frame thickness */
-  border-radius: 15px;
-  box-shadow: 0 16px 40px rgba(0,0,0,0.55);
-  cursor: pointer;
-}
-.image-card img {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-  display: block;
-  transform: scale(1.02);
-  transition:
-    transform 0.35s cubic-bezier(0.19, 1, 0.22, 1),
-    box-shadow 0.35s ease,
-    filter 0.35s ease;
-}
-.image-card::after {
-  content: "View";
-  position: absolute;
-  bottom: 10px;
-  right: 12px;
-  padding: 3px 8px;
-  border-radius: 999px;
-  background: rgba(0,0,0,0.55);
-  color: #f5f7ff;
-  font-size: 0.7rem;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none; /* add this */
-  box-shadow: 0 4px 15px rgba(241,116,7,0.4);
-}
-.image-card:hover img {
-  transform: scale(1.08) translateY(-2px);
-  box-shadow: 0 30px 80px rgba(241,116,7,0.5) !important;
-  filter: brightness(1.05);
-}
-.image-card:hover::after {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/*Home-icon*/
-.home-icon-btn {
-  background: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 12px;   /* space before logo */
-}
-
-.home-icon-img {
-  width: 24px;          /* adjust size as needed */
-  height: 24px;
-  object-fit: contain;
-  display: block;
-}
-
-
-/* simple house icon using pure CSS */
-.home-icon {
-  width: 20px;
-  height: 20px;
-  position: relative;
-  display: inline-block;
-}
-
-/* roof */
-.home-icon::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid #f17407;
-  top: 0;
-}
-
-.home-icon-btn:hover{
-background-color: #e67e22;
-}
-
-/* body */
-.home-icon::after {
-  content: "";
-  position: absolute;
-  left: 4px;
-  top: 8px;
-  width: 12px;
-  height: 10px;
-  background: #f17407;
-  border-radius: 2px;
-}
-
-
-/* Lightbox overlay for branches */
-.lightbox-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.92);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-.lightbox-backdrop.open { display: flex; }
-
-.lightbox-frame {
-  max-width: 94vw;
-  max-height: 90vh;
-  position: relative;
-}
-
-/* zoom wrapper */
-.lb-zoom-wrap {
-  max-width: 100%;
-  max-height: 90vh;
-  overflow: hidden;
-  cursor: zoom-in;
-}
-.lb-zoom-wrap img {
-  max-width: 100%;
-  max-height: 90vh;
-  border-radius: 16px;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.9);
-  display: block;
-  transition: transform 0.25s ease;
-}
-.lb-zoom-wrap.lb-zoomed { cursor: zoom-out; }
-.lb-zoom-wrap.lb-zoomed img { transform: scale(1.8); }
-
-.lightbox-caption {
-  margin-top: 10px;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #e0e5f0;
-}
-
-/* navigation buttons */
-.lb-btn {
-  position: absolute;
-  top: 50%;
-  width: 40px;
-  height: 40px;
-  margin-top: -20px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(0,0,0,0.6);
-  color: #ffffff;
-  cursor: pointer;
-  display: grid;
-  place-items: center;
-  font-size: 20px;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-.lb-btn:hover {
-  background: rgba(241,116,7,0.85);
-  transform: translateY(-1px);
-}
-.lb-prev { left: -50px; }
-.lb-next { right: -50px; }
-
-.lb-close {
-  top: -16px;
-  right: -16px;
-  margin-top: 0;
-  width: 34px;
-  height: 34px;
-  font-size: 20px;
-  background: rgba(0,0,0,0.7);
-}
-
-/* Use framed cards inside workshops too, but keep them inside the white box */
-.workshop .image-card {
-  background: #ffffff;      /* matches workshop card */
-  padding: 4px;
-  border-radius: 14px;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
-}
-.workshop .image-card img {
-  height: 200px;            /* same as .workshop img */
-  border-radius: 10px;
-}
-
-
-@media (max-width: 768px) {
-  .lb-prev { left: 6px; }
-  .lb-next { right: 6px; }
-  .lb-close { right: 6px; top: 6px; }
-}
-  </style>
+</style>
 </head>
-
 <body>
-  <!-- HEADER --> 
 
-<video autoplay loop muted playsinline class="background-video">
-  <source src="https://media.githubusercontent.com/media/sshepl-2013/sshepl/main/assets/videos/branches.mp4" type="video/mp4">
-  <!-- Add other formats (webm) for broader browser support -->
-</video>
-
-  <header>
-    <a href="sshepl.github.io" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
-      <div class="logo-text" style="font-size: 1.2em; letter-spacing: -2px;">S. S. HEAVY EQUIPMENTS PVT. LTD.</div>
-    </a><br>
-    <nav style="text-align: right;">
-      <button class="home-icon-btn" onclick="goHome()" aria-label="Home">
-  <img src="home.png" alt="Home" class="home-icon-img">
-</button>
-      <a href="about.html" ><strong>About</strong></a>
-      <a href="dealership.html" ><strong>Dealerships</strong></a>
-      <a href="services.html" ><strong>Services</strong></a>
-      <a href="branches.html" class="active"><strong>Branches</strong></a>
-      <a href="gallery.html"><strong>Gallery</strong></a>
-      <a href="index.html#contact"><strong>Contact</strong></a>
-    </nav>
-  </header>
-
-<section id="branches">
-  <h2 class="pop-card reveal-on-scroll" style="background: transparent;opacity: 1;">Our Branches</h2>
-
-  <p style="color: #ffffff;"><strong>We are glad to serve in 7 different cities across Maharashtra, enabling us to reach our customers more effectively. Our network of branches allows us to provide localized support, quicker service, and a strong presence in the region. These branches are integral to our vision of delivering quality and accessible solutions to all our clients throughout the state.</strong></p>
-
-  <div class="branches-map" style="text-align: center;"><br><br>
-
-    <div class="branch-cta-wrap">
-      <button type="button" class="branch-cta-btn" onclick="locateNearestBranch()">
-        📍 Locate Our Nearest Branch
-      </button>
+<div class="topbar">
+  <div class="topbar-inner">
+    <div style="display:flex;gap:24px">
+      <a class="topbar-item" href="tel:+919822016435">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        +91 9822016435
+      </a>
+      <a class="topbar-item" href="mailto:sshepl.pune@gmail.com">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        sshepl.pune@gmail.com
+      </a>
     </div>
-    <br><br>
-
-    <img src="map.png" usemap="#image-map" alt="Maharashtra Branches Map"
-         style="filter: brightness(1.2) contrast(1.0); max-width: 100%; height: auto; border-radius: 10px;opacity:0.9;">
-
-    <map name="image-map">
-      <area target="" alt="Pune Head office" title="Pune Head office" href="#branch-pune" coords="843,423,870,457" shape="rect">
-      <area target="" alt="Chhatrapati Sambhajinagar Branch office" title="Chhatrapati Sambhajinagar Branch office" href="#branch-sambhajinagar" coords="956,316,983,346" shape="rect">
-      <area target="" alt="Solapur Branch office" title="Solapur Branch office" href="#branch-solapur" coords="957,494,985,525" shape="rect">
-      <area target="" alt="Kolhapur Branch office" title="Kolhapur Branch office" href="#branch-kolhapur" coords="862,626,890,660" shape="rect">
-      <area target="" alt="Satara Branch office" title="Satara Branch office" href="#branch-satara" coords="864,509,889,541" shape="rect">
-      <area target="" alt="Latur Branch office" title="Latur Branch office" href="#branch-latur" coords="1093,460,1115,492" shape="rect">
-      <area target="" alt="Nanded Branch office" title="Nanded Branch office" href="#branch-nanded" coords="1126,428,1150,460" shape="rect">
-      <area target="" alt="Pune Workshop/ Warehouse" title="Pune Workshop/ Warehouse" href="#workshop-pune" coords="864,470,886,493" shape="rect">
-      <area target="" alt="Solapur Workshop" title="Solapur Workshop" href="#workshop-solapur" coords="965,536,988,560" shape="rect">
-      <area target="" alt="Chhatrapati Sambhajinagar Warehouse" title="Chhatrapati Sambhajinagar Warehouse" href="#workshop-sambhajinagar" coords="965,366,989,390" shape="rect">
-    </map>
-  </div>
-
-  <div class="branch" id="branch-pune"><br><br><br><br>
-    <h3>Head Office - Pune</h3>
-    <p style="text-align: center; color:#ffffff;">
-      <strong>Contact no. :  Mr. Prasad Diwakar - 7722014300, Mr. Mahesh Talele - 7722014302
-      <br><a href="https://maps.app.goo.gl/x33Ak4gsaB4SAekE9" target="_blank" rel="noopener" style="color:#ffffff;">
-      Address : 116/6/1, MUMBAI-BANGLORE HIGHWAY
-      NEAR 'R' SQUARE BUILDING,
-      OPP. VINAYAK HOSPITAL, PUNE. 411058</a></strong><br>
-    </p>
-    <div class="images">
-      <div class="image-card" data-tilt><img src="MH14 (1).png" alt="Pune branch 1"></div>
-      <div class="image-card"data-tilt><img src="MH14 (2).png" alt="Pune branch 2"></div>
-      <div class="image-card"data-tilt><img src="MH14 (3).png" alt="Pune branch 3"></div>
-      <div class="image-card"data-tilt><img src="MH14 (4).png" alt="Pune branch 4"></div>
-    </div>
-  </div>
-
-  <div class="branch" id="branch-sambhajinagar"><br><br><br><br>
-    <h3>Branch Office - Chhatrapati Sambhajinagar</h3>
-    <p style="text-align: center; color:#ffffff;"><strong>
-      Contact no. :  Mr. Sachin Deshmukh - 9822353430, Mr. Rajesh Bhale - 9850437443
-      <br><a href="https://maps.app.goo.gl/XTLPUXXoqNtu4Ynv5" target="_blank" rel="noopener" style="color:#ffffff;">
-      Address : N-5, H46 SATYAMNAGAR, CIDCO, CHHATRAPATI SAMBHAJINAGR. 431003</a></strong><br>
-    </p>
-    <div class="images">
-      <div class="image-card"data-tilt><img src="MH20 (5).png" alt="Sambhajinagar branch 1"></div>
-      <div class="image-card"data-tilt><img src="MH20 (2).png" alt="Sambhajinagar branch 2"></div>
-      <div class="image-card"data-tilt><img src="MH20 (3).png" alt="Sambhajinagar branch 3"></div>
-      <div class="image-card"data-tilt><img src="MH20 (4).png" alt="Sambhajinagar branch 4"></div>
-    </div>
-  </div>
-
-  <div class="branch" id="branch-kolhapur"><br><br><br><br>
-    <h3 style="text-align: center;">Branch Office - Kolhapur</h3>
-    <p style="text-align: center; color:#ffffff;"><strong>
-      Contact no. : Mr. Samar Karpe - 8669978662, Mr. Santosh Bartakke - 8669978665
-      <br>Address : MAHAT COMPLEX, OPP. MAHADIK BUNGLOW
-      NEAR S M TRACTOR, SHIROLI, PULACHI
-      KOLHAPUR. 416122</strong><br>
-    </p>
-    <div class="images">
-      <div class="image-card"data-tilt><img src="MH09.png" alt="Kolhapur branch 1"></div>
-      <div class="image-card"data-tilt><img src="MH09-1.jpg" alt="Kolhapur branch 2"></div>
-      <div class="image-card"data-tilt><img src="MH09-2.jpg" alt="Kolhapur branch 3"></div>
-      <div class="image-card"data-tilt><img src="MH09-3.jpg" alt="Kolhapur branch 4"></div>
-    </div>
-  </div>
-
-  <div class="branch" id="branch-solapur"><br><br><br><br>
-    <h3>Branch Office - Solapur</h3>
-    <p style="text-align: center; color:#ffffff;"><strong>
-      Contact no. : Mr.Vinay Atnur - 9503255689, Mr. Prashant Ganganvar - 8329986617<br>
-      <a href="https://maps.app.goo.gl/hoxo8HQcQsQP74T79" target="_blank" rel="noopener" style="color: #ffffff;">
-      Address : KRISHNA HEIGHTS,
-      315/2, PLOT NO-3, SOLAPUR-PUNE HIGHWAY, NEAR SOLAPUR UNIVERSITY, KONDI, NORTH SOLAPUR, SOLAPUR. 413255.</a></strong><br>
-    </p>
-    <div class="images">
-      <div class="image-card"data-tilt><img src="MH13.jpg" alt="Solapur branch 1"></div>
-      <div class="image-card"data-tilt><img src="MH13 (2).png" alt="Solapur branch 2"></div>
-      <div class="image-card"data-tilt><img src="MH13-2.jpg" alt="Solapur branch 3"></div>
-      <div class="image-card"data-tilt><img src="MH13-3.jpg" alt="Solapur branch 4"></div>
-    </div>
-  </div>
-
-  <div class="branch" id="branch-latur"><br><br><br><br>
-    <h3>Branch Office - Latur</h3>
-    <p style="text-align: center; color:#ffffff;"><strong>
-      Contact no. : Mr. Yatin Katke - 8484928194
-      <br>Address : DESAI COMPLEX, NEAR TCI EXPRESS OFFICE, NAIK, CHOWK, LATUR. 413512</strong><br>
-    </p>
-    <div class="images">
-      <div class="image-card"data-tilt><img src="MH24 (1).png" alt="Latur branch 1"></div>
-      <div class="image-card"data-tilt><img src="MH24 (2).png" alt="Latur branch 2"></div>
-    </div>
-  </div>
-
-  <div class="branch" id="branch-nanded"><br><br><br><br>
-    <h3>Branch Office - Nanded</h3>
-    <p style="text-align: center; color:#ffffff;"><strong>
-      Contact no. : Mr. Manik Surywanshi - 9175268073<br>
-      Address : KOKATE COMPLEX, ARDHAPUR ROAD, OPP. RAM NAGAR, AASANA BYPASS, NANDED. 431601</strong><br>
-    </p>
-    <div class="images">
-      <div class="image-card"data-tilt><img src="MH26 (2).png" alt="Nanded branch 1"></div>
-      <div class="image-card"data-tilt><img src="MH26 (1).png" alt="Nanded branch 2"></div>
-    </div>
-  </div>
-
-  <div class="branch" id="branch-satara"><br><br><br><br>
-    <h3>Branch Office - Satara</h3>
-    <p style="text-align: center; color:#ffffff;"><strong>
-      Contact no. : Mr.Vinod Shivtare - 8669921937<br>
-      Address : SHOP NO 8, MANGAL MURTI VIHAR NEAR HOTEL SAYAJI, BANGLORE HIGHWAY, WADE PHATA SATARA. 415004</strong><br></p>
-    <div class="images">
-      <div class="image-card"data-tilt><img src="MH11.png" alt="Satara branch"></div>
-    </div>
-  </div>
-</section>
-
-<section id="workshops">
-  <h2 class="pop-card" style="background: transparent;opacity: 1;">Workshop / Warehouse</h2>
-  <p style="color:#ffffff"><strong>Our dedicated facilities are strategically located to ensure prompt service, maintenance, and ready access to parts and equipment for our dealers and customers:</strong></p>
-  
-  <div class="workshops-container">
-    <div class="workshop"  id="workshop-pune">
-      <div class="image-card"data-tilt><img src="MH12WORKSHOP (1).jpg" alt="Pune workshop"></div>
-      <h4>Pune Workshop & Warehouse</h4>
-      <p>Our main service and storage facility, spanning 5,000 sq ft.</p>
-    </div>
-   
-    <div class="workshop" id="workshop-solapur">
-      <div class="image-card"data-tilt><img src="MH13WORKSHIP (2).png" style="height:fit-content" alt="Solapur workshop"></div> 
-      <h4>Solapur Warehouse</h4>
-      <p>A local Service Workshop and storage unit, covering 3,000 sq ft</p>
-    </div>
-
-    <div class="workshop" id="workshop-sambhajinagar">
-      <div class="image-card" data-tilt><img src="MH20WORKSHIOP.png" alt="Sambhajinagar warehouse"></div>      
-      <h4>Chhatrapati Sambhabhinagar Warehouse</h4>
-      <p>Our regional hub, featuring an 8,000 sq ft Workshop and Warehouse.</p>
-    </div>
-  </div>
-</section>
-
-<footer>
-    &copy; 2026 S. S. Heavy Equipments Pvt. Ltd. All rights reserved.
-  </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/image-map-resizer@1.0.10/js/imageMapResizer.min.js"></script>
-<script>
-  window.addEventListener('load', function () {
-    if (window.imageMapResize) {
-      imageMapResize();
-    }
-  });
-</script>
-
-
-<!-- ✅ FIXED: VanillaTilt LOADS LAST -->
-<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize tilt AFTER everything loads
-    VanillaTilt.init(document.querySelectorAll(".image-card[data-tilt]"), {
-        max: 18, speed: 500, glare: true, "max-glare": 0.3, perspective: 1000
-    });
-});
-</script>
-
- <script>
-        // FIXED TILT + LIGHTBOX COMPATIBILITY
-        document.addEventListener('DOMContentLoaded', function() {
-            // 1. Initialize Tilt
-            VanillaTilt.init(document.querySelectorAll(".image-card[data-tilt]"), {
-                max: 18,
-                speed: 500,
-                glare: true,
-                "max-glare": 0.3,
-                perspective: 1200,
-                easing: "cubic-bezier(0.25,0.46,0.45,0.94)",
-                gyroscope: false,
-                scale: 1.02
-            });
-
-            // 2. Pause tilt during lightbox
-            const lightbox = document.getElementById('branch-lightbox');
-            const tiltCards = document.querySelectorAll('.image-card[data-tilt]');
-            
-            lightbox?.addEventListener('click', () => {
-                tiltCards.forEach(card => card.vanillaTilt?.pause());
-            });
-            lightbox?.addEventListener('transitionend', () => {
-                tiltCards.forEach(card => card.vanillaTilt?.resume());
-            });
-
-           
-
-            // 4. Scroll animations
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) entry.target.classList.add('visible');
-                });
-            });
-            document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
-        });
-    </script>
-
-<!-- existing locateNearestBranch scripts unchanged (omitted here for brevity) -->
-
-<script>
-  // Ensure page starts at top + trigger reveal
-  window.addEventListener('load', function () {
-    window.scrollTo(0, 0);
-    document.querySelectorAll('section').forEach(function (sec) {
-      if (sec.getBoundingClientRect().top < window.innerHeight * 0.8) {
-        sec.classList.add('visible');
-      }
-    });
-  });
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const elems = document.querySelectorAll('.reveal-on-scroll');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    elems.forEach(el => observer.observe(el));
-  });
-</script>
-
-<!-- Lightbox for branches images -->
-<div class="lightbox-backdrop" id="branch-lightbox" aria-modal="true" role="dialog">
-  <div class="lightbox-frame">
-    <button class="lb-btn lb-close" id="branch-lb-close" aria-label="Close">&times;</button>
-    <button class="lb-btn lb-prev" id="branch-lb-prev" aria-label="Previous">&#10094;</button>
-
-    <div class="lb-zoom-wrap" id="branch-lb-zoom-wrap">
-      <img id="branch-lb-img" src="" alt="">
-    </div>
-
-    <button class="lb-btn lb-next" id="branch-lb-next" aria-label="Next">&#10095;</button>
-    <div class="lightbox-caption" id="branch-lb-cap"></div>
+    <div style="font-size:11px;color:rgba(255,255,255,.4)">Also: <span style="color:var(--gold)">SSP Sales Pvt. Ltd.</span> — BKT Tyre Distributor</div>
   </div>
 </div>
 
-<script>
-// Lightbox for branches
-(function() {
-  const thumbs = Array.from(
-    document.querySelectorAll('.branch .images .image-card, .workshop .image-card'));
-  if (!thumbs.length) return;
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="images/sshepl-logo.png" alt="SSHEPL" style="height:44px;width:auto;border-radius:6px">
+      <div><div class="nav-brand-name">S. S. HEAVY EQUIPMENTS PVT. LTD.</div><div class="nav-brand-sub">Est. 2013 · Maharashtra</div></div>
+    </a>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="dealerships.html">Dealerships</a>
+      <a class="nav-link nav-link-bkt" href="bkt.html">BKT Tyres</a>
+      <a class="nav-link" href="services.html">Services</a>
+      <a class="nav-link active" href="branches.html">Branches</a>
+    </div>
+    <a class="nav-cta" href="index.html#contact">Get Quote →</a>
+  </div>
+</nav>
 
-  const lb      = document.getElementById('branch-lightbox');
-  const lbImg   = document.getElementById('branch-lb-img');
-  const lbCap   = document.getElementById('branch-lb-cap');
-  const btnPrev = document.getElementById('branch-lb-prev');
-  const btnNext = document.getElementById('branch-lb-next');
-  const btnClose = document.getElementById('branch-lb-close');
-  const zoomWrap = document.getElementById('branch-lb-zoom-wrap');
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Branches</div>
+      <div class="page-hero-eyebrow">Our Network</div>
+      <h1 class="page-hero-title">7 Cities.<br>All of Maharashtra.</h1>
+      <p class="page-hero-desc">From Pune to Nanded — SSHEPL's branch network ensures sales, spares, and service support wherever you are in Maharashtra.</p>
+    </div>
+    <div class="hero-stats-right">
+      <div class="hero-stat-pill"><div class="hero-stat-num">7</div><div class="hero-stat-label">Branch Cities</div></div>
+      <div class="hero-stat-pill"><div class="hero-stat-num">3</div><div class="hero-stat-label">Workshops</div></div>
+      <div class="hero-stat-pill"><div class="hero-stat-num">16K+</div><div class="hero-stat-label">Sq Ft Space</div></div>
+    </div>
+  </div>
+</div>
 
-  let current = 0;
-  let zoomed  = false;
+<!-- CITY QUICK NAV -->
+<div class="network-overview">
+  <div class="network-bar">
+    <a class="network-city has-workshop active-city" href="#pune"><div class="network-city-name">Pune</div><div class="network-city-tag">HO + Workshop</div></a>
+    <a class="network-city has-workshop" href="#solapur"><div class="network-city-name">Solapur</div><div class="network-city-tag">Branch + Workshop</div></a>
+    <a class="network-city has-workshop" href="#sambhajinagar"><div class="network-city-name">Sambhajinagar</div><div class="network-city-tag">Branch +Workshop</div></a>
+    <a class="network-city" href="#kolhapur"><div class="network-city-name">Kolhapur</div><div class="network-city-tag">Branch</div></a>
+    <a class="network-city" href="#latur"><div class="network-city-name">Latur</div><div class="network-city-tag">Branch</div></a>
+    <a class="network-city" href="#nanded"><div class="network-city-name">Nanded</div><div class="network-city-tag">Branch</div></a>
+    <a class="network-city" href="#satara"><div class="network-city-name">Satara</div><div class="network-city-tag">Branch</div></a>
+  </div>
+</div>
 
-  function resetZoom() {
-    zoomed = false;
-    zoomWrap.classList.remove('lb-zoomed');
-  }
+<!-- BRANCH CARDS -->
+<section class="branches-section">
+  <div class="container">
+    <div class="fade-up" style="margin-bottom:48px">
+      <div class="section-eyebrow">Branch Directory</div>
+      <h2 class="section-title">Find Your Nearest SSHEPL Office</h2>
+    </div>
 
-  function openAt(index) {
-    current = (index + thumbs.length) % thumbs.length;
-    const card = thumbs[current];
-    const img  = card.querySelector('img');
-    lbImg.src = img.src;
-    lbImg.alt = img.alt || '';
-    lbCap.textContent = img.alt || '';
-    resetZoom();
-    lb.classList.add('open');
-    btnClose.focus();
-  }
-
-  function closeLb() {
-    lb.classList.remove('open');
-    lbImg.src = '';
-    resetZoom();
-  }
-  function next() { openAt(current + 1); }
-  function prev() { openAt(current - 1); }
-
-  thumbs.forEach((card,i) => {
-    card.addEventListener('click', () => openAt(i));
-  });
-
-  btnClose.addEventListener('click', closeLb);
-  btnNext.addEventListener('click', next);
-  btnPrev.addEventListener('click', prev);
-  lb.addEventListener('click', e => {
-    if (e.target === lb) closeLb();
-  });
-
-  zoomWrap.addEventListener('click', () => {
-    zoomed = !zoomed;
-    zoomWrap.classList.toggle('lb-zoomed', zoomed);
-  });
-
-  window.addEventListener('keydown', e => {
-    if (!lb.classList.contains('open')) return;
-    if (e.key === 'Escape') closeLb();
-    if (e.key === 'ArrowRight') next();
-    if (e.key === 'ArrowLeft') prev();
-  });
-})();
-</script>
-
-<script>
-  
-// ==== 1. Branch list (lat/lng for each city) ====
-// ==== GPS + MANUAL SEARCH WITH CLOSE BUTTON ====
-// ==== YOUR EXACT CODE + ❌ CLOSE + GPS FIXED ====
-const branches = [
-  { id: 'branch-pune', name: 'Pune (Head Office)', lat: 18.5204, lng: 73.8567 },
-  { id: 'branch-sambhajinagar', name: 'Chhatrapati Sambhajinagar', lat: 19.8762, lng: 75.3433 },
-  { id: 'branch-solapur', name: 'Solapur', lat: 17.6599, lng: 75.9064 },
-  { id: 'branch-kolhapur', name: 'Kolhapur', lat: 16.7049, lng: 74.2433 },
-  { id: 'branch-latur', name: 'Latur', lat: 18.4088, lng: 76.5604 },
-  { id: 'branch-nanded', name: 'Nanded', lat: 19.1383, lng: 77.3210 },
-  { id: 'branch-satara', name: 'Satara', lat: 17.6805, lng: 74.0183 }
-];
-
-function distanceKm(lat1, lng1, lat2, lng2) {
-  const R = 6371;
-  const dLat = (lat2 - lat1) * Math.PI / 180;
-  const dLng = (lng2 - lng1) * Math.PI / 180;
-  const a = Math.sin(dLat/2)**2 + Math.cos(lat1*Math.PI/180) * Math.cos(lat2*Math.PI/180) * Math.sin(dLng/2)**2;
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-  return R * c;
-}
-
-function findNearestBranch(lat, lng) {
-  let best = null;
-  branches.forEach(b => {
-    const distance = distanceKm(lat, lng, b.lat, b.lng);
-    if (!best || distance < best.distance) {
-      best = { ...b, distance };
-    }
-  });
-  return best;
-}
-
-function scrollToBranch(branchId) {
-  const el = document.getElementById(branchId);
-  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-// GPS MAIN FUNCTION
-function locateNearestBranch() {
-  if ('geolocation' in navigator) {
-    navigator.geolocation.getCurrentPosition(
-      function(pos) {
-        const lat = pos.coords.latitude;
-        const lng = pos.coords.longitude;
-        const nearest = findNearestBranch(lat, lng);
-        const distKm = Math.round(nearest.distance);
-        alert(`📍 GPS Found!\nNearest: ${nearest.name}\nDistance: ${distKm} km`);
-        scrollToBranch(nearest.id);
-      },
-      function() {
-        showNominatimSearch();
-      },
-      { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 }
-    );
-  } else {
-    showNominatimSearch();
-  }
-}
-
-// NOMINATIM SEARCH
-async function geocodeWithNominatim(query) {
-  await new Promise(r => setTimeout(r, 1000));
-  try {
-    const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&limit=5&addressdetails=1&countrycodes=in`;
-    const response = await fetch(url, {
-      headers: { 'User-Agent': 'SSHEPL-BranchLocator/1.0' }
-    });
-    const data = await response.json();
-    return data.map(item => ({
-      lat: parseFloat(item.lat),
-      lng: parseFloat(item.lon),
-      name: item.display_name.split(',')[0],
-      formatted: item.display_name
-    })).slice(0, 5);
-  } catch {
-    return [];
-  }
-}
-
-function showNominatimSearch() {
-  document.getElementById('nominatim-modal')?.remove();
-  
-  const modal = document.createElement('div');
-  modal.id = 'nominatim-modal';
-  modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:10000;display:flex;align-items:center;justify-content:center;font-family:system-ui';
-  
-  modal.innerHTML = `
-    <div style="background:white;border-radius:20px;padding:30px;max-width:500px;width:90vw;max-height:80vh;overflow:hidden;box-shadow:0 25px 100px rgba(0,0,0,0.8);position:relative">
-      <!-- ❌ CLOSE BUTTON -->
-      <button onclick="closeNominatimSearch()" style="position:absolute;top:15px;right:20px;width:40px;height:40px;border:none;background:rgba(0,0,0,0.2);color:white;border-radius:50%;font-size:20px;font-weight:bold;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s" onmouseover="this.style.background='rgba(241,116,7,0.8)'" onmouseout="this.style.background='rgba(0,0,0,0.2)'">×</button>
-      
-      <h3 style="margin:0 0 15px 0;color:#1a1a1a;font-size:1.4em">📍 Find Nearest Branch</h3>
-      <p style="margin:0 0 20px 0;color:#666;font-size:15px">City, village, taluka worldwide</p>
-      
-      <input id="nominatim-input" type="text" placeholder="Beed, Jalna, Pune..." style="width:100%;padding:18px 16px;border:2px solid #e2e8f0;border-radius:12px;font-size:16px;box-sizing:border-box">
-      
-      <div id="nominatim-results" style="margin-top:15px;max-height:300px;overflow-y:auto;border:1px solid #e2e8f0;border-radius:12px;background:white"></div>
-      
-      <div style="margin-top:20px;text-align:center">
-        <button onclick="tryGPSAgain()" style="padding:14px 28px;background:#f17407;color:white;border:none;border-radius:10px;cursor:pointer;font-weight:600;font-size:16px">🔄 Try GPS Again</button>
+    <!-- PUNE -->
+    <div class="branch-card head-office fade-up" id="pune">
+      <div class="branch-card-header">
+        <div class="branch-card-left">
+          <div class="branch-initials">MH12</div>
+          <div>
+            <div class="branch-city-name">Pune</div>
+            <div class="branch-type-label">Head Office & Primary Workshop</div>
+          </div>
+        </div>
+        <div class="branch-badges">
+          <span class="badge badge-ho">Head Office</span>
+          <span class="badge badge-workshop">Workshop — 5,000 sq ft</span>
+        </div>
+      </div>
+      <div class="branch-card-body">
+        <div class="branch-info-group">
+          <div class="branch-info-label">Address</div>
+          <div class="branch-info-text">116/6/1, Mumbai-Bengaluru Highway,<br>Opp. Vinayak Hospital,<br>Pune — 411058, Maharashtra</div>
+        </div>
+        <div class="branch-info-group">
+          <div class="branch-info-label">Contact</div>
+          <a class="branch-info-link" href="tel:+919822016435">+91 9822016435</a>
+          <a class="branch-info-link" href="tel:+917722014302">+91 7722014302</a>
+          <a class="branch-info-link" href="tel:+919422332031">+91 9422332031</a>
+          <a class="branch-info-link" href="mailto:sshepl.pune@gmail.com">sshepl.pune@gmail.com</a>
+        </div>
+        <div class="branch-info-group">
+          <div class="branch-info-label">Facilities</div>
+          <div class="branch-info-text">
+            ✔ Sales Office<br>
+            ✔ Spare Parts Warehouse<br>
+            ✔ Workshop — 5,000 sq ft<br>
+            ✔ BKT Tyre Enquiries (SSP Sales)
+          </div>
+        </div>
+      </div>
+      <img src="images/pune-branch.png" 
+      alt="SSHEPL Pune Office" 
+      style="width:420px;height:320px;object-fit:cover;display:block">
+      <div class="branch-card-footer">
+        <a class="branch-action branch-action-primary" href="https://maps.google.com/?q=116/6/1+Mumbai+Bengaluru+Highway+Pune" target="_blank">📍 Get Directions</a>
+        <a class="branch-action branch-action-wa" href="https://wa.me/919422332031" target="_blank">💬 WhatsApp</a>
+        <a class="branch-action branch-action-secondary" href="tel:+919422332031">📞 Call Now</a>
+        <a class="branch-action branch-action-secondary" href="services.html#book-service">🔧 Book Service</a>
       </div>
     </div>
-  `;
-  
-  document.body.appendChild(modal);
-  document.getElementById('nominatim-input').focus();
-  document.getElementById('nominatim-input').addEventListener('input', handleNominatimSearch);
-}
 
-async function handleNominatimSearch() {
-  const input = document.getElementById('nominatim-input');
-  const results = document.getElementById('nominatim-results');
-  const query = input.value;
-  
-  if (query.length < 2) {
-    results.innerHTML = '<div style="padding:20px;color:#999;text-align:center">Type city/village...</div>';
-    return;
-  }
-  
-  results.innerHTML = '<div style="padding:20px;color:#999">🔍 Searching...</div>';
-  const locations = await geocodeWithNominatim(query);
-  
-  if (locations.length === 0) {
-    results.innerHTML = '<div style="padding:20px;color:#999">No results. Try Pune, Beed...</div>';
-    return;
-  }
-  
-  results.innerHTML = locations.map(loc => {
-    const nearest = findNearestBranch(loc.lat, loc.lng);
-    const distKm = Math.round(nearest.distance);
-    return `
-      <div onclick="selectNominatimLocation(${loc.lat}, ${loc.lng}, '${loc.name.replace(/'/g, "\\'")}', '${nearest.id}')" style="padding:18px 20px;cursor:pointer;border-bottom:1px solid #f0f0f0;display:flex;justify-content:space-between;align-items:center" onmouseover="this.style.background='#f8faff'" onmouseout="this.style.background='white'">
-        <div>
-          <strong style="color:#1a1a1a">${loc.name}</strong>
-          <div style="color:#666;font-size:14px">${loc.formatted.split(',')[1] || ''}</div>
+<!-- SOLAPUR -->
+    <div class="branch-card fade-up" id="solapur">
+      <div class="branch-card-header">
+        <div class="branch-card-left">
+          <div class="branch-initials">MH13</div>
+          <div>
+            <div class="branch-city-name">Solapur</div>
+            <div class="branch-type-label">Branch Office & Workshop</div>
+          </div>
         </div>
-        <div style="color:#f17407;font-weight:600;font-size:16px">
-          → ${nearest.name}<br><small>${distKm} km</small>
+        <div class="branch-badges">
+          <span class="badge badge-branch">Branch Office</span>
+          <span class="badge badge-workshop">Workshop — 3,000 sq ft</span>
         </div>
       </div>
-    `;
-  }).join('');
-}
+      <div class="branch-card-body">
+        <div class="branch-info-group">
+          <div class="branch-info-label">Address</div>
+          <div class="branch-info-text">Krishna Heights,<br>Near Solapur University,<br>Solapur — 413255, Maharashtra</div>
+        </div>
+        <div class="branch-info-group">
+          <div class="branch-info-label">Contact</div>
+          <a class="branch-info-link" href="tel:+919503255689">+91 9503255689</a>
+          <a class="branch-info-link" href="tel:+918329986617">+91 8329986617</a>
+          <a class="branch-info-link" href="mailto:sshepl.pune@gmail.com">sshepl.pune@gmail.com</a>
+        </div>
+        <div class="branch-info-group">
+          <div class="branch-info-label">Facilities</div>
+          <div class="branch-info-text">
+            ✔ Sales Office<br>
+            ✔ Workshop — 3,000 sq ft<br>
+            ✔ Spare Parts Warehouse<br>
+            ✔ Field Service Team
+          </div>
+        </div>
+      </div>
+      <img src="images/solapur-branch.webp" 
+      alt="SSHEPL Solapur Office" 
+      style="width:420px;height:320px;object-fit:cover;display:block">
+      <div class="branch-card-footer">
+        <a class="branch-action branch-action-primary" href="https://maps.google.com/?q=Krishna+Heights+Near+Solapur+University+Solapur+413255" target="_blank">📍 Get Directions</a>
+        <a class="branch-action branch-action-wa" href="https://wa.me/919503255689" target="_blank">💬 WhatsApp</a>
+        <a class="branch-action branch-action-secondary" href="tel:+919503255689">📞 Call Now</a>
+        <a class="branch-action branch-action-secondary" href="services.html#book-service">🔧 Book Service</a>
+      </div>
+    </div>
 
-function selectNominatimLocation(lat, lng, name, branchId) {
-  const nearest = branches.find(b => b.id === branchId);
-  const distKm = Math.round(distanceKm(lat, lng, nearest.lat, nearest.lng));
-  alert(`📍 ${name} → ${nearest.name} (${distKm} km)`);
-  scrollToBranch(branchId);
-  closeNominatimSearch();
-}
+    <!-- SAMBHAJINAGAR -->
+    <div class="branch-card fade-up" id="sambhajinagar">
+      <div class="branch-card-header">
+        <div class="branch-card-left">
+          <div class="branch-initials">MH20</div>
+          <div>
+            <div class="branch-city-name">Chhatrapati Sambhajinagar</div>
+            <div class="branch-type-label">Regional Branch & Largest Workshop</div>
+          </div>
+        </div>
+        <div class="branch-badges">
+          <span class="badge badge-branch">Marathwada HQ</span>
+          <span class="badge badge-workshop">Warehouse — 8,000 sq ft</span>
+        </div>
+      </div>
+      <div class="branch-card-body">
+        <div class="branch-info-group">
+          <div class="branch-info-label">Address</div>
+          <div class="branch-info-text">N-5, H46 Satyamnagar, CIDCO,<br>Chhatrapati Sambhajinagar — 431003,<br>Maharashtra</div>
+        </div>
+      <div class="branch-info-group">
+          <div class="branch-info-label">Contact</div>
+          <a class="branch-info-link" href="tel:+919822353430">+91 9822353430</a>
+          <a class="branch-info-link" href="tel:+919850437443">+91 9850437443</a>
+          <a class="branch-info-link" href="mailto:sshepl.pune@gmail.com">sshepl.pune@gmail.com</a>
+        </div>
+        <div class="branch-info-group">
+          <div class="branch-info-label">Facilities</div>
+          <div class="branch-info-text">
+            ✔ Sales Office<br>
+            ✔ Largest Workshop — 8,000 sq ft<br>
+            ✔ Spare Parts Warehouse<br>
+            ✔ Marathwada Field Team
+          </div>
+        </div>
+      </div>
+      <img src="images/sambhajinagar-branch.webp" 
+      alt="SSHEPL Sambhajinagar Office" 
+      style="width:420px;height:320px;object-fit:cover;display:block">
+      <div class="branch-card-footer">
+        <a class="branch-action branch-action-primary" href="https://maps.google.com/?q=N-5+H46+Satyamnagar+CIDCO+Chhatrapati+Sambhajinagar" target="_blank">📍 Get Directions</a>
+        <a class="branch-action branch-action-wa" href="https://wa.me/919822353430" target="_blank">💬 WhatsApp</a>
+        <a class="branch-action branch-action-secondary" href="tel:+919850437443">📞 Call Now</a>
+        <a class="branch-action branch-action-secondary" href="services.html#book-service">🔧 Book Service</a>
+      </div>
+    </div>
 
-function closeNominatimSearch() {
-  document.getElementById('nominatim-modal')?.remove();
-}
+    <!-- KOLHAPUR -->
+    <div class="branch-card fade-up" id="kolhapur">
+      <div class="branch-card-header">
+        <div class="branch-card-left">
+          <div class="branch-initials">MH09</div>
+          <div>
+            <div class="branch-city-name">Kolhapur</div>
+            <div class="branch-type-label">Branch Office</div>
+          </div>
+        </div>
+        <div class="branch-badges">
+          <span class="badge badge-branch">Branch Office</span>
+        </div>
+      </div>
+      <div class="branch-card-body">
+        <div class="branch-info-group">
+          <div class="branch-info-label">Address</div>
+          <div class="branch-info-text">Mahat Complex,<br>Near SM Tractor, Shiroli,<br>Kolhapur — 416122, Maharashtra</div>
+        </div>
+        <div class="branch-info-group">
+          <div class="branch-info-label">Contact</div>
+          <a class="branch-info-link" href="tel:+918669978662">+91 8669978662</a>
+          <a class="branch-info-link" href="tel:+918669978665">+91 8669978665</a>
+          <a class="branch-info-link" href="mailto:sshepl.pune@gmail.com">sshepl.pune@gmail.com</a>
+        </div>
+        <div class="branch-info-group">
+          <div class="branch-info-label">Facilities</div>
+          <div class="branch-info-text">
+            ✔ Sales Office<br>
+            ✔ Spare Parts Supply<br>
+            ✔ Field Service Team<br>
+            ✔ Service coordination
+          </div>
+        </div>
+      </div>
+      <img src="images/kolhapur-branch.png" 
+      alt="SSHEPL Kolhapur Office" 
+      style="width:420px;height:320px;object-fit:cover;display:block">
+      <div class="branch-card-footer">
+        <a class="branch-action branch-action-primary" href="https://maps.google.com/?q=Mahat+Complex+Shiroli+Kolhapur+416122" target="_blank">📍 Get Directions</a>
+        <a class="branch-action branch-action-wa" href="https://wa.me/918669978662" target="_blank">💬 WhatsApp</a>
+        <a class="branch-action branch-action-secondary" href="tel:+918669978665">📞 Call Now</a>
+         <a class="branch-action branch-action-secondary" href="services.html#book-service">🔧 Book Service</a>
+      </div>
+    </div>
 
-function tryGPSAgain() {
-  closeNominatimSearch();
-  locateNearestBranch();
-}
+    
 
+    <!-- LATUR -->
+    <div class="branch-card fade-up" id="latur">
+      <div class="branch-card-header">
+        <div class="branch-card-left">
+          <div class="branch-initials">MH24</div>
+          <div>
+            <div class="branch-city-name">Latur</div>
+            <div class="branch-type-label">Branch Office</div>
+          </div>
+        </div>
+        <div class="branch-badges">
+          <span class="badge badge-branch">Branch Office</span>
+        </div>
+      </div>
+      <div class="branch-card-body">
+        <div class="branch-info-group">
+          <div class="branch-info-label">Address</div>
+          <div class="branch-info-text">Desai Complex,<br>Near TCI Express, Naik Chowk,<br>Latur — 413512, Maharashtra</div>
+        </div>
+        <div class="branch-info-group">
+          <div class="branch-info-label">Contact</div>
+          <a class="branch-info-link" href="tel:+918484928194">+91 8484928194</a>
+          <a class="branch-info-link" href="mailto:sshepl.pune@gmail.com">sshepl.pune@gmail.com</a>
+        </div>
+        <div class="branch-info-group">
+          <div class="branch-info-label">Facilities</div>
+          <div class="branch-info-text">
+            ✔ Sales Office<br>
+            ✔ Spare Parts Supply<br>
+            ✔ Field Service Team<br>
+            ✔ Service coordination
+          </div>
+        </div>
+      </div>
+      <img src="images/latur-branch.png" 
+      alt="SSHEPL Latur Office" 
+      style="width:420px;height:320px;object-fit:cover;display:block">
+      <div class="branch-card-footer">
+        <a class="branch-action branch-action-primary" href="https://maps.google.com/?q=Desai+Complex+Naik+Chowk+Latur+413512" target="_blank">📍 Get Directions</a>
+        <a class="branch-action branch-action-wa" href="https://wa.me/918484928194" target="_blank">💬 WhatsApp</a>
+        <a class="branch-action branch-action-secondary" href="tel:+918484928194">📞 Call Now</a>
+         <a class="branch-action branch-action-secondary" href="services.html#book-service">🔧 Book Service</a>
+      </div>
+    </div>
 
-</script>
+    <!-- NANDED -->
+    <div class="branch-card fade-up" id="nanded">
+      <div class="branch-card-header">
+        <div class="branch-card-left">
+          <div class="branch-initials">MH26</div>
+          <div>
+            <div class="branch-city-name">Nanded</div>
+            <div class="branch-type-label">Branch Office</div>
+          </div>
+        </div>
+        <div class="branch-badges">
+          <span class="badge badge-branch">Branch Office</span>
+        </div>
+      </div>
+      <div class="branch-card-body">
+        <div class="branch-info-group">
+          <div class="branch-info-label">Address</div>
+          <div class="branch-info-text">Kokate Complex,<br>Ardhapur Road, Aasana Bypass,<br>Nanded — 431601, Maharashtra</div>
+        </div>
+        <div class="branch-info-group">
+          <div class="branch-info-label">Contact</div>
+          <a class="branch-info-link" href="tel:+919175268073">+91 9175268073</a>
+          <a class="branch-info-link" href="mailto:sshepl.pune@gmail.com">sshepl.pune@gmail.com</a>
+        </div>
+        <div class="branch-info-group">
+          <div class="branch-info-label">Facilities</div>
+          <div class="branch-info-text">
+            ✔ Sales Office<br>
+            ✔ Spare Parts Supply<br>
+            ✔ Field Service Team<br>
+            ✔ Service coordination
+          </div>
+        </div>
+      </div>
+      <img src="images/nanded-branch.png" 
+      alt="SSHEPL Nanded Office" 
+      style="width:420px;height:320px;object-fit:cover;display:block">
+      <div class="branch-card-footer">
+        <a class="branch-action branch-action-primary" href="https://maps.google.com/?q=Kokate+Complex+Ardhapur+Road+Nanded+431601" target="_blank">📍 Get Directions</a>
+        <a class="branch-action branch-action-wa" href="https://wa.me/919175268073" target="_blank">💬 WhatsApp</a>
+        <a class="branch-action branch-action-secondary" href="tel:+919175268073">📞 Call Now</a>
+        <a class="branch-action branch-action-secondary" href="services.html#book-service">🔧 Book Service</a>
+      </div>
+    </div>
 
+    <!-- SATARA -->
+    <div class="branch-card fade-up" id="satara">
+      <div class="branch-card-header">
+        <div class="branch-card-left">
+          <div class="branch-initials">MH11</div>
+          <div>
+            <div class="branch-city-name">Satara</div>
+            <div class="branch-type-label">Branch Office</div>
+          </div>
+        </div>
+        <div class="branch-badges">
+          <span class="badge badge-branch">Branch Office</span>
+        </div>
+      </div>
+      <div class="branch-card-body">
+        <div class="branch-info-group">
+          <div class="branch-info-label">Address</div>
+          <div class="branch-info-text">Shop No. 8, Mangal Murti Vihar,<br>Near Hotel Sayaji,<br>Satara — 415004, Maharashtra</div>
+        </div>
+        <div class="branch-info-group">
+          <div class="branch-info-label">Contact</div>
+          <a class="branch-info-link" href="tel:+918669921937">+91 8669921937</a>
+          <a class="branch-info-link" href="mailto:sshepl.pune@gmail.com">sshepl.pune@gmail.com</a>
+        </div>
+        <div class="branch-info-group">
+          <div class="branch-info-label">Facilities</div>
+          <div class="branch-info-text">
+            ✔ Sales Office<br>
+            ✔ Spare Parts Supply<br>
+            ✔ Field Service Team<br>
+            ✔ Service coordination
+          </div>
+        </div>
+      </div>
+      <img src="images/satara-branch.png" 
+      alt="SSHEPL Satara Office" 
+      style="width:420px;height:320px;object-fit:cover;display:block">
+      <div class="branch-card-footer">
+        <a class="branch-action branch-action-primary" href="https://maps.google.com/?q=Mangal+Murti+Vihar+Near+Hotel+Sayaji+Satara+415004" target="_blank">📍 Get Directions</a>
+        <a class="branch-action branch-action-wa" href="https://wa.me/918669921937" target="_blank">💬 WhatsApp</a>
+        <a class="branch-action branch-action-secondary" href="tel:+918669921937">📞 Call Now</a>
+        <a class="branch-action branch-action-secondary" href="services.html#book-service">🔧 Book Service</a>
+      </div>
+    </div>
 
+  </div>
+</section>
 
-<!-- 3D TILT INITIALIZATION -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            VanillaTilt.init(document.querySelectorAll(".image-card[data-tilt]"), {
-                max: 20,
-                speed: 400,
-                glare: true,
-                "max-glare": 0.4,
-                perspective: 1000,
-                easing: "cubic-bezier(.25,.46,.45,.94)"
-            });
-        });
-    </script>
+<!-- CTA -->
+<div class="cta-strip">
+  <div class="cta-strip-inner">
+    <div>
+      <div class="cta-strip-title">Not sure which branch to contact?</div>
+      <div class="cta-strip-sub">Call our central helpline — we'll connect you to the nearest team.</div>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn-navy" href="tel:+919822016435">📞 +91 9822016435</a>
+      <a class="btn-navy" href="https://wa.me/919822016435" target="_blank" style="background:#25D366">💬 WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">S.S. Heavy Equipments</div>
+        <div class="footer-brand-sub">Pvt. Ltd. · Est. 2013</div>
+        <p class="footer-brand-desc">Authorized CASE dealer and BKT Tyre distributor across Maharashtra. 7 cities, 3 workshops, 50+ team members.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <a class="footer-link" href="index.html">Home</a>
+        <a class="footer-link" href="about.html">About Us</a>
+        <a class="footer-link" href="dealerships.html">Dealerships</a>
+        <a class="footer-link" href="bkt.html">BKT Tyres</a>
+        <a class="footer-link" href="services.html">Services</a>
+        <a class="footer-link" href="branches.html">Branches</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Our Branches</div>
+        <a class="footer-link" href="#pune">Pune — Head Office</a>
+        <a class="footer-link" href="#sambhajinagar">Chh. Sambhajinagar</a>
+        <a class="footer-link" href="#kolhapur">Kolhapur</a>
+        <a class="footer-link" href="#solapur">Solapur</a>
+        <a class="footer-link" href="#latur">Latur</a>
+        <a class="footer-link" href="#nanded">Nanded</a>
+        <a class="footer-link" href="#satara">Satara</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Central Contact</div>
+        <a class="footer-link" href="tel:+919822016435">+91 9822016435</a>
+        <a class="footer-link" href="tel:+919822353430">+91 9822353430</a>
+        <a class="footer-link" href="tel:+919422332031">+91 9422332031</a>
+        <a class="footer-link" href="mailto:sshepl.pune@gmail.com">sshepl.pune@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 S. S. HEAVY EQUIPMENTS PVT. LTD. & SSP SALES PVT. LTD.</div>
+      <div class="footer-copy">Authorized CASE · BKT Dealer in Maharashtra</div>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/919822016435" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 
 <script>
-function goHome() {
-  const isHome =
-    window.location.pathname.endsWith('index.html') ||
-    window.location.pathname === '/' ||
-    window.location.pathname === '';
-
-  if (isHome) {
-    // already on home: refresh
-    window.location.reload();
-  } else {
-    // go to home page
-    window.location.href = 'index.html';
-  }
-}
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:.08});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+// Highlight city nav on scroll
+const sections=['pune','sambhajinagar','kolhapur','solapur','latur','nanded','satara'];
+const cityLinks=document.querySelectorAll('.network-city');
+window.addEventListener('scroll',()=>{
+  let current='';
+  sections.forEach(id=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-200)current=id});
+  cityLinks.forEach(link=>{link.classList.remove('active-city');if(link.getAttribute('href')==='#'+current)link.classList.add('active-city')});
+});
 </script>
-
 </body>
 </html>
-
-
-

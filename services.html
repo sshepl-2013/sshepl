@@ -1,531 +1,557 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services - S. S. Heavy Equipments PVT. LTD.</title>
-  <style>
-    html { scroll-behavior: smooth; }
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
-      color: #2c3e50;
-      overflow-x: hidden;
-      
-      opacity:8;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    }
-    body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background: rgba(0,0,0,0.55);
-      z-index: 0; pointer-events: none;
-    }
-
-.background-video {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* Places video behind content */
-  transform: translate(-50%, -50%); /* Centers the video */
-  object-fit: cover; /* Ensures video covers area without distortion */
-}
-
-
-
-    header, section, footer { position: relative; z-index: 1; }
-
-    header {
-  background: #ffffff;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Complete 3S support — Sales, Spares & Service for CASE construction equipment across Maharashtra. SSHEPL workshops, field teams, and spare parts.">
+<title>Services | S. S. HEAVY EQUIPMENTS PVT. LTD.</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B1F3A;--navy-deep:#071529;--gold:#D4940A;--gold-light:#F0AB1A;--white:#FFFFFF;--off-white:#F5F3EE;--gray-light:#E8E6E0;--gray-mid:#9A9690;--gray-dark:#3A3830;--text-body:#2C2A26}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',sans-serif;color:var(--text-body);background:var(--off-white);overflow-x:hidden}
+.topbar{background:var(--navy-deep);padding:7px 0;border-bottom:1px solid rgba(212,148,10,.25)}
+.topbar-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between}
+.topbar-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 15px 30px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  flex-wrap: wrap;
-
-  position: sticky;  /* or: fixed */
-  top: 0;
-  z-index: 9999;     /* above dark overlay and content */
-}
-    .logo-text {
-      font-size: 1.2em; font-weight: 900; font-style: italic;
-      font-family: Arial, Helvetica, sans-serif; color: #f17407;
-      letter-spacing: -2px; user-select: none;
-    }
-    /* Nav menu styles */
-  nav {
-    display: flex;
-    align-items: right;
-    text-align: right;
-    gap: 1px;
-    flex-wrap: wrap;
-  }
-  nav a {
-    
-    text-decoration: none;
-    color: #000000;
-    padding: 8px 14px;
-    border-radius: 6px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    position:relative;
-  }
-  nav a:hover, nav a.active {
-    background: #e67e22;
-    color: #fff;
-  }
-  nav a::after {
-    content: "";
-    position: absolute;
-    bottom: 2px;
-    left: 50%;
-    width: 0;
-    height: 3px;
-    background: #fff;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-  }
-  nav a:hover::after, nav a.active::after {
-    width: 50%;
-    left: 25%;
-  }
-  /* CSS */
-.nav-tabs {
-  text-align: right; /* Aligns the inline children to the right */
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.nav-tabs li {
-  display: inline-block; /* Makes the list items act like text, allowing text-align to work */
-  padding: 10px 15px;
-}
-
-    section {
-      padding: 70px 25px; border-radius: 20px;
-      background: rgba(0,0,0,0.35); margin: 40px auto; max-width: 1100px;
-      box-shadow: 0 8px 35px rgba(0,0,0,0.35);
-    }
-    section h2 {
-      font-size: 3rem; font-weight: 900; margin: 0 0 20px;
-      text-align: center; color: #ffffff; letter-spacing: 1.3px;
-    }
-    #services-intro {
-      text-align:center; color:#ffffff; max-width:900px; margin: 0 auto 20px;
-    }
-    .service-cta-wrap { text-align:center; margin: 10px 0 30px; }
-    .service-cta-btn{
-      display:inline-flex; align-items:center; gap:6px;
-      padding:10px 28px; border-radius:999px; border:2px solid #e67e22;
-      background:#e67e22; color:#fff; font-weight:700; letter-spacing:.5px;
-      text-transform:uppercase; text-decoration:none; font-size:.95rem;
-      box-shadow:0 8px 20px rgba(230,126,34,.45);
-      transition: transform .2s, box-shadow .2s, background .2s, color .2s;
-    }
-    .service-cta-btn:hover{ background:#fff; color:#e67e22; transform: translateY(-2px); box-shadow:0 12px 28px rgba(0,0,0,.35); }
-
-    /* ===== Layout: icons left & right, center cards ===== */
-    .services-layout{
-      display:grid;
-      grid-template-columns: 1fr 1.4fr 1fr; /* left icons – cards – right icons */
-      gap:24px; align-items: stretch;
-    }
-
-    /* Icon panels */
-  .services-icons {
-  display: grid;
-  grid-template-rows: repeat(3, auto); /* shrink to content */
-  gap: 16px;
-  
-}
-
-.icon-card {
-  position: relative;  /* needed for ::before / ::after */
-  align-self: flex-start;
-  border-radius: 14px;
-  padding: 14px 16px 50px;
-  background: transparent;        /* inner background comes from ::after */
-  color: #f6f7fb;
-  box-shadow: 0 12px 32px rgba(0,0,0,0.45);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   gap: 6px;
-  z-index: 0;
-  overflow: hidden;
+  font-size: 12px;
+  color: rgba(255,255,255,.6);
+  text-decoration: none;
 }
+.topbar-item svg { width: 13px; height: 13px; fill: var(--gold); flex-shrink: 0; }
+.topbar-item:hover { color: var(--gold-light); }
+.topbar-item{font-size:12px;color:rgba(255,255,255,.6);text-decoration:none}
+.topbar-item:hover{color:var(--gold-light)}
 
-/* animated gradient ring – same feel as .glow-line */
-.icon-card::before {
-  content: "";
-  position: absolute;
-  inset: -2px;  /* thickness of glow border */
-  border-radius: inherit;
-  background: linear-gradient(90deg, #ffffff, #c7c7c0, #000000, #020747);
-  background-size: 200% 100%;
-  animation: glowMove 1s linear infinite;
-  z-index: -2;  /* behind everything */
+/* NAV */
+nav{background:var(--navy);position:sticky;top:0;z-index:100;border-bottom:2px solid var(--gold)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;height:68px;gap:40px}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.nav-logo{width:44px;height:44px;background:var(--gold);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--navy-deep);letter-spacing:1px}
+.nav-brand-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--white);letter-spacing:.5px}
+.nav-brand-sub{font-size:10px;color:var(--gold);letter-spacing:.05em;text-transform:uppercase}
+.nav-links{display:flex;gap:4px;align-items:center;flex:1}
+.nav-link{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:.5px;color:rgba(255,255,255,.75);text-decoration:none;padding:8px 14px;border-radius:4px;text-transform:uppercase;transition:color .2s,background .2s;position:relative}
+.nav-link:hover{color:var(--white);background:rgba(255,255,255,.07)}
+.nav-link.active{color:var(--gold-light)}
+.nav-link.active::after{content:'';position:absolute;bottom:-2px;left:14px;right:14px;height:2px;background:var(--gold);border-radius:2px}
+.nav-link-bkt{color:var(--gold)!important;border:1px solid rgba(212,148,10,.35)}
+.nav-cta{margin-left:auto;background:var(--gold);color:var(--navy-deep);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:10px 22px;border-radius:4px;text-decoration:none;white-space:nowrap;transition:background .2s}
+.nav-cta:hover{background:var(--gold-light)}
+
+/* PAGE HERO */
+.page-hero{background:var(--navy-deep);padding:72px 0 60px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(212,148,10,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(212,148,10,.03) 1px,transparent 1px);background-size:60px 60px}
+.page-hero-inner{max-width:1200px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
+.breadcrumb{font-size:12px;color:rgba(255,255,255,.35);margin-bottom:16px;display:flex;gap:8px}
+.breadcrumb a{color:rgba(255,255,255,.35);text-decoration:none}
+.breadcrumb a:hover{color:var(--gold)}
+.page-hero-eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.page-hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,6vw,80px);color:var(--white);letter-spacing:2px;line-height:1;margin-bottom:14px}
+.page-hero-desc{font-size:17px;color:rgba(255,255,255,.5);max-width:600px;line-height:1.6}
+
+/* 3S BANNER */
+.three-s{background:var(--gold);padding:0}
+.three-s-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr)}
+.three-s-item{padding:28px 32px;display:flex;align-items:center;gap:16px;border-right:1px solid rgba(7,21,41,.15)}
+.three-s-item:last-child{border-right:none}
+.three-s-num{font-family:'Bebas Neue',sans-serif;font-size:48px;color:rgba(7,21,41,.2);line-height:1;flex-shrink:0}
+.three-s-label{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--navy-deep);letter-spacing:1.5px;line-height:1;margin-bottom:4px}
+.three-s-sub{font-size:13px;color:rgba(7,21,41,.55)}
+
+/* COMMONS */
+.container{max-width:1200px;margin:0 auto;padding:0 32px}
+section{padding:72px 0}
+.section-eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,4vw,52px);letter-spacing:1.5px;color:var(--navy);line-height:1;margin-bottom:14px}
+.section-title-white{color:var(--white)}
+.section-desc{font-size:16px;color:var(--gray-mid);line-height:1.7;max-width:600px}
+.section-desc-white{color:rgba(255,255,255,.5)}
+
+/* SERVICE DETAIL CARDS */
+.services-main{background:var(--white)}
+.service-block{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:2px;border:1px solid var(--gray-light);border-radius:8px;overflow:hidden}
+.service-block:nth-child(even) .service-block-img{order:2}
+.service-block:nth-child(even) .service-block-content{order:1}
+.service-block-img{background:var(--navy);position:relative;overflow:hidden;min-height:320px}
+.service-block-img img{width:100%;height:100%;object-fit:cover;display:block;opacity:.7}
+.service-block-img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;min-height:320px}
+.service-block-number{position:absolute;bottom:20px;right:24px;font-family:'Bebas Neue',sans-serif;font-size:80px;color:rgba(212,148,10,.15);line-height:1;letter-spacing:2px}
+.service-block-content{padding:48px 40px;display:flex;flex-direction:column;justify-content:center;background:var(--white)}
+.service-block-icon{width:52px;height:52px;background:var(--off-white);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px}
+.service-block-name{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--navy);letter-spacing:1.5px;margin-bottom:12px}
+.service-block-desc{font-size:15px;color:var(--gray-mid);line-height:1.8;margin-bottom:20px}
+.service-block-items{display:flex;flex-direction:column;gap:8px;margin-bottom:24px}
+.service-block-item{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--text-body)}
+.service-block-item::before{content:'—';color:var(--gold);flex-shrink:0;font-weight:bold}
+.service-cta{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;color:var(--navy);text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:2px;transition:color .2s}
+.service-cta:hover{color:var(--gold)}
+
+/* WORKSHOP STATS */
+.workshop-stats{background:var(--navy-deep);padding:56px 0}
+.workshop-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.workshop-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.workshop-card{background:rgba(255,255,255,.05);border:1px solid rgba(212,148,10,.2);border-radius:8px;padding:20px}
+.workshop-city{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;color:var(--white);letter-spacing:.3px;margin-bottom:4px}
+.workshop-size{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--gold);letter-spacing:1px;margin-bottom:4px}
+.workshop-type{font-size:12px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px}
+
+/* PROCESS */
+.process-section{background:var(--off-white)}
+.process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:48px;position:relative}
+.process-steps::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,var(--gold),rgba(212,148,10,.2));z-index:0}
+.process-step{text-align:center;position:relative;z-index:1;padding:0 12px}
+.step-num{width:56px;height:56px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--navy-deep);margin:0 auto 16px;letter-spacing:1px}
+.step-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;color:var(--navy);letter-spacing:.3px;margin-bottom:6px}
+.step-desc{font-size:12px;color:var(--gray-mid);line-height:1.5}
+
+/* EMERGENCY */
+.emergency{background:var(--navy);padding:72px 0}
+.emergency-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.emergency-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(226,75,74,.15);border:1px solid rgba(226,75,74,.35);border-radius:2px;padding:5px 14px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#E24B4A;margin-bottom:16px}
+.emergency-dot{width:6px;height:6px;background:#E24B4A;border-radius:50%;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.emergency-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,60px);color:var(--white);letter-spacing:2px;line-height:1;margin-bottom:12px}
+.emergency-title span{color:var(--gold)}
+.emergency-desc{font-size:16px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:28px}
+.emergency-contacts{display:flex;flex-direction:column;gap:12px}
+.emergency-contact{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:14px 18px;text-decoration:none;transition:border-color .2s,background .2s}
+.emergency-contact:hover{border-color:var(--gold);background:rgba(212,148,10,.08)}
+.emergency-contact-icon{width:36px;height:36px;background:rgba(212,148,10,.15);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.emergency-contact-text{font-size:15px;color:rgba(255,255,255,.8);font-weight:500}
+.emergency-contact-sub{font-size:11px;color:rgba(255,255,255,.35);margin-top:2px}
+.emergency-img{border-radius:8px;overflow:hidden;background:rgba(255,255,255,.05);border:1px solid rgba(212,148,10,.2);height:380px;display:flex;align-items:center;justify-content:center}
+.emergency-img img{width:100%;height:100%;object-fit:cover}
+
+/* BOOK SERVICE FORM */
+.book-service{background:var(--gold);padding:72px 0}
+.book-service-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 480px;gap:60px;align-items:start}
+.book-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,56px);color:var(--navy-deep);letter-spacing:2px;line-height:1;margin-bottom:14px}
+.book-desc{font-size:16px;color:rgba(7,21,41,.65);line-height:1.7;margin-bottom:28px}
+.book-features{display:flex;flex-direction:column;gap:12px}
+.book-feature{display:flex;align-items:center;gap:12px;font-size:15px;color:rgba(7,21,41,.7)}
+.book-feature::before{content:'✓';width:22px;height:22px;background:var(--navy-deep);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:bold;flex-shrink:0}
+.book-form{background:var(--white);border-radius:8px;padding:32px}
+.book-form-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;color:var(--navy);letter-spacing:.5px;text-transform:uppercase;margin-bottom:20px}
+.form-group{margin-bottom:14px}
+.form-label{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--gray-dark);margin-bottom:5px}
+.form-input,.form-select,.form-textarea{width:100%;padding:10px 14px;border:1.5px solid var(--gray-light);border-radius:4px;font-family:'Barlow',sans-serif;font-size:14px;color:var(--text-body);background:var(--white);outline:none;transition:border-color .2s}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--gold)}
+.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-textarea{height:80px;resize:none}
+.form-submit{width:100%;background:var(--navy);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;letter-spacing:1.5px;text-transform:uppercase;padding:13px;border:none;border-radius:4px;cursor:pointer;margin-top:6px;transition:background .2s}
+.form-submit:hover{background:var(--navy-deep)}
+
+/* FOOTER */
+footer{background:var(--navy-deep);padding:56px 0 0;border-top:2px solid var(--gold)}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px}
+.footer-brand-name{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--white);letter-spacing:2px;margin-bottom:4px}
+.footer-brand-sub{font-size:11px;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+.footer-brand-desc{font-size:13px;color:rgba(255,255,255,.3);line-height:1.7}
+.footer-col-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.footer-link{font-size:13px;color:rgba(255,255,255,.4);text-decoration:none;display:block;margin-bottom:7px;transition:color .2s}
+.footer-link:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding:18px 0;display:flex;justify-content:space-between}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25)}
+.wa-fab{position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);z-index:999;text-decoration:none;transition:transform .2s}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:28px;height:28px;fill:#fff}
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.visible{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .service-block,.workshop-inner,.emergency-inner,.book-service-inner{grid-template-columns:1fr}
+  .service-block:nth-child(even) .service-block-img,.service-block:nth-child(even) .service-block-content{order:unset}
+  .process-steps{grid-template-columns:1fr 1fr;gap:24px}
+  .process-steps::before{display:none}
+  .three-s-inner{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .nav-links,.nav-cta{display:none}
+  .topbar{display:none}
+  .workshop-grid{grid-template-columns:1fr}
 }
-
-/* solid inner card so text sits on a clean panel */
-.icon-card::after {
-  content: "";
-  position: absolute;
-  inset: 2px;  /* distance from outer glow */
-  border-radius: inherit;
-  background: radial-gradient(circle at 0 0, #210d6b 0%, #758bb1 60%, #0b3070 100%);
-  z-index: -1;
-}
-
-@keyframes glowMove {
-  0%   { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
-}
-
-
-
-.icon-card .icon {
-  font-size: 1.8rem;
-  color: #f7a735;
-  margin: 0;                   /* remove extra gap */
-  opacity: 1;
-}
-.icon-card h4 {
-  margin: 0;
-  font-size: 1.32rem;
-  font-weight: 700;
-  opacity: 1;
-}
-.icon-card p {
-  margin: 0;
-  font-size: 1.2rem;
-  color: #d5dde8;
-  opacity: 1;
-}
-
-
-    /* Center white service cards */
-    .services-grid{ display:grid; grid-template-columns: 1fr; gap:18px; }
-    .service-card{
-      background: rgba(0, 0, 0, 0.56); border-radius:16px;opacity: 0.6;
-      padding:18px 20px 14px; box-shadow:0 10px 30px rgba(0,0,0,.18);
-      transition: transform .3s ease-out, box-shadow .3s ease-out;
-    }
-    .service-card:hover{ transform: translateY(-8px); box-shadow:0 18px 40px rgba(0,0,0,.35); }
-    .service-card h3{ margin:0 0 10px; font-size:1.5rem; color:#f17407; opacity: 1; }
-    .service-card ul{ margin:0; padding-left:18px; color:#ffffff; font-size:1rem;opacity: 1 }
-
-    footer{ background:#2c3e50; color:#ecf0f1; text-align:center; padding:16px 0; font-size:1rem; margin-top:30px; }
-    
-     /* subtle floating animation for icon cards */
-@keyframes floatPulse {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-20px); }
-}
-
-/* apply continuous movement */
-.icon-card {
-  animation: floatPulse 2s ease-in-out infinite;
-}
-
-/* slightly stronger effect on hover */
-.icon-card:hover {
-  animation-duration: 2.5s;
-  box-shadow: 0 18px 44px rgba(0,0,0,0.55);
-}
-
-/*Home-icon*/
-.home-icon-btn {
-  background: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 12px;   /* space before logo */
-}
-
-.home-icon-img {
-  width: 24px;          /* adjust size as needed */
-  height: 24px;
-  object-fit: contain;
-  display: block;
-}
-
-
-/* simple house icon using pure CSS */
-.home-icon {
-  width: 20px;
-  height: 20px;
-  position: relative;
-  display: inline-block;
-}
-
-/* roof */
-.home-icon::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid #f17407;
-  top: 0;
-}
-
-.home-icon-btn:hover{
-background-color: #e67e22;
-}
-
-/* body */
-.home-icon::after {
-  content: "";
-  position: absolute;
-  left: 4px;
-  top: 8px;
-  width: 12px;
-  height: 10px;
-  background: #f17407;
-  border-radius: 2px;
-}
-
- /* Scroll reveal base */
-    .reveal-on-scroll {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-    }
-    .reveal-on-scroll.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Reusable pop effect for cards/images */
-    /* Enhanced pop effect - combines zoom + lift */
-.pop-card {
-  transition: all 0.3s ease-out;
-}
-
-.pop-card:hover {
-  transform:  scale(1.05);  /* lift UP + slight zoom */
-  box-shadow: 0 20px 45px rgba(0,0,0,0.4);
-}
-
-
-    /* Optional slide directions */
-    .slide-in-left  { transform: translate(-40px, 40px); }
-    .slide-in-right { transform: translate(40px, 40px); }
-
-    /* When revealed, reset slide transforms */
-    .reveal-on-scroll.visible .slide-in-left,
-    .reveal-on-scroll.visible .slide-in-right {
-      transform: translate(0, 0);
-    }
-
-
-    @media (max-width: 900px){
-      .services-layout{ grid-template-columns: 1fr; }
-      .services-icons{
-        grid-template-rows: none;
-        grid-template-columns: repeat(3, minmax(0,1fr));
-      }
-    }
-  </style>
+@media(max-width:600px){.process-steps{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-  <header>
-    <div class="logo-text">S. S. HEAVY EQUIPMENTS PVT. LTD.</div>
-    <nav>
-      <button class="home-icon-btn" onclick="goHome()" aria-label="Home">
-  <img src="home.png" alt="Home" class="home-icon-img">
-</button>
-    <a href="about.html" ><strong>About</strong></a>
-    <a href="dealership.html" ><strong>Dealerships</strong></a>
-    <a href="services.html" class="active"><strong>Services</strong></a>
-    <a href="branches.html"><strong>Branches</strong> </a>
-    <a href="gallery.html" ><strong>Gallery</strong></a>
-    <a href="index.html#contact"><strong>Contact</strong></a>
-    
-    </nav>
-  </header>
-<video autoplay loop muted playsinline class="background-video">
-  <source src="https://media.githubusercontent.com/media/sshepl-2013/sshepl/main/assets/videos/services.mov" type="video/mp4">
-  <!-- Add other formats (webm) for broader browser support -->
-</video>
-  <section id="services">
-    <h2  class="pop-card reveal-on-scroll">Our Services</h2>
-    <p id="services-intro"><strong>We provide expert maintenance and repair with end‑to‑end 3S support – Sales, Spares, and Service – for CASE construction equipment and ELSA concreting machinery.</strong></p>
-<br><br>
-    <div class="service-cta-wrap">
-      <a class="service-cta-btn" href="index.html#contact">Book a Service ➡️</a>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div style="display:flex;gap:24px">
+      <a class="topbar-item" href="tel:+919822016435">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        +91 9822016435
+      </a>
+      <a class="topbar-item" href="mailto:sshepl.pune@gmail.com">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        sshepl.pune@gmail.com
+      </a>
     </div>
-<br><br>
-    <div class="services-layout">
-      <!-- Left icon panel -->
-      <div class="services-icons">
-        <div class="icon-card">
-          <div class="icon">🚚</div>
-          <h4>Wide Range</h4>
-          <p>Complete lineup of CASE & ELSA equipment.</p>
-        </div>
-        <div class="icon-card">
-          <div class="icon">🛠️</div>
-          <h4>Expert Service</h4>
-          <p>Certified technicians with process-driven repairs.</p>
-        </div>
-        <div class="icon-card">
-          <div class="icon">⚙️</div>
-          <h4>Genuine Parts</h4>
-          <p>OEM spares for reliability and long life.</p>
-        </div>
+    <div style="font-size:11px;color:rgba(255,255,255,.4)">Also: <span style="color:var(--gold)">SSP Sales Pvt. Ltd.</span> — BKT Tyre Distributor</div>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="images/sshepl-logo.png" alt="SSHEPL" style="height:44px;width:auto;border-radius:6px">
+      <div><div class="nav-brand-name">S. S. HEAVY EQUIPMENTS PVT. LTD.</div><div class="nav-brand-sub">Est. 2013 · Maharashtra</div></div>
+    </a>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="dealerships.html">Dealerships</a>
+      <a class="nav-link nav-link-bkt" href="bkt.html">BKT Tyres</a>
+      <a class="nav-link active" href="services.html">Services</a>
+      <a class="nav-link" href="branches.html">Branches</a>
+    </div>
+    <a class="nav-cta" href="#book-service">Book Service →</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Services</div>
+    <div class="page-hero-eyebrow">Full Lifecycle Support</div>
+    <h1 class="page-hero-title">Sales · Spares· Service</h1>
+    <p class="page-hero-desc">End-to-end 3S support for CASE construction equipment — from purchase to field breakdown, across all of Maharashtra.</p>
+  </div>
+</div>
+
+<!-- 3S BANNER -->
+<div class="three-s">
+  <div class="three-s-inner">
+    <div class="three-s-item">
+      <div class="three-s-num">S1</div>
+      <div><div class="three-s-label">Sales</div><div class="three-s-sub">Equipment, demos & finance</div></div>
+    </div>
+    <div class="three-s-item">
+      <div class="three-s-num">S2</div>
+      <div><div class="three-s-label">Spares</div><div class="three-s-sub">Genuine OEM parts, fast supply</div></div>
+    </div>
+    <div class="three-s-item">
+      <div class="three-s-num">S3</div>
+      <div><div class="three-s-label">Service</div><div class="three-s-sub">Workshop, field & breakdown</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICE DETAIL BLOCKS -->
+<section class="services-main">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;margin-bottom:52px">
+      <div class="section-eyebrow">What We Offer</div>
+      <h2 class="section-title">Our Service Portfolio</h2>
+      <p class="section-desc" style="margin:0 auto">Six specialized service areas — all under one roof across our 7-city Maharashtra network.</p>
+    </div>
+
+    <!-- SALES -->
+    <div class="service-block fade-up" style="margin-bottom:24px">
+      <div class="service-block-img" style="background:#0B1F3A">
+        <img src="images/case-sales.jpg" alt="CASE Equipment Sales">
+        <div class="service-block-number">01</div>
       </div>
-
-      <!-- Center white service cards -->
-      <div class="services-grid">
-        <div class="service-card" style="opacity: 1;">
-          <h3>Sales</h3>
-          <ul>
-            <li>Equipment selection for CASE &amp; ELSA machines</li>
-            <li>New sales, exchange, and finance coordination</li>
-            <li>Site visits and demonstrations</li>
-          </ul>
+      <div class="service-block-content">
+        <div class="service-block-icon">🏷️</div>
+        <div class="service-block-name">Sales</div>
+        <p class="service-block-desc">We don't just sell machines — we help you choose the right one. Our sales team understands Maharashtra's terrain, project types, and budget constraints to match you with the perfect CASE equipment.</p>
+        <div class="service-block-items">
+          <div class="service-block-item">CASE construction equipment — full model range</div>
+          <div class="service-block-item">Site visits and machine demonstrations</div>
+          <div class="service-block-item">Finance coordination with leading NBFCs & banks</div>
+          <div class="service-block-item">Exchange programs for old equipment</div>
+          <div class="service-block-item">Government & tender procurement support</div>
         </div>
-
-        <div class="service-card" style="opacity: 1;">
-          <h3>Spares</h3>
-          <ul>
-            <li>Genuine replacement spare parts</li>
-            <li>Undercarriage, filters, pins &amp; bushes</li>
-            <li>Wear parts and ground engaging tools</li>
-          </ul>
-        </div>
-
-        <div class="service-card" style="opacity: 1;">
-          <h3>Service &amp; Repairs</h3>
-          <ul>
-            <li>Engine overhauls and powertrain repair</li>
-            <li>Hydraulic system diagnosis &amp; repairs</li>
-            <li>Electrical &amp; electronic troubleshooting</li>
-          </ul>
-        </div>
-
-        <div class="service-card" style="opacity: 1;">
-          <h3>Structural &amp; Welding</h3>
-          <ul>
-            <li>Bucket hard‑facing and rebuilding</li>
-            <li>Boom, arm and chassis crack repair</li>
-            <li>Line boring and pin‑hole rebuilding</li>
-          </ul>
-        </div>
-
-        <div class="service-card" style="opacity: 1;">
-          <h3>Field Support</h3>
-          <ul>
-            <li>On‑site breakdown assistance</li>
-            <li>Preventive maintenance services</li>
-            <li>Operator and maintenance training</li>
-          </ul>
-        </div>
-
-        <div class="service-card" style="opacity: 1;">
-          <h3>Workshop Facilities</h3>
-          <ul>
-            <li>Workshops at Pune, Solapur &amp; Sambhajinagar</li>
-            <li>Engine, hydraulic and fabrication bays</li>
-            <li>Stocked warehouses for quick turnaround</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Right icon panel -->
-      <div class="services-icons" style="opacity: 1;">
-        <div class="icon-card">
-          <div class="icon" style="opacity: 1;">⏱️</div>
-          <h4 style="opacity: 1;">24/7 Support</h4>
-          <p style="opacity: 1;">Rapid response for urgent breakdowns.</p>
-        </div>
-        <div class="icon-card">
-          <div class="icon">📦</div>
-          <h4>Ready Inventory</h4>
-          <p>Fast-moving spares always in stock.</p>
-        </div>
-        <div class="icon-card">
-          <div class="icon">✅</div>
-          <h4>Quality Assured</h4>
-          <p>Standardized processes and checklists.</p>
-        </div>
+        <a class="service-cta" href="dealerships.html">View Equipment Range →</a>
       </div>
     </div>
-  </section>
 
-  <footer>
-    &copy; 2026 S. S. Heavy Equipments Pvt. Ltd. All rights reserved.
-  </footer>
+    <!-- SPARES -->
+    <div class="service-block fade-up" style="margin-bottom:24px">
+      <div class="service-block-img" style="background:#132d50">
+        <img src="images/genuine-parts.jpg" alt="Genuine OEM Spares">
+        <div class="service-block-number">02</div>
+      </div>
+      <div class="service-block-content">
+        <div class="service-block-icon">📦</div>
+        <div class="service-block-name">Spares</div>
+        <p class="service-block-desc">Genuine OEM spare parts sourced directly from CASE — no substandard replacements. Stocked warehouses at Pune, Solapur, and Sambhajinagar ensure critical parts are available fast.</p>
+        <div class="service-block-items">
+          <div class="service-block-item">Genuine CASE OEM spare parts</div>
+          <div class="service-block-item">Undercarriage components — tracks, rollers, sprockets</div>
+          <div class="service-block-item">Hydraulic components — pumps, cylinders, hoses</div>
+          <div class="service-block-item">Engine parts — filters, belts, gaskets</div>
+          <div class="service-block-item">Ground engaging tools — buckets, teeth, blades</div>
+          <div class="service-block-item">Wear parts & consumables</div>
+        </div>
+        <a class="service-cta" href="branches.html">Find Nearest Parts Stockist →</a>
+      </div>
+    </div>
 
-<!-- Scroll reveal JS -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const elems = document.querySelectorAll('.reveal-on-scroll');
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            observer.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.15 });
+    <!-- SERVICE & REPAIR -->
+    <div class="service-block fade-up" style="margin-bottom:24px">
+      <div class="service-block-img" style="background:#071529">
+        <img src="images/case-lubrificants.webp" alt="Service and Repair">
+        <div class="service-block-number">03</div>
+      </div>
+      <div class="service-block-content">
+        <div class="service-block-icon">🔧</div>
+        <div class="service-block-name">Service & Repair</div>
+        <p class="service-block-desc">Certified CASE technicians handle everything from routine maintenance to major overhauls. Our workshops in Pune, Solapur, and Sambhajinagar are fully equipped for complete machine restoration.</p>
+        <div class="service-block-items">
+          <div class="service-block-item">Engine overhaul & reconditioning</div>
+          <div class="service-block-item">Hydraulic system diagnosis & repair</div>
+          <div class="service-block-item">Electrical & electronic troubleshooting</div>
+          <div class="service-block-item">Powertrain & transmission overhauls</div>
+          <div class="service-block-item">Preventive maintenance scheduling</div>
+          <div class="service-block-item">Annual maintenance contracts (AMC)</div>
+        </div>
+        <a class="service-cta" href="#book-service">Book a Service →</a>
+      </div>
+    </div>
 
-      elems.forEach(el => observer.observe(el));
-    });
-  </script>
+    <!-- STRUCTURAL & WELDING -->
+    <div class="service-block fade-up" style="margin-bottom:24px">
+      <div class="service-block-img" style="background:#0f2540">
+        <img src="images/case-welding.avif" alt="Structural and Welding">
+        <div class="service-block-number">04</div>
+      </div>
+      <div class="service-block-content">
+        <div class="service-block-icon">⚙️</div>
+        <div class="service-block-name">Structural & Welding</div>
+        <p class="service-block-desc">Heavy structural repair and rebuilding for machine frames, booms, arms, and attachments. Our workshop is equipped with industrial welding stations, hard-facing equipment, and line boring machinery.</p>
+        <div class="service-block-items">
+          <div class="service-block-item">Bucket rebuilding & hard-facing</div>
+          <div class="service-block-item">Boom, arm & chassis crack repair</div>
+          <div class="service-block-item">Line boring & pin-hole rebuilding</div>
+          <div class="service-block-item">Frame reinforcement & structural repair</div>
+          <div class="service-block-item">Attachment fabrication & customization</div>
+        </div>
+        <a class="service-cta" href="#book-service">Enquire for Structural Repair →</a>
+      </div>
+    </div>
+
+    <!-- FIELD SUPPORT -->
+    <div class="service-block fade-up" style="margin-bottom:24px">
+      <div class="service-block-img" style="background:#0B1F3A">
+        <img src="images/case-fieldsupport.webp" alt="Field Support">
+        <div class="service-block-number">05</div>
+      </div>
+      <div class="service-block-content">
+        <div class="service-block-icon">🚐</div>
+        <div class="service-block-name">Field Support</div>
+        <p class="service-block-desc">Machine breakdown on a remote site? Our mobile service teams operate across all 7 cities in Maharashtra — equipped with tools, parts, and diagnostic equipment to resolve issues on-location.</p>
+        <div class="service-block-items">
+          <div class="service-block-item">24/7 breakdown response across Maharashtra</div>
+          <div class="service-block-item">On-site diagnosis & repair</div>
+          <div class="service-block-item">Mobile service vans with parts stock</div>
+          <div class="service-block-item">Operator training & machine handover</div>
+          <div class="service-block-item">Post-delivery commissioning & setup</div>
+        </div>
+        <a class="service-cta" href="tel:+919822016435">Call for Emergency Support →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKSHOP STATS -->
+<div class="workshop-stats">
+  <div class="workshop-inner">
+    <div class="fade-up">
+      <div class="section-eyebrow">Our Infrastructure</div>
+      <h2 class="section-title section-title-white">16,000+ sq ft<br>of Workshop Space</h2>
+      <p class="section-desc section-desc-white">Three fully-equipped workshops across Maharashtra — handling everything from routine service to full machine rebuilds.</p>
+    </div>
+    <div class="workshop-grid fade-up">
+      <div class="workshop-card">
+        <div class="workshop-city">Pune</div>
+        <div class="workshop-size">5,000 sq ft</div>
+        <div class="workshop-type">Head Office + Workshop</div>
+      </div>
+      <div class="workshop-card">
+        <div class="workshop-city">Sambhajinagar</div>
+        <div class="workshop-size">8,000 sq ft</div>
+        <div class="workshop-type">Largest Warehouse</div>
+      </div>
+      <div class="workshop-card">
+        <div class="workshop-city">Solapur</div>
+        <div class="workshop-size">3,000 sq ft</div>
+        <div class="workshop-type">Branch Workshop</div>
+      </div>
+      <div class="workshop-card" style="border-color:rgba(212,148,10,.4);background:rgba(212,148,10,.08)">
+        <div class="workshop-city" style="color:var(--gold)">Total</div>
+        <div class="workshop-size">16,000+</div>
+        <div class="workshop-type">Sq Ft Across Maharashtra</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICE PROCESS -->
+<section class="process-section">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;margin-bottom:0">
+      <div class="section-eyebrow">How It Works</div>
+      <h2 class="section-title">Our Service Process</h2>
+      <p class="section-desc" style="margin:0 auto">Simple, fast, and transparent — from your first call to machine back on site.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step fade-up">
+        <div class="step-num">01</div>
+        <div class="step-title">Call or WhatsApp</div>
+        <p class="step-desc">Contact our nearest branch or call the central helpline. Available 24/7 for breakdowns.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-num">02</div>
+        <div class="step-title">Diagnosis</div>
+        <p class="step-desc">Our technician diagnoses the issue — on-site for field calls, or at the workshop for drop-offs.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-num">03</div>
+        <div class="step-title">Estimate</div>
+        <p class="step-desc">Transparent cost estimate provided before any work begins. No surprises.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-num">04</div>
+        <div class="step-title">Repair</div>
+        <p class="step-desc">Certified technicians carry out repair using genuine OEM parts from our stocked warehouse.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-num">05</div>
+        <div class="step-title">Back on Site</div>
+        <p class="step-desc">Machine tested, cleared, and returned. Follow-up check within 48 hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMERGENCY -->
+<section class="emergency">
+  <div class="emergency-inner">
+    <div class="fade-up">
+      <div class="emergency-badge"><div class="emergency-dot"></div>24/7 Emergency Support</div>
+      <h2 class="emergency-title">Machine Down?<br><span>Call Us Now.</span></h2>
+      <p class="emergency-desc">Every hour of machine downtime costs you money. Our emergency response teams across 7 cities in Maharashtra are always on standby — with tools, parts, and the expertise to get you back up fast.</p>
+      <div class="emergency-contacts">
+        <a class="emergency-contact" href="tel:+919822016435">
+          <div class="emergency-contact-icon">📞</div>
+          <div><div class="emergency-contact-text">+91 9822016435</div><div class="emergency-contact-sub">Primary helpline — 24/7</div></div>
+        </a>
+        <a class="emergency-contact" href="tel:+919822353430">
+          <div class="emergency-contact-icon">📞</div>
+          <div><div class="emergency-contact-text">+91 9822353430</div><div class="emergency-contact-sub">Secondary helpline</div></div>
+        </a>
+        <a class="emergency-contact" href="tel:+919422332031">
+          <div class="emergency-contact-icon">📞</div>
+          <div><div class="emergency-contact-text">+91 9422332031</div><div class="emergency-contact-sub">Director — Service</div></div>
+        </a>
+        <a class="emergency-contact" href="https://wa.me/919822016435" target="_blank" style="border-color:rgba(37,211,102,.3)">
+          <div class="emergency-contact-icon" style="background:rgba(37,211,102,.15)">💬</div>
+          <div><div class="emergency-contact-text" style="color:#4ade80">WhatsApp: +91 9822016435</div><div class="emergency-contact-sub">Fastest response for on-site issues</div></div>
+        </a>
+      </div>
+    </div>
+    <div class="emergency-img fade-up">
+      <img src="images/case-machine-down.jpg" alt="SSHEPL service team">
+    </div>
+  </div>
+</section>
+
+<!-- BOOK SERVICE -->
+<section class="book-service" id="book-service">
+  <div class="book-service-inner">
+    <div class="fade-up">
+      <h2 class="book-title">Book a Service Request</h2>
+      <p class="book-desc">Fill in the form and our team will contact you within 2 business hours to schedule your service visit or workshop appointment.</p>
+      <div class="book-features">
+        <div class="book-feature">Certified CASE technicians</div>
+        <div class="book-feature">Genuine OEM parts guaranteed</div>
+        <div class="book-feature">Transparent pricing — estimate before work</div>
+        <div class="book-feature">On-site or workshop service options</div>
+        <div class="book-feature">Response within 2 business hours</div>
+      </div>
+    </div>
+    <div class="book-form fade-up">
+      <div class="book-form-title">Service Request Form</div>
+      <div class="form-row-2">
+        <div class="form-group"><label class="form-label">Full Name *</label><input class="form-input" type="text" placeholder="Your name"></div>
+        <div class="form-group"><label class="form-label">Phone *</label><input class="form-input" type="tel" placeholder="+91 XXXXX XXXXX"></div>
+      </div>
+      <div class="form-group"><label class="form-label">Machine Model *</label><input class="form-input" type="text" placeholder="e.g. CASE 770EX Backhoe Loader"></div>
+      <div class="form-group"><label class="form-label">Service Type *</label>
+        <select class="form-select">
+          <option value="">Select service type</option>
+          <option>Breakdown / Emergency Repair</option>
+          <option>Scheduled Maintenance</option>
+          <option>Engine / Powertrain Overhaul</option>
+          <option>Hydraulic System Repair</option>
+          <option>Structural / Welding Repair</option>
+          <option>Spare Parts Requirement</option>
+          <option>Annual Maintenance Contract</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group"><label class="form-label">Location / City *</label><input class="form-input" type="text" placeholder="Machine location or your city"></div>
+      <div class="form-group"><label class="form-label">Urgency</label>
+        <select class="form-select">
+          <option>Emergency — machine down</option>
+          <option>Urgent — within 24 hours</option>
+          <option>Standard — within a week</option>
+          <option>Planned — flexible schedule</option>
+        </select>
+      </div>
+      <div class="form-group"><label class="form-label">Describe the Issue</label><textarea class="form-textarea" placeholder="Describe the problem, symptoms, or service needed..."></textarea></div>
+      <button class="form-submit" onclick="handleSubmit(this)">Submit Service Request →</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">S.S. Heavy Equipments</div>
+        <div class="footer-brand-sub">Pvt. Ltd. · Est. 2013</div>
+        <p class="footer-brand-desc">Authorized CASE dealer and BKT Tyre distributor across Maharashtra. Full 3S support since 2013.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <a class="footer-link" href="index.html">Home</a>
+        <a class="footer-link" href="about.html">About Us</a>
+        <a class="footer-link" href="dealerships.html">Dealerships</a>
+        <a class="footer-link" href="bkt.html">BKT Tyres</a>
+        <a class="footer-link" href="services.html">Services</a>
+        <a class="footer-link" href="branches.html">Branches</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <a class="footer-link" href="tel:+919822016435">+91 9822016435</a>
+        <a class="footer-link" href="tel:+919822353430">+91 9822353430</a>
+        <a class="footer-link" href="mailto:sshepl.pune@gmail.com">sshepl.pune@gmail.com</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Head Office</div>
+        <p class="footer-link" style="cursor:default">116/6/1, Mumbai-Bengaluru Hwy, Opp. Vinayak Hospital, Pune 411058</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 S. S. HEAVY EQUIPMENTS PVT. LTD. & SSP SALES PVT. LTD.</div>
+      <div class="footer-copy">Authorized CASE · BKT Dealer in Maharashtra</div>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/919822016435" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 
 <script>
-  // Ensure page starts at top
-    window.addEventListener('load', function () {
-      window.scrollTo(0, 0);
-      // Trigger initial reveal
-      document.querySelectorAll('section').forEach(function (sec) {
-        if (sec.getBoundingClientRect().top < window.innerHeight * 0.8) {
-          sec.classList.add('visible');
-        }
-      });
-    });</script>
-
-<script>
-function goHome() {
-  const isHome =
-    window.location.pathname.endsWith('index.html') ||
-    window.location.pathname === '/' ||
-    window.location.pathname === '';
-
-  if (isHome) {
-    // already on home: refresh
-    window.location.reload();
-  } else {
-    // go to home page
-    window.location.href = 'index.html';
-  }
-}
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+function handleSubmit(btn){btn.textContent='Sending...';btn.disabled=true;setTimeout(()=>{btn.textContent='✓ Request Sent! We\'ll call you shortly.';btn.style.background='#1D9E75'},1200)}
 </script>
-
-  
-
 </body>
 </html>
-

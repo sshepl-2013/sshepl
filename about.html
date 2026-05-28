@@ -1,599 +1,472 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About - S. S. Heavy Equipments PVT. LTD.</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="About S.S. Heavy Equipments Pvt. Ltd. — Maharashtra's #1 CASE dealer since 2013. Our journey, directors, and awards.">
+<title>About Us | S. S. HEAVY EQUIPMENTS PVT. LTD.</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B1F3A;--navy-deep:#071529;--gold:#D4940A;--gold-light:#F0AB1A;--white:#FFFFFF;--off-white:#F5F3EE;--gray-light:#E8E6E0;--gray-mid:#9A9690;--gray-dark:#3A3830;--text-body:#2C2A26}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Barlow',sans-serif;color:var(--text-body);background:var(--off-white);overflow-x:hidden}
 
-  <style>
-    html { scroll-behavior: smooth; }
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
-      color: #2c3e50;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.55);
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    /* Fullscreen background video */
-    #bg-video {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      transform: translate(-50%, -50%);
-      object-fit: cover;
-      will-change: transform;
-    }
-
-    header, section, footer {
-      position: relative;
-      z-index: 1;
-    }
-
-    header {
-      background: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 15px 30px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.18);
-      flex-wrap: wrap;
-      position: sticky;
-      top: 0;
-      z-index: 9999;
-    }
-
-    .logo-text {
-      font-size: 1.2em;
-      font-weight: 900;
-      font-style: italic;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #f17407;
-      letter-spacing: -2px;
-      user-select: none;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      flex-wrap: wrap;
-    }
-    nav a {
-      text-decoration: none;
-      color: #000000;
-      padding: 8px 14px;
-      border-radius: 6px;
-      font-weight: 600;
-      transition: background 0.3s ease, color 0.3s ease;
-      position: relative;
-    }
-    nav a:hover, nav a.active {
-      background: #e67e22;
-      color: #fff;
-    }
-    nav a::after {
-      content: "";
-      position: absolute;
-      bottom: 2px;
-      left: 50%;
-      width: 0;
-      height: 3px;
-      background: #fff;
-      border-radius: 2px;
-      transition: width 0.3s ease, left 0.3s ease;
-    }
-    nav a:hover::after, nav a.active::after {
-      width: 50%;
-      left: 25%;
-    }
-
-    .home-icon-btn {
-      background: transparent;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 12px;
-    }
-    .home-icon-img {
-      width: 24px;
-      height: 24px;
-      object-fit: contain;
-      display: block;
-    }
-    .home-icon-btn:hover { background-color: #e67e22; }
-
-    /* Main content wrapper that appears after scroll */
-    .main-content {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(40px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+/* TOPBAR */
+.topbar{background:var(--navy-deep);padding:7px 0;border-bottom:1px solid rgba(212,148,10,.25)}
+.topbar-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between}
+.topbar-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: rgba(255,255,255,.6);
+  text-decoration: none;
 }
-.main-content.visible {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+.topbar-item svg { width: 13px; height: 13px; fill: var(--gold); flex-shrink: 0; }
+.topbar-item:hover { color: var(--gold-light); }
+.topbar-item{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.6);text-decoration:none}
+.topbar-item:hover{color:var(--gold-light)}
+
+/* NAV */
+nav{background:var(--navy);position:sticky;top:0;z-index:100;border-bottom:2px solid var(--gold)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;height:68px;gap:40px}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+.nav-logo{width:44px;height:44px;background:var(--gold);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--navy-deep);letter-spacing:1px}
+.nav-brand-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--white);letter-spacing:.5px}
+.nav-brand-sub{font-size:10px;color:var(--gold);letter-spacing:.05em;text-transform:uppercase}
+.nav-links{display:flex;gap:4px;align-items:center;flex:1}
+.nav-link{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:.5px;color:rgba(255,255,255,.75);text-decoration:none;padding:8px 14px;border-radius:4px;text-transform:uppercase;transition:color .2s,background .2s;position:relative}
+.nav-link:hover{color:var(--white);background:rgba(255,255,255,.07)}
+.nav-link.active{color:var(--gold-light)}
+.nav-link.active::after{content:'';position:absolute;bottom:-2px;left:14px;right:14px;height:2px;background:var(--gold);border-radius:2px}
+.nav-link-bkt{color:var(--gold)!important;border:1px solid rgba(212,148,10,.35)}
+.nav-cta{margin-left:auto;background:var(--gold);color:var(--navy-deep);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:10px 22px;border-radius:4px;text-decoration:none;white-space:nowrap;transition:background .2s}
+.nav-cta:hover{background:var(--gold-light)}
+
+/* PAGE HERO */
+.page-hero{background:var(--navy-deep);padding:72px 0 60px;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(212,148,10,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(212,148,10,.03) 1px,transparent 1px);background-size:60px 60px}
+.page-hero-inner{max-width:1200px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
+.breadcrumb{font-size:12px;color:rgba(255,255,255,.35);margin-bottom:16px;display:flex;gap:8px;align-items:center}
+.breadcrumb a{color:rgba(255,255,255,.35);text-decoration:none}
+.breadcrumb a:hover{color:var(--gold)}
+.breadcrumb span{color:rgba(255,255,255,.2)}
+.page-hero-eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.page-hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,6vw,80px);color:var(--white);letter-spacing:2px;line-height:1;margin-bottom:14px}
+.page-hero-desc{font-size:17px;color:rgba(255,255,255,.5);max-width:580px;line-height:1.6}
+
+/* COMMONS */
+.container{max-width:1200px;margin:0 auto;padding:0 32px}
+section{padding:72px 0}
+.section-eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,4vw,52px);letter-spacing:1.5px;color:var(--navy);line-height:1;margin-bottom:14px}
+.section-title-white{color:var(--white)}
+.section-desc{font-size:16px;color:var(--gray-mid);line-height:1.7;max-width:600px}
+
+/* STORY SECTION */
+.story-section{background:var(--white)}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:48px}
+.story-text p{font-size:15px;color:var(--gray-mid);line-height:1.8;margin-bottom:16px}
+.story-text p strong{color:var(--text-body);font-weight:500}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:28px}
+.timeline::before{content:'';position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--gold),rgba(212,148,10,.1))}
+.tl-item{position:relative;margin-bottom:32px}
+.tl-item:last-child{margin-bottom:0}
+.tl-dot{position:absolute;left:-24px;top:5px;width:14px;height:14px;background:var(--gold);border-radius:50%;border:2px solid var(--white);box-shadow:0 0 0 2px var(--gold)}
+.tl-year{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--gold);letter-spacing:1px;margin-bottom:4px}
+.tl-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--navy);margin-bottom:6px;letter-spacing:.3px}
+.tl-desc{font-size:13px;color:var(--gray-mid);line-height:1.6}
+
+/* NUMBERS */
+.numbers-section{background:var(--gold);padding:56px 0}
+.numbers-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;text-align:center}
+.num-item{}
+.num-val{font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--navy-deep);letter-spacing:2px;line-height:1}
+.num-label{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;color:rgba(7,21,41,.6);letter-spacing:1px;text-transform:uppercase;margin-top:4px}
+
+/* AWARDS */
+.awards-section{background:var(--navy-deep)}
+.awards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.award-card{background:rgba(255,255,255,.04);border:1px solid rgba(212,148,10,.2);border-radius:8px;padding:32px 28px;text-align:center;transition:border-color .2s,background .2s}
+.award-card:hover{border-color:var(--gold);background:rgba(212,148,10,.07)}
+.award-icon{width:56px;height:56px;background:rgba(212,148,10,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.award-icon svg{width:28px;height:28px;fill:var(--gold)}
+.award-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:18px;color:var(--white);letter-spacing:.3px;margin-bottom:8px}
+.award-desc{font-size:13px;color:rgba(255,255,255,.45);line-height:1.6}
+.award-year{display:inline-block;margin-top:12px;font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--gold);letter-spacing:1px}
+
+/* DIRECTORS */
+.directors-section{background:var(--off-white)}
+.directors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.director-card{background:var(--white);border-radius:8px;overflow:hidden;border:1px solid var(--gray-light);transition:border-color .2s,transform .2s}
+.director-card:hover{border-color:var(--gold);transform:translateY(-4px)}
+.director-img-wrap{height:240px;background:var(--navy);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.director-img{width:100%;height:100%;object-fit:cover;object-position:top}
+.director-initials{font-family:'Bebas Neue',sans-serif;font-size:64px;color:var(--gold);letter-spacing:4px;opacity:.4}
+.director-body{padding:24px}
+.director-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;color:var(--navy);letter-spacing:.3px;margin-bottom:4px}
+.director-role{font-size:12px;color:var(--gold);font-weight:500;letter-spacing:.5px;text-transform:uppercase;margin-bottom:12px}
+.director-desc{font-size:13px;color:var(--gray-mid);line-height:1.6}
+.director-exp{display:inline-block;margin-top:12px;background:var(--off-white);border-radius:2px;padding:4px 10px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;color:var(--navy);letter-spacing:.5px}
+
+/* VISION */
+.vision-section{background:var(--navy)}
+.vision-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px}
+.vision-card{padding:32px;border-radius:8px}
+.vision-card-v{background:rgba(212,148,10,.08);border:1px solid rgba(212,148,10,.25)}
+.vision-card-m{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1)}
+.vision-label{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.vision-text{font-size:16px;color:rgba(255,255,255,.7);line-height:1.8;font-style:italic}
+
+/* CTA STRIP */
+.cta-strip{background:var(--gold);padding:48px 0}
+.cta-strip-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+.cta-strip-title{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--navy-deep);letter-spacing:1.5px}
+.cta-strip-sub{font-size:15px;color:rgba(7,21,41,.6);margin-top:4px}
+.btn-navy{background:var(--navy-deep);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;padding:13px 28px;border-radius:4px;text-decoration:none;white-space:nowrap;transition:background .2s}
+.btn-navy:hover{background:var(--navy)}
+
+/* FOOTER */
+footer{background:var(--navy-deep);padding:56px 0 0;border-top:2px solid var(--gold)}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px}
+.footer-brand-name{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--white);letter-spacing:2px;margin-bottom:4px}
+.footer-brand-sub{font-size:11px;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+.footer-brand-desc{font-size:13px;color:rgba(255,255,255,.3);line-height:1.7}
+.footer-col-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.footer-link{font-size:13px;color:rgba(255,255,255,.4);text-decoration:none;display:block;margin-bottom:7px;transition:color .2s}
+.footer-link:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding:18px 0;display:flex;justify-content:space-between}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25)}
+
+/* WA FAB */
+.wa-fab{position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);z-index:999;text-decoration:none;transition:transform .2s}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:28px;height:28px;fill:#fff}
+
+/* ANIMATIONS */
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.visible{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .story-grid,.vision-grid,.directors-grid,.awards-grid{grid-template-columns:1fr}
+  .numbers-grid{grid-template-columns:repeat(3,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .nav-links,.nav-cta{display:none}
+  .topbar{display:none}
+  .cta-strip-inner{flex-direction:column;text-align:center}
 }
-.main-content.content-ready {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-  transition: none;
+@media(max-width:600px){
+  .numbers-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr}
 }
-
-
-    section {
-      padding: 60px 25px;
-      border-radius: 20px;
-      background: rgba(0,0,0,0.35);
-      margin: 40px auto;
-      max-width: 1100px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
-    }
-
-    section h2 {
-  font-size: 3rem;
-  font-weight: 900;
-  text-align: center;
-  color: #ffffff;
-  letter-spacing: 1.3px;
-
-  /* spacing tweaks */
-  margin-top: 40px;    /* gap from top of section */
-  margin-bottom: 32px; /* gap below heading */
-}
-
-    #about .info {
-      max-width: 1000px;
-      margin: 0 auto;
-      color: #ffffff;
-    }
-    #about p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin: 16px 0;
-      letter-spacing: 0.5px;
-    }
-
-    #journey {
-      background: rgba(0,0,0,0.35);
-      max-width: 900px;
-      margin: 40px auto 0;
-      padding: 10px 0 0;
-    }
-    #journey h3 {
-      font-size: 1.8rem;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #f17407;
-      margin-bottom: 16px;
-      text-align: center;
-    }
-
-    .timeline {
-      position: relative;
-      padding-left: 30px;
-      border-left: 2px solid #e67e22;
-    }
-    .timeline-item {
-      position: relative;
-      margin-bottom: 28px;
-      padding-left: 24px;
-    }
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: -12px;
-      top: 2px;
-      width: 14px;
-      height: 14px;
-      background: #e67e22;
-      border-radius: 50%;
-      border: 2px solid #fff;
-    }
-    .year {
-      font-weight: 700;
-      font-size: 1.05rem;
-      margin-bottom: 6px;
-      color: #f9a24c;
-    }
-    .content {
-      background: rgba(0,0,0,0.4);
-      padding: 10px 14px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-      font-size: 0.98rem;
-      line-height: 1.5;
-      color: #ffffff;
-    }
-
-    .content:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 26px rgba(0,0,0,0.45);
-    }
-
-    .S-A h3 {
-      font-size: 1.8rem;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #f17407;
-      margin-bottom: 12px;
-      text-align: center;
-    }
-    .S-A ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      color: #ffffff;
-      text-align: center;
-    }
-    .S-A li {
-      margin: 8px 0;
-      font-size: 1rem;
-      
-    }
-
-
-    .glow-line {
-      width: 100%;
-      max-width: 1020px;
-      height: 3px;
-      margin: 32px auto;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #f17407, #ffcc66, #f17407, #389105, #09efc1,#ae00f3);
-      background-size: 200% 100%;
-      animation: glowMove 3s linear infinite;
-    }
-    @keyframes glowMove {
-      0%   { background-position: 0% 50%; }
-      100% { background-position: 200% 50%; }
-    }
-
-    .directors-wrapper {
-      max-width: 1200px;
-      margin: 40px auto 0;
-      padding: 40px 20px 0;
-      color: #ffffff;
-      text-align: center;
-    }
-    .directors {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      justify-items: center;
-      margin-top: 20px;
-    }
-    .director {
-      background: rgba(0,0,0,0.4);
-      border-radius: 18px;
-      padding: 18px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.35);
-      max-width: 320px;
-      text-align: center;
-      transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
-    }
-    .director:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 26px rgba(0,0,0,0.45);
-    }
-    .director-img {
-      margin-bottom: 14px;
-      border-radius: 14px;
-      border: 4px solid rgba(255,255,255,0.95);
-      overflow: hidden;
-      width: 210px;
-      height: 260px;
-      margin-inline: auto;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.4);
-    }
-    .director-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .director h3 {
-      font-size: 1.5rem;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #f17407;
-      margin: 6px 0 8px;
-      font-weight: 700;
-    }
-    .director .qualification {
-      background: linear-gradient(135deg, #f17407, #ff8c42);
-      color: white;
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      display: inline-block;
-      margin-bottom: 10px;
-      box-shadow: 0 3px 10px rgba(241,116,7,0.45);
-    }
-    .director ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      color: #f1f4f8;
-      text-align: left;
-      font-size: 0.95rem;
-    }
-    .director li {
-      position: relative;
-      padding: 6px 0 6px 18px;
-      margin-bottom: 4px;
-    }
-    .director li::before {
-      content: "▸";
-      position: absolute;
-      left: 0;
-      color: #f17407;
-      font-size: 1rem;
-      font-weight: bold;
-    }
-
-    footer {
-      background: #2c3e50;
-      color: #ecf0f1;
-      text-align: center;
-      padding: 16px 0;
-      font-size: 1rem;
-      margin-top: 30px;
-    }
-
-    /* pop effect */
-    .pop-card {
-      transition: all 0.3s ease-out;
-    }
-    .pop-card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 20px 45px rgba(0,0,0,0.4);
-    }
-
-    @media (max-width: 768px) {
-      header { padding: 10px 12px; }
-      section {
-        padding: 40px 15px;
-        margin: 24px 10px;
-      }
-      section h2 { font-size: 2.2rem; }
-      .director { max-width: 90%; }
-      #bg-video { display: none; }
-      body {
-        background: url('About-bg-fallback.jpg') center/cover fixed no-repeat;
-      }
-    }
-  </style>
+</style>
 </head>
 <body>
-  <video id="bg-video" autoplay muted loop playsinline preload="metadata">
-    <source src="https://media.githubusercontent.com/media/sshepl-2013/sshepl/main/assets/videos/About-bg.mp4" type="video/mp4" />
-  </video>
 
-  <header>
-    <a href="sshepl.github.io" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
-      <div class="logo-text">S. S. HEAVY EQUIPMENTS PVT. LTD.</div>
-    </a>
-    <nav>
-      <button class="home-icon-btn" onclick="goHome()" aria-label="Home">
-        <img src="home.png" alt="Home" class="home-icon-img">
-      </button>
-      <a href="about.html" class="active"><strong>About</strong></a>
-      <a href="dealership.html"><strong>Dealerships</strong></a>
-      <a href="services.html"><strong>Services</strong></a>
-      <a href="branches.html"><strong>Branches</strong></a>
-      <a href="gallery.html"><strong>Gallery</strong></a>
-      <a href="index.html#contact"><strong>Contact</strong></a>
-    </nav>
-  </header>
-
-  <!-- Main content wrapper (hidden until scroll) -->
-  <div class="main-content" id="mainContent">
-    <section id="about">
-      <h2 class="pop-card">About SSHEPL</h2>
-      <div class="info">
-        <p><strong>
-          S.S. Heavy Equipments Pvt. Ltd. (SSHEPL) was established in 2013 to explore and expand the product
-          business in the field of construction, earthmoving, and allied machinery.
-        </strong></p>
-        <p><strong>
-          With years of combined experience in corporate and government sales, after-sales service, and
-          team management, the directors bring deep industry expertise and a strong commitment to
-          customer satisfaction.
-        </strong></p>
-      </div>
-<br>
-      <div class="glow-line"></div>
-
-<br><br>
-
-      <div id="journey">
-        <h3>Our Journey</h3>
-        <br>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="year">2014 – 2018 </div>
-            <div class="content">
-              SSHEPL began its operations as an authorized dealer for Kobelco Construction Equipment India Pvt. Ltd., handling excavator sales and service across 16 districts in Maharashtra. The company’s network included a head office in Pune and branches in Kolhapur, Solapur, Nanded, and Aurangabad (now Chhatrapati Sambhajinagar). Kobelco operations concluded in July 2018.
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="year">2018 </div>
-            <div class="content">
-              In November 2018, SSHEPL became the authorized dealer for CASE New Holland Construction Equipment India Pvt. Ltd., representing its entire product range in Pune and Satara districts.
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="year">2019</div>
-            <div class="content">
-              On our performance basis, Sangli and Kolhapur districts were added to SSHEPL’s territory in July 2019. We were no. 1 dealer in West Zone for machine sales.
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="year">2020</div>
-            <div class="content">
-              Building on continued excellence, Solapur, Osmanabad (now Dharashiv), Latur, and Nanded districts were also extended to SSHEPL from March 1, 2020 for our excellent performance in the calendar year 2019.
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="year">2023 </div>
-            <div class="content">
-              In 2023, SSHEPL started the dealership of ELSA – Concreting Machinery for its Chhatrapati Sambhajinagar branch.
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="year">2025 </div>
-            <div class="content">
-              In late 2025, SSHEPL entered into an association with BKT Tyres, beginning its journey in the tyres business segment. From 2026, SSHEPL plans to commence distributorship for BKT commercial tyres in the Pune, Nashik, and Chhatrapati Sambhajinagar regions, expanding its presence in the commercial mobility segment.
-            </div>
-          </div>
-        </div>
-      </div>
-
-<br><br><br>
-
-<div class="S-A">
-        <h3>Our Strength & Achievements</h3>
-        <ul class="ul.custom-bullets">
-          <li>A dedicated team of 50+ skilled professionals operating across Maharashtra</li>
-          <li>Recognized for outstanding sales and service performance</li>
-          <li>
-            <a href="Award-photo.png" target="_blank" rel="noopener" style="color:#ffffff;">
-              Awarded for three consecutive years for achieving the Highest Compactor Sales in India
-            </a>
-          </li>
-          <li>We continue to grow with a focus on trust, quality service, and long-term partnerships with our clients</li>
-          <li>Qualified in Sapphire Club with CNH for 2024 and No. 1 pan India in machine sales up to Sept 2025</li>
-        </ul>
-      </div>
-
-      <div class="directors-wrapper">
-        <h2>Our Directors</h2>
-        <p>
-          Meet the visionary directors driving S.S. Heavy Equipments Pvt. Ltd. with decades 
-          of industry expertise and unwavering commitment to excellence. 
-          Each director contributes a unique blend of technical expertise, strategic insight,
-           and hands-on operational leadership that has shaped SSHEPL into one of the most
-          trusted names in the sector.
-        </p><br>
-        <div class="directors">
-          <div class="director">
-            <div class="director-img">
-              <img src="img3.jpg" alt="Mr. Sachin G. Deshmukh" loading="lazy" />
-            </div>
-            <h3>Mr. Sachin G. Deshmukh</h3>
-            <div class="qualification">Diploma in Automobile Engineering</div>
-            <ul>
-              <li>Overall experience: Since 1998 in construction equipment sales and operations</li>
-              <li>Director at S.S. Heavy Equipments Pvt. Ltd. and founder of S.S. Engineers</li>
-              <li>Manages ELSA concreting machinery business and operations for the Marathwada territory</li>
-            </ul>
-          </div>
-
-          <div class="director">
-            <div class="director-img">
-              <img src="img1.jpg" alt="Mr. Santosh R. Chougule" loading="lazy" />
-            </div>
-            <h3>Mr. Santosh R. Chougule</h3>
-            <div class="qualification">Diploma in Production Technology</div>
-            <ul>
-              <li>Overall experience: Since 1996 in construction equipment and material handling</li>
-              <li>Director of S.S. Heavy Equipments Pvt. Ltd. since 2013</li>
-              <li>Manages finance, human resources, and administration</li>
-            </ul>
-          </div>
-
-          <div class="director">
-            <div class="director-img">
-              <img src="img2.jpg" alt="Mr. Prasad C. Diwakar" loading="lazy" />
-            </div>
-            <h3>Mr. Prasad C. Diwakar</h3>
-            <div class="qualification">Diploma in Automobile Engineering, B.E. (Mechanical), MBA (Marketing)</div>
-            <ul>
-              <li>Overall experience: Since 1994 in maintenance welding, industrial equipment, and management</li>
-              <li>Director at S.S. Heavy Equipments Pvt. Ltd. and Habco Inweld India Pvt. Ltd.</li>
-              <li>Manages after‑sales, service, and workshop operations</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div style="display:flex;gap:24px">
+      <a class="topbar-item" href="tel:+919822016435">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        +91 9822016435
+      </a>
+      <a class="topbar-item" href="mailto:sshepl.pune@gmail.com">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        sshepl.pune@gmail.com
+      </a>
+    </div>
+    <div style="font-size:11px;color:rgba(255,255,255,.4)">Also: <span style="color:var(--gold)">SSP Sales Pvt. Ltd.</span> — BKT Tyre Distributor</div>
   </div>
+</div>
 
-  <footer>
-    &copy; 2026 S. S. Heavy Equipments Pvt. Ltd. All rights reserved.
-  </footer>
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="images/sshepl-logo.png" alt="SSHEPL" style="height:44px;width:auto;border-radius:6px">
+      <div>
+        <div class="nav-brand-name">S. S. HEAVY EQUIPMENTS PVT. LTD.</div>
+        <div class="nav-brand-sub">Est. 2013 · Maharashtra</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link active" href="about.html">About</a>
+      <a class="nav-link" href="dealerships.html">Dealerships</a>
+      <a class="nav-link nav-link-bkt" href="bkt.html">BKT Tyres</a>
+      <a class="nav-link" href="services.html">Services</a>
+      <a class="nav-link" href="branches.html">Branches</a>
+    </div>
+    <a class="nav-cta" href="index.html#contact">Get Quote →</a>
+  </div>
+</nav>
 
-  <script>
-  // Always start at top on load/refresh
-  window.addEventListener('load', function () {
-    window.scrollTo(0, 0);
-  });
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>About Us</div>
+    <div class="page-hero-eyebrow">Our Story</div>
+    <h1 class="page-hero-title">Built on Hard Work.<br>Grown on Trust.</h1>
+    <p class="page-hero-desc">From 16 districts and one vision in 2013, to Maharashtra's most awarded heavy equipment dealer today.</p>
+  </div>
+</div>
 
-  // Show main content only once after user scrolls a bit
-  (function () {
-    const mainContent = document.getElementById('mainContent');
-    const SHOW_AT = 50; // px from top
-    let revealedOnce = false;
+<!-- STORY -->
+<section class="story-section">
+  <div class="container">
+    <div class="story-grid">
+      <div class="fade-up">
+        <div class="section-eyebrow">Who We Are</div>
+        <h2 class="section-title">S.S. Heavy Equipments Pvt. Ltd.</h2>
+        <div class="story-text">
+          <p>Founded in 2013, <strong>S.S. Heavy Equipments Pvt. Ltd. (SSHEPL)</strong> is one of Maharashtra's most trusted names in construction equipment — authorized dealer for <strong>CASE Construction Equipment</strong>, backed by a team of 50+ professionals across 7 cities.</p>
+          <p>We began as an authorized Kobelco dealer covering 16 districts of Maharashtra with 5 offices. Over the years, our consistent performance and customer-first approach earned us expanded territories, national awards, and the trust of hundreds of contractors, infra companies, and government bodies across the state.</p>
+          <p>In 2025–26, we added a new chapter — launching <strong>SSP Sales Pvt. Ltd.</strong> as an authorized <strong>BKT Tyre Distributor</strong> for Pune, Nashik, and Chhatrapati Sambhajinagar territories.</p>
+          <p>Today SSHEPL is not just a dealer — we are a full <strong>3S partner</strong>: Sales, Spares, and Service. Our workshops, field teams, and spare parts network ensure that every machine we sell stays running at peak performance throughout its lifecycle.</p>
+        </div>
+      </div>
 
-    function handleScroll() {
-      if (window.scrollY > SHOW_AT && !revealedOnce) {
-        // first time: play fade
-        mainContent.classList.add('visible');
-        revealedOnce = true;
+      <div class="fade-up">
+        <div class="section-eyebrow">Our Journey</div>
+        <h2 class="section-title" style="font-size:clamp(28px,3vw,40px)">2013 — Today</h2>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2013 – 2018</div>
+            <div class="tl-title">Kobelco Era — 16 Districts, 5 Offices</div>
+            <div class="tl-desc">Started as authorized Kobelco dealer covering a wide territory across Maharashtra. Established strong service infrastructure and customer relationships.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">Nov 2018</div>
+            <div class="tl-title">CASE Dealership — Pune & Satara</div>
+            <div class="tl-desc">Became authorized CASE New Holland dealer. Opened offices in Pune and Satara and began building the CASE service ecosystem in Maharashtra.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2019</div>
+            <div class="tl-title">West Zone Rank #1 — Expanded to Sangli & Kolhapur</div>
+            <div class="tl-desc">Ranked #1 dealer in West Zone for CASE. Territory expanded to Sangli and Kolhapur as a reward for outstanding sales performance.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2020</div>
+            <div class="tl-title">Marathwada Expansion — Solapur, Latur, Nanded, Dharashiv</div>
+            <div class="tl-desc">Added four new districts for top 2019 performance. Established workshops and service teams across Marathwada region.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2021 – 2023</div>
+            <div class="tl-title">Sapphire Club & National Awards</div>
+            <div class="tl-desc">Achieved Highest Compactor Sales in India for 3 consecutive years. Earned Sapphire Club recognition with CNH for 2024. Ranked #1 pan-India in machine sales up to September 2025.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2023</div>
+            <div class="tl-title">ELSA Concreting Machinery Dealer</div>
+            <div class="tl-desc">Became authorized ELSA Concreting Machinery dealer for Marathwada region.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2025</div>
+            <div class="tl-title">BKT Tyre Distributorship</div>
+            <div class="tl-desc">Authorized distributorship for BKT commercial vehicle tyres under the SSHEPL Group.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <div class="tl-year">2026</div>
+            <div class="tl-title">SSP Sales — Operations Begin</div>
+            <div class="tl-desc">Full distribution operations commenced under the newly incorporated SSP Sales Pvt. Ltd. — serving Pune, Nashik, and Chhatrapati Sambhajinagar.</div>
+            <div class="tl-desc">ELSA dealership concluded.</div>          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // after fade animation, lock into non-animated state
-        setTimeout(() => {
-          mainContent.classList.remove('visible');
-          mainContent.classList.add('content-ready');
-        }, 700); // slightly more than CSS transition duration
-      }
-    }
+<!-- NUMBERS -->
+<div class="numbers-section">
+  <div class="container">
+    <div class="numbers-grid">
+      <div class="num-item fade-up"><div class="num-val" data-count="13">0</div><div class="num-label">Years Active</div></div>
+      <div class="num-item fade-up"><div class="num-val" data-count="750">0</div><div class="num-label">Machines Delivered</div></div>
+      <div class="num-item fade-up"><div class="num-val" data-count="50">0</div><div class="num-label">Team Members</div></div>
+      <div class="num-item fade-up"><div class="num-val" data-count="7">0</div><div class="num-label">Branch Cities</div></div>
+      <div class="num-item fade-up"><div class="num-val" data-count="3">0</div><div class="num-label">National Awards</div></div>
+    </div>
+  </div>
+</div>
 
-    handleScroll();
-    window.addEventListener('scroll', handleScroll);
-  })();
+<!-- AWARDS -->
+<section class="awards-section">
+  <div class="container">
+    <div class="fade-up" style="text-align:center">
+      <div class="section-eyebrow">Recognition</div>
+      <h2 class="section-title section-title-white">Awards & Achievements</h2>
+      <p class="section-desc" style="color:rgba(255,255,255,.45);margin:0 auto">National recognition for performance that speaks for itself.</p>
+    </div>
+    <div class="awards-grid">
+      <div class="award-card fade-up">
+        <div class="award-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+        </div>
+        <div class="award-title">Highest Compactor Sales in India</div>
+        <p class="award-desc">Awarded for achieving the highest compactor sales volume across all CASE dealers in India — three years in a row.</p>
+        <div class="award-year">3 Consecutive Years</div>
+      </div>
+      <div class="award-card fade-up">
+        <div class="award-icon">
+          <svg viewBox="0 0 24 24"><path d="M5 3H19C20.1 3 21 3.9 21 5V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V5C3 3.9 3.9 3 5 3M12 6C9.24 6 7 8.24 7 11C7 12.85 8.04 14.45 9.58 15.27L9 18H15L14.42 15.27C15.96 14.45 17 12.85 17 11C17 8.24 14.76 6 12 6Z"/></svg>
+        </div>
+        <div class="award-title">CNH Sapphire Club</div>
+        <p class="award-desc">Qualified for the prestigious Sapphire Club with CNH Industrial — awarded to top-performing CASE dealers globally.</p>
+        <div class="award-year">2024</div>
+      </div>
+      <div class="award-card fade-up">
+        <div class="award-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.33C18 2.54 15.96.5 13.5.5S9 2.54 9 4.67c0 .45.11.89.18 1.33H7c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h13c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg>
+        </div>
+        <div class="award-title">#1 Pan-India Machine Sales</div>
+        <p class="award-desc">Ranked number one across all CASE dealers in India for total machine sales volume — up to September 2025.</p>
+        <div class="award-year">Up to Sept 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  function goHome() {
-    const isHome =
-      window.location.pathname.endsWith('index.html') ||
-      window.location.pathname === '/' ||
-      window.location.pathname === '';
+<!-- DIRECTORS -->
+<section class="directors-section">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;margin-bottom:48px">
+      <div class="section-eyebrow">Leadership</div>
+      <h2 class="section-title">Our Directors</h2>
+      <p class="section-desc" style="margin:0 auto">Three decades of combined industry expertise driving SSHEPL's growth.</p>
+    </div>
+    <div class="directors-grid">
 
-    if (isHome) {
-      window.location.reload();
-    } else {
-      window.location.href = 'index.html';
-    }
-  }
-  window.goHome = goHome;
+      <div class="director-card fade-up">
+        <div class="director-img-wrap">
+          <img class="director-img" src="https://sshepl-2013.github.io/sshepl/santosh.jpg" alt="Mr. Santosh R. Chougule" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="director-initials" style="display:none">SRC</div>
+        </div>
+        <div class="director-body">
+          <div class="director-name">Mr. Santosh R. Chougule</div>
+          <div class="director-role">Director</div>
+          <p class="director-desc">Leads Finance, HR, and Administration for the group. Instrumental in structuring SSHEPL's growth from a 2-city operation to a 7-city network.</p>
+          <span class="director-exp">In Industry Since 1996</span>
+        </div>
+      </div>
+
+      <div class="director-card fade-up">
+        <div class="director-img-wrap">
+          <img class="director-img" src="https://sshepl-2013.github.io/sshepl/sachin.jpg" alt="Mr. Sachin G. Deshmukh" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="director-initials" style="display:none">SGD</div>
+        </div>
+        <div class="director-body">
+          <div class="director-name">Mr. Sachin G. Deshmukh</div>
+          <div class="director-role">Director</div>
+          <p class="director-desc">Heads the Marathwada operations and oversees field service delivery. Known for his deep technical knowledge and hands-on approach to customer support.</p>
+          <span class="director-exp">In Industry Since 1998</span>
+        </div>
+      </div>
+      
+      <div class="director-card fade-up">
+        <div class="director-img-wrap">
+          <img class="director-img" src="https://sshepl-2013.github.io/sshepl/prasad.jpg" alt="Mr. Prasad C. Diwakar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="director-initials" style="display:none">PCD</div>
+        </div>
+        <div class="director-body">
+          <div class="director-name">Mr. Prasad C. Diwakar</div>
+          <div class="director-role">Director</div>
+          <p class="director-desc">Manages After-Sales, Service, and Workshop operations. His deep expertise in heavy equipment service has set SSHEPL's quality benchmark across Maharashtra.</p>
+          <span class="director-exp">In Industry Since 1994</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION & MISSION -->
+<section class="vision-section">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;margin-bottom:48px">
+      <div class="section-eyebrow">What We Stand For</div>
+      <h2 class="section-title section-title-white">Vision & Mission</h2>
+    </div>
+    <div class="vision-grid">
+      <div class="vision-card vision-card-v fade-up">
+        <div class="vision-label">Our Vision</div>
+        <p class="vision-text">"To be the most trusted and comprehensive construction equipment partner in Maharashtra — recognized for delivery excellence, service integrity, and long-term customer relationships."</p>
+      </div>
+      <div class="vision-card vision-card-m fade-up">
+        <div class="vision-label">Our Mission</div>
+        <p class="vision-text">"To provide complete 3S support — Sales, Spares, and Service — that maximizes machine uptime and returns for every customer, backed by genuine parts, certified technicians, and 24/7 field response."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip">
+  <div class="cta-strip-inner">
+    <div>
+      <div class="cta-strip-title">Ready to Work Together?</div>
+      <div class="cta-strip-sub">Talk to our team — we respond within 2 business hours.</div>
+    </div>
+    <a class="btn-navy" href="index.html#contact">Get in Touch →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">S.S. Heavy Equipments</div>
+        <div class="footer-brand-sub">Pvt. Ltd. · Est. 2013</div>
+        <p class="footer-brand-desc">Authorized CASE dealer and BKT Tyre distributor across Maharashtra. Sales, Spares & Service since 2013.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <a class="footer-link" href="index.html">Home</a>
+        <a class="footer-link" href="about.html">About Us</a>
+        <a class="footer-link" href="dealerships.html">Dealerships</a>
+        <a class="footer-link" href="bkt.html">BKT Tyres</a>
+        <a class="footer-link" href="services.html">Services</a>
+        <a class="footer-link" href="branches.html">Branches</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <a class="footer-link" href="tel:+919822016435">+91 9822016435</a>
+        <a class="footer-link" href="tel:+919822353430">+91 9822353430</a>
+        <a class="footer-link" href="mailto:sshepl.pune@gmail.com">sshepl.pune@gmail.com</a>
+      </div>
+      <div>
+        <div class="footer-col-title">Head Office</div>
+        <p class="footer-link" style="cursor:default">116/6/1, Mumbai-Bengaluru Hwy, Opp. Vinayak Hospital, Pune 411058</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 S. S. HEAVY EQUIPMENTS PVT. LTD. & SSP SALES PVT. LTD.</div>
+      <div class="footer-copy">Authorized CASE · BKT Dealer in Maharashtra</div>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/919822016435" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');e.target.querySelectorAll('[data-count]').forEach(el=>animateCounter(el));observer.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+function animateCounter(el){const target=parseInt(el.dataset.count),duration=1800,start=performance.now();const update=now=>{const p=Math.min((now-start)/duration,1),ease=1-Math.pow(1-p,3);el.textContent=Math.floor(ease*target)+'+';if(p<1)requestAnimationFrame(update);else el.textContent=target+'+'};requestAnimationFrame(update)}
 </script>
 </body>
 </html>
-
-</body>
-</html>
-

@@ -1,1458 +1,2177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <title>S. S. Heavy Equipments Pvt. Ltd. | CASE, ELSA & BKT Construction Equipment Dealer in Pune, Maharashtra</title>
-
-<meta name="description" content="S. S. Heavy Equipments Pvt. Ltd. (SSHEPL) is an authorized CASE, ELSA and BKT construction equipment dealer in Pune, Maharashtra, providing sales, spares and service for backhoe loaders, excavators, compactors and concreting machinery.">
-
-<meta name="keywords" content="ss heavy equipments, ss heavy equipments pvt ltd, sshepl, construction equipment dealer pune, heavy equipment dealer pune, construction machinery dealer maharashtra, CASE construction dealer pune, ELSA concreting machinery dealer, BKT tyre dealer, backhoe loader dealer, excavator dealer, road compactor dealer">
-
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title style="text-align: center;">S. S. Heavy Equipments PVT. LTD.</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="S.S. Heavy Equipments Pvt. Ltd. — Authorized CASE dealer and BKT Tyre distributor in Maharashtra. Sales, Spares & Service since 2013.">
+<meta name="keywords" content="CASE dealer pune, heavy equipment maharashtra, BKT tyres pune, SSHEPL, construction equipment dealer">
+<meta property="og:title" content="S.S. Heavy Equipments Pvt. Ltd. | CASE · BKT">
+<meta property="og:description" content="Maharashtra's #1 CASE Equipment Dealer. 12+ years. 7 cities. 500+ machines delivered. Now also BKT Tyre Distributor under SSP Sales Pvt. Ltd.">
+<meta property="og:image" content="https://sshepl-2013.github.io/sshepl/animation%20(1).jpeg">
+<meta property="og:type" content="website">
+<title>S. S. HEAVY EQUIPMENTS PVT. LTD. | CASE · BKT Tyres</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
-
-/*Backhoe loader icon*/
-ul.custom-bullets {
-  list-style-type: none; /* Remove default bullet points */
-  padding-left: 20px; /* Add space for custom bullets */
-}
-ul.custom-bullets li {
-  background: url('icon.png') no-repeat left center;
-  background-size: 16px 16px; /* Adjust size */
-  padding-left: 24px; /* Space so text doesn't overlap image */
-}
-ul.custom-bullets li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 3px;
-    width: 24px;  /* Adjust size */
-    height: 24px;
-    background: url('icon.png') no-repeat center center;
-    background-size: contain;
-  }
-
-  
-
-.popup-content {
-  display: none;
-  position: absolute;
-  bottom: 120%; /* Position above the image */
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #222;
-  color: #fff;
-  padding: 10px 18px;
-  border-radius: 6px;
-  white-space: nowrap;
-  z-index: 10;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-}
-
-.image-popup-container:hover .popup-content {
-  display: block;
-}
-
-.hero p {
-
-  font-size: 1.5rem;           /* existing */
-  margin-bottom: 1.5rem;       /* existing */
-
-
-  opacity: 0;
-  transform: translateX(100px);  /* start off right side */
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  will-change: opacity, transform;
-}
-
-.hero p.visible {
-  opacity: 1;
-  transform: translateX(0);    /* slide back to original position */
-}
-
 :root {
-    --primary-orange: #f17407;
-    --white: #ffffff;
+  --navy: #0B1F3A;
+  --navy-deep: #071529;
+  --navy-mid: #132d50;
+  --gold: #D4940A;
+  --gold-light: #F0AB1A;
+  --gold-pale: #FDF3DC;
+  --white: #FFFFFF;
+  --off-white: #F5F3EE;
+  --gray-light: #E8E6E0;
+  --gray-mid: #9A9690;
+  --gray-dark: #3A3830;
+  --text-body: #2C2A26;
+  --red-case: #CC0000;
 }
 
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin: 3rem auto;
-    max-width: 800px;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  color: var(--text-body);
+  background: var(--off-white);
+  overflow-x: hidden;
 }
 
-.stats-grid.visible {
-    opacity: 1;
-    transform: translateY(0);
+/* ── TOPBAR ── */
+.topbar {
+  background: var(--navy-deep);
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(212,148,10,.25);
 }
-
-.stat {
-    text-align: center;
-    padding: 1rem;
+.topbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-
-.counter-wrapper {
-  display: inline-flex;
-  align-items: flex-end;        /* bottom align */
-  justify-content: center;
-  gap: 0.1em;
+.topbar-left {
+  display: flex;
+  gap: 24px;
+  align-items: center;
 }
-
-.counter {
-  font-size: 4rem;
-  line-height: 1;
-  font-weight: 900;
-  color: #f17407;
-  font-family: 'Arial Black', Arial, sans-serif;
+.topbar-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: rgba(255,255,255,.6);
+  text-decoration: none;
 }
-
-.plus-sign {
-  font-size:1.2rem;            /* slightly bigger so it looks same height */
-  line-height: 1;
-  font-weight: 900;
-  color: #f17407;               /* force orange */
-  font-family: 'Arial Black', Arial, sans-serif;
-  opacity: 0;
-  transform: scale(0.7);
-  transform-origin: left bottom;
-  transition: opacity 0.25s ease 0.15s, transform 0.25s ease 0.15s;
+.topbar-item svg { width: 13px; height: 13px; fill: var(--gold); flex-shrink: 0; }
+.topbar-item:hover { color: var(--gold-light); }
+.topbar-right {
+  display: flex;
+  gap: 16px;
+  align-items: center;
 }
-
-.plus-sign.show {
-  opacity: 1;
-  transform: scale(1);
-  font-size: 1.2rem;
+.topbar-social {
+  display: flex;
+  gap: 10px;
 }
-
-.stat span:last-child {
-    font-size: 1.1rem;
-    color: #ffffff;
-    font-weight: 600;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-    margin-top: 0.5rem;
-    display: block;
+.topbar-social a {
+  width: 24px; height: 24px;
+  background: rgba(255,255,255,.08);
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,.6);
+  font-size: 12px;
+  text-decoration: none;
+  transition: background .2s;
 }
-
-@media (max-width: 768px) {
-    .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    .counter {
-        font-size: 3rem;
-    }
-    .plus-sign {
-        font-size: 2.5rem;
-    }
+.topbar-social a:hover { background: var(--gold); color: var(--white); }
+.topbar-ssp {
+  font-size: 11px;
+  color: rgba(255,255,255,.4);
+  border-left: 1px solid rgba(255,255,255,.1);
+  padding-left: 16px;
 }
+.topbar-ssp span { color: var(--gold); }
 
-
-
-html {
-  scroll-behavior: smooth;
+/* ── NAVBAR ── */
+nav {
+  background: var(--navy);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 2px solid var(--gold);
 }
-
-/* Service image hover */
-.pop-up-effect {
-  transition: transform 0.3s ease; /* Smooth transition */
-  cursor: pointer; /* Optional: shows pointer on hover */
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  height: 68px;
+  gap: 40px;
 }
-.pop-up-effect:hover {
-  transform: scale(1.1); /* Enlarges image by 10% on hover */
-  z-index: 10; /* Ensures it stays on top */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
 }
-
-
-
-  /* GENERAL STYLES */
-  body {
-    margin: 0; padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f4f6f8;
-    color: #2c3e50;
-    overflow-x: hidden;
-  }
-
-
-  /*bg video*/
-.background-video {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* Places video behind content */
-  transform: translate(-50%, -50%); /* Centers the video */
-  object-fit: cover; /* Ensures video covers area without distortion */
+.nav-logo {
+  width: 44px; height: 44px;
+  background: var(--gold);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  color: var(--navy-deep);
+  letter-spacing: 1px;
 }
-
-
-  /* HEADER */
-  header {
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 30px;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    flex-wrap: wrap;
-  }
-
-  /* Page reset so hero can touch edges */
-* {
-  box-sizing: border-box;
+.nav-brand-text { line-height: 1.2; }
+.nav-brand-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--white);
+  letter-spacing: .5px;
 }
-
-
-
-/* Hero Section */
-.hero {
- 
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: #ffffff; /* so any leftover strip is black, not white */
-
-  display: block;
-  margin: 0;
-  width: 100vw;                /* CHANGE from 100% to 100vw */
-  max-width: 100vw;            /* NEW */
-  min-height: 100vh;
-
-
-  color: rgb(255, 255, 255);
-  padding: 120px 2rem 90px;
-  text-align: center;
+.nav-brand-sub {
+  font-size: 10px;
+  color: var(--gold);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.nav-links {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  flex: 1;
+}
+.nav-link {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: .5px;
+  color: rgba(255,255,255,.75);
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  transition: color .2s, background .2s;
   position: relative;
-
-  /* Animation start */
-  transition: transform 0.5s cubic-bezier(.4,0,.2,1),
-              box-shadow 0.5s cubic-bezier(.4,0,.2,1);
-  transform: scale(1);
-  box-shadow: 0 0 0 rgba(0,0,0,0);
 }
-
-/* Pop-up animation on hover */
-.hero:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 40px rgba(40,40,60,0.15);
-}
-
-.hero::after {
+.nav-link:hover { color: var(--white); background: rgba(255,255,255,.07); }
+.nav-link.active { color: var(--gold-light); }
+.nav-link.active::after {
   content: '';
   position: absolute;
-  inset: 0;
-  background: rgba(17, 23, 35, 0.65);
-  z-index: 0;
+  bottom: -2px; left: 14px; right: 14px;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 2px;
 }
-
-.hero > * {
-  position: relative;
-  z-index: 1;
+.nav-link-bkt {
+  color: var(--gold) !important;
+  border: 1px solid rgba(212,148,10,.35);
 }
-
-.hero h1 {
-  font-family: 'Merriweather', serif;
-  font-size: 3.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.hero p {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  will-change: opacity, transform;
-}
-
-.hero p.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.hero .btn-primary {
-  font-size: 1.2rem;
-  background-color: #f17407;
-  border: none;
-  padding: 12px 30px;
-  color: white;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.nav-link-bkt:hover { background: rgba(212,148,10,.12) !important; }
+.nav-cta {
+  margin-left: auto;
+  background: var(--gold);
+  color: var(--navy-deep);
+  font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  border-radius: 4px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .2s, transform .15s;
+  flex-shrink: 0;
 }
+.nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
 
-.hero .btn-primary:hover,
-.hero .btn-primary:focus {
-  background-color: #d35400;
+/* hamburger */
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { display: block; width: 22px; height: 2px; background: var(--white); margin: 5px 0; border-radius: 2px; transition: all .3s; }
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--navy-deep);
 }
-
-  /* Logo as text & Styling */
-  .logo-text {
-    
-    font-size: 2.8rem;
-    font-weight: 900;
-    text-align:center;
-    font-style: italic;
-    font-family:Arial, Helvetica, sans-serif;
-    color: #f17407;
-    letter-spacing: 3px;
-    cursor: default;
-    user-select: none;
-  }
-
-  /* Nav menu styles */
-  nav {
-    display: flex;
-    align-items: right;
-    text-align: right;
-    gap: 1px;
-    flex-wrap: wrap;
-  }
-  nav a {
-    
-    text-decoration: none;
-    color:#000000;
-    background-color: #ffffff;
-    padding: 8px 14px;
-    border-radius: 6px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    position:relative;
-  }
-  nav a:hover, nav a.active {
-    background: #e67e22;
-    color: #fff;
-  }
-  nav a::after {
-    content: "";
-    position: absolute;
-    bottom: 2px;
-    left: 50%;
-    width: 0;
-    height: 3px;
-    background: #fff;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-  }
-  nav a:hover::after, nav a.active::after {
-    width: 50%;
-    left: 25%;
-  }
-  /* CSS */
-.nav-tabs {
-  text-align: right; /* Aligns the inline children to the right */
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
-
-.nav-tabs li {
-  display: inline-block; /* Makes the list items act like text, allowing text-align to work */
-  padding: 10px 15px;
-}
-
-  /* Sections styling */
-section {
-  padding: 70px 25px;
-  border-radius: 20px;
-  background: #fff;
-  margin: 40px auto;
-  max-width: 1100px;
-  box-shadow: 0 8px 35px rgba(44, 62, 80, 0.08);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease;
-}
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-  box-shadow: 0 16px 50px rgba(44,62,80,0.16);
-}
-
-h2 {
-  font-size: 3rem;
-  font-weight: 900;
-  margin-bottom: 45px;
-  text-align: center;
-  color: #2c3e50;
-  letter-spacing: 1.3px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-#about p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin: 20px 0;
-  letter-spacing: 0.5px;
-}
-
-/*Updated for About info*/
-
-
-
-
-/* Dealership logos */
-.logos {
-  text-align: center;
-  margin-bottom: 40px;
-}
-.logos img {
-  height: 110px;
-  margin: 0 30px;
-  border-radius: 15px;
-  box-shadow: 0 12px 35px rgba(44, 62, 80, 0.10);
-  transition: all 0.3s ease;
-}
-.logos img:hover {
-  transform: scale(1.12);
-}
-
-
-
-.images img {
-  width: 100%;
-  height: 190px;
+.hero-bg-img {
+  height: 100%;
   object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 8px 18px rgba(44, 62, 80, 0.15);
+  opacity: .18;
+  filter: grayscale(30%);
+}
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, var(--navy-deep) 40%, rgba(7,21,41,.7) 70%, rgba(7,21,41,.3) 100%);
+}
+.hero-grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(212,148,10,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,148,10,.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 32px;
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 60px;
+  align-items: center;
+  width: 100%;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(212,148,10,.12);
+  border: 1px solid rgba(212,148,10,.35);
+  border-radius: 2px;
+  padding: 5px 14px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 20px;
+}
+.hero-eyebrow-dot {
+  width: 6px; height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .5; transform: scale(.7); }
+}
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(56px, 7vw, 96px);
+  line-height: .95;
+  color: var(--white);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.hero-title-accent { color: var(--gold); }
+.hero-subtitle {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: rgba(255,255,255,.55);
+  margin-bottom: 28px;
+  line-height: 1.4;
+  letter-spacing: .3px;
+  max-width: 520px;
+}
+.hero-subtitle strong { color: rgba(255,255,255,.85); font-weight: 500; }
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 52px;
+}
+.btn-gold {
+  background: var(--gold);
+  color: var(--navy-deep);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 14px 30px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background .2s, transform .15s;
+  border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 0;
-  margin: 0;
 }
-.images img:hover {
-  transform: scale(1.08);
-  box-shadow: 0 20px 40px rgba(44,62,80,0.2);
+.btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-ghost {
+  background: transparent;
+  color: var(--white);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 13px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: border-color .2s, background .2s;
+}
+.btn-ghost:hover { border-color: rgba(255,255,255,.7); background: rgba(255,255,255,.06); }
+.hero-stats {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding-top: 32px;
+}
+.hero-stat { text-align: left; }
+.hero-stat-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 42px;
+  color: var(--gold);
+  letter-spacing: 1px;
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 11px;
+  color: rgba(255,255,255,.45);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 3px;
 }
 
-
-
-
-
-
-/* Contact section */
-
-.contact-section {
-      max-width: 1100px;
-      margin: 40px auto 60px;
-      padding: 40px 24px;
-      border-radius: 20px;
-      background:rgba(3, 16, 47, 0.9);
-      opacity: 0.5;
-      box-shadow: 0 18px 50px rgba(0,0,0,0.55);
-      color: #ffffff;
-    }
-
-    .contact-wrapper {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
-      gap: 30px;
-    }
-
-    .contact-info h2 {
-      margin: 0 0 4px;
-      font-size: 2.2rem;
-      color: #ffffff;
-    }
-    .contact-info h3 {
-      margin: 8px 0;
-    }
-    .contact-info p {
-      margin: 4px 0;
-      color: #ffffff;
-    }
-
-    .social-icons {
-      display: flex;
-      gap: 10px;
-      margin-top: 6px;
-      align-items: center;
-    }
-    .social-icons img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: 0.8px solid #000;
-      padding: 6px;
-      box-sizing: border-box;
-      background: #ffffff;
-    }
-
-    .contact-form {
-      background: rgba(10,14,24,0.95);
-      border-radius: 16px;
-      padding: 18px 18px 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    }
-    .contact-form h3 {
-      margin: 0 0 14px;
-      font-size: 1.4rem;
-      color: #ffffff;
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 10px;
-    }
-    .field label {
-      font-size: 0.9rem;
-      margin-bottom: 4px;
-      color: #ffffff;
-    }
-    .field input,
-    .field select,
-    .field textarea {
-      padding: 8px 10px;
-      border-radius: 6px;
-      border: 1px solid #3a4760;
-      background: #0f1724;
-      color: #ffffff;
-      font: inherit;
-    }
-    .field input:focus,
-    .field select:focus,
-    .field textarea:focus {
-      outline: none;
-      border-color: #f17407;
-      box-shadow: 0 0 0 1px rgba(241,116,7,0.6);
-    }
-
-    .contact-submit {
-      margin-top: 4px;
-      padding: 10px 22px;
-      border-radius: 6px;
-      border: 2px solid #f17407;
-      background: #f17407;
-      color: #ffffff;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.25s ease;
-    }
-    .contact-submit:hover {
-      background: transparent;
-      color: #f17407;
-    }
-
-    @media (max-width: 768px) {
-      .contact-wrapper {
-        grid-template-columns: 1fr;
-      }
-    }
-
-
-
-/* Footer */
-footer {
-  background: #2c3e50;
-  color: #ecf0f1;
+/* hero right — image stack */
+.hero-right {
+  position: relative;
+  height: 480px;
+}
+.hero-img-main {
+  position: absolute;
+  right: 0; top: 0;
+  width: 88%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid rgba(212,148,10,.3);
+}
+.hero-img-secondary {
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 56%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid var(--gold);
+}
+.hero-badge-float {
+  position: absolute;
+  top: 24px; left: -20px;
+  background: var(--gold);
+  color: var(--navy-deep);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  border-radius: 4px;
+  line-height: 1.3;
   text-align: center;
-  padding: 16px 0;
-  font-size: 1rem;
-  margin-top: 30px;
+  z-index: 3;
 }
 
-/* Popup Modal */
-.popup-modal {
+/* ── TRUST STRIP ── */
+.trust-strip {
+  background: var(--navy);
+  border-bottom: 1px solid rgba(212,148,10,.2);
+  padding: 0;
+  overflow: hidden;
+}
+.trust-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: stretch;
+}
+.trust-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 22px 20px;
+  border-right: 1px solid rgba(255,255,255,.07);
+  transition: background .2s;
+}
+.trust-item:last-child { border-right: none; }
+.trust-item:hover { background: rgba(255,255,255,.04); }
+.trust-icon {
+  width: 36px; height: 36px;
+  background: rgba(212,148,10,.15);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.trust-icon svg { width: 18px; height: 18px; fill: var(--gold); }
+.trust-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--white);
+  letter-spacing: .3px;
+}
+.trust-sub {
+  font-size: 11px;
+  color: rgba(255,255,255,.4);
+  margin-top: 1px;
+}
+
+/* ── SECTION COMMONS ── */
+section { padding: 80px 0; }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.section-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 4vw, 54px);
+  letter-spacing: 1.5px;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.section-title-white { color: var(--white); }
+.section-desc {
+  font-size: 16px;
+  color: var(--gray-mid);
+  line-height: 1.7;
+  max-width: 580px;
+}
+.section-desc-white { color: rgba(255,255,255,.55); }
+
+/* ── DEALERSHIPS ── */
+.dealerships { background: var(--white); }
+.dealer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 48px;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.dealer-card-img { height: 280px; }
+.dealer-card {
+  border: 1px solid var(--gray-light);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color .2s, transform .2s;
+  background: var(--white);
+}
+.dealer-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+.dealer-card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+.dealer-card-body { padding: 24px; }
+.dealer-card-logo-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.dealer-badge {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+.dealer-badge-auth { background: #EAF3DE; color: #3B6D11; }
+.dealer-card-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--navy);
+  margin-bottom: 8px;
+  letter-spacing: .5px;
+}
+.dealer-card-desc {
+  font-size: 14px;
+  color: var(--gray-mid);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.dealer-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.product-chip {
+  background: var(--off-white);
+  border: 1px solid var(--gray-light);
+  border-radius: 2px;
+  font-size: 11px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  letter-spacing: .5px;
+  padding: 4px 10px;
+  color: var(--gray-dark);
+  text-transform: uppercase;
+}
+.dealer-link {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--navy);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 2px;
+  transition: color .2s;
+}
+.dealer-link:hover { color: var(--gold); }
+
+/* BKT teaser inside dealerships */
+.bkt-teaser {
+  grid-column: 1 / -1;
+  background: #1A1A1A;
+  border-radius: 8px;
+  padding: 36px 40px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 32px;
+  align-items: center;
+  border: 1px solid rgba(255,165,0,.2);
+}
+.bkt-logo-big {
+  width: 100px; height: 100px;
+  background: #ffffff;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  color: #fff;
+  letter-spacing: 2px;
+}
+.bkt-new-badge {
+  display: inline-block;
+  background: #007834;
+  color: #fff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 2px;
+  margin-bottom: 8px;
+}
+.bkt-teaser-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+.bkt-teaser-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,.5);
+  line-height: 1.5;
+}
+.bkt-teaser-sub strong { color: #18B325; font-weight: 500; }
+.btn-bkt {
+  background: #D2E988;
+  color: #000000;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background .2s;
+}
+.btn-bkt:hover { background: #e05500; }
+
+/* ── SERVICES SECTION ── */
+.services-section { background: var(--navy-deep); }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 48px;
+  border: 2px solid rgba(212,148,10,.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.service-card {
+  background: rgba(255,255,255,.03);
+  padding: 32px 28px;
+  border-right: 2px solid rgba(212,148,10,.12);
+  border-bottom: 2px solid rgba(212,148,10,.12);
+  transition: background .2s;
+}
+.service-card:hover { background: rgba(212,148,10,.06); }
+.service-icon-wrap {
+  width: 48px; height: 48px;
+  background: rgba(212,148,10,.12);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+}
+.service-icon-wrap svg { width: 24px; height: 24px; fill: var(--gold); }
+.service-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--white);
+  letter-spacing: .5px;
+  margin-bottom: 10px;
+}
+.service-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,.45);
+  line-height: 1.6;
+}
+.service-items {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,.07);
+}
+.service-item {
+  font-size: 12px;
+  color: rgba(255,255,255,.35);
+  margin-bottom: 4px;
+  display: flex;
+  gap: 6px;
+}
+.service-item::before { content: '—'; color: var(--gold); flex-shrink: 0; }
+
+/* ── WHY SSHEPL ── */
+.why-section { background: var(--off-white); }
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-top: 0;
+}
+.why-left { }
+.why-img-wrap {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.why-img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+}
+.why-img-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(7,21,41,.92));
+  padding: 32px 28px 28px;
+}
+.why-img-stat {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  color: var(--gold);
+  letter-spacing: 1px;
+  line-height: 1;
+}
+.why-img-stat-label {
+  font-size: 13px;
+  color: rgba(255,255,255,.6);
+  margin-top: 4px;
+}
+.why-right { }
+.why-items { margin-top: 36px; }
+.why-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--gray-light);
+}
+.why-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.why-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 42px;
+  color: var(--gray-light);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 48px;
+  text-align: right;
+}
+.why-item-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--navy);
+  letter-spacing: .3px;
+  margin-bottom: 6px;
+}
+.why-item-desc {
+  font-size: 14px;
+  color: var(--gray-mid);
+  line-height: 1.6;
+}
+
+/* ── ACHIEVEMENTS ── */
+.achievements { background: var(--gold); padding: 56px 0; }
+.ach-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+.ach-item { }
+.ach-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 56px;
+  color: var(--navy-deep);
+  letter-spacing: 2px;
+  line-height: 1;
+}
+.ach-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: rgba(7,21,41,.65);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+.ach-divider {
+  width: 1px;
+  background: rgba(7,21,41,.15);
+  align-self: stretch;
+  display: none;
+}
+
+/* ── TESTIMONIALS ── */
+.testimonials { background: var(--white); }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
+.testimonial-card {
+  background: var(--off-white);
+  border-radius: 8px;
+  padding: 28px 28px 24px;
+  border-left: 3px solid var(--gold);
+  position: relative;
+}
+.testimonial-quote-mark {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 72px;
+  color: var(--gold);
+  line-height: .7;
+  margin-bottom: 12px;
+  display: block;
+  opacity: .4;
+}
+.testimonial-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-body);
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.testimonial-stars {
+  color: var(--gold);
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.testimonial-avatar {
+  width: 40px; height: 40px;
+  background: var(--navy);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.testimonial-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--navy);
+  letter-spacing: .3px;
+}
+.testimonial-co {
+  font-size: 12px;
+  color: var(--gray-mid);
+  margin-top: 1px;
+}
+
+/* ── BRANCHES STRIP ── */
+.branches-strip { background: var(--navy-deep); padding: 56px 0; }
+.branches-strip-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.branches-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+.branches-list {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+.branch-pill {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 4px;
+  padding: 16px 12px;
+  text-align: center;
+  transition: border-color .2s, background .2s;
+  cursor: default;
+}
+.branch-pill:hover { border-color: var(--gold); background: rgba(212,148,10,.08); }
+.branch-pill-city {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--white);
+  letter-spacing: .3px;
+  margin-bottom: 4px;
+}
+.branch-pill-type {
+  font-size: 10px;
+  color: rgba(255,255,255,.35);
+  letter-spacing: .5px;
+}
+.branch-pill.has-workshop .branch-pill-type { color: var(--gold); }
+
+/* ── CTA SECTION ── */
+.cta-section {
+  background: var(--navy);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  right: -100px; top: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(212,148,10,.08) 0%, transparent 70%);
+  pointer-events:none;
+}
+.cta-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 60px;
+  align-items: center;
+}
+.cta-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px, 4vw, 58px);
+  color: var(--white);
+  letter-spacing: 2px;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+.cta-title span { color: var(--gold); }
+.cta-desc {
+  font-size: 16px;
+  color: rgba(255,255,255,.5);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+.cta-contact-items { display: flex; flex-direction: column; gap: 10px; }
+.cta-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cta-contact-icon {
+  width: 32px; height: 32px;
+  background: rgba(212,148,10,.12);
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.cta-contact-icon svg { width: 16px; height: 16px; fill: var(--gold); }
+.cta-contact-text {
+  font-size: 15px;
+  color: rgba(255,255,255,.8);
+}
+.cta-contact-text a {
+  color: rgba(255,255,255,.8);
+  text-decoration: none;
+}
+.cta-contact-text a:hover { color: var(--gold-light); }
+
+/* inquiry form */
+.inquiry-form {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 28px;
+}
+.form-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--navy);
+  letter-spacing: .5px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.form-group { margin-bottom: 14px; }
+.form-label {
+  display: block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gray-dark);
+  margin-bottom: 5px;
+}
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--gray-light);
+  border-radius: 4px;
+  font-family: 'Barlow', sans-serif;
+  font-size: 14px;
+  color: var(--text-body);
+  background: var(--white);
+  outline: none;
+  transition: border-color .2s;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--gold);
+}
+.form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.form-textarea { height: 80px; resize: none; }
+.form-submit {
+  width: 100%;
+  background: var(--navy);
+  color: var(--white);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 13px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background .2s;
+  margin-top: 6px;
+}
+.form-submit:hover { background: var(--gold); color: var(--navy-deep); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy-deep);
+  padding: 64px 0 0;
+  border-top: 2px solid var(--gold);
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+.footer-brand-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  color: var(--white);
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+.footer-brand-sub {
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.footer-brand-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,.35);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.footer-ssp-note {
+  background: rgba(255,102,0,.08);
+  border: 1px solid rgba(255,102,0,.2);
+  border-radius: 4px;
+  padding: 10px 14px;
+  font-size: 12px;
+  color: rgba(255,255,255,.5);
+}
+.footer-ssp-note span { color: #FF6600; font-weight: 500; }
+.footer-col-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.footer-links { display: flex; flex-direction: column; gap: 8px; }
+.footer-link {
+  font-size: 13px;
+  color: rgba(255,255,255,.4);
+  text-decoration: none;
+  transition: color .2s;
+}
+.footer-link:hover { color: var(--white); }
+.footer-contact-item {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: rgba(255,255,255,.4);
+  align-items: flex-start;
+}
+.footer-contact-item svg { width: 14px; height: 14px; fill: var(--gold); flex-shrink: 0; margin-top: 2px; }
+.footer-contact-item a { color: rgba(255,255,255,.4); text-decoration: none; }
+.footer-contact-item a:hover { color: var(--gold-light); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.07);
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-copy {
+  font-size: 12px;
+  color: rgba(255,255,255,.25);
+}
+.footer-social {
+  display: flex;
+  gap: 8px;
+}
+.footer-social-link {
+  width: 32px; height: 32px;
+  background: rgba(255,255,255,.06);
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,.4);
+  text-decoration: none;
+  font-size: 13px;
+  transition: background .2s, color .2s;
+}
+.footer-social-link:hover { background: var(--gold); color: var(--navy-deep); }
+
+/* ── WhatsApp FAB ── */
+.wa-fab {
   position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background: rgba(44, 62, 80, 0.62);
+  bottom: 28px; right: 28px;
+  width: 56px; height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,.4);
+  z-index: 999;
+  text-decoration: none;
+  transition: transform .2s;
+}
+.wa-fab:hover { transform: scale(1.1); }
+.wa-fab svg { width: 28px; height: 28px; fill: #fff; }
+
+/* ── GALLERY ── */
+.gallery-section { background: var(--navy-deep); padding: 80px 0; }
+.gallery-section .section-eyebrow { color: var(--gold); }
+.gallery-section .section-title { color: var(--white); }
+.gallery-section .section-desc { color: rgba(255,255,255,.45); }
+
+.gallery-filters {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+.gf-btn {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border-radius: 2px;
+  border: 1px solid rgba(255,255,255,.15);
+  background: transparent;
+  color: rgba(255,255,255,.5);
+  cursor: pointer;
+  transition: all .2s;
+}
+.gf-btn:hover { border-color: var(--gold); color: var(--gold); }
+.gf-btn.active { background: var(--gold); color: var(--navy-deep); border-color: var(--gold); }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.gallery-item {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 4/3;
+  border: 1px solid rgba(255,255,255,.07);
+  transition: transform .25s, border-color .25s;
+}
+.gallery-item:hover { transform: scale(1.02); border-color: var(--gold); }
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s;
+}
+.gallery-item:hover img { transform: scale(1.06); }
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 40%, rgba(7,21,41,.92) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 14px;
+  opacity: 0;
+  transition: opacity .25s;
+}
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--navy-deep);
+  padding: 2px 8px;
+  border-radius: 2px;
+  display: inline-block;
+  margin-bottom: 6px;
+  width: fit-content;
+}
+.gallery-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--white);
+  letter-spacing: .3px;
+  line-height: 1.3;
+}
+.gallery-item.hidden { display: none; }
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.97);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.lightbox.open {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 9999;
 }
-.popup-modal.open {
-  opacity: 1;
-  pointer-events: auto;
+.lb-content {
+  max-width: 900px;
+  width: 100%;
+  position: relative;
 }
-.popup-modal img {
-  max-width: 90vw;
-  max-height: 90vh;
+#lb-img {
+  width: 100%;
+  max-height: 75vh;
   object-fit: contain;
-  border-radius: 16px;
-  box-shadow: 0 28px 90px rgba(44, 62, 80, 0.37);
-  animation: zoomIn 0.5s ease;
-}
-
-/* Director popup for detailed info, including image & scroll */
-
-
-/* Close button on popup */
-.close-btn {
-  position: absolute;
-  top: 12px; right: 16px;
-  font-size: 2.6rem;
-  border: none;
-  background: transparent;
-  color: #e67e22;
-  cursor: pointer;
-  font-weight: bold;
-}
-@keyframes zoomIn {
-  from { transform: scale(0.7);}
-  to { transform: scale(1);}
-}
-
-
-/*For mobile phones*/
-
-@media (max-width: 600px) {
-    .hero h1 {
-      font-size: 2rem !important;
-    }
-    .hero p {
-      font-size: 1rem !important;
-      padding: 0 1rem !important;
-    }
-    header, nav, section, footer {
-      padding: 10px 1rem !important;
-    }
-
-}
-
-/* Outer container: hides overflow, white background only behind convoy */
-    .convoy-wrapper {
-      width: 100vw;
-      height: 200px;         /* Fixed height for convoy area */
-      overflow: hidden;
-      position: relative;
-      background: white;     /* White background only behind images */
-    }
-
-    /* Moving strip containing all vehicles (duplicated once) */
-    .convoy-track {
-      display: flex;
-      align-items: center;   /* Center images vertically */
-      width: max-content;
-      animation: moveConvoy 20s linear infinite;
-      height: 100%;
-      padding: 0 20px;       /* Space at edges */
-    }
-
-    .convoy-track img {
-      height: 120px;
-      margin-right: 8px;
-      flex-shrink: 0;
-    }
-
-    /* Company text - appears after each set of 7 vehicles */
-    .company-text {
-      margin-left: 40px;
-      margin-right: 40px;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .company-text span {
-
-    font-size: 2.8rem;
-    font-weight: 900;
-    text-align:center;
-    font-style: italic;
-    font-family:Arial, Helvetica, sans-serif;
-    color: #f17407;
-    letter-spacing: 3px;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-      background: white;
-      padding: 8px 16px;
-      border-radius: 4px;
-    }
-
-    /* Keyframes for smooth continuous motion */
-    @keyframes moveConvoy {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    /* Pause on hover */
-    .convoy-wrapper:hover .convoy-track {
-      animation-play-state: paused;
-    }
-
-    /* Responsive text sizing */
-    @media (max-width: 768px) {
-      .company-text span {
-        font-size: 20px;
-      }
-    }
-
-/* FORCE styles for stats number and plus */
-.hero .stats-grid .counter {
-  font-size: 4rem !important;
-  line-height: 1 !important;
-  font-weight: 900 !important;
-  color: #f17407 !important;
-  font-family: 'Arial Black', Arial, sans-serif !important;
-}
-
-.hero .stats-grid .plus-sign {
-  font-size: 2.2rem !important;        /* slightly bigger for same visual height */
-  line-height: 1 !important;
-  font-weight: 900 !important;
-  color: #f17407 !important;           /* force orange */
-  font-family: 'Arial Black', Arial, sans-serif !important;
-  display: inline-block !important;
-  opacity: 0;
-  transform: scale(0.7);
-  transform-origin: left bottom;
-  transition: opacity 0.25s ease 0.15s, transform 0.25s ease 0.15s;
-}
-
-.hero .stats-grid .plus-sign.show {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/*Home-icon*/
-.home-icon-btn {
-  background: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 12px;   /* space before logo */
-}
-
-.home-icon-img {
-  width: 24px;          /* adjust size as needed */
-  height: 24px;
-  object-fit: contain;
+  border-radius: 6px;
   display: block;
 }
-
-
-/* simple house icon using pure CSS */
-.home-icon {
-  width: 20px;
-  height: 20px;
-  position: relative;
+.lb-caption {
+  margin-top: 14px;
+  text-align: center;
+}
+#lb-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--navy-deep);
+  padding: 3px 10px;
+  border-radius: 2px;
   display: inline-block;
+  margin-bottom: 8px;
 }
-
-/* roof */
-.home-icon::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid #f17407;
-  top: 0;
+#lb-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--white);
+  letter-spacing: .3px;
 }
-
-.home-icon-btn:hover{
-background-color: #e67e22;
+.lb-close {
+  position: fixed;
+  top: 20px; right: 24px;
+  background: rgba(255,255,255,.1);
+  border: none;
+  color: var(--white);
+  font-size: 22px;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background .2s;
+  z-index: 10;
 }
-
-/* body */
-.home-icon::after {
-  content: "";
-  position: absolute;
-  left: 4px;
-  top: 8px;
-  width: 12px;
-  height: 10px;
-  background: #f17407;
-  border-radius: 2px; 
+.lb-close:hover { background: var(--gold); color: var(--navy-deep); }
+.lb-prev, .lb-next {
+  position: fixed;
+  top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,.1);
+  border: none;
+  color: var(--white);
+  font-size: 36px;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background .2s;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 10;
 }
+.lb-prev { left: 16px; }
+.lb-next { right: 16px; }
+.lb-prev:hover, .lb-next:hover { background: var(--gold); color: var(--navy-deep); }
 
- /* TESTIMONIALS */
-        .testimonials { background-image: url(backgrnd.jpg); background-size:cover; }
-        .testimonial-carousel { display: flex; overflow: hidden; position: relative; max-width: 900px; margin: 0 auto 3rem; }
-        .testimonial-slide { min-width: 100%; opacity: 0; transition: opacity 0.6s ease; padding: 0 2rem; }
-        .testimonial-slide.active { opacity: 1; }
-        .testimonial-content { background: transparent; padding: 3rem; border-radius: 20px; box-shadow: var(--shadow); text-align: center; height: 100%; }
-        .client-logo { width: 90px; height: 90px; border-radius: 50%; margin-bottom: 2rem; box-shadow: var(--shadow); }
-        .testimonial-content p { font-size: 1.3rem; color: #ffffff;background-color: #000000;opacity: 0.5; margin: 2rem 0 1.5rem; font-style: italic; line-height: 1.7;font-weight:bolder; }
-        .testimonial-content h4 { font-size: 1rem; color: #ffffff; margin: 2rem 0 1.5rem; font-style: italic; line-height: 1.7; }
-        .stars { color: #fef200; font-size: 1.8rem; margin: 1.5rem 0; }
-        .carousel-nav { text-align: center; }
-        .carousel-nav button { background: var(--primary-orange); color: var(--white); border: none; width: 60px; height: 60px; border-radius: 50%; margin: 0 1rem; cursor: pointer; font-size: 1.8rem; transition: all 0.3s; }
-        .carousel-nav button:hover { transform: scale(1.1); box-shadow: 0 8px 25px rgba(241,116,7,0.4); }
-
-
-        .testimonial-slide {
-  min-width: 100%;
+/* ── ANIMATIONS ── */
+.fade-up {
   opacity: 0;
-  transition: opacity 0.6s ease;
-  display: none;          /* add this */
+  transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
 }
-.testimonial-slide.active {
-  opacity: 1;
-  display: block;         /* ensure active one is visible */
-}
+.fade-up.visible { opacity: 1; transform: none; }
 
-  </style>
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .dealer-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .achievements .ach-inner { grid-template-columns: 1fr 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-overlay { opacity: 1; }
+  
+  .branches-list { grid-template-columns: repeat(4, 1fr); }
+  .cta-inner { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .trust-inner { flex-wrap: wrap; }
+  .trust-item { flex: 1 1 45%; }
+  .nav-links, .nav-cta { display: none; }
+  .nav-toggle { display: block; }
+  .topbar { display: none; }
+  .bkt-teaser { grid-template-columns: 1fr; text-align: center; }
+  .bkt-logo-big { margin: 0 auto; }
+}
+@media (max-width: 600px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .branches-list { grid-template-columns: repeat(3, 1fr); }
+  .footer-grid { grid-template-columns: 1fr; }
+  .ach-inner { grid-template-columns: 1fr 1fr; }
+}
+</style>
 </head>
 <body>
 
-<header>
-  <a href="sshepl.github.io" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
-     <div class="logo-text" style="font-size: 1.2em; letter-spacing: -2px;">S. S. HEAVY EQUIPMENTS PVT. LTD.</div>
-    </a>
-
-
-  <nav style="text-align: right;">
-    <button class="home-icon-btn" onclick="goHome()" aria-label="Home">
-  <img src="home.png" alt="Home" class="home-icon-img">
-</button>
-    <a href="about.html"><strong>About</strong></a>
-    <a href="dealership.html"><strong>Dealerships</strong></a>
-    <a href="branches.html"><strong>Branches</strong></a>
-    <a href="services.html"><strong>Services</strong></a>
-    <a href="gallery.html"><strong>Gallery</strong></a>
-    <a href="index.html#contact"><strong>Contact</strong></a>
-    
-  </nav>
-</header>
-
-<section class="hero" style="background: transparent;" role="banner" aria-label="Hero section with company slogan">
-  <p style="font-family:'Times New Roman', Times, serif; font-size: 3.2em; font-weight: bold; color: #ffffff;">
-    <strong>SSHEPL</strong>
-  </p>
-  <p style="text-align: center; font-size:1.6em; color: #ffffff; font-weight:bold">
-    <strong>Delivering Strength, Reliability, and Service Excellence Since 2013</strong>
-  </p>
-   <!-- STATS GRID - Fixed structure -->
-<div class="stats-grid" id="statsGrid">
-  <div class="stat">
-    <span class="counter-wrapper">
-      <span class="counter" data-target="12">0</span>
-      <span class="plus-sign">+</span>
-    </span>
-    <span>Years </span>
-  </div>
-
-  <div class="stat">
-    <span class="counter-wrapper">
-      <span class="counter" data-target="750">0</span>
-      <span class="plus-sign">+</span>
-    </span>
-    <span>Machines Delivered</span>
-  </div>
-
-  <div class="stat">
-    <span class="counter-wrapper">
-      <span class="counter" data-target="500">0</span>
-      <span class="plus-sign">+</span>
-    </span>
-    <span>Satisfied Clients</span>
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <a class="topbar-item" href="tel:+919822016435">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        +91 9822016435
+      </a>
+      <a class="topbar-item" href="mailto:sshepl.pune@gmail.com">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        sshepl.pune@gmail.com
+      </a>
+    </div>
+    <div class="topbar-right">
+      <div class="topbar-social">
+        <a href="https://www.facebook.com/share/1A4fUjgfnK/" target="_blank" title="Facebook">f</a>
+        <a href="https://www.linkedin.com/company/sshepl/" target="_blank" title="LinkedIn">in</a>
+      </div>
+      <div class="topbar-ssp">Also: <span>SSP Sales Pvt. Ltd.</span> — BKT Tyre Distributor</div>
+    </div>
   </div>
 </div>
 
-<a href="#contact" class="btn-primary">Request Quote Now</a>
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="images/sshepl-logo.png" alt="SSHEPL" style="height:44px;width:auto;border-radius:6px">
+      <div class="nav-brand-text">
+        <div class="nav-brand-name">S. S. HEAVY EQUIPMENTS PVT. LTD.</div>
+        <div class="nav-brand-sub">Est. 2013 · Maharashtra</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a class="nav-link active" href="index.html">Home</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="dealerships.html">Dealerships</a>
+      <a class="nav-link nav-link-bkt" href="bkt.html">BKT Tyres</a>
+      <a class="nav-link" href="services.html">Services</a>
+      <a class="nav-link" href="branches.html">Branches</a>
+    </div>
+    <a class="nav-cta" href="#contact">Get Quote →</a>
+    <button class="nav-toggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img class="hero-bg-img" src="images/caselogo.jpg" alt="">
+    <img class="hero-bg-img" src="D:\New_SSHEPL\images\case-3.webp" alt="">
+    <img class="hero-bg-img" src="" alt="">
+  </div>
+  <div class="hero-bg-overlay"></div>
+  <div class="hero-grid-lines"></div>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-dot"></div>
+        Maharashtra's #1 CASE Equipment Dealer
+      </div>
+      <h1 class="hero-title">
+        Delivering<br>
+        <span class="hero-title-accent">Strength</span><br>
+        Since 2013
+      </h1>
+      <p class="hero-subtitle">
+        Authorized dealer for <strong>CASE Construction Equipment</strong>. Now also BKT Tyre Distributor across Pune, Nashik &amp; Chhatrapati Sambhajinagar.
+      </p>
+      <div class="hero-btns">
+        <a class="btn-gold" href="#contact">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+          Request a Quote
+        </a>
+        <a class="btn-ghost" href="dealerships.html">
+          Explore Equipment →
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-number" data-count="12">0</div>
+          <div class="hero-stat-label">Years active</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number" data-count="500">0</div>
+          <div class="hero-stat-label">Machines delivered</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number" data-count="50">0</div>
+          <div class="hero-stat-label">Team members</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number" data-count="7">0</div>
+          <div class="hero-stat-label">Branch cities</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <img class="hero-img-main" src="images\case-compactor.webp" alt="CASE Construction Equipment">
+      <img class="hero-img-secondary" src="images\case-excavator.webp" alt="Heavy equipment in action">
+      <div class="hero-badge-float">
+        #1 Pan-India<br>Machine Sales<br>2025
+      </div>
+    </div>
+  </div>
 </section>
 
-
-<br><br>
-
-<div class="convoy-wrapper">
-  <div class="convoy-track" id="convoyTrack">
-    <!-- Original 7 vehicles + company text -->
-    <img src="animation (3).jpeg" alt="Vehicle 6">
-    <img src="animation (2).jpeg" alt="Vehicle 4">
-    <img src="animation (1).jpeg" alt="Vehicle 1">
-    <img src="animation (1).jpg" alt="Vehicle 2">
-    <img src="animation (2).jpg" alt="Vehicle 5">
-    <img src="animation (1).png" alt="Vehicle 3">
-    <img src="animation (3).jpg" alt="Vehicle 7">
-    <div class="company-text">
-      <span>S. S. HEAVY EQUIPMENTS PVT. LTD.</span>
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
+      <div>
+        <div class="trust-label">Authorized Dealer</div>
+        <div class="trust-sub">CASE · BKT</div>
+      </div>
     </div>
-
-    <!-- Duplicate everything for seamless loop -->
-     <img src="animation (3).jpeg" alt="Vehicle 6">
-    <img src="animation (2).jpeg" alt="Vehicle 4">
-    <img src="animation (1).jpeg" alt="Vehicle 1">
-    <img src="animation (1).jpg" alt="Vehicle 2">
-    <img src="animation (2).jpg" alt="Vehicle 5">
-    <img src="animation (1).png" alt="Vehicle 3">
-    <img src="animation (3).jpg" alt="Vehicle 7">
-    <div class="company-text">
-      <span>S. S. HEAVY EQUIPMENTS PVT. LTD.</span>
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg></div>
+      <div>
+        <div class="trust-label">24/7 Support</div>
+        <div class="trust-sub">Breakdown response teams</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+      <div>
+        <div class="trust-label">7 Branch Cities</div>
+        <div class="trust-sub">Across Maharashtra</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg></div>
+      <div>
+        <div class="trust-label">50+ Professionals</div>
+        <div class="trust-sub">Certified technicians</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.33C18 2.54 15.96.5 13.5.5S9 2.54 9 4.67c0 .45.11.89.18 1.33H7c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h13c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-6.5-4c1.07 0 2 .93 2 2.17 0 1.54-1.09 3.83-2 5.17-.91-1.34-2-3.63-2-5.17C11.5 2.93 12.43 2 13.5 2zM20 21H7V8h3.73c.84 1.56 2.09 3.5 2.77 3.5.68 0 1.93-1.94 2.77-3.5H20v13z"/></svg></div>
+      <div>
+        <div class="trust-label">3× Award Winner</div>
+        <div class="trust-sub">Highest compactor sales in India</div>
+      </div>
     </div>
   </div>
 </div>
 
-<video autoplay loop muted playsinline class="background-video">
-  <source src="https://media.githubusercontent.com/media/sshepl-2013/sshepl/main/assets/videos/index.mp4" type="video/mp4">
-</video>
+<!-- DEALERSHIPS -->
+<section class="dealerships">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-eyebrow">Our Dealerships</div>
+      <h2 class="section-title">Equipment You Can Trust</h2>
+      <p class="section-desc">Authorized dealer for industry-leading brands — backed by full sales, spares, and service support across Maharashtra.</p>
+    </div>
+
+    <div class="dealer-grid">
+      <div class="dealer-card fade-up">
+        
+        <div class="dealer-card-body">
+          <div class="dealer-card-logo-row">
+            <img src="images/case-construction.png" alt="CASE Construction" style="height:48px;width:auto;object-fit:contain">
+            <span class="dealer-badge dealer-badge-auth">Authorized Dealer</span>
+          </div>
+          <div class="dealer-card-name">CASE Construction Equipment</div>
+          <p class="dealer-card-desc">Italian-American global leader in construction machinery since 1842. Part of CNH Industrial — pioneers of the factory-integrated backhoe loader.</p>
+          <div class="dealer-products">
+            <span class="product-chip">Backhoe Loaders</span>
+            <span class="product-chip">Compactors</span>
+            <span class="product-chip">Crawler Excavator</span>
+            <span class="product-chip">Graders</span>
+            <span class="product-chip">Crawler Dozers</span>
+            
+          </div>
+          <a class="dealer-link" href="dealerships.html">View CASE Products →</a>
+        </div>
+      </div>
 
 
 
+      <!-- BKT teaser -->
+      <div class="bkt-teaser fade-up" style="position:relative">
+        <div class="bkt-logo-big"><img src="images/bkt-tires.png" style="height:60px;width:80px;object-fit:contain" alt="BKT Commercial Tyres"></div>
+        <div>
+          <div class="bkt-new-badge">New Distributorship — 2026</div>
+          <span class="dealer-badge dealer-badge-auth" style="position:absolute;top:28px;right:28px;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:2px;background:#EAF3DE;color:#3B6D11">AUTHORIZED DISTRIBUTOR</span>
+          <div class="bkt-teaser-title">BKT Commercial Tyres</div>
+          <p class="bkt-teaser-sub">
+            Under <strong>SSP Sales Pvt. Ltd.</strong> — now distributing BKT commercial tyres across
+            <strong>Pune · Nashik · Chhatrapati Sambhajinagar</strong>.
+            Truck radials, tippers, OTR &amp; heavy transport for India's toughest terrains.
+          </p>
+        </div>
+        <a class="btn-bkt" href="bkt.html">Explore BKT Tyres →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-eyebrow">What We Do</div>
+      <h2 class="section-title section-title-white">Complete 3S Support</h2>
+      <p class="section-desc section-desc-white">Sales, Spares &amp; Service — end-to-end support for CASE construction equipment across Maharashtra.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <div class="service-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+        </div>
+        <div class="service-name">Sales</div>
+        <p class="service-desc">Equipment selection, site demonstrations, finance coordination and exchange programs.</p>
+        <div class="service-items">
+          <div class="service-item">New equipment sales for CASE</div>
+          <div class="service-item">Exchange &amp; finance coordination</div>
+          <div class="service-item">Site visits &amp; demos</div>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.33A4.5 4.5 0 0013.5.5 4.5 4.5 0 009 4.67c0 .45.11.89.18 1.33H7c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h13c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2z"/></svg>
+        </div>
+        <div class="service-name">Spares</div>
+        <p class="service-desc">Genuine OEM replacement parts with stocked warehouses for fast-moving items.</p>
+        <div class="service-items">
+          <div class="service-item">Genuine OEM spare parts</div>
+          <div class="service-item">Undercarriage, filters, pins &amp; bushes</div>
+          <div class="service-item">Ground engaging tools</div>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+        </div>
+        <div class="service-name">Service &amp; Repair</div>
+        <p class="service-desc">Certified technicians for engine overhauls, hydraulic diagnosis and electrical troubleshooting.</p>
+        <div class="service-items">
+          <div class="service-item">Engine &amp; powertrain overhauls</div>
+          <div class="service-item">Hydraulic system repair</div>
+          <div class="service-item">Electrical troubleshooting</div>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M12 3L2 12h3v8h6v-5h2v5h6v-8h3L12 3zm0 12.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+        </div>
+        <div class="service-name">Structural &amp; Welding</div>
+        <p class="service-desc">Bucket hard-facing, boom and arm crack repair, line boring and pin-hole rebuilding.</p>
+        <div class="service-items">
+          <div class="service-item">Bucket rebuilding &amp; hard-facing</div>
+          <div class="service-item">Boom, arm &amp; chassis crack repair</div>
+          <div class="service-item">Line boring &amp; pin-hole rebuild</div>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/></svg>
+        </div>
+        <div class="service-name">Field Support</div>
+        <p class="service-desc">On-site breakdown assistance, preventive maintenance and operator training programs.</p>
+        <div class="service-items">
+          <div class="service-item">On-site breakdown response</div>
+          <div class="service-item">Preventive maintenance</div>
+          <div class="service-item">Operator &amp; maintenance training</div>
+        </div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon-wrap">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6z"/></svg>
+        </div>
+        <div class="service-name">Workshop</div>
+        <p class="service-desc">16,000+ sq ft of workshop and warehouse across Pune, Solapur &amp; Sambhajinagar.</p>
+        <div class="service-items">
+          <div class="service-item">Pune — 5,000 sq ft</div>
+          <div class="service-item">Solapur — 3,000 sq ft</div>
+          <div class="service-item">Sambhajinagar — 8,000 sq ft</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px">
+      <a class="btn-gold" href="services.html">View All Services →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SSHEPL -->
+<section class="why-section">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-left fade-up">
+        <div class="why-img-wrap">
+          <img class="why-img" src="images/case-4.webp" alt="SSHEPL in action">
+          <div class="why-img-overlay">
+            <div class="why-img-stat">#1</div>
+            <div class="why-img-stat-label">Pan-India machine sales up to Sept 2025</div>
+          </div>
+        </div>
+      </div>
+      <div class="why-right fade-up">
+        <div class="section-eyebrow">Why Choose SSHEPL</div>
+        <h2 class="section-title">Built on Performance, Grown on Trust</h2>
+        <p class="section-desc">From a startup in 2013 to Maharashtra's most decorated heavy equipment dealer — here's what sets us apart.</p>
+        <div class="why-items">
+          <div class="why-item">
+            <div class="why-num">01</div>
+            <div>
+              <div class="why-item-title">12+ Years of Deep Industry Experience</div>
+              <p class="why-item-desc">Our directors bring 30+ combined years in construction equipment sales, service, and management. We understand what contractors and infrastructure companies need.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">02</div>
+            <div>
+              <div class="why-item-title">Recognized as India's Best — 3 Years Running</div>
+              <p class="why-item-desc">Awarded for Highest Compactor Sales in India for three consecutive years. Qualified in Sapphire Club with CNH for 2024. Ranked #1 pan-India in machine sales.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">03</div>
+            <div>
+              <div class="why-item-title">Territory That Grows With Performance</div>
+              <p class="why-item-desc">Started with Pune &amp; Satara — now covering 8 districts across Maharashtra. Every expansion was earned through top sales and service performance, not just contracts.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">04</div>
+            <div>
+              <div class="why-item-title">Always There — 24/7 Field Response</div>
+              <p class="why-item-desc">Breakdown on a site? Our teams across 7 cities respond around the clock. Stocked warehouses mean no waiting weeks for critical parts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS BAR -->
+<div class="achievements">
+  <div class="ach-inner">
+    <div class="ach-item fade-up">
+      <div class="ach-number">12+</div>
+      <div class="ach-label">Years in Business</div>
+    </div>
+    <div class="ach-item fade-up">
+      <div class="ach-number">500+</div>
+      <div class="ach-label">Machines Delivered</div>
+    </div>
+    <div class="ach-item fade-up">
+      <div class="ach-number">50+</div>
+      <div class="ach-label">Team Members</div>
+    </div>
+    <div class="ach-item fade-up">
+      <div class="ach-number">3×</div>
+      <div class="ach-label">National Award Winner</div>
+    </div>
+  </div>
+</div>
 
 <!-- TESTIMONIALS -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <h2 style="color: #ffffff;">What Our Clients Say</h2>
-            <div class="testimonial-carousel">
-                <div class="testimonial-slide active">
-                    <div class="testimonial-content">
-                        <img src="client-logo1.png" alt="" class="client-logo">
-                        <p>"SSHEPL delivered our CASE backhoe loader ahead of schedule with excellent after-sales service. Their team is professional and responsive."</p>
-                        <div class="stars">★★★★★</div>
-                        <h4><br><small></small></h4>
-                    </div>
-                </div>
-                <div class="testimonial-slide">
-                    <div class="testimonial-content">
-                        <img src="client-logo2.png" alt="" class="client-logo">
-                        <p>"Best ELSA mixer supplier in Maharashtra. Quick spare parts availability and excellent service support."</p>
-                        <div class="stars">★★★★★</div>
-                        <h4><br><small></small></h4>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-nav">
-                <button class="carousel-prev" aria-label="Previous">‹</button>
-                <button class="carousel-next" aria-label="Next">›</button>
-            </div>
+<section class="testimonials">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;margin-bottom:48px">
+      <div class="section-eyebrow">Client Testimonials</div>
+      <h2 class="section-title">What Our Clients Say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-up">
+        <span class="testimonial-quote-mark">"</span>
+        <p class="testimonial-text">SSHEPL delivered our CASE 770EX backhoe loader ahead of schedule with excellent after-sales service. Their team is professional, responsive, and always available when we need them on site.</p>
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">RC</div>
+          <div>
+            <div class="testimonial-name">Ramdas Constructions</div>
+            <div class="testimonial-co">Pune — CASE Backhoe Loader · 2024</div>
+          </div>
         </div>
-    </section>
-
-
-<section id="contact" class="contact-section">
-  <div class="contact-wrapper">
-    <!-- LEFT: your existing contact info -->
-    <div class="contact-info">
-<br><br>
-
-      <h2>Contact</h2><br>
-      <h3>For enquiries contact us at</h3>
-
-      <p><strong>Phone :</strong> +91 9822016435, 9822353430, 9422332031</p><br>
-      <p>
-        <strong>Email :<button style="background-color: rgba(0,0,0,0.25);"></strong>
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sshepl.pune@gmail.com"
-          target="_blank" rel="noopener" style="color:#ffffff;">
-          sshepl.pune@gmail.com</button>
-        </a>
-      </p><br>
-      <p>
-        <strong>Address :</strong> 116/6/1, Mumbai Bengaluru Highway<br>
-        Near 'R' Square Building,<br>
-        Opposite Vinayak Hospital, Pune. 411058
-      </p><br>
-
-      <h3>Follow us on</h3>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/share/1A4fUjgfnK/" target="_blank" rel="noopener">
-          <img src="facebook_logo.png" alt="Facebook">
-        </a>
-        <a href="https://www.linkedin.com/company/sshepl/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BhACo4bk6QEav8dcNJPMwrA%3D%3D"
-           target="_blank" rel="noopener">
-          <img src="linkedin_logo.png" alt="LinkedIn">
-        </a>
+      </div>
+      <div class="testimonial-card fade-up">
+        <span class="testimonial-quote-mark">"</span>
+        <p class="testimonial-text">SSHEPL's after-sales support in Marathwada is unmatched. Genuine spare parts, fast turnaround, and a service team that actually comes on-site. Highly recommend them for CASE equipment.</p>
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">KI</div>
+          <div>
+            <div class="testimonial-name">Kale Infra Pvt. Ltd.</div>
+            <div class="testimonial-co">Chhatrapati Sambhajinagar — CASE Soil Compactor · 2024</div>
+          </div>
+        </div>
       </div>
     </div>
-
-    <!-- RIGHT: Inquiry form -->
-    <form class="contact-form" id="inquiry-form" action="https://formspree.io/f/manrapek" method="POST">
-<br><br>
-
-      <h3>Inquiry Form</h3>
-
-      <div class="field">
-        <label for="name">Name *</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-
-      <div class="field">
-        <label for="email">Email (optional)</label>
-        <input type="email" id="email" name="email">
-      </div>
-
-      <div class="field">
-        <label for="phone">Phone *</label>
-        <input type="tel" id="phone" name="phone" required>
-      </div>
-
-      <div class="field">
-        <label for="inquiryType">Inquiry *</label>
-        <select id="inquiryType" name="inquiryType" required>
-          <option value="">Select inquiry type</option>
-          <option value="sales">Sales</option>
-          <option value="service">Service</option>
-          <option value="spares">Spares</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label for="machineBrand">Machine *</label>
-        <select id="machineBrand" name="machineBrand" required>
-          <option value="">Select brand</option>
-          <option value="case">CASE</option>
-          <option value="elsa">ELSA</option>
-          <option value="bkt">BKT</option>
-        </select>
-      </div>
-
-      <!-- CASE product list -->
-      <div class="field product-field" id="caseProductsField" style="display:none;">
-        <label for="caseProduct">CASE Product *</label>
-        <select id="caseProduct" name="caseProduct">
-  <option value="">Select CASE product</option>
-  <option value="backhoe">Backhoe Loader</option>
-  <option value="compactor">Soil Compactor</option>
-  <option value="excavator">Crawler Excavator</option>
-  <option value="grader">Motor Grader</option>
-  <option value="dozer">Dozers</option>
-  <option value="loader">Wheel Loader</option>
-  <option value="other">Other</option>
-</select>
-<div class="field" id="caseOtherField" style="display:none;">
-  <label for="caseOther">Other CASE product *</label>
-  <input type="text" id="caseOther" name="caseOther" placeholder="Enter product name">
-</div>
-
-      </div>
-
-      <!-- ELSA product list -->
-      <div class="field product-field" id="elsaProductsField" style="display:none;">
-        <label for="elsaProduct">ELSA Product *</label>
-        <select id="elsaProduct" name="elsaProduct">
-  <option value="">Select ELSA product</option>
-  <option value="slm">Self‑Loading Mixer</option>
-  <option value="inline">Inline Batching Plant</option>
-  <option value="captive">Captive Batching Plant</option>
-  <option value="compact">Compact Batching Plant</option>
-  <option value="other">Other</option>
-</select>
-<div class="field" id="elsaOtherField" style="display:none;">
-  <label for="elsaOther">Other ELSA product *</label>
-  <input type="text" id="elsaOther" name="elsaOther" placeholder="Enter product name">
-</div>
-      </div>
-
-      <!-- BKT – simple optional text -->
-      <div class="field product-field" id="bktProductsField" style="display:none;">
-        <label for="bktProduct">BKT Tyre (optional)</label>
-        <input type="text" id="bktProduct" name="bktProduct"
-               placeholder="Truck / OTR / other tyre">
-      </div>
-
-      <div class="field">
-        <label for="city">City *</label>
-        <input type="text" id="city" name="city" required>
-      </div>
-
-      <div class="field">
-        <label for="message">Describe your requirement / problem (optional)</label>
-        <textarea id="message" name="message" rows="4"></textarea>
-      </div>
-
-      <button type="submit" class="contact-submit">Submit Inquiry</button>
-    </form>
   </div>
 </section>
 
+<!-- GALLERY SECTION -->
+<section class="gallery-section">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;margin-bottom:40px">
+      <div class="section-eyebrow">Our Work in the Field</div>
+      <h2 class="section-title">Machines Delivered.<br>Customers Powered.</h2>
+      <p class="section-desc" style="margin:0 auto">Real deliveries, real workshops, real recognition — across Maharashtra since 2013.</p>
+    </div>
 
+    <!-- FILTER TABS -->
+    <div class="gallery-filters fade-up">
+      <button class="gf-btn active" onclick="filterGallery('all',this)">All</button>
+      <button class="gf-btn" onclick="filterGallery('delivery',this)">Deliveries</button>
+      <button class="gf-btn" onclick="filterGallery('workshop',this)">Workshop</button>
+      <button class="gf-btn" onclick="filterGallery('awards',this)">Awards</button>
+      <button class="gf-btn" onclick="filterGallery('fleet',this)">Fleet</button>
+    </div>
 
+    <!-- GALLERY GRID -->
+    <div class="gallery-grid fade-up">
 
-<footer>
-    &copy; 2026 S. S. Heavy Equipments Pvt. Ltd. All rights reserved.
-  </footer>
-<!-- Modal popup for images -->
-<div class="popup-modal" style="display:none;"></div>
+      
 
-<script>
-  // Show sections on scroll
-  window.addEventListener('scroll', ()=> {
-    document.querySelectorAll('section').forEach(sec => {
-      if (sec.getBoundingClientRect().top < window.innerHeight * 0.8) {
-        sec.classList.add('visible');
-      }
-    });
-  });
-  document.querySelectorAll('.director').forEach(d => {
-    d.addEventListener('click', () => {
-      // Show director info modal
-      showDirectorInfo(d.dataset.index);
-    });
-  });
-  function showDirectorInfo(index) {
-    const directors = [
-      {
-        name: "Santosh Chougule", qualification: "Diploma in Production Technology", experience: "15 Years", career: [
-          "1996-2000: Larsen & Toubro Limited",
-          "2000-2009: L&T Case Equipment Pvt. Ltd.",
-          "2009-2011: Telco Construction Equipment Limited",
-          "2011-13: Chaitanya Escorts – Managing Partner",
-          "2013 – Till date: S.S. Heavy Equipments Pvt. Ltd."
-        ],
-        img: "director1.jpg"
-      },
-      {
-        name: "Prasad Diwakar", qualification: "Diploma in Automobile, B.E (Mech), MBA (Marketing)", experience: "10 Years", career: [
-          "1994–2003: Magna Industrial Corporation (Australia)",
-          "2004 – Till 2024: Habco Inweld India Pvt. Ltd.",
-          "2013 – Till date: S.S. Heavy Equipments Pvt. Ltd."
-        ],
-        img: "director2.jpg"
-      },
-      {
-        name: "Sachin Deshmukh", qualification: "Diploma in Automobile Engineering", experience: "4 Years", career: [
-          "1998–2002: Authorized Dealership of Larsen & Toubro Limited",
-          "2002 – Till date: S.S. Engineers - Proprietor",
-          "2013 – Till date: S.S. Heavy Equipments Pvt. Ltd."
-        ],
-        img: "director3.jpg"
-      }
-    ];
-    const director = directors[index];
-    // create modal
-    const modalDiv = document.createElement('div');
-    modalDiv.className = 'popup-modal open';
-    modalDiv.innerHTML = `
-      <div class="director-info" role="dialog" aria-modal="true" aria-labelledby="directorName">
-        <button class="close-btn" aria-label="Close">&times;</button>
-        <h3 id="directorName">${director.name}</h3>
-        <img src="${director.img}" alt="${director.name}">
-        <p><strong>Qualification:</strong> ${director.qualification}</p>
-        <p><strong>Experience:</strong> ${director.experience}</p>
-        ${director.career.map(entry => `<p>${entry}</p>`).join('')}
+      <div class="gallery-item" data-cat="delivery" onclick="openLightbox(1)">
+        <img src="images/gallery/0704.jpeg" alt="CASE Compactor Delivery">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Delivery</span>
+          <div class="gallery-title">CASE Compactor — Delivered with Pride</div>
+        </div>
       </div>
-    `;
-    document.body.appendChild(modalDiv);
-    // event to close modal
-    modalDiv.querySelector('.close-btn').onclick = () => {
-      document.body.removeChild(modalDiv);
-    };
-    modalDiv.onclick = e => {
-      if (e.target === modalDiv) {
-        document.body.removeChild(modalDiv);
-      }
-    };
-  }
-  // Image enlarge effect
-  document.querySelectorAll('.images img').forEach(img => {
-    img.onclick = () => {
-      const modal = document.createElement('div');
-      modal.className = 'popup-modal';
-      modal.innerHTML = `
-        <button class="close-btn" aria-label="Close">&times;</button>
-        <img src="${img.src}">
-      `;
-      document.body.appendChild(modal);
-      modal.style.display='flex';
-      modal.querySelector('.close-btn').onclick = () => document.body.removeChild(modal);
-      modal.onclick = e => { if (e.target === modal) document.body.removeChild(modal); };
-    }
-  });
-</script>
+
+      <div class="gallery-item" data-cat="delivery" onclick="openLightbox(2)">
+        <img src="images/gallery/gallerypic.jpg" alt="On-Site Delivery October 2025">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Delivery</span>
+          <div class="gallery-title">On-Site Delivery — October 2025</div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-cat="delivery" onclick="openLightbox(3)">
+        <img src="images/gallery/gal2.jpg" alt="ELSA Machinery Key Handover">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Delivery</span>
+          <div class="gallery-title">ELSA Machinery — Key Handover Ceremony</div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-cat="fleet" onclick="openLightbox(4)">
+        <img src="images/gallery/2.jpg" alt="Our Fleet Ready for Delivery">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Fleet</span>
+          <div class="gallery-title">Our Fleet — Ready for Delivery</div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-cat="awards" onclick="openLightbox(5)">
+        <img src="images/gallery/Award_photo.png" alt="Award Ceremony">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Awards</span>
+          <div class="gallery-title">Award Ceremony — CASE Dealership Recognition</div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-cat="workshop" onclick="openLightbox(6)">
+        <img src="images/gallery/MH13WORKSHIP (3).png" alt="Workshop Solapur">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Workshop</span>
+          <div class="gallery-title">Our Workshop — Solapur</div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-cat="workshop" onclick="openLightbox(0)">
+        <img src="images/gallery/MH20WORKSHIOP.png" alt="Warehouse Sambhajinagar">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Warehouse</span>
+          <div class="gallery-title">Our Warehouse</div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-cat="workshop" onclick="openLightbox(7)">
+        <img src="images/gallery/MH12WORKSHOP (1).jpg" alt="Service Centre Pune">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Workshop</span>
+          <div class="gallery-title">Service Centre — Pune</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <button class="lb-prev" onclick="changeSlide(-1);event.stopPropagation()">&#8249;</button>
+  <button class="lb-next" onclick="changeSlide(1);event.stopPropagation()">&#8250;</button>
+  <div class="lb-content">
+    <img id="lb-img" src="" alt="">
+    <div class="lb-caption">
+      <span id="lb-tag"></span>
+      <div id="lb-title"></div>
+    </div>
+  </div>
+</div>
+
+<!-- BRANCHES STRIP -->
+<div class="branches-strip">
+  <div class="branches-strip-inner">
+    <div class="branches-header">
+      <div>
+        <div class="section-eyebrow">Our Network</div>
+        <h2 class="section-title section-title-white" style="font-size:clamp(28px,3vw,42px)">7 Cities. All of Maharashtra.</h2>
+      </div>
+      <a class="btn-ghost" href="branches.html" style="white-space:nowrap">View All Branches →</a>
+    </div>
+    <div class="branches-list">
+      <div class="branch-pill has-workshop">
+        <div class="branch-pill-city">Pune</div>
+        <div class="branch-pill-type">Head Office + Workshop</div>
+      </div>
+      <div class="branch-pill has-workshop">
+        <div class="branch-pill-city">Solapur</div>
+        <div class="branch-pill-type">Branch + Workshop</div>
+      </div>
+      <div class="branch-pill has-workshop">
+        <div class="branch-pill-city">Sambhajinagar</div>
+        <div class="branch-pill-type">Branch + Workshop</div>
+      </div>
+      <div class="branch-pill">
+        <div class="branch-pill-city">Kolhapur</div>
+        <div class="branch-pill-type">Branch Office</div>
+      </div>
+      <div class="branch-pill">
+        <div class="branch-pill-city">Latur</div>
+        <div class="branch-pill-type">Branch Office</div>
+      </div>
+      <div class="branch-pill">
+        <div class="branch-pill-city">Nanded</div>
+        <div class="branch-pill-type">Branch Office</div>
+      </div>
+      <div class="branch-pill">
+        <div class="branch-pill-city">Satara</div>
+        <div class="branch-pill-type">Branch Office</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA / CONTACT -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div class="fade-up">
+      <h2 class="cta-title">Ready to Talk?<br><span>We Respond Fast.</span></h2>
+      <p class="cta-desc">Need a machine, a quote, a spare part, or emergency field support? Our team across 7 cities is ready.</p>
+      <div class="cta-contact-items">
+        <div class="cta-contact-item">
+          <div class="cta-contact-icon"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></div>
+          <div class="cta-contact-text"><a href="tel:+919822016435">+91 9822016435</a> &nbsp;·&nbsp; <a href="tel:+919822353430">+91 9822353430</a> &nbsp;·&nbsp; <a href="tel:+919422332031">+91 9422332031</a></div>
+        </div>
+        <div class="cta-contact-item">
+          <div class="cta-contact-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+          <div class="cta-contact-text"><a href="mailto:sshepl.pune@gmail.com">sshepl.pune@gmail.com</a></div>
+        </div>
+        <div class="cta-contact-item">
+          <div class="cta-contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+          <div class="cta-contact-text">116/6/1, Mumbai-Bengaluru Highway, Opp. Vinayak Hospital, Pune 411058</div>
+        </div>
+        <div class="cta-contact-item">
+          <div class="cta-contact-icon" style="background:rgba(37,211,102,.15)"><svg viewBox="0 0 24 24" style="fill:#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+          <div class="cta-contact-text"><a href="https://wa.me/919822016435" target="_blank" style="color:#25D366">Chat on WhatsApp →</a></div>
+        </div>
+      </div>
+    </div>
+
+    <form class="inquiry-form fade-up" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="YOUR-WEB3FORMS-KEY-HERE">
+  <input type="hidden" name="subject" value="New Inquiry — SSHEPL Website">
+  <input type="hidden" name="from_name" value="SSHEPL Website">
+  <div class="form-title">Send an Inquiry</div>
+      <div class="form-row-2">
+        <div class="form-group">
+          <label class="form-label">Full Name *</label>
+          <input class="form-input" type="text" placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone *</label>
+          <input class="form-input" type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input class="form-input" type="email" placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Inquiry Type *</label>
+        <select class="form-select">
+          <option value="">Select inquiry type</option>
+          <option>Sales — CASE Equipment</option>
+          
+          <option>BKT Tyres (SSP Sales)</option>
+          <option>Service / Repair</option>
+          <option>Spare Parts</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Machine / Product</label>
+        <input class="form-input" type="text" placeholder="e.g. CASE 770EX Backhoe Loader">
+      </div>
+      <div class="form-group">
+        <label class="form-label">City *</label>
+        <input class="form-input" type="text" placeholder="Your city">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea class="form-textarea" placeholder="Describe your requirement or problem..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Submit Inquiry →</button>
+</form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">S.S. Heavy Equipments</div>
+        <div class="footer-brand-sub">Pvt. Ltd. · Est. 2013</div>
+        <p class="footer-brand-desc">Authorized dealer for CASE Construction Equipment. Delivering sales, spares and service excellence across Maharashtra since 2013.</p>
+        <div class="footer-ssp-note">
+          <span>SSP Sales Pvt. Ltd.</span> — Authorized BKT Tyre Distributor<br>
+          <span style="color:rgba(255,255,255,.4);font-size:11px">Pune · Nashik · Chhatrapati Sambhajinagar</span>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <div class="footer-links">
+          <a class="footer-link" href="index.html">Home</a>
+          <a class="footer-link" href="about.html">About Us</a>
+          <a class="footer-link" href="dealerships.html">Dealerships</a>
+          <a class="footer-link" href="bkt.html">BKT Tyres</a>
+          <a class="footer-link" href="services.html">Services</a>
+          <a class="footer-link" href="branches.html">Branches</a>
+          <a class="footer-link" href="#contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Dealerships</div>
+        <div class="footer-links">
+          <a class="footer-link" href="dealerships.html">CASE Construction Equipment</a>
+          
+          <a class="footer-link" href="bkt.html">BKT Commercial Tyres</a>
+        </div>
+        <div class="footer-col-title" style="margin-top:20px">Follow Us</div>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <a class="footer-social-link" href="https://www.facebook.com/share/1A4fUjgfnK/" target="_blank">f</a>
+          <a class="footer-social-link" href="https://www.linkedin.com/company/sshepl/" target="_blank">in</a>
+          <a class="footer-social-link" href="https://wa.me/919822016435" target="_blank">wa</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          <div><a href="tel:+919822016435">+91 9822016435</a><br><a href="tel:+919822353430">+91 9822353430</a><br><a href="tel:+919422332031">+91 9422332031</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <a href="mailto:sshepl.pune@gmail.com">sshepl.pune@gmail.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          116/6/1, Mumbai-Bengaluru Hwy, Opp. Vinayak Hospital, Pune 411058
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 S. S. HEAVY EQUIPMENTS PVT. LTD. & SSP SALES PVT. LTD.  All rights reserved.</div>
+      <div class="footer-copy">Authorized CASE · BKT Dealer in Maharashtra</div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp FAB -->
+<a class="wa-fab" href="https://wa.me/919822016435" target="_blank" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 
 <script>
-  const track = document.getElementById('convoyTrack');
-
-  function updateAnimation() {
-    const totalWidth = track.scrollWidth;
-    track.style.animationDuration = (totalWidth / 50) + 's'; 
-  }
-
-  window.addEventListener('load', updateAnimation);
-  window.addEventListener('resize', updateAnimation);
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const paragraphs = document.querySelectorAll('.hero p');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  paragraphs.forEach(p => observer.observe(p));
-});
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/image-map-resizer@1.0.10/js/imageMapResizer.min.js"></script>
-
-<script>
-  // Disable automatic scroll restoration
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
-
-  window.addEventListener('load', function () {
-    // If URL has a hash like #contact, let the browser scroll there
-    if (window.location.hash) return;
-
-    // Otherwise always start at top
-    window.scrollTo(0, 0);
-  });
-</script>
-
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const brandSelect = document.getElementById('machineBrand');
-  const caseField   = document.getElementById('caseProductsField');
-  const elsaField   = document.getElementById('elsaProductsField');
-  const bktField    = document.getElementById('bktProductsField');
-  const caseSelect  = document.getElementById('caseProduct');
-  const elsaSelect  = document.getElementById('elsaProduct');
-
-  const caseOtherField = document.getElementById('caseOtherField');
-  const elsaOtherField = document.getElementById('elsaOtherField');
-  const caseOtherInput = document.getElementById('caseOther');
-  const elsaOtherInput = document.getElementById('elsaOther');
-
-  function updateProductFields() {
-    const brand = brandSelect.value;
-    caseField.style.display = brand === 'case' ? 'block' : 'none';
-    elsaField.style.display = brand === 'elsa' ? 'block' : 'none';
-    bktField.style.display  = brand === 'bkt'  ? 'block' : 'none';
-
-    caseSelect.required = (brand === 'case');
-    elsaSelect.required = (brand === 'elsa');
-
-  
-
-
-    // hide and clear any "other" fields when switching brand
-    if (brand !== 'case') {
-      caseOtherField.style.display = 'none';
-      caseOtherInput.required = false;
-      caseOtherInput.value = '';
-    }
-    if (brand !== 'elsa') {
-      elsaOtherField.style.display = 'none';
-      elsaOtherInput.required = false;
-      elsaOtherInput.value = '';
-    }
-  }
-
-  function updateCaseOther() {
-    const val = caseSelect.value;
-    const show = (val === 'other');
-    caseOtherField.style.display = show ? 'block' : 'none';
-    caseOtherInput.required = show;
-    if (!show) caseOtherInput.value = '';
-  }
-
-  function updateElsaOther() {
-    const val = elsaSelect.value;
-    const show = (val === 'other');
-    elsaOtherField.style.display = show ? 'block' : 'none';
-    elsaOtherInput.required = show;
-    if (!show) elsaOtherInput.value = '';
-  }
-
-  brandSelect.addEventListener('change', updateProductFields);
-  caseSelect.addEventListener('change', updateCaseOther);
-  elsaSelect.addEventListener('change', updateElsaOther);
-
-  updateProductFields();
-  updateCaseOther();
-  updateElsaOther();
-
-  // demo submit handler
-  
-});
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    // STATS COUNTER ANIMATION - MOVED TO TOP LEVEL
-    function animateCounters() {
-    const counters = document.querySelectorAll('.counter');
-    const statsGrid = document.getElementById('statsGrid');
-    
-    counters.forEach((counter, index) => {
-        const target = parseInt(counter.getAttribute('data-target'));
-        const increment = target / 150;
-        let current = 0;
-        
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-    counter.textContent = target;
-    clearInterval(timer);
-
-    // SHOW PLUS SIGN after counting finishes (for any counter that has it)
-    const plusSign = counter.parentElement.querySelector('.plus-sign');
-    if (plusSign) {
-        setTimeout(() => {
-            plusSign.classList.add('show');
-        }, 200);
-    }
-} else {
-    counter.textContent = Math.floor(current);
+/* ── COUNTER ANIMATION ── */
+function animateCounter(el) {
+  const target = parseInt(el.dataset.count);
+  const suffix = el.dataset.suffix || (target >= 100 ? '+' : '+');
+  const duration = 1800;
+  const start = performance.now();
+  const update = (now) => {
+    const progress = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    const current = Math.floor(ease * target);
+    el.textContent = current + suffix;
+    if (progress < 1) requestAnimationFrame(update);
+    else el.textContent = target + suffix;
+  };
+  requestAnimationFrame(update);
 }
 
-        }, 25);
-    });
-    
-    statsGrid.classList.add('visible');
-}
-
-
-    // Trigger stats when hero section is visible
-    const statsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateCounters();
-                statsObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    statsObserver.observe(document.querySelector('.hero'));
-
-    // === YOUR EXISTING FORM LOGIC BELOW ===
-    const brandSelect = document.getElementById('machineBrand');
-    const caseField = document.getElementById('caseProductsField');
-    const elsaField = document.getElementById('elsaProductsField');
-    const bktField = document.getElementById('bktProductsField');
-    const caseSelect = document.getElementById('caseProduct');
-    const elsaSelect = document.getElementById('elsaProduct');
-    const caseOtherField = document.getElementById('caseOtherField');
-    const elsaOtherField = document.getElementById('elsaOtherField');
-    const caseOtherInput = document.getElementById('caseOther');
-    const elsaOtherInput = document.getElementById('elsaOther');
-
-    function updateProductFields() {
-        const brand = brandSelect.value;
-        caseField.style.display = brand === 'case' ? 'block' : 'none';
-        elsaField.style.display = brand === 'elsa' ? 'block' : 'none';
-        bktField.style.display = brand === 'bkt' ? 'block' : 'none';
-
-        caseSelect.required = (brand === 'case');
-        elsaSelect.required = (brand === 'elsa');
-
-        if (brand !== 'case') {
-            caseOtherField.style.display = 'none';
-            caseOtherInput.required = false;
-            caseOtherInput.value = '';
-        }
-        if (brand !== 'elsa') {
-            elsaOtherField.style.display = 'none';
-            elsaOtherInput.required = false;
-            elsaOtherInput.value = '';
-        }
+/* ── INTERSECTION OBSERVER — fade-up + counters ── */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      const counters = entry.target.querySelectorAll('[data-count]');
+      counters.forEach(c => animateCounter(c));
+      if (entry.target.dataset.count) animateCounter(entry.target);
+      observer.unobserve(entry.target);
     }
+  });
+}, { threshold: 0.15 });
 
-    function updateCaseOther() {
-        const val = caseSelect.value;
-        const show = (val === 'other');
-        caseOtherField.style.display = show ? 'block' : 'none';
-        caseOtherInput.required = show;
-        if (!show) caseOtherInput.value = '';
-    }
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    function updateElsaOther() {
-        const val = elsaSelect.value;
-        const show = (val === 'other');
-        elsaOtherField.style.display = show ? 'block' : 'none';
-        elsaOtherInput.required = show;
-        if (!show) elsaOtherInput.value = '';
-    }
+/* Also observe hero stats directly */
+document.querySelectorAll('.hero-stat-number[data-count]').forEach(el => {
+  const io = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) { animateCounter(el); io.disconnect(); }
+  }, { threshold: 0.5 });
+  io.observe(el);
+});
 
-    brandSelect.addEventListener('change', updateProductFields);
-    caseSelect.addEventListener('change', updateCaseOther);
-    elsaSelect.addEventListener('change', updateElsaOther);
-
-    updateProductFields();
-    updateCaseOther();
-    updateElsaOther();
-
-    // Form submission
-   // Form submission
-   document.getElementById('inquiry-form').addEventListener('submit', function(e) {
-  // Show loading
-  const submitBtn = document.querySelector('.contact-submit');
-  const originalText = submitBtn.textContent;
-  submitBtn.textContent = 'Sending...';
-  submitBtn.disabled = true;
-  
-  // Formspree handles submission automatically
+/* ── FORM SUBMIT ── */
+function handleSubmit(btn) {
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
   setTimeout(() => {
-    alert('✅ Thank you! Your inquiry has been sent to SSHEPL.');
-    document.getElementById('inquiry-form').reset();
-    submitBtn.textContent = originalText;
-    submitBtn.disabled = false;
-  }, 2000);
-     });
-});
-</script>
+    btn.textContent = '✓ Inquiry Sent! We\'ll respond shortly.';
+    btn.style.background = '#1D9E75';
+  }, 1200);
+}
 
-<script>
-function goHome() {
-  const isHome =
-    window.location.pathname.endsWith('index.html') ||
-    window.location.pathname === '/' ||
-    window.location.pathname === '';
+/* ── GALLERY DATA ── */
+const galleryData = [
+  { img: 'images/gallery/0704.jpeg',        tag: 'Delivery', title: 'CASE Compactor — Key Handover' },
+  { img: 'images/gallery/gallerypic.jpg', tag: 'Delivery', title: 'CASE Wheel Loader — Delivered with Pride' },
+  { img: 'images/gallery/gal2.jpg',     tag: 'Delivery', title: 'ELSA Machinery — Key Handover Ceremony'},
+  { img: 'images/gallery/2.jpg',        tag: 'Fleet', title: 'Our Fleet — Ready for Delivery' },
+  { img: 'images/gallery/award_photo.png',                tag: 'Awards',    title: 'Award Ceremony — CASE Dealership Recognition'  },
+  { img: 'images/gallery/MH13WORKSHIP (3).png',                tag: 'Workshop',   title: 'Our Workshop — Solapur' },
+  { img: 'images/gallery/MH20WORKSHIOP.png',     tag: 'Workshop', title: 'Our Warehouse' },
+  { img: 'images/gallery/MH12WORKSHOP (1).jpg',        tag: 'Workshop', title: 'Service Centre — Pune' },
+];
+let currentSlide = 0;
+let visibleSlides = [];
 
-  if (isHome) {
-    // already on home: refresh
-    window.location.reload();
-  } else {
-    // go to home page
-    window.location.href = 'index.html';
+function filterGallery(cat, btn) {
+  document.querySelectorAll('.gf-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const items = document.querySelectorAll('.gallery-item');
+  visibleSlides = [];
+  items.forEach((item, i) => {
+    const match = cat === 'all' || item.dataset.cat === cat;
+    item.classList.toggle('hidden', !match);
+    if (match) visibleSlides.push(i);
+  });
+}
+
+function openLightbox(index) {
+  currentSlide = index;
+  updateLightbox();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox(e) {
+  if (!e || e.target === document.getElementById('lightbox') || e.target.classList.contains('lb-close')) {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
   }
 }
+
+function changeSlide(dir) {
+  currentSlide = (currentSlide + dir + galleryData.length) % galleryData.length;
+  updateLightbox();
+}
+
+function updateLightbox() {
+  const d = galleryData[currentSlide];
+  document.getElementById('lb-img').src = d.img;
+  document.getElementById('lb-img').alt = d.title;
+  document.getElementById('lb-tag').textContent = d.tag;
+  document.getElementById('lb-title').textContent = d.title;
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  const lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'ArrowRight') changeSlide(1);
+  if (e.key === 'ArrowLeft') changeSlide(-1);
+  if (e.key === 'Escape') { lb.classList.remove('open'); document.body.style.overflow = ''; }
+});
+
+// Init visible slides
+visibleSlides = galleryData.map((_, i) => i);
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  nav.style.boxShadow = window.scrollY > 10 ? '0 2px 20px rgba(0,0,0,.3)' : 'none';
+});
 </script>
-
-
-<script>
-
-// Testimonial Carousel
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.testimonial-slide');
-        document.querySelector('.carousel-next').addEventListener('click', () => {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        });
-        document.querySelector('.carousel-prev').addEventListener('click', () => {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-        });
-
-
-</script>
-
 </body>
 </html>
-
-
