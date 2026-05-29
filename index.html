@@ -497,6 +497,7 @@ section { padding: 80px 0; }
   overflow: hidden;
   transition: border-color .2s, transform .2s;
   background: var(--white);
+  border: 1px solid rgba(58, 39, 3, 0.2);
 }
 .dealer-card:hover { border-color: var(--gold); transform: translateY(-3px); }
 .dealer-card-img {
@@ -574,14 +575,14 @@ section { padding: 80px 0; }
 /* BKT teaser inside dealerships */
 .bkt-teaser {
   grid-column: 1 / -1;
-  background: #1A1A1A;
+  background: #000000;
   border-radius: 8px;
   padding: 36px 40px;
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 32px;
   align-items: center;
-  border: 1px solid rgba(255,165,0,.2);
+  border: 1px solid rgba(58, 39, 3, 0.2);
 }
 .bkt-logo-big {
   width: 100px; height: 100px;
@@ -592,6 +593,7 @@ section { padding: 80px 0; }
   font-size: 28px;
   color: #fff;
   letter-spacing: 2px;
+  border: .8px solid #000000;
 }
 .bkt-new-badge {
   display: inline-block;
@@ -615,7 +617,7 @@ section { padding: 80px 0; }
 }
 .bkt-teaser-sub {
   font-size: 14px;
-  color: rgba(255,255,255,.5);
+  color: rgba(255, 255, 255, 0.5);
   line-height: 1.5;
 }
 .bkt-teaser-sub strong { color: #18B325; font-weight: 500; }
@@ -633,6 +635,7 @@ section { padding: 80px 0; }
   white-space: nowrap;
   transition: background .2s;
 }
+.bkt-teaser:hover { border-color: var(--gold); transform: translateY(-3px); }
 .btn-bkt:hover { background: #e05500; }
 
 /* ── SERVICES SECTION ── */
@@ -1462,8 +1465,8 @@ footer {
     </div>
 
     <div class="hero-right">
-      <img class="hero-img-main" src="images\case-compactor.webp" alt="CASE Construction Equipment">
-      <img class="hero-img-secondary" src="images\case-excavator.webp" alt="Heavy equipment in action">
+      <img class="hero-img-main" src="images/case-compactor.webp" alt="CASE Construction Equipment">
+      <img class="hero-img-secondary" src="images/case-excavator.webp" alt="Heavy equipment in action">
       <div class="hero-badge-float">
         #1 Pan-India<br>Machine Sales<br>2025
       </div>
@@ -1516,7 +1519,7 @@ footer {
 <section class="dealerships">
   <div class="container">
     <div class="fade-up">
-      <div class="section-eyebrow">Our Dealerships</div>
+      <div class="section-eyebrow">Our Dealerships and Distribtorship</div>
       <h2 class="section-title">Equipment You Can Trust</h2>
       <p class="section-desc">Authorized dealer for industry-leading brands — backed by full sales, spares, and service support across Maharashtra.</p>
     </div>
@@ -1532,14 +1535,16 @@ footer {
           <div class="dealer-card-name">CASE Construction Equipment</div>
           <p class="dealer-card-desc">Italian-American global leader in construction machinery since 1842. Part of CNH Industrial — pioneers of the factory-integrated backhoe loader.</p>
           <div class="dealer-products">
-            <span class="product-chip">Backhoe Loaders</span>
-            <span class="product-chip">Compactors</span>
-            <span class="product-chip">Crawler Excavator</span>
-            <span class="product-chip">Graders</span>
-            <span class="product-chip">Crawler Dozers</span>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px">
+  <a href="backhoe-loaders.html" style="font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:.5px;text-transform:uppercase;background:var(--off-white);border:1px solid var(--gray-light);border-radius:2px;padding:4px 10px;color:var(--navy);text-decoration:none">Backhoe Loaders</a>
+  <a href="compactors.html" style="font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:.5px;text-transform:uppercase;background:var(--off-white);border:1px solid var(--gray-light);border-radius:2px;padding:4px 10px;color:var(--navy);text-decoration:none">Compactors</a>
+  <a href="excavators.html" style="font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:.5px;text-transform:uppercase;background:var(--off-white);border:1px solid var(--gray-light);border-radius:2px;padding:4px 10px;color:var(--navy);text-decoration:none">Excavators</a>
+  <a href="motor-graders.html" style="font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:.5px;text-transform:uppercase;background:var(--off-white);border:1px solid var(--gray-light);border-radius:2px;padding:4px 10px;color:var(--navy);text-decoration:none">Motor Graders</a>
+  <a href="crawler-dozers.html" style="font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:.5px;text-transform:uppercase;background:var(--off-white);border:1px solid var(--gray-light);border-radius:2px;padding:4px 10px;color:var(--navy);text-decoration:none">Crawler Dozers</a>
+</div>
             
           </div>
-          <a class="dealer-link" href="dealerships.html">View CASE Products →</a>
+          <a class="dealer-link" href="dealerships.html">View All CASE Products →</a>
         </div>
       </div>
 
