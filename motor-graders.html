@@ -65,6 +65,61 @@ nav{background:var(--navy);position:sticky;top:0;z-index:100;border-bottom:2px s
 .cta-strip{background:var(--gold);padding:48px 0}.cta-strip-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:32px}.cta-strip-title{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--navy-deep);letter-spacing:1.5px}.cta-strip-sub{font-size:14px;color:rgba(7,21,41,.6);margin-top:4px}.btn-navy{background:var(--navy-deep);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;padding:13px 28px;border-radius:4px;text-decoration:none;transition:background .2s;white-space:nowrap}.btn-ghost-navy{background:transparent;color:var(--navy-deep);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;padding:12px 26px;border-radius:4px;border:2px solid var(--navy-deep);text-decoration:none;transition:all .2s;white-space:nowrap}.btn-ghost-navy:hover{background:var(--navy-deep);color:var(--white)}
 footer{background:var(--navy-deep);padding:48px 0 0;border-top:2px solid var(--gold)}.footer-inner{max-width:1200px;margin:0 auto;padding:0 32px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:32px}.footer-brand-name{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--white);letter-spacing:2px;margin-bottom:4px}.footer-brand-sub{font-size:11px;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}.footer-brand-desc{font-size:13px;color:rgba(255,255,255,.3);line-height:1.6}.footer-col-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}.footer-link{font-size:13px;color:rgba(255,255,255,.4);text-decoration:none;display:block;margin-bottom:6px;transition:color .2s}.footer-link:hover{color:var(--white)}.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding:16px 0;display:flex;justify-content:space-between}.footer-copy{font-size:12px;color:rgba(255,255,255,.25)}
 .wa-fab{position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);z-index:999;text-decoration:none;transition:transform .2s}.wa-fab:hover{transform:scale(1.1)}.wa-fab svg{width:28px;height:28px;fill:#fff}
+
+/*1*/
+/* ── ACCORDION + TABS ── */
+.accordion-section{background:var(--off-white);padding:64px 0}
+.accordion-wrap{margin-top:48px;display:flex;flex-direction:column;gap:16px}
+.accordion-item{background:var(--white);border:1px solid var(--gray-light);border-radius:8px;overflow:hidden;transition:border-color .2s}
+.accordion-item.open{border-color:var(--gold)}
+.accordion-header{display:flex;align-items:center;justify-content:space-between;padding:22px 28px;cursor:pointer;user-select:none;gap:16px}
+.accordion-header:hover{background:var(--off-white)}
+.accordion-header-left{display:flex;align-items:center;gap:16px}
+.accordion-series-tag{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;background:rgba(212,148,10,.1);border:1px solid rgba(212,148,10,.3);color:var(--gold);padding:3px 10px;border-radius:2px}
+.accordion-title{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--navy);letter-spacing:1.5px}
+.accordion-subtitle{font-size:13px;color:var(--gray-mid);margin-top:2px}
+.accordion-arrow{width:32px;height:32px;background:var(--off-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--navy);transition:transform .3s;flex-shrink:0}
+.accordion-item.open .accordion-arrow{transform:rotate(180deg);background:var(--gold);color:var(--white)}
+.accordion-body{display:none;padding:0 28px 28px}
+.accordion-item.open .accordion-body{display:block}
+/* Model tabs */
+.model-tabs{display:flex;gap:6px;margin-bottom:24px;flex-wrap:wrap;border-bottom:2px solid var(--gray-light);padding-bottom:0}
+.model-tab{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;padding:10px 20px;border:none;background:none;color:var(--gray-mid);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s}
+.model-tab:hover{color:var(--navy)}
+.model-tab.active{color:var(--navy);border-bottom-color:var(--gold)}
+.model-panel{display:none}.model-panel.active{display:block}
+/* Model content */
+.model-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-top:20px}
+.model-img-wrap{border-radius:6px;overflow:hidden;border:1px solid var(--gray-light);background:var(--navy)}
+.model-img{width:100%;height:280px;object-fit:cover;display:block}
+.model-img-placeholder{width:100%;height:280px;background:linear-gradient(135deg,#0B1F3A,#132d50);display:flex;align-items:center;justify-content:center}
+.model-overview-title{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--navy);letter-spacing:1.5px;margin-bottom:6px}
+.model-overview-badge{display:inline-block;background:#EAF3DE;color:#3B6D11;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:2px;margin-bottom:10px}
+.model-overview-desc{font-size:14px;color:var(--gray-mid);line-height:1.8;margin-bottom:16px}
+.model-key-specs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;padding:16px;background:var(--off-white);border-radius:6px}
+.mspec-label{font-size:10px;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.5px}
+.mspec-val{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--navy);margin-top:2px}
+/* Full spec table */
+.spec-table-wrap{margin-top:28px}
+.spec-table-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--gray-light)}
+.spec-table{width:100%;border-collapse:collapse;font-size:13px}
+.spec-table tr{border-bottom:1px solid var(--gray-light)}
+.spec-table tr:last-child{border-bottom:none}
+.spec-table td:first-child{color:var(--gray-mid);padding:8px 12px 8px 0;width:55%;font-size:12px}
+.spec-table td:last-child{color:var(--navy);font-weight:500;padding:8px 0;text-align:right}
+/* Features */
+.features-list{margin-top:24px}
+.feature-item{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--gray-light);font-size:13px;color:var(--text-body);line-height:1.5}
+.feature-item:last-child{border-bottom:none}
+.feature-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:6px}
+/* Bottom action row */
+.model-actions{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;padding-top:16px;border-top:1px solid var(--gray-light)}
+.btn-quote{background:var(--navy);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:10px 20px;border-radius:4px;text-decoration:none;transition:background .2s;border:none;cursor:pointer}
+.btn-quote:hover{background:var(--gold);color:var(--navy-deep)}
+.btn-brochure{background:transparent;color:var(--navy);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:9px 18px;border-radius:4px;border:1.5px solid var(--navy);text-decoration:none;transition:all .2s}
+.btn-brochure:hover{border-color:var(--gold);color:var(--gold)}
+@media(max-width:900px){.model-grid{grid-template-columns:1fr}}
+
 .fade-up{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}.fade-up.visible{opacity:1;transform:none}
 @media(max-width:900px){.model-showcase{grid-template-columns:1fr}.features-grid{grid-template-columns:1fr 1fr}.why-grid{grid-template-columns:1fr 1fr}.nav-links,.nav-cta{display:none}.topbar{display:none}.footer-grid{grid-template-columns:1fr}.cta-strip-inner{flex-direction:column;text-align:center}}
 @media(max-width:600px){.features-grid,.why-grid{grid-template-columns:1fr}}
@@ -141,7 +196,7 @@ footer{background:var(--navy-deep);padding:48px 0 0;border-top:2px solid var(--g
   <div class="series-spec-item"><div class="series-spec-label">Models</div><div class="series-spec-val">3 Variants</div></div>
   <div class="series-spec-item"><div class="series-spec-label">Best For</div><div class="series-spec-val">Road Sub-grade, earthworks</div></div>
 </div>
-      <a class="series-cta" href="#">View B Series →</a>
+      <span class="series-cta" onclick="scrollAndOpen('acc-b')">View B Series →</span>
     </div>
   </div>
 
@@ -167,7 +222,7 @@ footer{background:var(--navy-deep);padding:48px 0 0;border-top:2px solid var(--g
   <div class="series-spec-item"><div class="series-spec-label">Transmission</div><div class="series-spec-val">Torque Converter Lock-Up</div></div>
   <div class="series-spec-item"><div class="series-spec-label">Best For</div><div class="series-spec-val">Highway Grading</div></div>
 </div>
-      <a class="series-cta" href="#">View C Series →</a>
+      <span class="series-cta" onclick="scrollAndOpen('acc-c')">View C Series →</span>
     </div>
   </div>
 
@@ -184,7 +239,318 @@ footer{background:var(--navy-deep);padding:48px 0 0;border-top:2px solid var(--g
     <div class="feature-card fade-up"><div class="feature-icon">🔧</div><div class="feature-name">Easy Serviceability</div><p class="feature-desc">Ground-level access to major service points — filters, fluids, and daily checks — reduces maintenance time and operating costs.</p></div>
     <div class="feature-card fade-up"><div class="feature-icon">💪</div><div class="feature-name">130 HP Performance</div><p class="feature-desc">Powerful 130 HP engine delivers ample torque for demanding grading operations in hard and compacted material conditions.</p></div>
   </div>
-</div></section>
+</div>
+
+<!--2-->
+<!-- ACCORDION MODELS -->
+<section class="accordion-section" id="models">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-eyebrow">All Models</div>
+      <h2 class="section-title">Explore Every Variant</h2>
+      <p class="section-desc">Click any series to see full specs, features and details for each model.</p>
+    </div>
+
+    <div class="accordion-wrap">
+
+      <!-- B SERIES ACCORDION -->
+      <div class="accordion-item fade-up" id="acc-b">
+        <div class="accordion-header" onclick="toggleAccordion('acc-b')">
+          <div class="accordion-header-left">
+            <div>
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+                <span class="accordion-series-tag">B Series</span>
+                <span style="font-size:11px;color:var(--gray-mid);font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px">2 Models · 173–220 HP · Proven Performance</span>
+              </div>
+              <div class="accordion-title">B Series Motor Graders</div>
+              <div class="accordion-subtitle">845B · 865B VHP — Strong throttle response, superior visibility, flip-up rear hood</div>
+            </div>
+          </div>
+          <div class="accordion-arrow">▼</div>
+        </div>
+        <div class="accordion-body">
+          <div class="model-tabs">
+            <button class="model-tab active" onclick="switchTab('b','845b',this)">845B</button>
+            <button class="model-tab" onclick="switchTab('b','865b',this)">865B VHP</button>
+          </div>
+
+          <!-- 845B PANEL -->
+          <div class="model-panel active" id="b-845b">
+            <div class="model-grid">
+              <div>
+                <img class="model-img"
+                  src="https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/5c87aef60ca5489c9e7fa10d4c35bc90?v=33ad7001&t=size500"
+                  alt="CASE 845B Motor Grader"
+                  onerror="this.style.display='none'">
+              </div>
+              <div>
+                <div class="model-overview-badge">Medium Scale · Road Construction</div>
+                <div class="model-overview-title">CASE 845B</div>
+                <p class="model-overview-desc">The 845B is a dependable motor grader built for medium-scale road construction, mining support, and land development across Maharashtra. It delivers strong blade accuracy, powerful grading performance, and consistent reliability in Indian working conditions. Widely used on PMGSY rural road projects and state highway sub-grade preparation — the 845B is the right machine when you need proven performance at a competitive operating cost. Its industry-leading flip-up rear hood and ground-level service access keep downtime minimal on remote sites.</p>
+                <div class="model-key-specs">
+                  <div><div class="mspec-label">Engine Power</div><div class="mspec-val">173 HP</div></div>
+                  <div><div class="mspec-label">Operating Weight</div><div class="mspec-val">14,605 kg</div></div>
+                  <div><div class="mspec-label">Turning Radius</div><div class="mspec-val">7,250 mm</div></div>
+                  <div><div class="mspec-label">Top Speed</div><div class="mspec-val">41.5 km/h</div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="spec-table-wrap">
+              <div class="spec-table-title">Engine</div>
+              <table class="spec-table">
+                <tr><td>Engine power</td><td>173 HP</td></tr>
+                <tr><td>Throttle response</td><td>Strong at every RPM</td></tr>
+                <tr><td>Cold-start capability</td><td>Improved</td></tr>
+                <tr><td>Emission level</td><td>CEV BS-IV</td></tr>
+              </table>
+
+              <div class="spec-table-title" style="margin-top:20px">Performance</div>
+              <table class="spec-table">
+                <tr><td>Operating weight</td><td>14,605 kg</td></tr>
+                <tr><td>Turning radius</td><td>7,250 mm</td></tr>
+                <tr><td>Top forward speed</td><td>41.5 km/h</td></tr>
+                <tr><td>Blade width</td><td>Standard</td></tr>
+                <tr><td>Frame</td><td>Rugged A-frame design</td></tr>
+              </table>
+
+              <div class="spec-table-title" style="margin-top:20px">Serviceability</div>
+              <table class="spec-table">
+                <tr><td>Hood design</td><td>Industry-leading flip-up rear hood</td></tr>
+                <tr><td>Service access</td><td>Ground-level — all daily checks</td></tr>
+                <tr><td>Visibility</td><td>Outstanding all-round cab visibility</td></tr>
+                <tr><td>Optional attachments</td><td>Ripper 3-teeth · Scarifier 5-teeth</td></tr>
+              </table>
+            </div>
+
+            <div class="features-list">
+              <div class="spec-table-title">Key Features</div>
+              <div class="feature-item"><div class="feature-dot"></div>173 HP engine with strong throttle response at every RPM — maintains consistent blade speed and grading accuracy even on long uphill stretches common on Maharashtra highway projects</div>
+              <div class="feature-item"><div class="feature-dot"></div>Industry-leading flip-up rear hood gives unobstructed access to engine and mechanical components — service teams spend less time on maintenance, more time grading</div>
+              <div class="feature-item"><div class="feature-dot"></div>Rugged A-frame design provides excellent stability — critical for precision grading on embankments and sloped road sections in Western Maharashtra terrain</div>
+              <div class="feature-item"><div class="feature-dot"></div>Outstanding operator cabin visibility — clear sightlines to the blade and all four corners of the machine for safer, more precise operation on congested sites</div>
+              <div class="feature-item"><div class="feature-dot"></div>Optional ripper (3-teeth) and scarifier (5-teeth) attachments — breaks up hard compacted soil before grading, essential for rural road construction in Marathwada's black cotton soil regions</div>
+              <div class="feature-item"><div class="feature-dot"></div>Improved cold-start capability — starts reliably in Maharashtra's cooler winter mornings without warm-up delays, keeping project timelines on track</div>
+            </div>
+
+            <div class="model-actions">
+              <button class="btn-quote" onclick="openQuoteModal('CASE 845B Motor Grader')">Get Quote for 845B →</button>
+              <a class="btn-brochure" href="https://www.casece.com/en/india/products/graders/b-series-graders/845b" target="_blank">View on CASE India ↗</a>
+            </div>
+          </div>
+
+          <!-- 865B VHP PANEL -->
+          <div class="model-panel" id="b-865b">
+            <div class="model-grid">
+              <div>
+                <img class="model-img"
+                  src="https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/5c87aef60ca5489c9e7fa10d4c35bc90?v=33ad7001&t=size500"
+                  alt="CASE 865B VHP Motor Grader"
+                  onerror="this.style.display='none'">
+              </div>
+              <div>
+                <div class="model-overview-badge">Heavy Duty · High Performance</div>
+                <div class="model-overview-title">CASE 865B VHP</div>
+                <p class="model-overview-desc">The 865B VHP (Variable Horsepower) is CASE's heavy-duty B Series grader — engineered for long operational cycles on demanding infrastructure projects. With 220 HP available on demand, it handles the toughest grading tasks including deep-cut road widening, rocky terrain leveling, and large-scale earthwork on national highway projects. The VHP system intelligently manages power delivery — giving maximum force when the blade needs it and saving fuel when it doesn't. A popular choice for road contractors working on Maharashtra's expanding highway and expressway network.</p>
+                <div class="model-key-specs">
+                  <div><div class="mspec-label">Engine Power</div><div class="mspec-val">220 HP (VHP)</div></div>
+                  <div><div class="mspec-label">Operating Weight</div><div class="mspec-val">15,587 kg</div></div>
+                  <div><div class="mspec-label">Turning Radius</div><div class="mspec-val">7,250 mm</div></div>
+                  <div><div class="mspec-label">Top Speed</div><div class="mspec-val">36 km/h</div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="spec-table-wrap">
+              <div class="spec-table-title">Engine</div>
+              <table class="spec-table">
+                <tr><td>Engine power (VHP)</td><td>220 HP</td></tr>
+                <tr><td>VHP system</td><td>Variable Horsepower — power on demand</td></tr>
+                <tr><td>Emission level</td><td>CEV BS-IV</td></tr>
+                <tr><td>Hood design</td><td>Flip-up rear hood</td></tr>
+              </table>
+
+              <div class="spec-table-title" style="margin-top:20px">Performance</div>
+              <table class="spec-table">
+                <tr><td>Operating weight</td><td>15,587 kg</td></tr>
+                <tr><td>Turning radius</td><td>7,250 mm</td></tr>
+                <tr><td>Top forward speed</td><td>36 km/h</td></tr>
+                <tr><td>Operational cycle</td><td>Long — heavy-duty design</td></tr>
+              </table>
+
+              <div class="spec-table-title" style="margin-top:20px">Attachments</div>
+              <table class="spec-table">
+                <tr><td>Ripper</td><td>3-teeth</td></tr>
+                <tr><td>Scarifier</td><td>5-teeth</td></tr>
+                <tr><td>Additional teeth</td><td>2 ripper + 4 scarifier optional</td></tr>
+                <tr><td>Rear pull hook</td><td>Available</td></tr>
+                <tr><td>Work lights</td><td>2 behind blade + 2 mounted on hood</td></tr>
+              </table>
+            </div>
+
+            <div class="features-list">
+              <div class="spec-table-title">Key Features</div>
+              <div class="feature-item"><div class="feature-dot"></div>Variable Horsepower (VHP) system delivers 220 HP on demand — maximum blade force when cutting through hard compacted surfaces, fuel savings during lighter grading passes</div>
+              <div class="feature-item"><div class="feature-dot"></div>Engineered for long operational cycles — heavier build at 15,587 kg provides the stability and durability needed for sustained heavy-duty highway grading</div>
+              <div class="feature-item"><div class="feature-dot"></div>4 work lights (2 behind blade + 2 hood-mounted) — enables night shift operation common on fast-track highway projects across Maharashtra</div>
+              <div class="feature-item"><div class="feature-dot"></div>Ripper and scarifier attachments — breaks compacted gravel and rock before grading, reducing wear on the blade and improving grade quality on highway widening projects</div>
+              <div class="feature-item"><div class="feature-dot"></div>Rear pull hook — towing capability for recovery operations and equipment repositioning on large sites</div>
+              <div class="feature-item"><div class="feature-dot"></div>Flip-up rear hood with ground-level service access — even on a heavy 220 HP machine, daily service checks and maintenance are fast and straightforward</div>
+            </div>
+
+            <div class="model-actions">
+              <button class="btn-quote" onclick="openQuoteModal('CASE 865B VHP Motor Grader')">Get Quote for 865B VHP →</button>
+              <a class="btn-brochure" href="https://www.casece.com/en/india/products/graders/b-series-graders/865b" target="_blank">View on CASE India ↗</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- C SERIES ACCORDION -->
+      <div class="accordion-item fade-up" id="acc-c">
+        <div class="accordion-header" onclick="toggleAccordion('acc-c')">
+          <div class="accordion-header-left">
+            <div>
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+                <span class="accordion-series-tag">C Series</span>
+                <span style="font-size:11px;color:var(--gray-mid);font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px">2 Models · 150–193 HP · Torque Converter Lock-Up</span>
+              </div>
+              <div class="accordion-title">C Series Motor Graders</div>
+              <div class="accordion-subtitle">845C · 865C — Faster travel speed, FPT engine, multi-radius blade, advanced grading</div>
+            </div>
+          </div>
+          <div class="accordion-arrow">▼</div>
+        </div>
+        <div class="accordion-body">
+          <div class="model-tabs">
+            <button class="model-tab active" onclick="switchTab('c','845c',this)">845C</button>
+            <button class="model-tab" onclick="switchTab('c','865c',this)">865C</button>
+          </div>
+
+          <!-- 845C PANEL -->
+          <div class="model-panel active" id="c-845c">
+            <div class="model-grid">
+              <div>
+                <img class="model-img"
+                  src="https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/5c87aef60ca5489c9e7fa10d4c35bc90?v=33ad7001&t=size500"
+                  alt="CASE 845C Motor Grader"
+                  onerror="this.style.display='none'">
+              </div>
+              <div>
+                <div class="model-overview-badge">Versatile · Adapts to All Conditions</div>
+                <div class="model-overview-title">CASE 845C</div>
+                <p class="model-overview-desc">The 845C is CASE's next-generation medium grader — upgraded from the proven 845B platform with the torque converter lock-up system that converts hydraulic coupling to a direct rigid connection, allowing faster machine travel between grading passes. This means less time repositioning and more time grading — directly improving production on long road stretches. The 845C adapts effortlessly to different site conditions: from precise sub-grade preparation on urban road projects to rough rural road leveling across Maharashtra's interior districts.</p>
+                <div class="model-key-specs">
+                  <div><div class="mspec-label">Engine Power</div><div class="mspec-val">150 HP</div></div>
+                  <div><div class="mspec-label">Operating Weight</div><div class="mspec-val">14,373 kg</div></div>
+                  <div><div class="mspec-label">Turning Radius</div><div class="mspec-val">7,250 mm</div></div>
+                  <div><div class="mspec-label">Top Speed</div><div class="mspec-val">42.8 km/h</div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="spec-table-wrap">
+              <div class="spec-table-title">Engine</div>
+              <table class="spec-table">
+                <tr><td>Engine power</td><td>150 HP</td></tr>
+                <tr><td>Engine displacement</td><td>6.7 L</td></tr>
+                <tr><td>Cylinders</td><td>6</td></tr>
+                <tr><td>Transmission upgrade</td><td>Torque Converter Lock-Up system</td></tr>
+              </table>
+
+              <div class="spec-table-title" style="margin-top:20px">Performance</div>
+              <table class="spec-table">
+                <tr><td>Operating weight</td><td>14,373 kg</td></tr>
+                <tr><td>Turning radius</td><td>7,250 mm</td></tr>
+                <tr><td>Top forward speed</td><td>42.8 km/h (+3.3 km/h vs 845B)</td></tr>
+                <tr><td>Blade design</td><td>Multi-radius for top-notch grading results</td></tr>
+                <tr><td>Service access</td><td>Simplified — easily accessible main checks</td></tr>
+              </table>
+            </div>
+
+            <div class="features-list">
+              <div class="spec-table-title">Key Features</div>
+              <div class="feature-item"><div class="feature-dot"></div>Torque converter lock-up system — automatically switches from hydraulic coupling to direct rigid coupling for faster travel between passes, reducing repositioning time on long road stretches</div>
+              <div class="feature-item"><div class="feature-dot"></div>42.8 km/h top speed (fastest in CASE India grader range) — moves quickly between work zones on large highway projects, keeping pace with tight project timelines</div>
+              <div class="feature-item"><div class="feature-dot"></div>Multi-radius blade ensures superior grading results — better surface finish quality on road sub-grade and final wearing course preparation</div>
+              <div class="feature-item"><div class="feature-dot"></div>Adapts effortlessly to different site conditions — equally effective on hard laterite, black cotton soil, gravel, and mixed terrain found across Maharashtra</div>
+              <div class="feature-item"><div class="feature-dot"></div>Simplified maintenance with easily accessible service points — reduces daily service time even for field technicians, minimizing downtime on remote project sites</div>
+              <div class="feature-item"><div class="feature-dot"></div>6.7L 6-cylinder engine — smooth power delivery with excellent low-end torque for consistent blade force through the entire grading pass</div>
+            </div>
+
+            <div class="model-actions">
+              <button class="btn-quote" onclick="openQuoteModal('CASE 845C Motor Grader')">Get Quote for 845C →</button>
+              <a class="btn-brochure" href="https://www.casece.com/en/india/products/graders" target="_blank">View on CASE India ↗</a>
+            </div>
+          </div>
+
+          <!-- 865C PANEL -->
+          <div class="model-panel" id="c-865c">
+            <div class="model-grid">
+              <div>
+                <img class="model-img"
+                  src="https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/5c87aef60ca5489c9e7fa10d4c35bc90?v=33ad7001&t=size500"
+                  alt="CASE 865C Motor Grader"
+                  onerror="this.style.display='none'">
+              </div>
+              <div>
+                <div class="model-overview-badge">Top of Range · Large Infrastructure</div>
+                <div class="model-overview-title">CASE 865C</div>
+                <p class="model-overview-desc">The 865C is CASE's most advanced motor grader for the Indian market — designed for high-accuracy grading on large infrastructure projects. Powered by a 6.7L FPT engine delivering up to 193 HP and 930 Nm of torque, it provides superior traction and blade control across all terrains. The advanced load-sensing hydraulic system ensures precise blade movement at all times, while the 3,962 mm blade width covers more ground per pass than any other CASE grader. Built for expressway projects, large highway contracts, and mining site leveling where accuracy and output are non-negotiable.</p>
+                <div class="model-key-specs">
+                  <div><div class="mspec-label">Engine Power</div><div class="mspec-val">193 HP (FPT)</div></div>
+                  <div><div class="mspec-label">Operating Weight</div><div class="mspec-val">15,481 kg</div></div>
+                  <div><div class="mspec-label">Max Torque</div><div class="mspec-val">930 Nm</div></div>
+                  <div><div class="mspec-label">Blade Width</div><div class="mspec-val">3,962 mm</div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="spec-table-wrap">
+              <div class="spec-table-title">Engine</div>
+              <table class="spec-table">
+                <tr><td>Engine brand</td><td>FPT (CNH Group)</td></tr>
+                <tr><td>Displacement</td><td>6.7 L</td></tr>
+                <tr><td>Max power</td><td>193 HP</td></tr>
+                <tr><td>Max torque</td><td>930 Nm</td></tr>
+                <tr><td>Transmission</td><td>Torque Converter Lock-Up</td></tr>
+                <tr><td>Fuel tank capacity</td><td>380 litres</td></tr>
+              </table>
+
+              <div class="spec-table-title" style="margin-top:20px">Performance</div>
+              <table class="spec-table">
+                <tr><td>Operating weight</td><td>15,481 kg</td></tr>
+                <tr><td>Blade width</td><td>3,962 mm (widest in CASE India range)</td></tr>
+                <tr><td>Turning radius</td><td>7,250 mm</td></tr>
+                <tr><td>Top forward speed</td><td>44.1 km/h</td></tr>
+                <tr><td>Hydraulic system</td><td>Advanced load-sensing</td></tr>
+                <tr><td>Blade movement</td><td>Precise at all operating conditions</td></tr>
+              </table>
+            </div>
+
+            <div class="features-list">
+              <div class="spec-table-title">Key Features</div>
+              <div class="feature-item"><div class="feature-dot"></div>193 HP FPT engine with 930 Nm torque — the most powerful CASE grader for India, delivering class-leading blade force for deep-cut grading and hard material work on expressway projects</div>
+              <div class="feature-item"><div class="feature-dot"></div>3,962 mm blade width — covers more ground per pass than any other CASE grader in India, directly improving output on large highway contracts where every pass counts</div>
+              <div class="feature-item"><div class="feature-dot"></div>Advanced load-sensing hydraulic system — blade responds precisely to operator inputs at all times, ensuring the consistent surface accuracy required on high-specification highway projects</div>
+              <div class="feature-item"><div class="feature-dot"></div>44.1 km/h top speed — fastest in the CASE India grader lineup, maximizing productivity on long highway stretches by reducing dead time between grading passes</div>
+              <div class="feature-item"><div class="feature-dot"></div>380-litre fuel tank — extended operating range between refuels, critical on remote expressway sites in Maharashtra where fuel supply is not always nearby</div>
+              <div class="feature-item"><div class="feature-dot"></div>Torque converter lock-up with FPT engine offering three power curves — adapts engine output to the exact grading task, balancing productivity and fuel consumption intelligently</div>
+            </div>
+
+            <div class="model-actions">
+              <button class="btn-quote" onclick="openQuoteModal('CASE 865C Motor Grader')">Get Quote for 865C →</button>
+              <a class="btn-brochure" href="https://www.casece.com/en/india/products/graders" target="_blank">View on CASE India ↗</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <section class="why-section"><div class="container">
   <div class="fade-up" style="text-align:center"><div class="section-eyebrow">Why CASE Grader</div><h2 class="section-title section-title-white">Precision That Builds Better Roads</h2></div>
@@ -200,5 +566,12 @@ footer{background:var(--navy-deep);padding:48px 0 0;border-top:2px solid var(--g
 
 <footer><div class="footer-inner"><div class="footer-grid"><div><div class="footer-brand-name">S.S. Heavy Equipments</div><div class="footer-brand-sub">Pvt. Ltd. · Est. 2013</div><p class="footer-brand-desc">Authorized CASE dealer across Maharashtra. Full 3S support.</p></div><div><div class="footer-col-title">CASE Products</div><a class="footer-link" href="backhoe-loaders.html">Backhoe Loaders</a><a class="footer-link" href="compactors.html">Compactors</a><a class="footer-link" href="excavators.html">Crawler Excavators</a><a class="footer-link" href="motor-graders.html">Motor Graders</a><a class="footer-link" href="crawler-dozers.html">Crawler Dozers</a></div><div><div class="footer-col-title">Contact</div><a class="footer-link" href="tel:+919822016435">+91 9822016435</a><a class="footer-link" href="tel:+919822353430">+91 9822353430</a><a class="footer-link" href="mailto:sshepl.pune@gmail.com">sshepl.pune@gmail.com</a></div></div><div class="footer-bottom"><div class="footer-copy">© 2026 S.S. Heavy Equipments Pvt. Ltd.</div><div class="footer-copy">Authorized CASE · BKT Dealer — Maharashtra</div></div></div></footer>
 <a class="wa-fab" href="https://wa.me/919822016435" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-<script>const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));</script>
+<script>
+
+function toggleAccordion(id){const item=document.getElementById(id);const isOpen=item.classList.contains('open');document.querySelectorAll('.accordion-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open')}
+function switchTab(series,model,btn){const body=btn.closest('.accordion-body');body.querySelectorAll('.model-tab').forEach(t=>t.classList.remove('active'));body.querySelectorAll('.model-panel').forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById(series+'-'+model).classList.add('active')}
+function openQuoteModal(product){document.getElementById('quoteModal').style.display='flex';const msg=document.querySelector('#quoteModal [name="message"]');if(msg)msg.placeholder='Interested in: '+product}
+function scrollAndOpen(id){toggleAccordion(id);setTimeout(()=>{document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'})},100)}
+
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));</script>
 </body></html>

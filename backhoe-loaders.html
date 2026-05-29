@@ -124,6 +124,63 @@ footer{background:var(--navy-deep);padding:48px 0 0;border-top:2px solid var(--g
 .wa-fab{position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);z-index:999;text-decoration:none;transition:transform .2s}
 .wa-fab:hover{transform:scale(1.1)}
 .wa-fab svg{width:28px;height:28px;fill:#fff}
+
+
+/*1*/
+/* ── ACCORDION + TABS ── */
+.accordion-section{background:var(--off-white);padding:64px 0}
+.accordion-wrap{margin-top:48px;display:flex;flex-direction:column;gap:16px}
+.accordion-item{background:var(--white);border:1px solid var(--gray-light);border-radius:8px;overflow:hidden;transition:border-color .2s}
+.accordion-item.open{border-color:var(--gold)}
+.accordion-header{display:flex;align-items:center;justify-content:space-between;padding:22px 28px;cursor:pointer;user-select:none;gap:16px}
+.accordion-header:hover{background:var(--off-white)}
+.accordion-header-left{display:flex;align-items:center;gap:16px}
+.accordion-series-tag{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;background:rgba(212,148,10,.1);border:1px solid rgba(212,148,10,.3);color:var(--gold);padding:3px 10px;border-radius:2px}
+.accordion-title{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--navy);letter-spacing:1.5px}
+.accordion-subtitle{font-size:13px;color:var(--gray-mid);margin-top:2px}
+.accordion-arrow{width:32px;height:32px;background:var(--off-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--navy);transition:transform .3s;flex-shrink:0}
+.accordion-item.open .accordion-arrow{transform:rotate(180deg);background:var(--gold);color:var(--white)}
+.accordion-body{display:none;padding:0 28px 28px}
+.accordion-item.open .accordion-body{display:block}
+/* Model tabs */
+.model-tabs{display:flex;gap:6px;margin-bottom:24px;flex-wrap:wrap;border-bottom:2px solid var(--gray-light);padding-bottom:0}
+.model-tab{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;padding:10px 20px;border:none;background:none;color:var(--gray-mid);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s}
+.model-tab:hover{color:var(--navy)}
+.model-tab.active{color:var(--navy);border-bottom-color:var(--gold)}
+.model-panel{display:none}.model-panel.active{display:block}
+/* Model content */
+.model-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-top:20px}
+.model-img-wrap{border-radius:6px;overflow:hidden;border:1px solid var(--gray-light);background:var(--navy)}
+.model-img{width:100%;height:280px;object-fit:cover;display:block}
+.model-img-placeholder{width:100%;height:280px;background:linear-gradient(135deg,#0B1F3A,#132d50);display:flex;align-items:center;justify-content:center}
+.model-overview-title{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--navy);letter-spacing:1.5px;margin-bottom:6px}
+.model-overview-badge{display:inline-block;background:#EAF3DE;color:#3B6D11;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:2px;margin-bottom:10px}
+.model-overview-desc{font-size:14px;color:var(--gray-mid);line-height:1.8;margin-bottom:16px}
+.model-key-specs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;padding:16px;background:var(--off-white);border-radius:6px}
+.mspec-label{font-size:10px;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.5px}
+.mspec-val{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--navy);margin-top:2px}
+/* Full spec table */
+.spec-table-wrap{margin-top:28px}
+.spec-table-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--gray-light)}
+.spec-table{width:100%;border-collapse:collapse;font-size:13px}
+.spec-table tr{border-bottom:1px solid var(--gray-light)}
+.spec-table tr:last-child{border-bottom:none}
+.spec-table td:first-child{color:var(--gray-mid);padding:8px 12px 8px 0;width:55%;font-size:12px}
+.spec-table td:last-child{color:var(--navy);font-weight:500;padding:8px 0;text-align:right}
+/* Features */
+.features-list{margin-top:24px}
+.feature-item{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--gray-light);font-size:13px;color:var(--text-body);line-height:1.5}
+.feature-item:last-child{border-bottom:none}
+.feature-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:6px}
+/* Bottom action row */
+.model-actions{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;padding-top:16px;border-top:1px solid var(--gray-light)}
+.btn-quote{background:var(--navy);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:10px 20px;border-radius:4px;text-decoration:none;transition:background .2s;border:none;cursor:pointer}
+.btn-quote:hover{background:var(--gold);color:var(--navy-deep)}
+.btn-brochure{background:transparent;color:var(--navy);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:9px 18px;border-radius:4px;border:1.5px solid var(--navy);text-decoration:none;transition:all .2s}
+.btn-brochure:hover{border-color:var(--gold);color:var(--gold)}
+@media(max-width:900px){.model-grid{grid-template-columns:1fr}}
+
+
 .fade-up{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
 .fade-up.visible{opacity:1;transform:none}
 @media(max-width:900px){.series-grid{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr 1fr}.nav-links,.nav-cta{display:none}.topbar{display:none}.footer-grid{grid-template-columns:1fr}.cta-strip-inner{flex-direction:column;text-align:center}}
@@ -213,7 +270,7 @@ footer{background:var(--navy-deep);padding:48px 0 0;border-top:2px solid var(--g
             <span class="model-chip">770EX</span>
             <span class="model-chip">770EX Plus</span>
           </div>
-          <span class="series-cta">View EX Series →</span>
+          <span class="series-cta" onclick="scrollAndOpen('acc-ex')">View EX Series →</span>
         </div>
       </a>
 
@@ -240,13 +297,356 @@ footer{background:var(--navy-deep);padding:48px 0 0;border-top:2px solid var(--g
             <span class="model-chip">770NX</span>
             <span class="model-chip">770NX Plus</span>
           </div>
-          <span class="series-cta">View NX Series →</span>
+          <span class="series-cta" onclick="scrollAndOpen('acc-nx')">View NX Series →</span>
         </div>
       </a>
 
     </div>
   </div>
 </section>
+
+<!--2-->
+<!-- ACCORDION MODELS -->
+<section class="accordion-section" id="models">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-eyebrow">All Models</div>
+      <h2 class="section-title">Explore Every Variant</h2>
+      <p class="section-desc">Click any series below to see full specs, features and details for each model.</p>
+    </div>
+
+    <div class="accordion-wrap">
+
+      <!-- EX SERIES ACCORDION -->
+      <div class="accordion-item fade-up" id="acc-ex">
+        <div class="accordion-header" onclick="toggleAccordion('acc-ex')">
+          <div class="accordion-header-left">
+            <div>
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+                <span class="accordion-series-tag">EX Series</span>
+                <span style="font-size:11px;color:var(--gray-mid);font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px">2 Models · 74 HP · Tier 4B / CEV BS-IV</span>
+              </div>
+              <div class="accordion-title">EX Series Backhoe Loaders</div>
+              <div class="accordion-subtitle">770EX · 770EX Plus — Advanced features, 4,000-hr hydraulic oil interval, 25+ attachments</div>
+            </div>
+          </div>
+          <div class="accordion-arrow">▼</div>
+        </div>
+        <div class="accordion-body">
+          <div class="model-tabs">
+            <button class="model-tab active" onclick="switchTab('ex','770ex',this)">770EX</button>
+            <button class="model-tab" onclick="switchTab('ex','770ex-plus',this)">770EX Plus</button>
+          </div>
+
+          <!-- 770EX PANEL -->
+          <div class="model-panel active" id="ex-770ex">
+            <div class="model-grid">
+              <div>
+                <img class="model-img"
+                  src="https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/435f8608c0d74cfc990c157f10e0f676?v=4b15c7d1&t=size500"
+                  alt="CASE 770EX Backhoe Loader"
+                  onerror="this.style.display='none'">
+              </div>
+              <div>
+                <div class="model-overview-badge">Authorized Dealer — SSHEPL Maharashtra</div>
+                <div class="model-overview-title">CASE 770EX</div>
+                <p class="model-overview-desc">India's most trusted backhoe loader — the 770EX is built for contractors who need proven reliability, strong digging power, and low running costs. Powered by an Ashok Leyland engine compliant with Tier 4B / CEV BS-IV norms, it handles everything from deep trenching on Pune's infrastructure sites to hard-soil digging across Marathwada's construction projects.</p>
+                <div class="model-key-specs">
+                  <div><div class="mspec-label">Engine Power</div><div class="mspec-val">74 HP / 54.4 kW</div></div>
+                  <div><div class="mspec-label">Operating Weight</div><div class="mspec-val">7,780 kg</div></div>
+                  <div><div class="mspec-label">Max Dig Depth</div><div class="mspec-val">4,440 mm</div></div>
+                  <div><div class="mspec-label">Bucket Capacity</div><div class="mspec-val">0.26 m³</div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="spec-table-wrap">
+              <div class="spec-table-title">Engine</div>
+              <table class="spec-table">
+                <tr><td>Engine brand</td><td>Ashok Leyland</td></tr>
+                <tr><td>Model</td><td>H4C4E7422*W</td></tr>
+                <tr><td>Cylinders</td><td>4</td></tr>
+                <tr><td>Displacement</td><td>3.84 L</td></tr>
+                <tr><td>Max gross power @ 2200 rpm</td><td>74 HP / 54.4 kW</td></tr>
+                <tr><td>Max gross torque @ 1400–1500 rpm</td><td>340 Nm</td></tr>
+                <tr><td>Emission level</td><td>Tier 4B / CEV BS-IV</td></tr>
+                <tr><td>Air intake</td><td>Turbocharged Intercooled</td></tr>
+                <tr><td>Fuel injection</td><td>Electronic Common Rail Direct Injection</td></tr>
+              </table>
+
+              <div class="spec-table-title" style="margin-top:20px">Loader</div>
+              <table class="spec-table">
+                <tr><td>Bucket capacity</td><td>1.1 m³</td></tr>
+                <tr><td>Max lift capacity</td><td>1,464 kg</td></tr>
+                <tr><td>Dump height</td><td>2,730 mm</td></tr>
+                <tr><td>Load over height</td><td>3,300 mm</td></tr>
+                <tr><td>Hinge pin height</td><td>3,600 mm</td></tr>
+                <tr><td>Payload capacity</td><td>1,925 kg</td></tr>
+              </table>
+
+              <div class="spec-table-title" style="margin-top:20px">Backhoe</div>
+              <table class="spec-table">
+                <tr><td>Backhoe bucket capacity</td><td>0.26 m³</td></tr>
+                <tr><td>Max dig depth</td><td>4,440 mm</td></tr>
+                <tr><td>Max working height</td><td>5,500 mm</td></tr>
+                <tr><td>Transmission</td><td>4F-4R Power Shuttle Synchromesh</td></tr>
+              </table>
+
+              <div class="spec-table-title" style="margin-top:20px">General</div>
+              <table class="spec-table">
+                <tr><td>Operating weight</td><td>7,780 kg</td></tr>
+                <tr><td>Wheelbase</td><td>2,180 mm</td></tr>
+                <tr><td>Min ground clearance</td><td>380 mm</td></tr>
+                <tr><td>Hydraulic oil change interval</td><td>4,000 hours</td></tr>
+                <tr><td>Safety structure</td><td>ROPS + FOPS</td></tr>
+              </table>
+            </div>
+
+            <div class="features-list">
+              <div class="spec-table-title">Key Features</div>
+              <div class="feature-item"><div class="feature-dot"></div>74 HP Ashok Leyland engine with 340 Nm torque — powerful low-end pull for digging in Maharashtra's hard laterite and black cotton soils</div>
+              <div class="feature-item"><div class="feature-dot"></div>4,000-hour hydraulic oil change interval — dramatically reduces maintenance cost and downtime over the machine's lifecycle</div>
+              <div class="feature-item"><div class="feature-dot"></div>ROPS and FOPS certified operator cabin for full safety on Indian construction sites</div>
+              <div class="feature-item"><div class="feature-dot"></div>4F-4R Power Shuttle Synchromesh transmission — smooth directional changes without stopping, critical for fast loading operations</div>
+              <div class="feature-item"><div class="feature-dot"></div>25+ attachment options — hydraulic rock breakers, augers, compaction wheels, pipe layers and more for maximum versatility</div>
+              <div class="feature-item"><div class="feature-dot"></div>Tier 4B / CEV BS-IV compliant — meets India's latest emission standards for urban and infrastructure project work</div>
+            </div>
+
+            <div class="model-actions">
+              <button class="btn-quote" onclick="openQuoteModal('CASE 770EX Backhoe Loader')">Get Quote for 770EX →</button>
+              <a class="btn-brochure" href="https://www.casece.com/en/india/products/backhoe-loaders/ex-series-backhoe-loaders/770ex" target="_blank">View on CASE India ↗</a>
+            </div>
+          </div>
+
+          <!-- 770EX PLUS PANEL -->
+          <div class="model-panel" id="ex-770ex-plus">
+            <div class="model-grid">
+              <div>
+                <img class="model-img"
+                  src="https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/435f8608c0d74cfc990c157f10e0f676?v=4b15c7d1&t=size500"
+                  alt="CASE 770EX Plus Backhoe Loader"
+                  onerror="this.style.display='none'">
+              </div>
+              <div>
+                <div class="model-overview-badge">Upgraded · Higher Capacity</div>
+                <div class="model-overview-title">CASE 770EX Plus</div>
+                <p class="model-overview-desc">The 770EX Plus takes everything great about the 770EX and adds 22 unique enhancements — including higher loader arm breakout force, greater lifting capacity, a straight loader arm for better visibility, and an improved FNR location for fast directional changes. The heavier operating weight of 8,150 kg gives it superior stability on demanding sites. Ideal for contractors who need maximum productivity from a backhoe loader on urban infrastructure and agricultural projects.</p>
+                <div class="model-key-specs">
+                  <div><div class="mspec-label">Engine Power</div><div class="mspec-val">74 HP / 54.4 kW</div></div>
+                  <div><div class="mspec-label">Operating Weight</div><div class="mspec-val">8,150 kg</div></div>
+                  <div><div class="mspec-label">Max Dig Depth</div><div class="mspec-val">4,440 mm</div></div>
+                  <div><div class="mspec-label">Fuel Saving</div><div class="mspec-val">Up to 20%</div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="spec-table-wrap">
+              <div class="spec-table-title">Engine</div>
+              <table class="spec-table">
+                <tr><td>Engine brand</td><td>Ashok Leyland</td></tr>
+                <tr><td>Displacement</td><td>3.84 L</td></tr>
+                <tr><td>Max gross power @ 2200 rpm</td><td>74 HP / 54.4 kW</td></tr>
+                <tr><td>Max gross torque</td><td>340 Nm</td></tr>
+                <tr><td>Emission level</td><td>Tier 4B / CEV BS-IV</td></tr>
+                <tr><td>Fuel saving (vs standard)</td><td>Up to 14% better with load sensing pump · Up to 20% with ECO mode</td></tr>
+              </table>
+
+              <div class="spec-table-title" style="margin-top:20px">Loader — Upgrades over 770EX</div>
+              <table class="spec-table">
+                <tr><td>Loader arm design</td><td>Straight arm (better visibility)</td></tr>
+                <tr><td>Loader arm breakout force</td><td>Higher than 770EX</td></tr>
+                <tr><td>Max lifting capacity</td><td>Higher than 770EX</td></tr>
+                <tr><td>Dump height</td><td>2,730 mm</td></tr>
+                <tr><td>FNR location</td><td>Improved — faster directional change</td></tr>
+              </table>
+
+              <div class="spec-table-title" style="margin-top:20px">General</div>
+              <table class="spec-table">
+                <tr><td>Operating weight</td><td>8,150 kg</td></tr>
+                <tr><td>Ground clearance increase</td><td>+2 inches vs 770EX</td></tr>
+                <tr><td>Unique features vs standard EX</td><td>22 enhancements</td></tr>
+                <tr><td>Attachment options</td><td>25+</td></tr>
+                <tr><td>Safety structure</td><td>ROPS + FOPS</td></tr>
+              </table>
+            </div>
+
+            <div class="features-list">
+              <div class="spec-table-title">Key Features — What's upgraded over 770EX</div>
+              <div class="feature-item"><div class="feature-dot"></div>22 unique enhancements over the standard 770EX — more productive, more comfortable, more efficient</div>
+              <div class="feature-item"><div class="feature-dot"></div>Straight loader arm gives the operator a clear, unobstructed view to the bucket — safer and faster loading</div>
+              <div class="feature-item"><div class="feature-dot"></div>Higher loader arm breakout force and greater lifting capacity — moves more material per cycle on heavy-duty sites</div>
+              <div class="feature-item"><div class="feature-dot"></div>Up to 20% fuel savings with ECO mode and Auto Idle / Auto Shutdown — reduces operating cost per hour significantly</div>
+              <div class="feature-item"><div class="feature-dot"></div>2-inch increase in swing frame ground clearance — better maneuverability and loader productivity on uneven terrain</div>
+              <div class="feature-item"><div class="feature-dot"></div>Standard lifting hook for material handling — pipe laying, towing, and material placement without additional attachments</div>
+            </div>
+
+            <div class="model-actions">
+              <button class="btn-quote" onclick="openQuoteModal('CASE 770EX Plus Backhoe Loader')">Get Quote for 770EX Plus →</button>
+              <a class="btn-brochure" href="https://www.casece.com/en/india/products/backhoe-loaders/ex-series-backhoe-loaders/770ex-plus" target="_blank">View on CASE India ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NX SERIES ACCORDION -->
+      <div class="accordion-item fade-up" id="acc-nx">
+        <div class="accordion-header" onclick="toggleAccordion('acc-nx')">
+          <div class="accordion-header-left">
+            <div>
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+                <span class="accordion-series-tag">NX Series</span>
+                <span style="font-size:11px;color:var(--gray-mid);font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px">2 Models · 74 HP · CEV Stage V</span>
+              </div>
+              <div class="accordion-title">NX Series Backhoe Loaders</div>
+              <div class="accordion-subtitle">770NX · 770NX MAGNUM — Next-gen engine, 3 work modes, 24% better fuel efficiency</div>
+            </div>
+          </div>
+          <div class="accordion-arrow">▼</div>
+        </div>
+        <div class="accordion-body">
+          <div class="model-tabs">
+            <button class="model-tab active" onclick="switchTab('nx','770nx',this)">770NX</button>
+            <button class="model-tab" onclick="switchTab('nx','770nx-magnum',this)">770NX MAGNUM</button>
+          </div>
+
+          <!-- 770NX PANEL -->
+          <div class="model-panel active" id="nx-770nx">
+            <div class="model-grid">
+              <div>
+                <img class="model-img"
+                  src="https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/d228f6356aaf4797ba82901a30e3c3bd?v=9ea91a06&t=size500"
+                  alt="CASE 770NX Backhoe Loader"
+                  onerror="this.style.display='none'">
+              </div>
+              <div>
+                <div class="model-overview-badge">New Generation · CEV Stage V</div>
+                <div class="model-overview-title">CASE 770NX</div>
+                <p class="model-overview-desc">The 770NX is CASE's next-generation backhoe loader — built around a cleaner, more intelligent engine and smarter hydraulics. Its three selectable work modes (ECO, Standard, Power) let operators adapt the machine to every task on site — saving fuel on light work, unleashing full power when needed. With 375 Nm of torque and 119 LPM hydraulic flow, the 770NX is noticeably more responsive in digging and loading operations compared to the EX Series.</p>
+                <div class="model-key-specs">
+                  <div><div class="mspec-label">Engine Power</div><div class="mspec-val">74 HP</div></div>
+                  <div><div class="mspec-label">Operating Weight</div><div class="mspec-val">7,600 kg</div></div>
+                  <div><div class="mspec-label">Max Torque</div><div class="mspec-val">375 Nm</div></div>
+                  <div><div class="mspec-label">Hydraulic Flow</div><div class="mspec-val">119 LPM</div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="spec-table-wrap">
+              <div class="spec-table-title">Engine</div>
+              <table class="spec-table">
+                <tr><td>Engine</td><td>CNH F3B — CEV Stage V</td></tr>
+                <tr><td>Displacement</td><td>2.8 L</td></tr>
+                <tr><td>Max gross power</td><td>74 HP</td></tr>
+                <tr><td>Max torque @ 1400 rpm</td><td>375 Nm</td></tr>
+                <tr><td>Emission level</td><td>CEV Stage V (BS-V)</td></tr>
+                <tr><td>Work modes</td><td>ECO (60 HP) · Standard · Power (74 HP)</td></tr>
+                <tr><td>Fuel tank</td><td>129 litres</td></tr>
+              </table>
+
+              <div class="spec-table-title" style="margin-top:20px">Hydraulics</div>
+              <table class="spec-table">
+                <tr><td>Hydraulic pump</td><td>Electro-hydraulic variable displacement</td></tr>
+                <tr><td>Pump flow</td><td>119 LPM</td></tr>
+                <tr><td>System pressure</td><td>235 bar</td></tr>
+                <tr><td>Hydraulic oil capacity</td><td>96 litres</td></tr>
+                <tr><td>Oil change interval</td><td>4,000 hours</td></tr>
+              </table>
+
+              <div class="spec-table-title" style="margin-top:20px">Performance</div>
+              <table class="spec-table">
+                <tr><td>Max dig depth</td><td>4,400 mm</td></tr>
+                <tr><td>Max working height</td><td>5,500 mm</td></tr>
+                <tr><td>Loader bucket capacity</td><td>1.1 m³</td></tr>
+                <tr><td>Backhoe bucket capacity</td><td>0.26 m³</td></tr>
+                <tr><td>Dump height</td><td>2,730 mm</td></tr>
+                <tr><td>Operating weight</td><td>7,600 kg</td></tr>
+                <tr><td>Attachment options</td><td>30+</td></tr>
+              </table>
+            </div>
+
+            <div class="features-list">
+              <div class="spec-table-title">Key Features</div>
+              <div class="feature-item"><div class="feature-dot"></div>Three work modes — ECO, Standard, Power — adjusted via RPM knob, allowing operators to optimize for fuel saving or maximum output on the same shift</div>
+              <div class="feature-item"><div class="feature-dot"></div>375 Nm torque at 1,400 rpm — more pulling power at low engine speeds compared to the EX Series, particularly useful in heavy clay and compacted soil across Marathwada</div>
+              <div class="feature-item"><div class="feature-dot"></div>CEV Stage V compliant — India's latest and cleanest emission standard, required for government infrastructure projects</div>
+              <div class="feature-item"><div class="feature-dot"></div>Electro-hydraulic variable displacement pump — 119 LPM flow gives faster, smoother boom and bucket response for quicker cycle times</div>
+              <div class="feature-item"><div class="feature-dot"></div>myCASE Telematics — real-time machine monitoring, location tracking, and health diagnostics from your phone</div>
+              <div class="feature-item"><div class="feature-dot"></div>Spacious cabin with near 360° visibility, ergonomic controls and Bluetooth connectivity — reduces operator fatigue on long shifts</div>
+              <div class="feature-item"><div class="feature-dot"></div>Operates reliably down to -20°C — built to handle extreme temperature variations across Maharashtra's seasons</div>
+            </div>
+
+            <div class="model-actions">
+              <button class="btn-quote" onclick="openQuoteModal('CASE 770NX Backhoe Loader')">Get Quote for 770NX →</button>
+              <a class="btn-brochure" href="https://www.casece.com/en/india/products/backhoe-loaders/nx-series-backhoe-loaders/770-nx" target="_blank">View on CASE India ↗</a>
+            </div>
+          </div>
+
+          <!-- 770NX MAGNUM PANEL -->
+          <div class="model-panel" id="nx-770nx-magnum">
+            <div class="model-grid">
+              <div>
+                <img class="model-img"
+                  src="https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/d228f6356aaf4797ba82901a30e3c3bd?v=9ea91a06&t=size500"
+                  alt="CASE 770NX MAGNUM Backhoe Loader"
+                  onerror="this.style.display='none'">
+              </div>
+              <div>
+                <div class="model-overview-badge">Top of Range · Maximum Power</div>
+                <div class="model-overview-title">CASE 770NX MAGNUM</div>
+                <p class="model-overview-desc">The 770NX MAGNUM is the most capable backhoe loader in the NX Series — built for contractors who need maximum performance on the most demanding sites. With a 4,700 mm dig depth (deepest in the 770 range), a reinforced build for extreme conditions, and 360° cabin visibility, the MAGNUM handles deep trenching, heavy excavation, and tough material handling that others can't. If you're working on large infrastructure, road widening, or deep utility projects across Maharashtra — this is the machine.</p>
+                <div class="model-key-specs">
+                  <div><div class="mspec-label">Engine Power</div><div class="mspec-val">74 HP</div></div>
+                  <div><div class="mspec-label">Operating Weight</div><div class="mspec-val">7,700 kg</div></div>
+                  <div><div class="mspec-label">Max Dig Depth</div><div class="mspec-val">4,700 mm</div></div>
+                  <div><div class="mspec-label">Backhoe Bucket</div><div class="mspec-val">0.30 m³</div></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="spec-table-wrap">
+              <div class="spec-table-title">Engine</div>
+              <table class="spec-table">
+                <tr><td>Emission level</td><td>CEV Stage V</td></tr>
+                <tr><td>Max gross power</td><td>74 HP</td></tr>
+                <tr><td>Air intake</td><td>Turbocharged Intercooled CRDI</td></tr>
+                <tr><td>Work modes</td><td>ECO (60 HP) · Standard · Power (74 HP)</td></tr>
+                <tr><td>Fuel tank</td><td>129 litres</td></tr>
+              </table>
+
+              <div class="spec-table-title" style="margin-top:20px">Performance — Upgrades over 770NX</div>
+              <table class="spec-table">
+                <tr><td>Max dig depth</td><td>4,700 mm (+300 mm vs 770NX)</td></tr>
+                <tr><td>Backhoe bucket capacity</td><td>0.30 m³ (larger than 770NX)</td></tr>
+                <tr><td>Loader shovel capacity</td><td>1.1 m³</td></tr>
+                <tr><td>Dump height</td><td>2,730 mm</td></tr>
+                <tr><td>Operating weight</td><td>7,700 kg</td></tr>
+                <tr><td>Build</td><td>Reinforced for extreme conditions</td></tr>
+              </table>
+            </div>
+
+            <div class="features-list">
+              <div class="spec-table-title">Key Features — What makes MAGNUM special</div>
+              <div class="feature-item"><div class="feature-dot"></div>4,700 mm max dig depth — deepest in the 770 range, ideal for deep trenching, utility laying, and foundation work on infrastructure projects</div>
+              <div class="feature-item"><div class="feature-dot"></div>Larger 0.30 m³ backhoe bucket — shifts more material per dig cycle, improving productivity on high-volume excavation jobs</div>
+              <div class="feature-item"><div class="feature-dot"></div>Reinforced build for extreme conditions — stronger frames and components for demanding sites like quarries, demolition, and rough terrain</div>
+              <div class="feature-item"><div class="feature-dot"></div>Full 360° cabin visibility — panoramic view keeps operators aware of surroundings on congested Indian construction sites</div>
+              <div class="feature-item"><div class="feature-dot"></div>ECO, Standard, Power work modes — same intelligent mode switching as 770NX, plus the extra power of the reinforced hydraulics</div>
+              <div class="feature-item"><div class="feature-dot"></div>Simultaneous backhoe operations with smart hydraulics — multiple functions at once without pressure drop, reducing cycle times</div>
+            </div>
+
+            <div class="model-actions">
+              <button class="btn-quote" onclick="openQuoteModal('CASE 770NX MAGNUM Backhoe Loader')">Get Quote for 770NX MAGNUM →</button>
+              <a class="btn-brochure" href="https://www.casece.com/en/india/products/backhoe-loaders/nx-series-backhoe-loaders/770-nx-magnum" target="_blank">View on CASE India ↗</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
 <!-- WHY CASE BACKHOE -->
 <section class="why-section">
@@ -356,8 +756,38 @@ footer{background:var(--navy-deep);padding:48px 0 0;border-top:2px solid var(--g
 <a class="wa-fab" href="https://wa.me/919822016435" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 
 <script>
+
+function toggleAccordion(id) {
+  const item = document.getElementById(id);
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+function switchTab(series, model, btn) {
+  const body = btn.closest('.accordion-body');
+  body.querySelectorAll('.model-tab').forEach(t => t.classList.remove('active'));
+  body.querySelectorAll('.model-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(series + '-' + model).classList.add('active');
+}
+
+function openQuoteModal(product) {
+  document.getElementById('quoteModal').style.display = 'flex';
+  const msg = document.querySelector('#quoteModal [name="message"]');
+  if (msg) msg.placeholder = 'Interested in: ' + product;
+}
+
 const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:.1});
 document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+
+function scrollAndOpen(id) {
+  toggleAccordion(id);
+  setTimeout(() => {
+    document.getElementById(id).scrollIntoView({behavior:'smooth', block:'start'});
+  }, 100);
+}
+
 </script>
 </body>
 </html>
