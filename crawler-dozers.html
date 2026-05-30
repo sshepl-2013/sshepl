@@ -68,6 +68,61 @@ nav{background:var(--navy);position:sticky;top:0;z-index:100;border-bottom:2px s
 .cta-strip{background:var(--gold);padding:48px 0}.cta-strip-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:32px}.cta-strip-title{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--navy-deep);letter-spacing:1.5px}.cta-strip-sub{font-size:14px;color:rgba(7,21,41,.6);margin-top:4px}.btn-navy{background:var(--navy-deep);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;padding:13px 28px;border-radius:4px;text-decoration:none;transition:background .2s;white-space:nowrap}.btn-ghost-navy{background:transparent;color:var(--navy-deep);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;padding:12px 26px;border-radius:4px;border:2px solid var(--navy-deep);text-decoration:none;transition:all .2s;white-space:nowrap}.btn-ghost-navy:hover{background:var(--navy-deep);color:var(--white)}
 footer{background:var(--navy-deep);padding:48px 0 0;border-top:2px solid var(--gold)}.footer-inner{max-width:1200px;margin:0 auto;padding:0 32px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:32px}.footer-brand-name{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--white);letter-spacing:2px;margin-bottom:4px}.footer-brand-sub{font-size:11px;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}.footer-brand-desc{font-size:13px;color:rgba(255,255,255,.3);line-height:1.6}.footer-col-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}.footer-link{font-size:13px;color:rgba(255,255,255,.4);text-decoration:none;display:block;margin-bottom:6px;transition:color .2s}.footer-link:hover{color:var(--white)}.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding:16px 0;display:flex;justify-content:space-between}.footer-copy{font-size:12px;color:rgba(255,255,255,.25)}
 .wa-fab{position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);z-index:999;text-decoration:none;transition:transform .2s}.wa-fab:hover{transform:scale(1.1)}.wa-fab svg{width:28px;height:28px;fill:#fff}
+
+/*1*/
+/* ── ACCORDION + TABS ── */
+.accordion-section{background:var(--off-white);padding:64px 0}
+.accordion-wrap{margin-top:48px;display:flex;flex-direction:column;gap:16px}
+.accordion-item{background:var(--white);border:1px solid var(--gray-light);border-radius:8px;overflow:hidden;transition:border-color .2s}
+.accordion-item.open{border-color:var(--gold)}
+.accordion-header{display:flex;align-items:center;justify-content:space-between;padding:22px 28px;cursor:pointer;user-select:none;gap:16px}
+.accordion-header:hover{background:var(--off-white)}
+.accordion-header-left{display:flex;align-items:center;gap:16px}
+.accordion-series-tag{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;background:rgba(212,148,10,.1);border:1px solid rgba(212,148,10,.3);color:var(--gold);padding:3px 10px;border-radius:2px}
+.accordion-title{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--navy);letter-spacing:1.5px}
+.accordion-subtitle{font-size:13px;color:var(--gray-mid);margin-top:2px}
+.accordion-arrow{width:32px;height:32px;background:var(--off-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--navy);transition:transform .3s;flex-shrink:0}
+.accordion-item.open .accordion-arrow{transform:rotate(180deg);background:var(--gold);color:var(--white)}
+.accordion-body{display:none;padding:0 28px 28px}
+.accordion-item.open .accordion-body{display:block}
+/* Model tabs */
+.model-tabs{display:flex;gap:6px;margin-bottom:24px;flex-wrap:wrap;border-bottom:2px solid var(--gray-light);padding-bottom:0}
+.model-tab{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;padding:10px 20px;border:none;background:none;color:var(--gray-mid);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s}
+.model-tab:hover{color:var(--navy)}
+.model-tab.active{color:var(--navy);border-bottom-color:var(--gold)}
+.model-panel{display:none}.model-panel.active{display:block}
+/* Model content */
+.model-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-top:20px}
+.model-img-wrap{border-radius:6px;overflow:hidden;border:1px solid var(--gray-light);background:var(--navy)}
+.model-img{width:100%;height:280px;object-fit:cover;display:block}
+.model-img-placeholder{width:100%;height:280px;background:linear-gradient(135deg,#0B1F3A,#132d50);display:flex;align-items:center;justify-content:center}
+.model-overview-title{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--navy);letter-spacing:1.5px;margin-bottom:6px}
+.model-overview-badge{display:inline-block;background:#EAF3DE;color:#3B6D11;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:2px;margin-bottom:10px}
+.model-overview-desc{font-size:14px;color:var(--gray-mid);line-height:1.8;margin-bottom:16px}
+.model-key-specs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;padding:16px;background:var(--off-white);border-radius:6px}
+.mspec-label{font-size:10px;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.5px}
+.mspec-val{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--navy);margin-top:2px}
+/* Full spec table */
+.spec-table-wrap{margin-top:28px}
+.spec-table-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--gray-light)}
+.spec-table{width:100%;border-collapse:collapse;font-size:13px}
+.spec-table tr{border-bottom:1px solid var(--gray-light)}
+.spec-table tr:last-child{border-bottom:none}
+.spec-table td:first-child{color:var(--gray-mid);padding:8px 12px 8px 0;width:55%;font-size:12px}
+.spec-table td:last-child{color:var(--navy);font-weight:500;padding:8px 0;text-align:right}
+/* Features */
+.features-list{margin-top:24px}
+.feature-item{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--gray-light);font-size:13px;color:var(--text-body);line-height:1.5}
+.feature-item:last-child{border-bottom:none}
+.feature-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:6px}
+/* Bottom action row */
+.model-actions{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;padding-top:16px;border-top:1px solid var(--gray-light)}
+.btn-quote{background:var(--navy);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:10px 20px;border-radius:4px;text-decoration:none;transition:background .2s;border:none;cursor:pointer}
+.btn-quote:hover{background:var(--gold);color:var(--navy-deep)}
+.btn-brochure{background:transparent;color:var(--navy);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:9px 18px;border-radius:4px;border:1.5px solid var(--navy);text-decoration:none;transition:all .2s}
+.btn-brochure:hover{border-color:var(--gold);color:var(--gold)}
+@media(max-width:900px){.model-grid{grid-template-columns:1fr}}
+
 .fade-up{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}.fade-up.visible{opacity:1;transform:none}
 @media(max-width:900px){.models-grid,.app-grid{grid-template-columns:1fr 1fr}.why-grid{grid-template-columns:1fr 1fr}.nav-links,.nav-cta{display:none}.topbar{display:none}.footer-grid{grid-template-columns:1fr}.cta-strip-inner{flex-direction:column;text-align:center}}
 @media(max-width:600px){.models-grid,.app-grid,.why-grid{grid-template-columns:1fr}}
@@ -131,7 +186,7 @@ footer{background:var(--navy-deep);padding:48px 0 0;border-top:2px solid var(--g
       <div><div class="spec-label">PAT Blade</div><div class="spec-val">Standard</div></div>
       <div><div class="spec-label">Models</div><div class="spec-val">1150L · 1650L</div></div>
     </div>
-    <a class="model-cta" href="index.html#contact">Get Quote →</a>
+    <span class="series-cta" onclick="scrollAndOpen('acc-l')">View L Series →</span>
   </div>
 </div>
 
@@ -146,7 +201,7 @@ footer{background:var(--navy-deep);padding:48px 0 0;border-top:2px solid var(--g
       <div><div class="spec-label">Fuel Saving</div><div class="spec-val">Up to 10% vs L</div></div>
       <div><div class="spec-label">Models</div><div class="spec-val">1650M · 2050M</div></div>
     </div>
-    <a class="model-cta" href="index.html#contact">Get Quote →</a>
+    <span class="series-cta" onclick="scrollAndOpen('acc-m')">View M Series →</span>
   </div>
 </div>
       </div>
@@ -183,6 +238,279 @@ footer{background:var(--navy-deep);padding:48px 0 0;border-top:2px solid var(--g
   </table>
 </div></section>
 
+<!--2-->
+<!-- ACCORDION MODELS -->
+<section class="accordion-section" id="models">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-eyebrow">All Models</div>
+      <h2 class="section-title">L Series & M Series — All 4 Models</h2>
+      <p class="section-desc">Click any series to see full specs, features and the right model for your application.</p>
+    </div>
+
+    <div class="accordion-wrap">
+
+      <!-- L SERIES ACCORDION -->
+      <div class="accordion-item fade-up" id="acc-l">
+        <div class="accordion-header" onclick="toggleAccordion('acc-l')">
+          <div class="accordion-header-left">
+            <div>
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+                <span class="accordion-series-tag">L Series</span>
+                <span style="font-size:11px;color:var(--gray-mid);font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px">2 Models · 118–158 HP · Hydrostatic · PAT Blade Standard</span>
+              </div>
+              <div class="accordion-title">L Series Crawler Dozers</div>
+              <div class="accordion-subtitle">1150L · 1650L — Precision grading, slope work, PAT blade as standard</div>
+            </div>
+          </div>
+          <div class="accordion-arrow">▼</div>
+        </div>
+        <div class="accordion-body">
+          <div class="model-tabs">
+            <button class="model-tab active" onclick="switchTab('l','1150l',this)">1150L</button>
+            <button class="model-tab" onclick="switchTab('l','1650l',this)">1650L</button>
+          </div>
+
+          <!-- 1150L PANEL -->
+          <div class="model-panel active" id="l-1150l">
+            <div class="model-grid">
+              <div>
+                <img class="model-img"
+                  src="https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/c3e2c9a6b40342c3a3ffd98b9b0d1e02?v=4d7f03fc&t=size500"
+                  alt="CASE 1150L Crawler Dozer" onerror="this.style.display='none'">
+              </div>
+              <div>
+                <div class="model-overview-badge">Medium Duty · Fine Grading · Slopes</div>
+                <div class="model-overview-title">CASE 1150L</div>
+                <p class="model-overview-desc">The 1150L is CASE's medium-duty hydrostatic dozer — purpose-built for contractors who need precise blade control on slopes, embankments, and fine-grade work. At 13,625 kg with a 118 HP FPT engine, it's the most maneuverable dozer in the CASE India range, making it ideal for working on narrow road embankments, canal berms, and agricultural land development across Maharashtra's interior. The PAT (Pitch Angle Tilt) blade comes as standard — allowing operators to adjust blade angle without stopping — critical for achieving correct road cross-sections and drainage channels.</p>
+                <div class="model-key-specs">
+                  <div><div class="mspec-label">Engine Power</div><div class="mspec-val">118 HP</div></div>
+                  <div><div class="mspec-label">Operating Weight</div><div class="mspec-val">13,625 kg</div></div>
+                  <div><div class="mspec-label">Blade Capacity</div><div class="mspec-val">2.9 m³</div></div>
+                  <div><div class="mspec-label">Blade Width</div><div class="mspec-val">2,787 mm</div></div>
+                </div>
+              </div>
+            </div>
+            <div class="spec-table-wrap">
+              <div class="spec-table-title">Engine & Drive</div>
+              <table class="spec-table">
+                <tr><td>Engine power</td><td>118 HP</td></tr>
+                <tr><td>Engine brand</td><td>FPT Industrial</td></tr>
+                <tr><td>Transmission</td><td>Hydrostatic</td></tr>
+                <tr><td>PAT blade</td><td>Standard</td></tr>
+                <tr><td>Track gauge</td><td>1,778 mm</td></tr>
+              </table>
+              <div class="spec-table-title" style="margin-top:20px">Performance</div>
+              <table class="spec-table">
+                <tr><td>Operating weight</td><td>13,625 kg</td></tr>
+                <tr><td>Blade capacity</td><td>2.9 m³</td></tr>
+                <tr><td>Blade width</td><td>2,787 mm</td></tr>
+                <tr><td>Best for</td><td>Fine grading · Slopes · Embankments</td></tr>
+              </table>
+            </div>
+            <div class="features-list">
+              <div class="spec-table-title">Key Features</div>
+              <div class="feature-item"><div class="feature-dot"></div>Hydrostatic transmission delivers traction to each track independently — full push power maintained through turns for precise slope grading without losing material from the blade</div>
+              <div class="feature-item"><div class="feature-dot"></div>PAT (Pitch Angle Tilt) blade as standard — operator adjusts blade pitch and angle from the cab without stopping, essential for achieving correct road camber and drainage slopes</div>
+              <div class="feature-item"><div class="feature-dot"></div>Most maneuverable CASE India dozer at 13,625 kg — works effectively in narrow embankments, canal berms, and confined site areas where larger dozers cannot operate</div>
+              <div class="feature-item"><div class="feature-dot"></div>FPT engine with powerful low-end torque — consistent push force even on steep embankment slopes found on Maharashtra's highway widening and irrigation projects</div>
+              <div class="feature-item"><div class="feature-dot"></div>Ideal for agricultural land development — size and maneuverability make it effective for farm leveling, bunding, and irrigation channel construction across Maharashtra's agricultural districts</div>
+            </div>
+            <div class="model-actions">
+              <button class="btn-quote" onclick="openQuoteModal('CASE 1150L Crawler Dozer')">Get Quote for 1150L →</button>
+              <a class="btn-brochure" href="https://www.casece.com/en/india/products/crawler-dozers/l-series-crawler-dozers" target="_blank">View on CASE India ↗</a>
+            </div>
+          </div>
+
+          <!-- 1650L PANEL -->
+          <div class="model-panel" id="l-1650l">
+            <div class="model-grid">
+              <div>
+                <img class="model-img"
+                  src="https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/c3e2c9a6b40342c3a3ffd98b9b0d1e02?v=4d7f03fc&t=size500"
+                  alt="CASE 1650L Crawler Dozer" onerror="this.style.display='none'">
+              </div>
+              <div>
+                <div class="model-overview-badge">Medium-Heavy · FPT Powered · Precise</div>
+                <div class="model-overview-title">CASE 1650L</div>
+                <p class="model-overview-desc">The 1650L is the larger L Series dozer — powered by a 158 HP FPT engine and weighing in at 17,960 kg with a 4 m³ blade capacity. It bridges the gap between light grading work and heavy earthmoving — capable enough for road sub-grade preparation on large highway projects, yet precise enough for embankment finishing and slope work requiring accurate blade control. The hydrostatic transmission with PAT blade as standard gives operators the same precision as the 1150L, but with significantly more push force for cutting through harder soil conditions.</p>
+                <div class="model-key-specs">
+                  <div><div class="mspec-label">Engine Power</div><div class="mspec-val">158 HP / FPT</div></div>
+                  <div><div class="mspec-label">Operating Weight</div><div class="mspec-val">17,960 kg</div></div>
+                  <div><div class="mspec-label">Blade Capacity</div><div class="mspec-val">4 m³</div></div>
+                  <div><div class="mspec-label">Track Gauge</div><div class="mspec-val">1,880 mm</div></div>
+                </div>
+              </div>
+            </div>
+            <div class="spec-table-wrap">
+              <div class="spec-table-title">Engine & Drive</div>
+              <table class="spec-table">
+                <tr><td>Engine power</td><td>158 HP (156 HP Semi-U blade variant)</td></tr>
+                <tr><td>Engine brand</td><td>FPT (CNH Group)</td></tr>
+                <tr><td>Transmission</td><td>Hydrostatic</td></tr>
+                <tr><td>PAT blade</td><td>Standard</td></tr>
+                <tr><td>Track gauge</td><td>1,880 mm</td></tr>
+              </table>
+              <div class="spec-table-title" style="margin-top:20px">Performance</div>
+              <table class="spec-table">
+                <tr><td>Operating weight</td><td>17,960 kg</td></tr>
+                <tr><td>Blade capacity</td><td>4 m³</td></tr>
+                <tr><td>Blade type</td><td>Semi-U / Standard (variants available)</td></tr>
+                <tr><td>Best for</td><td>Road sub-grade · Medium earthmoving · Slopes</td></tr>
+              </table>
+            </div>
+            <div class="features-list">
+              <div class="spec-table-title">Key Features</div>
+              <div class="feature-item"><div class="feature-dot"></div>158 HP FPT engine with hydrostatic transmission — more push force than 1150L while retaining the same precise independent track control for accurate fine-grading on slopes</div>
+              <div class="feature-item"><div class="feature-dot"></div>4 m³ blade capacity — moves significantly more material per pass than 1150L, improving productivity on road sub-grade preparation and embankment construction</div>
+              <div class="feature-item"><div class="feature-dot"></div>PAT blade as standard — same pitch and angle adjustability as 1150L but with a larger blade, ideal for achieving precise road camber and drainage crossfalls on highway projects</div>
+              <div class="feature-item"><div class="feature-dot"></div>Excellent maneuverability for its size — hydrostatic drive powers each track independently for full push through turns, maintaining material in the blade throughout the dozing cycle</div>
+              <div class="feature-item"><div class="feature-dot"></div">FPT engine — same proven reliability as all CASE India equipment, with full spare parts support from SSHEPL's stocked warehouses across Maharashtra</div>
+            </div>
+            <div class="model-actions">
+              <button class="btn-quote" onclick="openQuoteModal('CASE 1650L Crawler Dozer')">Get Quote for 1650L →</button>
+              <a class="btn-brochure" href="https://www.casece.com/en/india/products/crawler-dozers/l-series-crawler-dozers/1650l" target="_blank">View on CASE India ↗</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- M SERIES ACCORDION -->
+      <div class="accordion-item fade-up" id="acc-m">
+        <div class="accordion-header" onclick="toggleAccordion('acc-m')">
+          <div class="accordion-header-left">
+            <div>
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+                <span class="accordion-series-tag">M Series</span>
+                <span style="font-size:11px;color:var(--gray-mid);font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px">2 Models · 150–214 HP · Maximum Push Power · ProCare Warranty</span>
+              </div>
+              <div class="accordion-title">M Series Crawler Dozers</div>
+              <div class="accordion-subtitle">1650M · 2050M — Heavy earthmoving, both tracks powered through turns, 3-year ProCare warranty</div>
+            </div>
+          </div>
+          <div class="accordion-arrow">▼</div>
+        </div>
+        <div class="accordion-body">
+          <div class="model-tabs">
+            <button class="model-tab active" onclick="switchTab('m','1650m',this)">1650M</button>
+            <button class="model-tab" onclick="switchTab('m','2050m',this)">2050M</button>
+          </div>
+
+          <!-- 1650M PANEL -->
+          <div class="model-panel active" id="m-1650m">
+            <div class="model-grid">
+              <div>
+                <img class="model-img"
+                  src="https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/c3e2c9a6b40342c3a3ffd98b9b0d1e02?v=4d7f03fc&t=size500"
+                  alt="CASE 1650M Crawler Dozer" onerror="this.style.display='none'">
+              </div>
+              <div>
+                <div class="model-overview-badge">Heavy Duty · Maximum Push · ProCare</div>
+                <div class="model-overview-title">CASE 1650M</div>
+                <p class="model-overview-desc">The 1650M is where the M Series begins — and it's a significant step up from the L Series. Unlike the 1650L which uses hydrostatic drive for precision, the 1650M powers both tracks simultaneously even while turning — keeping maximum blade load retention and productivity through the entire dozing cycle. At 17,123 kg with a 5 m³ blade capacity and 150 HP FPT Tier 4 engine, it's built for heavy earthmoving, large-scale land clearing, and demanding road sub-grade work on Maharashtra's expressway projects. Comes with CASE ProCare — 3-year/3,000-hour full machine warranty plus a 3-year planned maintenance contract.</p>
+                <div class="model-key-specs">
+                  <div><div class="mspec-label">Engine Power</div><div class="mspec-val">150 HP / FPT Tier 4</div></div>
+                  <div><div class="mspec-label">Operating Weight</div><div class="mspec-val">17,123 kg</div></div>
+                  <div><div class="mspec-label">Blade Capacity</div><div class="mspec-val">5 m³</div></div>
+                  <div><div class="mspec-label">Warranty</div><div class="mspec-val">ProCare 3-Year</div></div>
+                </div>
+              </div>
+            </div>
+            <div class="spec-table-wrap">
+              <div class="spec-table-title">Engine & Drive</div>
+              <table class="spec-table">
+                <tr><td>Engine power</td><td>150 HP</td></tr>
+                <tr><td>Engine brand</td><td>FPT — Tier 4</td></tr>
+                <tr><td>Drive system</td><td>Both tracks powered through turns</td></tr>
+                <tr><td>Blade type</td><td>Large capacity — auto functions available</td></tr>
+                <tr><td>Warranty</td><td>CASE ProCare — 3yr/3,000 hrs</td></tr>
+              </table>
+              <div class="spec-table-title" style="margin-top:20px">Performance</div>
+              <table class="spec-table">
+                <tr><td>Operating weight</td><td>17,123 kg</td></tr>
+                <tr><td>Blade capacity</td><td>5 m³</td></tr>
+                <tr><td>Maintenance contract</td><td>3-year planned maintenance</td></tr>
+                <tr><td>Joystick</td><td>Electrohydraulic — smooth control</td></tr>
+                <tr><td>Best for</td><td>Heavy earthmoving · Large land clearing</td></tr>
+              </table>
+            </div>
+            <div class="features-list">
+              <div class="spec-table-title">Key Features</div>
+              <div class="feature-item"><div class="feature-dot"></div>Both tracks powered simultaneously through turns — CASE M Series maintains maximum blade load retention even while turning, dramatically improving material moved per pass vs L Series</div>
+              <div class="feature-item"><div class="feature-dot"></div>5 m³ blade capacity — moves 25% more material per pass than 1650L, directly improving daily output on large highway sub-grade and mass earthmoving projects</div>
+              <div class="feature-item"><div class="feature-dot"></div>CASE ProCare — 3-year/3,000-hour full machine factory warranty plus 3-year planned maintenance contract — total peace of mind for the first years of ownership</div>
+              <div class="feature-item"><div class="feature-dot"></div>Electrohydraulic joystick — smooth, precise directional control for reversing and steering with minimal operator fatigue on long dozing shifts</div>
+              <div class="feature-item"><div class="feature-dot"></div>FPT Tier 4 engine — cleaner emission standard, required for projects in urban and environmentally sensitive areas across Maharashtra</div>
+              <div class="feature-item"><div class="feature-dot"></div>Ultra-comfortable operator platform with intuitive controls and great visibility — reduces operator fatigue on long dozing cycles, maintaining productivity throughout the shift</div>
+            </div>
+            <div class="model-actions">
+              <button class="btn-quote" onclick="openQuoteModal('CASE 1650M Crawler Dozer')">Get Quote for 1650M →</button>
+              <a class="btn-brochure" href="https://www.casece.com/en/india/products/crawler-dozers/m-series-crawler-dozers" target="_blank">View on CASE India ↗</a>
+            </div>
+          </div>
+
+          <!-- 2050M PANEL -->
+          <div class="model-panel" id="m-2050m">
+            <div class="model-grid">
+              <div>
+                <img class="model-img"
+                  src="https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/c3e2c9a6b40342c3a3ffd98b9b0d1e02?v=4d7f03fc&t=size500"
+                  alt="CASE 2050M Crawler Dozer" onerror="this.style.display='none'">
+              </div>
+              <div>
+                <div class="model-overview-badge">Top of Range · Mass Earthmoving · Auto Blade</div>
+                <div class="model-overview-title">CASE 2050M</div>
+                <p class="model-overview-desc">The 2050M is CASE's most powerful dozer for the Indian market — 214 HP, 20,599 kg, and a massive 6 m³ blade built for mass earthmoving on the largest infrastructure projects. It's the machine that SSHEPL's customers choose for expressway earthwork, large quarry bench preparation, and dam construction where moving maximum material per hour is the only metric that matters. The 2050M also comes with automatic blade functions as standard — the blade automatically adjusts to maintain target grade without constant manual input, reducing operator fatigue and improving finished grade quality simultaneously.</p>
+                <div class="model-key-specs">
+                  <div><div class="mspec-label">Engine Power</div><div class="mspec-val">214 HP</div></div>
+                  <div><div class="mspec-label">Operating Weight</div><div class="mspec-val">20,599 kg</div></div>
+                  <div><div class="mspec-label">Blade Capacity</div><div class="mspec-val">6 m³</div></div>
+                  <div><div class="mspec-label">Auto Blade</div><div class="mspec-val">Standard</div></div>
+                </div>
+              </div>
+            </div>
+            <div class="spec-table-wrap">
+              <div class="spec-table-title">Engine & Drive</div>
+              <table class="spec-table">
+                <tr><td>Engine power</td><td>214 HP</td></tr>
+                <tr><td>Engine brand</td><td>FPT — Tier 4</td></tr>
+                <tr><td>Track gauge</td><td>1,940 mm</td></tr>
+                <tr><td>Drive system</td><td>Both tracks powered through turns</td></tr>
+                <tr><td>Auto blade functions</td><td>Standard</td></tr>
+                <tr><td>Joystick</td><td>Electrohydraulic</td></tr>
+                <tr><td>Warranty</td><td>CASE ProCare — 3yr/3,000 hrs</td></tr>
+              </table>
+              <div class="spec-table-title" style="margin-top:20px">Performance</div>
+              <table class="spec-table">
+                <tr><td>Operating weight</td><td>20,599 kg</td></tr>
+                <tr><td>Blade capacity</td><td>6 m³</td></tr>
+                <tr><td>Track gauge</td><td>1,940 mm (widest in CASE India range)</td></tr>
+                <tr><td>Best for</td><td>Mass earthmoving · Quarry · Dam · Expressway</td></tr>
+              </table>
+            </div>
+            <div class="features-list">
+              <div class="spec-table-title">Key Features — What makes 2050M the top choice</div>
+              <div class="feature-item"><div class="feature-dot"></div>214 HP — most powerful CASE dozer in India, delivering the raw force needed for mass earthmoving on large expressway cuts, dam embankments, and quarry bench preparation</div>
+              <div class="feature-item"><div class="feature-dot"></div>6 m³ blade capacity — the largest in the CASE India dozer range, moving maximum material per pass on high-volume earthmoving contracts</div>
+              <div class="feature-item"><div class="feature-dot"></div>Automatic blade functions as standard — blade automatically maintains target grade without constant manual correction, reducing operator workload and improving finished grade accuracy simultaneously</div>
+              <div class="feature-item"><div class="feature-dot"></div>1,940 mm track gauge — widest in the CASE India dozer range, providing exceptional stability on large cut slopes and quarry benches where ground conditions are variable</div>
+              <div class="feature-item"><div class="feature-dot"></div>Both tracks powered simultaneously through turns — maximum blade load retention throughout the entire dozing cycle, material stays in the blade even on tight turns at the end of long dozing passes</div>
+              <div class="feature-item"><div class="feature-dot"></div>CASE ProCare 3-year warranty + 3-year planned maintenance — on a machine of this investment level, ProCare provides complete cost certainty for the first 3 years of operation</div>
+            </div>
+            <div class="model-actions">
+              <button class="btn-quote" onclick="openQuoteModal('CASE 2050M Crawler Dozer')">Get Quote for 2050M →</button>
+              <a class="btn-brochure" href="https://www.casece.com/en/india/products/crawler-dozers/m-series-crawler-dozers" target="_blank">View on CASE India ↗</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section class="why-section"><div class="container">
   <div class="fade-up" style="text-align:center"><div class="section-eyebrow">Why CASE Dozers</div><h2 class="section-title section-title-white">Built Tough for Indian Conditions</h2></div>
   <div class="why-grid">
@@ -197,5 +525,12 @@ footer{background:var(--navy-deep);padding:48px 0 0;border-top:2px solid var(--g
 
 <footer><div class="footer-inner"><div class="footer-grid"><div><div class="footer-brand-name">S.S. Heavy Equipments</div><div class="footer-brand-sub">Pvt. Ltd. · Est. 2013</div><p class="footer-brand-desc">Authorized CASE dealer across Maharashtra. Full 3S support.</p></div><div><div class="footer-col-title">CASE Products</div><a class="footer-link" href="backhoe-loaders.html">Backhoe Loaders</a><a class="footer-link" href="compactors.html">Compactors</a><a class="footer-link" href="excavators.html">Crawler Excavators</a><a class="footer-link" href="motor-graders.html">Motor Graders</a><a class="footer-link" href="crawler-dozers.html">Crawler Dozers</a></div><div><div class="footer-col-title">Contact</div><a class="footer-link" href="tel:+919822016435">+91 9822016435</a><a class="footer-link" href="tel:+919822353430">+91 9822353430</a><a class="footer-link" href="mailto:sshepl.pune@gmail.com">sshepl.pune@gmail.com</a></div></div><div class="footer-bottom"><div class="footer-copy">© 2026 S.S. Heavy Equipments Pvt. Ltd.</div><div class="footer-copy">Authorized CASE · BKT Dealer — Maharashtra</div></div></div></footer>
 <a class="wa-fab" href="https://wa.me/919822016435" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-<script>const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));</script>
+<script>
+  
+function toggleAccordion(id){const item=document.getElementById(id);const isOpen=item.classList.contains('open');document.querySelectorAll('.accordion-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open')}
+function switchTab(series,model,btn){const body=btn.closest('.accordion-body');body.querySelectorAll('.model-tab').forEach(t=>t.classList.remove('active'));body.querySelectorAll('.model-panel').forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById(series+'-'+model).classList.add('active')}
+function openQuoteModal(product){document.getElementById('quoteModal').style.display='flex';const msg=document.querySelector('#quoteModal [name="message"]');if(msg)msg.placeholder='Interested in: '+product}
+function scrollAndOpen(id){toggleAccordion(id);setTimeout(()=>{document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'})},100)}
+
+  const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));</script>
 </body></html>

@@ -47,6 +47,61 @@ nav{background:var(--navy);position:sticky;top:0;z-index:100;border-bottom:2px s
 .cta-strip{background:var(--gold);padding:48px 0}.cta-strip-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;gap:32px}.cta-strip-title{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--navy-deep);letter-spacing:1.5px}.cta-strip-sub{font-size:14px;color:rgba(7,21,41,.6);margin-top:4px}.btn-navy{background:var(--navy-deep);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;padding:13px 28px;border-radius:4px;text-decoration:none;transition:background .2s;white-space:nowrap}.btn-ghost-navy{background:transparent;color:var(--navy-deep);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;padding:12px 26px;border-radius:4px;border:2px solid var(--navy-deep);text-decoration:none;transition:all .2s;white-space:nowrap}.btn-ghost-navy:hover{background:var(--navy-deep);color:var(--white)}
 footer{background:var(--navy-deep);padding:48px 0 0;border-top:2px solid var(--gold)}.footer-inner{max-width:1200px;margin:0 auto;padding:0 32px}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:32px}.footer-brand-name{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--white);letter-spacing:2px;margin-bottom:4px}.footer-brand-sub{font-size:11px;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}.footer-brand-desc{font-size:13px;color:rgba(255,255,255,.3);line-height:1.6}.footer-col-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}.footer-link{font-size:13px;color:rgba(255,255,255,.4);text-decoration:none;display:block;margin-bottom:6px;transition:color .2s}.footer-link:hover{color:var(--white)}.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding:16px 0;display:flex;justify-content:space-between}.footer-copy{font-size:12px;color:rgba(255,255,255,.25)}
 .wa-fab{position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);z-index:999;text-decoration:none;transition:transform .2s}.wa-fab:hover{transform:scale(1.1)}.wa-fab svg{width:28px;height:28px;fill:#fff}
+
+/*1*/
+/* ── ACCORDION + TABS ── */
+.accordion-section{background:var(--off-white);padding:64px 0}
+.accordion-wrap{margin-top:48px;display:flex;flex-direction:column;gap:16px}
+.accordion-item{background:var(--white);border:1px solid var(--gray-light);border-radius:8px;overflow:hidden;transition:border-color .2s}
+.accordion-item.open{border-color:var(--gold)}
+.accordion-header{display:flex;align-items:center;justify-content:space-between;padding:22px 28px;cursor:pointer;user-select:none;gap:16px}
+.accordion-header:hover{background:var(--off-white)}
+.accordion-header-left{display:flex;align-items:center;gap:16px}
+.accordion-series-tag{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;background:rgba(212,148,10,.1);border:1px solid rgba(212,148,10,.3);color:var(--gold);padding:3px 10px;border-radius:2px}
+.accordion-title{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--navy);letter-spacing:1.5px}
+.accordion-subtitle{font-size:13px;color:var(--gray-mid);margin-top:2px}
+.accordion-arrow{width:32px;height:32px;background:var(--off-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--navy);transition:transform .3s;flex-shrink:0}
+.accordion-item.open .accordion-arrow{transform:rotate(180deg);background:var(--gold);color:var(--white)}
+.accordion-body{display:none;padding:0 28px 28px}
+.accordion-item.open .accordion-body{display:block}
+/* Model tabs */
+.model-tabs{display:flex;gap:6px;margin-bottom:24px;flex-wrap:wrap;border-bottom:2px solid var(--gray-light);padding-bottom:0}
+.model-tab{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;padding:10px 20px;border:none;background:none;color:var(--gray-mid);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s}
+.model-tab:hover{color:var(--navy)}
+.model-tab.active{color:var(--navy);border-bottom-color:var(--gold)}
+.model-panel{display:none}.model-panel.active{display:block}
+/* Model content */
+.model-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-top:20px}
+.model-img-wrap{border-radius:6px;overflow:hidden;border:1px solid var(--gray-light);background:var(--navy)}
+.model-img{width:100%;height:280px;object-fit:cover;display:block}
+.model-img-placeholder{width:100%;height:280px;background:linear-gradient(135deg,#0B1F3A,#132d50);display:flex;align-items:center;justify-content:center}
+.model-overview-title{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--navy);letter-spacing:1.5px;margin-bottom:6px}
+.model-overview-badge{display:inline-block;background:#EAF3DE;color:#3B6D11;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:2px;margin-bottom:10px}
+.model-overview-desc{font-size:14px;color:var(--gray-mid);line-height:1.8;margin-bottom:16px}
+.model-key-specs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;padding:16px;background:var(--off-white);border-radius:6px}
+.mspec-label{font-size:10px;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.5px}
+.mspec-val{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--navy);margin-top:2px}
+/* Full spec table */
+.spec-table-wrap{margin-top:28px}
+.spec-table-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--gray-light)}
+.spec-table{width:100%;border-collapse:collapse;font-size:13px}
+.spec-table tr{border-bottom:1px solid var(--gray-light)}
+.spec-table tr:last-child{border-bottom:none}
+.spec-table td:first-child{color:var(--gray-mid);padding:8px 12px 8px 0;width:55%;font-size:12px}
+.spec-table td:last-child{color:var(--navy);font-weight:500;padding:8px 0;text-align:right}
+/* Features */
+.features-list{margin-top:24px}
+.feature-item{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--gray-light);font-size:13px;color:var(--text-body);line-height:1.5}
+.feature-item:last-child{border-bottom:none}
+.feature-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:6px}
+/* Bottom action row */
+.model-actions{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;padding-top:16px;border-top:1px solid var(--gray-light)}
+.btn-quote{background:var(--navy);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:10px 20px;border-radius:4px;text-decoration:none;transition:background .2s;border:none;cursor:pointer}
+.btn-quote:hover{background:var(--gold);color:var(--navy-deep)}
+.btn-brochure{background:transparent;color:var(--navy);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:9px 18px;border-radius:4px;border:1.5px solid var(--navy);text-decoration:none;transition:all .2s}
+.btn-brochure:hover{border-color:var(--gold);color:var(--gold)}
+@media(max-width:900px){.model-grid{grid-template-columns:1fr}}
+
 .fade-up{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}.fade-up.visible{opacity:1;transform:none}
 @media(max-width:900px){.models-grid{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr 1fr}.nav-links,.nav-cta{display:none}.topbar{display:none}.footer-grid{grid-template-columns:1fr}.cta-strip-inner{flex-direction:column;text-align:center}}
 </style>
@@ -73,7 +128,8 @@ footer{background:var(--navy-deep);padding:48px 0 0;border-top:2px solid var(--g
 <nav><div class="nav-inner"><a class="nav-brand" href="index.html"><img src="images/sshepl-logo.png" alt="SSHEPL" style="height:44px;width:auto;border-radius:6px"><div>
 <div class="nav-brand-name">S. S. HEAVY EQUIPMENTS PVT. LTD.</div>
 <div class="nav-brand-sub">Est. 2013 · Maharashtra</div></div></a><div class="nav-links">
-<a class="nav-link" href="index.html">Home</a><a class="nav-link" href="about.html">About</a><a class="nav-link active" href="dealerships.html">Dealerships</a><a class="nav-link nav-link-bkt" href="bkt.html">BKT Tyres</a><a class="nav-link" href="services.html">Services</a><a class="nav-link" href="branches.html">Branches</a></div><a class="nav-cta" href="index.html#contact">Get Quote →</a></div></nav>
+<a class="nav-link" href="index.html">Home</a><a class="nav-link" href="about.html">About</a><a class="nav-link active" href="dealerships.html">Dealerships</a><a class="nav-link nav-link-bkt" href="bkt.html">BKT Tyres</a><a class="nav-link" href="services.html">Services</a><a class="nav-link" href="branches.html">Branches</a></div>
+<a class="model-cta" onclick="scrollAndOpen('acc-cx220c');return false" href="#">View Full Specs ↓</a></div></nav>
 
 <div class="page-hero"><div class="page-hero-inner">
   <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><a href="dealerships.html">Dealerships</a><span>/</span>Crawler Excavators</div>
@@ -104,7 +160,7 @@ footer{background:var(--navy-deep);padding:48px 0 0;border-top:2px solid var(--g
           <div class="spec-item"><div class="spec-label">Max Reach</div><div class="spec-val">9.96 m</div></div>
           <div class="spec-item"><div class="spec-label">Undercarriage</div><div class="spec-val">Standard</div></div>
         </div>
-        <a class="model-cta" href="index.html#contact">Get Quote →</a>
+        <a class="model-cta" onclick="scrollAndOpen('acc-cx220c');return false" href="#">View Full Specs ↓</a>
       </div>
     </div>
     <div class="model-card fade-up">
@@ -121,11 +177,167 @@ footer{background:var(--navy-deep);padding:48px 0 0;border-top:2px solid var(--g
           <div class="spec-item"><div class="spec-label">Max Reach</div><div class="spec-val">9.96 m</div></div>
           <div class="spec-item"><div class="spec-label">Undercarriage</div><div class="spec-val">Long (LC)</div></div>
         </div>
-        <a class="model-cta" href="index.html#contact">Get Quote →</a>
+        <a class="model-cta" onclick="scrollAndOpen('acc-cx220c');return false" href="#">View Full Specs ↓</a>
       </div>
     </div>
   </div>
 </div></section>
+
+<!---2-->
+<!-- ACCORDION MODELS -->
+<section class="accordion-section" id="models">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-eyebrow">All Models</div>
+      <h2 class="section-title">CX220C Series — Both Variants</h2>
+      <p class="section-desc">Click to explore full specs, CIHS hydraulics, and application details for each model.</p>
+    </div>
+
+    <div class="accordion-wrap">
+
+      <!-- CX220C ACCORDION -->
+      <div class="accordion-item fade-up" id="acc-cx220c">
+        <div class="accordion-header" onclick="toggleAccordion('acc-cx220c')">
+          <div class="accordion-header-left">
+            <div>
+              <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+                <span class="accordion-series-tag">CX220C Series</span>
+                <span style="font-size:11px;color:var(--gray-mid);font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px">2 Variants · 157 HP · CASE Intelligent Hydraulic System</span>
+              </div>
+              <div class="accordion-title">CX220C Crawler Excavators</div>
+              <div class="accordion-subtitle">CX220C · CX220C LC — Standard and long undercarriage variants</div>
+            </div>
+          </div>
+          <div class="accordion-arrow">▼</div>
+        </div>
+        <div class="accordion-body">
+          <div class="model-tabs">
+            <button class="model-tab active" onclick="switchTab('cx','cx220c',this)">CX220C</button>
+            <button class="model-tab" onclick="switchTab('cx','cx220c-lc',this)">CX220C LC</button>
+          </div>
+
+          <!-- CX220C PANEL -->
+          <div class="model-panel active" id="cx-cx220c">
+            <div class="model-grid">
+              <div>
+                <img class="model-img"
+                  src="https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/e7a7ca84f7d94803bd5a50ef1adabf59?v=3c1f547d&t=size500"
+                  alt="CASE CX220C Crawler Excavator" onerror="this.style.display='none'">
+              </div>
+              <div>
+                <div class="model-overview-badge">Standard Undercarriage · Versatile</div>
+                <div class="model-overview-title">CASE CX220C</div>
+                <p class="model-overview-desc">CASE's first excavator built specifically for India — launched at Excon 2019 and engineered for Indian terrain. The CX220C combines a 157 HP FPT 6-cylinder engine with CASE's Intelligent Hydraulic System (CIHS) to deliver 17% more horsepower output and up to ₹7 lakh in annual fuel savings compared to competitors. At 21,250 kg, it's a perfectly balanced machine — productive enough for large earthmoving on Pune's highway projects, yet versatile enough for foundation excavation and trenching on urban infrastructure across Maharashtra.</p>
+                <div class="model-key-specs">
+                  <div><div class="mspec-label">Engine Power</div><div class="mspec-val">157 HP / 117 kW</div></div>
+                  <div><div class="mspec-label">Operating Weight</div><div class="mspec-val">21,250 kg</div></div>
+                  <div><div class="mspec-label">Max Dig Depth</div><div class="mspec-val">6,650 mm</div></div>
+                  <div><div class="mspec-label">Max Reach</div><div class="mspec-val">9,730 mm</div></div>
+                </div>
+              </div>
+            </div>
+            <div class="spec-table-wrap">
+              <div class="spec-table-title">Engine</div>
+              <table class="spec-table">
+                <tr><td>Engine brand</td><td>FPT (CNH Group)</td></tr>
+                <tr><td>Cylinders</td><td>6 — electronically controlled</td></tr>
+                <tr><td>Max gross power</td><td>157 HP / 117 kW</td></tr>
+                <tr><td>Peak torque @ 1800 rpm</td><td>622 Nm</td></tr>
+                <tr><td>Hydraulic flow</td><td>211 LPM</td></tr>
+                <tr><td>Fuel tank</td><td>410 litres</td></tr>
+              </table>
+              <div class="spec-table-title" style="margin-top:20px">Performance</div>
+              <table class="spec-table">
+                <tr><td>Operating weight</td><td>21,250 kg</td></tr>
+                <tr><td>Bucket capacity</td><td>1.0 m³</td></tr>
+                <tr><td>Lifting capacity</td><td>5,600 kg</td></tr>
+                <tr><td>Tear-out force</td><td>152 kN</td></tr>
+                <tr><td>Max digging depth</td><td>6,650 mm</td></tr>
+                <tr><td>Max horizontal reach</td><td>9,730 mm</td></tr>
+                <tr><td>Transport length</td><td>9,430 mm</td></tr>
+                <tr><td>Transport width</td><td>2,800 mm</td></tr>
+                <tr><td>Track width</td><td>600 mm</td></tr>
+                <tr><td>Hydraulic system</td><td>CASE Intelligent Hydraulic System (CIHS)</td></tr>
+              </table>
+            </div>
+            <div class="features-list">
+              <div class="spec-table-title">Key Features</div>
+              <div class="feature-item"><div class="feature-dot"></div>CASE Intelligent Hydraulic System (CIHS) — delivers higher breakout forces, improved swing speeds and greater swing torque, resulting in 5% more productivity and faster cycle times vs competitors</div>
+              <div class="feature-item"><div class="feature-dot"></div>622 Nm peak torque at 1,800 rpm — powerful low-end pulling force for deep excavation in hard soil, rock fragments, and compacted fill across Maharashtra's infrastructure sites</div>
+              <div class="feature-item"><div class="feature-dot"></div>211 LPM hydraulic flow — faster, more responsive boom and arm movement delivers quicker cycle times and noticeably higher daily output on large earthmoving projects</div>
+              <div class="feature-item"><div class="feature-dot"></div>410-litre fuel tank — extended working range between refuels, particularly valuable on remote highway and dam projects in Maharashtra's interior districts</div>
+              <div class="feature-item"><div class="feature-dot"></div>Built and designed for Indian terrain — launched specifically for India at Excon 2019, engineered to handle Maharashtra's varied soil conditions from coastal clay to Deccan basalt</div>
+              <div class="feature-item"><div class="feature-dot"></div>Up to 17% more horsepower output than the rated spec — CIHS maximizes available engine power delivery to the hydraulic system for industry-leading productivity</div>
+            </div>
+            <div class="model-actions">
+              <button class="btn-quote" onclick="openQuoteModal('CASE CX220C Crawler Excavator')">Get Quote for CX220C →</button>
+              <a class="btn-brochure" href="https://www.casece.com/en/india/products/crawler-excavators/cx220c" target="_blank">View on CASE India ↗</a>
+            </div>
+          </div>
+
+          <!-- CX220C LC PANEL -->
+          <div class="model-panel" id="cx-cx220c-lc">
+            <div class="model-grid">
+              <div>
+                <img class="model-img"
+                  src="https://cnhi-p-001-delivery.sitecorecontenthub.cloud/api/public/content/e7a7ca84f7d94803bd5a50ef1adabf59?v=3c1f547d&t=size500"
+                  alt="CASE CX220C LC Crawler Excavator" onerror="this.style.display='none'">
+              </div>
+              <div>
+                <div class="model-overview-badge">Long Undercarriage · Enhanced Stability</div>
+                <div class="model-overview-title">CASE CX220C LC</div>
+                <p class="model-overview-desc">The CX220C LC is the long-undercarriage variant of CASE's flagship Indian excavator — adding 190 kg and longer track length compared to the standard CX220C to deliver enhanced stability on soft and uneven ground. At 22,220 kg, the wider track footprint distributes ground pressure more evenly — making it the preferred choice for excavation on waterlogged sites, soft alluvial soils along Maharashtra's river systems, and demolition work where a low center of gravity is critical. Same 157 HP FPT engine and CIHS hydraulics as the CX220C, with the added stability of the LC configuration.</p>
+                <div class="model-key-specs">
+                  <div><div class="mspec-label">Engine Power</div><div class="mspec-val">157 HP / 117 kW</div></div>
+                  <div><div class="mspec-label">Operating Weight</div><div class="mspec-val">22,220 kg</div></div>
+                  <div><div class="mspec-label">Max Dig Depth</div><div class="mspec-val">6,650 mm</div></div>
+                  <div><div class="mspec-label">Undercarriage</div><div class="mspec-val">Long (LC)</div></div>
+                </div>
+              </div>
+            </div>
+            <div class="spec-table-wrap">
+              <div class="spec-table-title">Engine — Same as CX220C</div>
+              <table class="spec-table">
+                <tr><td>Engine brand</td><td>FPT (CNH Group) — 6-cylinder</td></tr>
+                <tr><td>Max gross power</td><td>157 HP / 117 kW</td></tr>
+                <tr><td>Peak torque @ 1800 rpm</td><td>622 Nm</td></tr>
+                <tr><td>Hydraulic system</td><td>CASE Intelligent Hydraulic System (CIHS)</td></tr>
+                <tr><td>Hydraulic flow</td><td>211 LPM</td></tr>
+              </table>
+              <div class="spec-table-title" style="margin-top:20px">LC Differences vs Standard CX220C</div>
+              <table class="spec-table">
+                <tr><td>Undercarriage</td><td>Long (LC) — extended track length</td></tr>
+                <tr><td>Operating weight</td><td>22,220 kg (+970 kg vs CX220C)</td></tr>
+                <tr><td>Transport width</td><td>2,990 mm (wider than CX220C)</td></tr>
+                <tr><td>Stability</td><td>Enhanced — lower ground pressure</td></tr>
+                <tr><td>Lifting capacity</td><td>5,600 kg</td></tr>
+                <tr><td>Max digging depth</td><td>6,650 mm — same as CX220C</td></tr>
+                <tr><td>Tear-out force</td><td>152 kN — same as CX220C</td></tr>
+                <tr><td>Best for</td><td>Soft ground · Demolition · Waterlogged sites</td></tr>
+              </table>
+            </div>
+            <div class="features-list">
+              <div class="spec-table-title">Key Features — Why choose LC over standard</div>
+              <div class="feature-item"><div class="feature-dot"></div>Long undercarriage distributes 22,220 kg weight over a larger track footprint — essential for excavation in Maharashtra's soft alluvial soils near rivers like Krishna, Godavari and Bhima</div>
+              <div class="feature-item"><div class="feature-dot"></div>Enhanced stability for demolition work — the wider stance prevents tipping when swinging heavy concrete debris or working with long-reach attachments on demolition projects</div>
+              <div class="feature-item"><div class="feature-dot"></div>Same 157 HP FPT engine and CIHS hydraulics as CX220C — all the productivity and power advantages, plus the added stability of the LC configuration</div>
+              <div class="feature-item"><div class="feature-dot"></div>Lower ground pressure — LC track configuration protects soft site surfaces on waterlogged construction sites and river bank excavation projects common in Maharashtra</div>
+              <div class="feature-item"><div class="feature-dot"></div>152 kN tear-out force — class-leading breakout power maintained in the LC configuration, essential for hard rock and compacted fill excavation in Deccan Plateau construction sites</div>
+              <div class="feature-item"><div class="feature-dot"></div>SSHEPL support — full spare parts, service, and field support across Maharashtra from SSHEPL's 3 workshops and 7-city network for both CX220C variants</div>
+            </div>
+            <div class="model-actions">
+              <button class="btn-quote" onclick="openQuoteModal('CASE CX220C LC Crawler Excavator')">Get Quote for CX220C LC →</button>
+              <a class="btn-brochure" href="https://www.casece.com/en/india/products/crawler-excavators/cx220c-lc" target="_blank">View on CASE India ↗</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
 <section class="why-section"><div class="container">
   <div class="fade-up" style="text-align:center"><div class="section-eyebrow">Why CASE Excavators</div><h2 class="section-title section-title-white">High Production, Low Cost</h2></div>
@@ -157,5 +369,12 @@ footer{background:var(--navy-deep);padding:48px 0 0;border-top:2px solid var(--g
 
 <footer><div class="footer-inner"><div class="footer-grid"><div><div class="footer-brand-name">S.S. Heavy Equipments</div><div class="footer-brand-sub">Pvt. Ltd. · Est. 2013</div><p class="footer-brand-desc">Authorized CASE dealer across Maharashtra. Full 3S support.</p></div><div><div class="footer-col-title">CASE Products</div><a class="footer-link" href="backhoe-loaders.html">Backhoe Loaders</a><a class="footer-link" href="compactors.html">Compactors</a><a class="footer-link" href="excavators.html">Crawler Excavators</a><a class="footer-link" href="motor-graders.html">Motor Graders</a><a class="footer-link" href="crawler-dozers.html">Crawler Dozers</a></div><div><div class="footer-col-title">Contact</div><a class="footer-link" href="tel:+919822016435">+91 9822016435</a><a class="footer-link" href="tel:+919822353430">+91 9822353430</a><a class="footer-link" href="mailto:sshepl.pune@gmail.com">sshepl.pune@gmail.com</a></div></div><div class="footer-bottom"><div class="footer-copy">© 2026 S.S. Heavy Equipments Pvt. Ltd.</div><div class="footer-copy">Authorized CASE · BKT Dealer — Maharashtra</div></div></div></footer>
 <a class="wa-fab" href="https://wa.me/919822016435" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-<script>const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));</script>
+<script>
+
+function toggleAccordion(id){const item=document.getElementById(id);const isOpen=item.classList.contains('open');document.querySelectorAll('.accordion-item').forEach(i=>i.classList.remove('open'));if(!isOpen)item.classList.add('open')}
+function switchTab(series,model,btn){const body=btn.closest('.accordion-body');body.querySelectorAll('.model-tab').forEach(t=>t.classList.remove('active'));body.querySelectorAll('.model-panel').forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById(series+'-'+model).classList.add('active')}
+function openQuoteModal(product){document.getElementById('quoteModal').style.display='flex';const msg=document.querySelector('#quoteModal [name="message"]');if(msg)msg.placeholder='Interested in: '+product}
+function scrollAndOpen(id){toggleAccordion(id);setTimeout(()=>{document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'})},100)}
+  
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));</script>
 </body></html>
